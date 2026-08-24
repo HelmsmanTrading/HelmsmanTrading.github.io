@@ -1,13 +1,13 @@
-<nav class="fixed w-full z-50 transition-all duration-300 bg-white/80 dark:bg-brand-dark/80 backdrop-blur-md border-b border-gray-200 dark:border-white/5"
+﻿<nav class="fixed w-full z-50 transition-all duration-300 bg-white/80 dark:bg-brand-dark/80 backdrop-blur-md border-b border-gray-200 dark:border-white/5"
   id="navbar">
   <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
     <!-- Logo -->
     <a href="{{ '/' | relative_url }}{% if page.lang == 'it' %}it/{% else %}en/{% endif %}"
       class="flex items-center hover:opacity-90 transition-opacity shrink-0">
-      <img src="/assets/images/logo/logo-dark.png" alt="Helmsman Trading"
-        class="h-9 w-auto object-contain dark:hidden">
       <img src="/assets/images/logo/logo-light.png" alt="Helmsman Trading"
+        class="h-9 w-auto object-contain dark:hidden">
+      <img src="/assets/images/logo/logo-dark.png" alt="Helmsman Trading"
         class="h-9 w-auto object-contain hidden dark:block">
     </a>
 
