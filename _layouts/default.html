@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }} - Algorithmic Trading Framework</title>
+    <meta name="description" content="{{ site.description }}">
+    
+    <link rel="icon" type="image/x-icon" href="{{ site.favicon }}">
+    
+    <!-- Open Graph Meta -->
+    <meta property="og:title" content="{{ site.title }}">
+    <meta property="og:description" content="{{ site.description }}">
+    <meta property="og:image" content="{{ site.og_image }}">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="/" class="logo">
+                <img src="/assets/images/logo/logo-light.png" alt="Helmsman Trading Logo" height="40">
+            </a>
+            <nav class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#architecture">Architecture</a>
+                <a href="#faq">FAQ</a>
+                <a href="https://github.com/helmsmantrading/HelmsmanTrading" class="btn btn-outline" target="_blank">View on GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {{ content }}
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="/assets/images/logo/logo-light.png" alt="Helmsman Trading" height="30" style="margin-bottom: 1rem;">
+                    <p>The open-source algorithmic trading framework designed for resilience, modularity, and risk control.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <a href="https://github.com/helmsmantrading/HelmsmanTrading">Documentation</a>
+                    <a href="https://github.com/helmsmantrading/HelmsmanTrading/issues">Issue Tracker</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p>{{ site.author.name }}</p>
+                    <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Helmsman Trading. Open Source Software.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,26 @@
+title: "Helmsman Trading"
+description: "The open-source algorithmic trading framework designed for resilience, modularity, and risk control. Trade with confidence on multiple brokers."
+baseurl: ""
+url: "https://helmsmantrading.github.io"
+
+author:
+  name: "Antonio Trento"
+  email: "info@antoniotrento.net"
+  bio: "Algorithmic Trading & Automation"
+
+og_image: "/assets/images/logo/og-image.jpg"
+favicon: "/assets/images/logo/favicon-192.png"
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+faq_en:
+  - question: "What is Helmsman Trading?"
+    answer: "Helmsman Trading is a modular algorithmic trading framework. It features a robust multi-layer architecture (L1 Data, L2 Strategies, L4 Risk Engine, and L5 Broker Execution) designed to execute trades safely without relying solely on simple scripts."
+  - question: "Which brokers are supported?"
+    answer: "Helmsman currently supports Alpaca (Live & Paper) and Tradier, seamlessly abstracted by the L5 Broker Bridge contract. A PaperSimAdapter is also included for offline backtesting."
+  - question: "How does the Risk Engine work?"
+    answer: "The L4 Risk Engine enforces hard constraints on position sizing and total portfolio heat. It calculates dynamic stop-losses and prevents catastrophic drawdowns, overriding any malicious or erratic signals from the strategy layer."
+  - question: "Can I write my own strategies?"
+    answer: "Yes, the L2 Plugin Registry allows you to create custom strategies easily. Just drop a new file in the skills folder, decorate it with @register, and the system auto-discovers it. You have access to over 40 built-in indicators and accurate Session VWAP."
