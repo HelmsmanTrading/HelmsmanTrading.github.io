@@ -1,9 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Qwibo">
-  <title>Qwibo</title>
-  <desc>Una bobina il cui nastro si srotola e diventa righe di testo</desc>
-  <circle cx="22" cy="25" r="13" stroke="#38bdf8" stroke-width="5"/>
-  <circle cx="22" cy="25" r="3" fill="#38bdf8"/>
-  <path d="M22 38H57" stroke="#38bdf8" stroke-width="5" stroke-linecap="round"/>
-  <path d="M22 48H57" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
-  <path d="M22 58H44" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+
+  <circle cx="512" cy="512" r="215" fill="#FFFFFF"/>
+  <circle cx="512" cy="512" r="241" fill="none" stroke="#0B1F3A" stroke-width="52"/>
+  <path d="M 535.65,297.00 L 535.65,150.80 L 488.35,150.80 L 488.35,297.00 Z" fill="#0B1F3A"/><circle cx="512.00" cy="147.25" r="24.83" fill="#0B1F3A"/><path d="M 680.75,376.70 L 784.13,273.32 L 750.68,239.87 L 647.30,343.25 Z" fill="#0B1F3A"/><circle cx="769.92" cy="254.08" r="24.83" fill="#0B1F3A"/><path d="M 727.00,535.65 L 873.20,535.65 L 873.20,488.35 L 727.00,488.35 Z" fill="#0B1F3A"/><circle cx="876.75" cy="512.00" r="24.83" fill="#0B1F3A"/><path d="M 647.30,680.75 L 750.68,784.13 L 784.13,750.68 L 680.75,647.30 Z" fill="#0B1F3A"/><circle cx="769.92" cy="769.92" r="24.83" fill="#0B1F3A"/><path d="M 488.35,727.00 L 488.35,873.20 L 535.65,873.20 L 535.65,727.00 Z" fill="#0B1F3A"/><circle cx="512.00" cy="876.75" r="24.83" fill="#0B1F3A"/><path d="M 343.25,647.30 L 239.87,750.68 L 273.32,784.13 L 376.70,680.75 Z" fill="#0B1F3A"/><circle cx="254.08" cy="769.92" r="24.83" fill="#0B1F3A"/><path d="M 297.00,488.35 L 150.80,488.35 L 150.80,535.65 L 297.00,535.65 Z" fill="#0B1F3A"/><circle cx="147.25" cy="512.00" r="24.83" fill="#0B1F3A"/><path d="M 376.70,343.25 L 273.32,239.87 L 239.87,273.32 L 343.25,376.70 Z" fill="#0B1F3A"/><circle cx="254.08" cy="254.08" r="24.83" fill="#0B1F3A"/>
+  <circle cx="512" cy="512" r="47" fill="#0B1F3A"/>
+  <circle cx="512" cy="512" r="32" fill="none" stroke="#C4A35A" stroke-width="12"/>
+  <circle cx="512" cy="512" r="16" fill="#0B1F3A"/>
+
 </svg>

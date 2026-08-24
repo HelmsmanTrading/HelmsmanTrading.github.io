@@ -1,14 +1,15 @@
-title: "Helmsman Trading"
-description: "The Professional algorithmic trading framework designed for resilience, modularity, and risk control."
+title: "Helmsman"
+description: "Sonda i mercati più liquidi, ti propone le opportunità, apre solo posizioni coperte — sul broker che usi già."
 baseurl: ""
 url: "https://helmsmantrading.github.io"
+locale: en_US
 
 author:
   name: "Antonio Trento"
   email: "info@antoniotrento.net"
-  bio: "Local AI & Automation"
+  bio: "Helmsman Trading"
 
-og_image: "/assets/images/logo/og-image.jpg"
+og_image: "/assets/images/logo/icon.png"
 
 paginate: 20
 paginate_path: "/blog/page:num"
@@ -18,57 +19,74 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
 
-faq_en:
-  - question: "Is Helmsman Trading open for public use?"
-    answer: "Helmsman Trading is a proprietary, professional-grade algorithmic trading framework. It is designed for institutional and advanced retail quants who need absolute resilience and risk management."
-  - question: "Which brokers are supported?"
-    answer: "Currently, the L5 Broker Bridge supports Alpaca (Live/Paper) and Tradier. A local PaperSim environment is also included for offline backtesting."
-  - question: "How does the Risk Engine work?"
-    answer: "The L4 Risk Engine acts as a gatekeeper. It enforces maximum heat limits, position sizing, and dynamic stop-losses independently of your strategy's logic, preventing catastrophic drawdowns."
-  - question: "Do I need external libraries for indicators?"
-    answer: "No. The L1 Data Lake natively consolidates data and computes resilient VWAPs and other indicators locally, ensuring your strategies run fast and reliably."
-faq_it:
-  - question: "Helmsman Trading è disponibile al pubblico?"
-    answer: "Helmsman Trading è un framework di trading algoritmico proprietario e professionale. È progettato per quant istituzionali e retail avanzati che richiedono resilienza assoluta e gestione del rischio."
-  - question: "Quali broker sono supportati?"
-    answer: "Attualmente, il Broker Bridge L5 supporta Alpaca (Live/Paper) e Tradier. È incluso anche un ambiente PaperSim locale per il backtesting offline."
-  - question: "Come funziona il Risk Engine?"
-    answer: "Il Risk Engine L4 agisce come un guardiano. Applica limiti massimi di esposizione, dimensionamento delle posizioni e stop-loss dinamici indipendentemente dalla logica della tua strategia, prevenendo drawdown catastrofici."
-  - question: "Ho bisogno di librerie esterne per gli indicatori?"
-    answer: "No. Il Data Lake L1 consolida nativamente i dati e calcola VWAP resilienti e altri indicatori in locale, assicurando che le tue strategie vengano eseguite in modo rapido e affidabile."
-
+contact_email: "info@antoniotrento.net"
 
 social:
-  github: "https://github.com/helmsmantrading/HelmsmanTrading"
+  github: "https://github.com/HelmsmanTrading/HelmsmanTrading"
   twitter: "https://x.com/antoniotrento"
 
 cta:
-  github_url: "https://github.com/helmsmantrading/HelmsmanTrading"
-  docs_url: "https://helmsmantrading.github.io/en/architecture"
-  # Direct installer download (GitHub Releases).
-  # Pre-release alpha: URL puntuale al tag (aggiornare versione+nome file a ogni release
-  # finche' non esiste una release "latest" stabile, che permetterebbe /releases/latest/download/).
-  download_url: "https://github.com/helmsmantrading/HelmsmanTrading/releases/download/v0.1.0-alpha.1/Qwibo-Setup-0.1.0-alpha.1.exe"
-  download_page_it: "/it/download/"
-  download_page_en: "/en/download/"
-
-# MkDocs i18n (folder): English at /docs/, Italian at /docs/it/
-docs:
-  base_en: "/docs/"
-  base_it: "/docs/it/"
+  github_url: "https://github.com/HelmsmanTrading/HelmsmanTrading"
+  access_it: "/it/accesso/"
+  access_en: "/en/access/"
 
 popup:
-  url: "https://github.com/helmsmantrading/HelmsmanTrading"
   en:
-    url: "/en/download/"
-    title: "Got a recording to transcribe?"
-    body: "Download for Windows, double-click, drop in one real file. Text and subtitles on your PC — no per-minute fees, no forced upload."
-    button: "Download for Windows"
+    url: "/en/access/"
+    title: "Want setups — not another terminal?"
+    body: "Early paper access: Helmsman scans liquid names, you confirm, every entry has a stop."
+    button: "Request paper access"
   it:
-    url: "/it/download/"
-    title: "Hai una registrazione da trascrivere?"
-    body: "Scarica per Windows, doppio clic, trascina un file vero. Testo e sottotitoli sul tuo PC — zero costi al minuto, niente upload obbligatorio."
-    button: "Scarica per Windows"
+    url: "/it/accesso/"
+    title: "Vuoi le opportunità, non un altro terminale?"
+    body: "Accesso paper: Helmsman sonda i liquidi, tu confermi, ogni ingresso ha lo stop."
+    button: "Richiedi l'accesso paper"
+
+faq_it:
+  - question: "Devo saper programmare?"
+    answer: "No. Helmsman è per chi fa trading, non per chi scrive bot. Vedi le proposte, leggi size e stop, dici di sì o di no. Il codice resta sotto il cofano."
+  - question: "Apre da solo, senza di me?"
+    answer: "No. Prima vedi l'anteprima (titolo, direzione, size, stop, target). Solo se confermi parte l'ordine. Tu tieni il timone: Helmsman non è un autopilota."
+  - question: "Cosa significa «posizione coperta»?"
+    answer: "Ogni ingresso esce con protezione: stop, e target quando la regola lo prevede. Niente market nudi «poi metto lo stop». Se il broker o la regola non coprono, Helmsman non apre."
+  - question: "L'AI decide quanto comprare?"
+    answer: "No. Un modello può aiutarti a leggere il contesto; size e stop li calcola il motore di rischio, con regole fisse sul tuo conto. Niente quantità inventate in chat."
+  - question: "Quali broker?"
+    answer: "Oggi il ponte vivo è Alpaca in paper. L'architettura è fatta per attaccare ogni broker che espone API: non sei sposato a un unico conto. Man mano che un adapter è pronto, lo colleghi senza cambiare modo di decidere."
+  - question: "Opera già con soldi veri?"
+    answer: "L'accesso anticipato è paper. Il live arriva quando il ponte, le coperture e le regole di ingaggio sono all'altezza. Non vendiamo magia sul capitale reale."
+  - question: "Su quali mercati cerca?"
+    answer: "Titoli e ETF liquidi, dove entrare e uscire ha senso. Se una regola non è applicabile — prezzo sotto la media, mercato morto, dati stantii — non inventa il trade: lo salta."
+  - question: "Quanto costa?"
+    answer: "Siamo in accesso anticipato: lasci l'email, ti diciamo quando il paper è pronto per te. Niente listino finto, niente carta di credito per «provare»."
+
+faq_en:
+  - question: "Do I need to code?"
+    answer: "No. Helmsman is for traders, not bot authors. You see proposals, read size and stop, say yes or no. The stack stays under the hood."
+  - question: "Does it trade without me?"
+    answer: "No. You get a preview (symbol, side, size, stop, target). The order goes out only if you confirm. You hold the helm: this is not autopilot."
+  - question: "What is a «covered» position?"
+    answer: "Every entry ships with protection: a stop, and a target when the rule calls for one. No naked market orders with a promise to add the stop later. If the broker or the rule cannot cover, Helmsman does not open."
+  - question: "Does the AI pick position size?"
+    answer: "No. A model can help you read context; size and stops come from the risk engine, with fixed rules on your account. No quantities invented in chat."
+  - question: "Which brokers?"
+    answer: "The live bridge today is Alpaca paper. The product is built to plug into every broker that offers an API — you are not married to one venue. As adapters land, you connect them without changing how you decide."
+  - question: "Is this live money already?"
+    answer: "Early access is paper. Live comes when the bridge, the covers, and the engagement rules are ready. We do not sell magic on real capital."
+  - question: "Which markets does it scan?"
+    answer: "Liquid names and ETFs, where getting in and out is realistic. If a rule does not apply — price under the average, dead tape, stale data — it skips the trade. It does not invent one."
+  - question: "What does it cost?"
+    answer: "Early access: leave your email, we tell you when paper is ready for you. No fake price list, no credit card to «try it»."
+
+keywords:
+  - trading
+  - posizioni coperte
+  - paper trading
+  - multi broker
+  - stop loss
+  - mercati liquidi
+  - alpaca paper
+  - helmsman
 
 permalink: "/:categories/:title/"
 markdown: kramdown
@@ -77,14 +95,3 @@ highlighter: rouge
 include:
   - assets
   - robots.txt
-
-keywords:
-  - trascrizione audio
-  - app trascrizione windows
-  - speech to text italiano
-  - nemo parakeet
-  - trascrizione video
-  - whisper alternative
-  - local asr
-  - riassunto llm
-  - trascrizione offline pc

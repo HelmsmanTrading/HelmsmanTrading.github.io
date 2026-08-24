@@ -1,0 +1,11 @@
+{% if page.lang == 'it' %}
+  {% assign cta_href = site.cta.access_it %}
+  {% assign cta_label = "Richiedi l'accesso paper" %}
+{% else %}
+  {% assign cta_href = site.cta.access_en %}
+  {% assign cta_label = 'Request paper access' %}
+{% endif %}
+<a href="{{ cta_href | relative_url }}"
+  class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-brand-gold text-brand-dark font-bold text-sm hover:bg-brand-goldLight transition-colors">
+  {{ include.label | default: cta_label }}
+</a>

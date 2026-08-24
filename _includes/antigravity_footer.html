@@ -1,74 +1,64 @@
-﻿<!-- Footer -->
-<footer class="bg-brand-dark border-t border-white/5 py-20 px-6">
+﻿<footer class="bg-brand-dark border-t border-white/5 py-20 px-6">
     <div class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-start gap-12">
 
         <div class="max-w-sm">
-            <a href="{{ '/' | relative_url }}{% if page.lang == 'it' %}it/{% else %}en/{% endif %}"
+            <a href="{% if page.lang == 'it' %}/it/{% else %}/en/{% endif %}"
                 class="inline-block mb-6 hover:opacity-90 transition-opacity">
-                <img src="/assets/images/logo/logo-dark.png" alt="Helmsman Trading"
+                <img src="{{ '/assets/images/logo/logo-dark.png' | relative_url }}" alt="Helmsman"
                     class="h-10 w-auto object-contain">
             </a>
             <p class="text-gray-500 mb-2 text-sm font-bold uppercase tracking-widest">
                 {% if page.lang == 'it' %}
-                Framework di Algorithmic Trading
+                Trading, con il timone in mano
                 {% else %}
-                Algorithmic Trading Framework
+                Trading, with a hand on the helm
                 {% endif %}
             </p>
-            <p class="text-gray-600 text-sm mb-6">
+            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
                 {% if page.lang == 'it' %}
-                Architettura di trading modulare progettata per istituzionali e retail avanzati. Esecuzione ultra-veloce, risk management ferreo, e test in locale.
+                Helmsman sonda i mercati liquidi, ti propone le opportunità e apre solo posizioni coperte — sul broker che colleghi tu.
                 {% else %}
-                Modular trading architecture designed for institutional and advanced retail quants. Ultra-fast execution, strict risk management, and local testing.
+                Helmsman scans liquid markets, proposes the setups, and opens only covered positions — at the broker you connect.
                 {% endif %}
             </p>
-            <div class="flex flex-col sm:flex-row gap-6">
-                <div>
-                    <p class="text-gray-600 text-[10px] font-bold uppercase tracking-widest mb-2">
-                        {% if page.lang == 'it' %}Progetto{% else %}Project{% endif %}
-                    </p>
-                    <div class="flex gap-2">
-                        <a href="https://github.com/helmsmantrading/HelmsmanTrading" target="_blank" rel="noopener"
-                            class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-purple hover:border-brand-purple transition-all text-gray-400 hover:text-white"
-                            title="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <p class="text-gray-600 text-[10px] font-bold uppercase tracking-widest mb-2">Antonio Trento</p>
-                    <div class="flex gap-2">
-                        <a href="https://x.com/antoniotrento" target="_blank" rel="noopener"
-                            class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-purple hover:border-brand-purple transition-all text-gray-400 hover:text-white"
-                            title="X / Twitter">
-                            <i class="fab fa-x-twitter"></i>
-                        </a>
-                    </div>
-                </div>
+            <div class="flex gap-2">
+                <a href="{{ site.social.github }}" target="_blank" rel="noopener"
+                    class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-gold hover:border-brand-gold hover:text-brand-dark transition-all text-gray-400"
+                    title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="{{ site.social.twitter }}" target="_blank" rel="noopener"
+                    class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-gold hover:border-brand-gold hover:text-brand-dark transition-all text-gray-400"
+                    title="X">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
             </div>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-3 gap-12 w-full lg:w-auto">
             <div>
-                <h4 class="font-bold mb-4 text-white text-sm uppercase tracking-wider">{% if page.lang == 'it'
-                    %}Prodotto{% else %}Product{% endif %}</h4>
+                <h4 class="font-bold mb-4 text-white text-sm uppercase tracking-wider">{% if page.lang == 'it' %}Prodotto{% else %}Product{% endif %}</h4>
                 <ul class="space-y-3 text-sm text-gray-500">
                     <li>
-                        <a href="{% if page.lang == 'it' %}/it/about/{% else %}/en/about/{% endif %}"
-                            class="hover:text-brand-purple transition-colors">
-                            {% if page.lang == 'it' %}Chi Siamo{% else %}About{% endif %}
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{% if page.lang == 'it' %}/it/strategies/{% else %}/en/strategies/{% endif %}"
-                            class="hover:text-brand-purple transition-colors">
-                            {% if page.lang == 'it' %}FunzionalitÃ {% else %}Features{% endif %}
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{% if page.lang == 'it' %}/it/architecture/{% else %}/en/architecture/{% endif %}"
-                            class="hover:text-brand-purple transition-colors">
+                        <a href="{% if page.lang == 'it' %}/it/come-funziona/{% else %}/en/how-it-works/{% endif %}"
+                            class="hover:text-brand-gold transition-colors">
                             {% if page.lang == 'it' %}Come funziona{% else %}How it works{% endif %}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% if page.lang == 'it' %}/it/broker/{% else %}/en/brokers/{% endif %}"
+                            class="hover:text-brand-gold transition-colors">Broker</a>
+                    </li>
+                    <li>
+                        <a href="{% if page.lang == 'it' %}/it/chi-siamo/{% else %}/en/about/{% endif %}"
+                            class="hover:text-brand-gold transition-colors">
+                            {% if page.lang == 'it' %}Chi siamo{% else %}About{% endif %}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% if page.lang == 'it' %}/it/accesso/{% else %}/en/access/{% endif %}"
+                            class="hover:text-brand-gold transition-colors">
+                            {% if page.lang == 'it' %}Accesso paper{% else %}Paper access{% endif %}
                         </a>
                     </li>
                 </ul>
@@ -77,34 +67,31 @@
                 <h4 class="font-bold mb-4 text-white text-sm uppercase tracking-wider">{% if page.lang == 'it' %}Risorse{% else %}Resources{% endif %}</h4>
                 <ul class="space-y-3 text-sm text-gray-500">
                     <li>
-                        <a href="https://github.com/helmsmantrading/HelmsmanTrading" target="_blank" rel="noopener"
-                            class="hover:text-brand-purple transition-colors flex items-center gap-2">
-                            <i class="fab fa-github text-xs"></i>
-                            GitHub Repo
-                        </a>
+                        <a href="{% if page.lang == 'it' %}/it/#faq{% else %}/en/#faq{% endif %}"
+                            class="hover:text-brand-gold transition-colors">FAQ</a>
                     </li>
                     <li>
-                        <a href="{% include docs_href.html %}" target="_blank" rel="noopener"
-                            class="hover:text-brand-purple transition-colors flex items-center gap-2">
-                            <i class="fas fa-book text-xs"></i>
-                            {% if page.lang == 'it' %}Documentazione{% else %}Documentation{% endif %}
-                        </a>
+                        <a href="{{ site.social.github }}" target="_blank" rel="noopener"
+                            class="hover:text-brand-gold transition-colors">GitHub</a>
                     </li>
                 </ul>
             </div>
             <div>
-                <h4 class="font-bold mb-4 text-white text-sm uppercase tracking-wider">{% if page.lang == 'it'
-                    %}Autore{% else %}Author{% endif %}</h4>
+                <h4 class="font-bold mb-4 text-white text-sm uppercase tracking-wider">{% if page.lang == 'it' %}Legale{% else %}Legal{% endif %}</h4>
                 <ul class="space-y-3 text-sm text-gray-500">
                     <li>
-                        <a href="https://antoniotrento.net" target="_blank" rel="noopener"
-                            class="hover:text-brand-purple transition-colors">Antonio Trento</a>
+                        <a href="{% if page.lang == 'it' %}/it/legal/{% else %}/en/legal/{% endif %}"
+                            class="hover:text-brand-gold transition-colors">
+                            {% if page.lang == 'it' %}Disclaimer{% else %}Disclaimer{% endif %}
+                        </a>
                     </li>
                     <li>
-                        <a href="{% if page.lang == 'it' %}/it/legal/{% else %}/en/legal/{% endif %}"
-                            class="hover:text-brand-purple transition-colors">
-                            {% if page.lang == 'it' %}Licenza & Disclaimer{% else %}License & Disclaimer{% endif %}
-                        </a>
+                        <a href="{{ '/privacy-policy/' | relative_url }}"
+                            class="hover:text-brand-gold transition-colors">Privacy</a>
+                    </li>
+                    <li>
+                        <a href="{{ '/cookie-policy/' | relative_url }}"
+                            class="hover:text-brand-gold transition-colors">Cookie</a>
                     </li>
                 </ul>
             </div>
@@ -112,20 +99,21 @@
     </div>
 
     <div
-        class="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-600 text-xs">
+        class="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-gray-500 text-xs">
         <p>
-            Â© {{ site.time | date: '%Y' }} <a href="https://antoniotrento.net"
-                class="hover:text-brand-purple transition-colors">Antonio Trento</a>.
-            {% if page.lang == 'it' %}Licenza proprietaria â€” uso personale gratuito.{% else %}Proprietary license â€” free personal use.{% endif %}
-        </p>
-        <p class="text-center md:text-right max-w-lg">
+            &copy; {{ site.time | date: '%Y' }} Helmsman Trading.
             {% if page.lang == 'it' %}
-            I tuoi file restano sul tuo PC. Installa una volta, prova con un file vero.
+            Il trading comporta perdite. Questo non è un consiglio di investimento.
             {% else %}
-            Your files stay on your PC. Install once, try one real file.
+            Trading involves loss. This is not investment advice.
+            {% endif %}
+        </p>
+        <p class="md:text-right max-w-lg">
+            {% if page.lang == 'it' %}
+            Accesso anticipato in paper. Live solo quando coperture e regole sono pronte.
+            {% else %}
+            Early access is paper. Live only when covers and rules are ready.
             {% endif %}
         </p>
     </div>
 </footer>
-
-

@@ -1,0 +1,48 @@
+---
+layout: default
+permalink: /en/access/
+title: "Paper access | Helmsman"
+lang: en
+locale: en_US
+alt: /it/accesso/
+description: "Request early paper access. Tell us which broker you already use."
+---
+<section class="pt-32 pb-24 px-6 min-h-screen bg-gray-50 dark:bg-[#0a0a0a]">
+  <div class="max-w-xl mx-auto">
+    <p class="text-sm font-mono text-brand-gold uppercase tracking-widest mb-4">Early access</p>
+    <h1 class="text-4xl md:text-5xl font-black font-display text-gray-900 dark:text-white tracking-tight mb-4">Paper. Covers. Your yes.</h1>
+    <p class="text-gray-600 dark:text-gray-400 mb-10 leading-relaxed">No fake price list, no card. Tell us where you already trade: we let in people with a connectable account first — we are not selling you a new broker.</p>
+
+    <form action="https://formsubmit.co/{{ site.contact_email }}" method="POST" class="space-y-5 bg-white dark:bg-[#081628] border border-gray-200 dark:border-white/10 p-8">
+      <input type="hidden" name="_subject" value="Helmsman — paper access">
+      <input type="hidden" name="_next" value="{{ site.url }}/en/access/thanks/">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off">
+
+      <label class="block">
+        <span class="text-xs font-mono uppercase tracking-widest text-gray-500">Email</span>
+        <input required type="email" name="email" autocomplete="email"
+          class="mt-2 w-full px-4 py-3 bg-gray-50 dark:bg-black/40 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white"
+          placeholder="you@email.com">
+      </label>
+      <label class="block">
+        <span class="text-xs font-mono uppercase tracking-widest text-gray-500">Broker you already use</span>
+        <input type="text" name="broker"
+          class="mt-2 w-full px-4 py-3 bg-gray-50 dark:bg-black/40 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white"
+          placeholder="Alpaca, IBKR, other…">
+      </label>
+      <label class="block">
+        <span class="text-xs font-mono uppercase tracking-widest text-gray-500">What weighs on you most</span>
+        <textarea name="message" rows="4"
+          class="mt-2 w-full px-4 py-3 bg-gray-50 dark:bg-black/40 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white"
+          placeholder="Alerts, forgotten stops, three platforms open…"></textarea>
+      </label>
+      <button type="submit" class="w-full py-4 bg-brand-gold text-brand-dark font-bold hover:bg-brand-goldLight transition-colors">
+        Request paper access
+      </button>
+      <p class="text-xs text-gray-500">Or write directly to <a class="text-brand-gold hover:underline" href="mailto:{{ site.contact_email }}?subject=Helmsman%20paper%20access">{{ site.contact_email }}</a>.</p>
+    </form>
+
+    <p class="mt-8 text-xs text-gray-500">Trading involves loss. Paper access. This is not investment advice.</p>
+  </div>
+</section>

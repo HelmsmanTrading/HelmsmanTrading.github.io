@@ -1,25 +1,18 @@
-# Qwibo Website
+# Helmsman — sito
 
-Official landing site for **Qwibo** — local Italian audio/video transcription with NVIDIA NeMo Parakeet.
+Landing SaaS per trader: scan dei mercati liquidi, proposte, posizioni coperte, multi-broker.
 
-Built with **Jekyll** and deployed on GitHub Pages.
+Jekyll + GitHub Pages. Italiano in `/it/`, inglese in `/en/`.
 
-## Local preview
+## Anteprima locale
 
 ```bash
 bundle install
 bundle exec jekyll serve
 ```
 
-## Documentation
+Apri `http://127.0.0.1:4000/it/`.
 
-MkDocs HTML is published into `docs/` from the main repo:
+## Cosa non è
 
-```cmd
-cd ..\qwibo
-scripts\publish_docs.bat
-cd ..\qwibo.github.io
-git push
-```
-
-Main project: [github.com/qwibo/qwibo](https://github.com/qwibo/qwibo)
+Non è la documentazione del ponte MCP (quella vive nel repo [HelmsmanTrading](https://github.com/HelmsmanTrading/HelmsmanTrading)). Questo sito parla a chi fa trading, non a chi clona un framework.

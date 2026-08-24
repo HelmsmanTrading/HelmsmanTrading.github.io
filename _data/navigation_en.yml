@@ -1,6 +1,9 @@
-﻿- title: Architecture
-  url: /en/architecture/
-- title: Strategies
-  url: /en/strategies/
-- title: GitHub
-  url: https://github.com/helmsmantrading/HelmsmanTrading
+﻿- title: How it works
+  url: /en/how-it-works/
+- title: Brokers
+  url: /en/brokers/
+- title: FAQ
+  url: /en/#faq
+- title: Paper access
+  url: /en/access/
+  cta: true

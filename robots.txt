@@ -8,4 +8,4 @@ Disallow: /Gemfile.lock
 Disallow: /.sass-cache/
 Disallow: /.jekyll-cache/
 
-Sitemap: https://qwibo.github.io/sitemap.xml
+Sitemap: https://helmsmantrading.github.io/sitemap.xml

@@ -1,6 +1,9 @@
-﻿- title: Architettura
-  url: /it/architecture/
-- title: Strategie
-  url: /it/strategies/
-- title: GitHub
-  url: https://github.com/helmsmantrading/HelmsmanTrading
+﻿- title: Come funziona
+  url: /it/come-funziona/
+- title: Broker
+  url: /it/broker/
+- title: FAQ
+  url: /it/#faq
+- title: Accesso paper
+  url: /it/accesso/
+  cta: true

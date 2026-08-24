@@ -1,0 +1,61 @@
+<div class="relative z-10 w-full shadow-2xl overflow-hidden border border-white/10 bg-[#081628]">
+  <div class="flex items-center justify-between px-4 py-3 bg-black/40 border-b border-white/5">
+    <div class="flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+      <span class="text-[10px] font-mono uppercase tracking-widest text-gray-400">
+        {% if page.lang == 'it' %}Scan · mercati liquidi{% else %}Scan · liquid names{% endif %}
+      </span>
+    </div>
+    <span class="text-[10px] font-mono text-brand-gold">
+      {% if page.lang == 'it' %}3 proposte{% else %}3 setups{% endif %}
+    </span>
+  </div>
+  <div class="p-5 space-y-3 text-sm">
+    <div class="border border-brand-gold/30 bg-brand-gold/5 p-4">
+      <div class="flex justify-between items-start gap-3 mb-2">
+        <div>
+          <div class="font-bold text-white tracking-wide">SLV</div>
+          <div class="text-xs text-gray-400">{% if page.lang == 'it' %}Breakout ATR · multi-day{% else %}ATR breakout · multi-day{% endif %}</div>
+        </div>
+        <span class="text-[10px] font-mono uppercase text-brand-gold border border-brand-gold/40 px-2 py-0.5">
+          {% if page.lang == 'it' %}Coperto{% else %}Covered{% endif %}
+        </span>
+      </div>
+      <div class="grid grid-cols-3 gap-2 text-[11px] font-mono text-gray-300">
+        <div>{% if page.lang == 'it' %}Size{% else %}Size{% endif %}<div class="text-white">887</div></div>
+        <div>Stop<div class="text-red-400">58.76</div></div>
+        <div>Target<div class="text-green-400">61.70</div></div>
+      </div>
+      <div class="mt-3 text-[11px] text-brand-goldLight">
+        {% if page.lang == 'it' %}Anteprima pronta · aspetti il tuo sì{% else %}Preview ready · waiting for your yes{% endif %}
+      </div>
+    </div>
+    <div class="border border-white/10 p-4 opacity-90">
+      <div class="flex justify-between items-start gap-3 mb-2">
+        <div>
+          <div class="font-bold text-white">V</div>
+          <div class="text-xs text-gray-400">{% if page.lang == 'it' %}Mean reversion · short-term{% else %}Mean reversion · short-term{% endif %}</div>
+        </div>
+        <span class="text-[10px] font-mono uppercase text-brand-gold border border-brand-gold/40 px-2 py-0.5">
+          {% if page.lang == 'it' %}Coperto{% else %}Covered{% endif %}
+        </span>
+      </div>
+      <div class="grid grid-cols-3 gap-2 text-[11px] font-mono text-gray-300">
+        <div>Size<div class="text-white">42</div></div>
+        <div>Stop<div class="text-red-400">347.41</div></div>
+        <div>Target<div class="text-green-400">380.32</div></div>
+      </div>
+    </div>
+    <div class="border border-white/10 p-4 opacity-70">
+      <div class="flex justify-between items-start gap-3">
+        <div>
+          <div class="font-bold text-white">WMT</div>
+          <div class="text-xs text-gray-400">{% if page.lang == 'it' %}Sotto la media · non applicabile{% else %}Below the average · not applicable{% endif %}</div>
+        </div>
+        <span class="text-[10px] font-mono uppercase text-gray-500 border border-white/10 px-2 py-0.5">
+          {% if page.lang == 'it' %}Saltato{% else %}Skipped{% endif %}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
