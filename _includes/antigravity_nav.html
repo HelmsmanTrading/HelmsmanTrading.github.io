@@ -1,20 +1,57 @@
 ﻿<nav class="fixed w-full z-50 transition-all duration-300 bg-white/80 dark:bg-brand-dark/80 backdrop-blur-md border-b border-gray-200 dark:border-white/5"
   id="navbar">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center gap-4">
 
     <a href="{% if page.lang == 'it' %}/it/{% else %}/en/{% endif %}"
       class="flex items-center hover:opacity-90 transition-opacity shrink-0 min-w-0">
       {% include brand-logo.html %}
     </a>
 
-    <div class="hidden md:flex items-center gap-8">
+    <div class="hidden lg:flex items-center gap-7">
       {% assign nav_items = site.data.navigation_en %}
       {% if page.lang == 'it' %}
       {% assign nav_items = site.data.navigation_it %}
       {% endif %}
 
       {% for item in nav_items %}
-      {% if item.cta %}
+      {% if item.mega %}
+      {% assign mega_active = false %}
+      {% for group in item.groups %}
+        {% for link in group.items %}
+          {% if page.url == link.url or page.permalink == link.url %}
+            {% assign mega_active = true %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+      <div class="mega" data-mega>
+        <button type="button" class="mega__btn {% if mega_active %}is-active{% endif %}"
+          aria-expanded="false" aria-haspopup="true">
+          {{ item.title }}
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <div class="mega__panel" role="menu">
+          <div class="mega__grid">
+            {% for group in item.groups %}
+            <div class="mega__col">
+              <p class="mega__heading">{{ group.heading }}</p>
+              {% for link in group.items %}
+              {% assign link_active = false %}
+              {% if page.url == link.url or page.permalink == link.url %}
+                {% assign link_active = true %}
+              {% endif %}
+              <a href="{{ link.url | relative_url }}" class="mega__link {% if link_active %}is-active{% endif %}">
+                <span class="mega__link-title">{{ link.title }}</span>
+                {% if link.blurb %}
+                <span class="mega__link-blurb">{{ link.blurb }}</span>
+                {% endif %}
+              </a>
+              {% endfor %}
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% elsif item.cta %}
       <a href="{{ item.url | relative_url }}"
         class="flex items-center gap-2 text-sm font-bold px-5 py-2 rounded-full bg-brand-gold text-brand-dark hover:bg-brand-goldLight transition-all shadow-sm">
         {{ item.title }}
@@ -53,14 +90,14 @@
       </div>
     </div>
 
-    <button class="md:hidden text-2xl text-gray-900 dark:text-white" onclick="toggleMobileMenu()" aria-label="Menu">
+    <button class="lg:hidden text-2xl text-gray-900 dark:text-white" onclick="toggleMobileMenu()" aria-label="Menu">
       <i class="fas fa-bars"></i>
     </button>
   </div>
 </nav>
 
 <div id="mobile-menu"
-  class="fixed inset-0 bg-white dark:bg-brand-dark z-[60] transform translate-x-full transition-transform duration-300 flex flex-col justify-center items-center gap-8">
+  class="fixed inset-0 bg-white dark:bg-brand-dark z-[60] transform translate-x-full transition-transform duration-300 flex flex-col overflow-y-auto">
   <button class="absolute top-6 right-6 text-3xl text-gray-900 dark:text-white" onclick="toggleMobileMenu()" aria-label="Close menu">
     <i class="fas fa-times"></i>
   </button>
@@ -70,27 +107,30 @@
   {% assign nav_items = site.data.navigation_it %}
   {% endif %}
 
-  {% for item in nav_items %}
-  {% if item.cta %}
-  <a href="{{ item.url | relative_url }}"
-    class="text-2xl font-black flex items-center gap-3 px-6 py-3 rounded-full bg-brand-gold text-brand-dark"
-    onclick="toggleMobileMenu()">{{ item.title }}</a>
-  {% else %}
-  <a href="{{ item.url | relative_url }}"
-    class="text-3xl font-black font-display text-gray-900 dark:text-white hover:text-brand-gold transition-colors" onclick="toggleMobileMenu()">{{
-    item.title }}</a>
-  {% endif %}
-  {% endfor %}
+  <div class="mobile-nav">
+    {% for item in nav_items %}
+    {% if item.mega %}
+      {% for group in item.groups %}
+      <div class="mobile-nav__group">
+        <p class="mobile-nav__heading">{{ group.heading }}</p>
+        {% for link in group.items %}
+        <a href="{{ link.url | relative_url }}" onclick="toggleMobileMenu()">{{ link.title }}</a>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    {% elsif item.cta %}
+    <a href="{{ item.url | relative_url }}" class="mobile-nav__cta" onclick="toggleMobileMenu()">{{ item.title }}</a>
+    {% else %}
+    <a href="{{ item.url | relative_url }}" class="mobile-nav__top" onclick="toggleMobileMenu()">{{ item.title }}</a>
+    {% endif %}
+    {% endfor %}
 
-  <div class="flex gap-4 mt-8 flex-col items-center">
-    <div class="flex items-center gap-4 text-xl font-bold uppercase tracking-wide mb-4">
+    <div class="mobile-nav__lang">
       {% if page.lang == 'it' %}
       <span class="text-brand-gold border-b-2 border-brand-gold">Italiano</span>
-      <a href="{{ page.alt | default: '/en/' | relative_url }}"
-        class="text-gray-500 hover:text-brand-gold transition-colors">English</a>
+      <a href="{{ page.alt | default: '/en/' | relative_url }}">English</a>
       {% else %}
-      <a href="{{ page.alt | default: '/it/' | relative_url }}"
-        class="text-gray-500 hover:text-brand-gold transition-colors">Italiano</a>
+      <a href="{{ page.alt | default: '/it/' | relative_url }}">Italiano</a>
       <span class="text-brand-gold border-b-2 border-brand-gold">English</span>
       {% endif %}
     </div>
@@ -98,6 +138,35 @@
 </div>
 
 <script>
+  (function () {
+    const megas = document.querySelectorAll('[data-mega]');
+    function closeAll(except) {
+      megas.forEach(function (m) {
+        if (m !== except) {
+          m.classList.remove('is-open');
+          const btn = m.querySelector('.mega__btn');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+    megas.forEach(function (mega) {
+      const btn = mega.querySelector('.mega__btn');
+      btn.addEventListener('click', function (e) {
+        if (window.matchMedia('(hover: hover)').matches) return;
+        e.preventDefault();
+        const open = mega.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (open) closeAll(mega);
+      });
+    });
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('[data-mega]')) closeAll();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeAll();
+    });
+  })();
+
   function toggleMobileMenu() {
     const menu = document.getElementById('mobile-menu');
     const isOpen = !menu.classList.contains('translate-x-full');
