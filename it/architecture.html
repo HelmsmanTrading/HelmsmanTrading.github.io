@@ -1,186 +1,34 @@
----
+﻿---
 layout: default
-title: "Come funziona - HelmsmanTrading"
+title: "Architettura | Helmsman Trading"
 lang: it
-permalink: /it/architecture/
+locale: it_IT
+description: "Scopri i livelli professionali da L1 a L5 di Helmsman Trading."
 ---
-
-<!-- Hero Section -->
-<section class="relative pt-32 pb-20 overflow-hidden bg-grid-pattern border-b border-gray-200 dark:border-white/10">
-    <div class="absolute inset-0 bg-white/90 dark:bg-brand-dark/90 transition-colors"></div>
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-purple/10 border-l-2 border-brand-purple text-brand-purple text-xs font-mono font-bold uppercase mb-6">
-                FLUSSO REALE // PRIMA ORA
-            </div>
-            <h1 class="text-5xl md:text-7xl font-black font-display mb-6 text-gray-900 dark:text-white uppercase tracking-tighter">
-                La tua prima ora, <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple to-brand-pink">minuto per minuto</span>
-            </h1>
-            <p class="text-xl text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-                Questa pagina ti dice cosa succede nella prima ora — non ti sommerge di termini tecnici. Trascini un file, il lavoro va in background, scarichi output usabili. La domanda non è "com'è fatto dentro" ma "posso scaricarlo stasera e usarlo domani senza frizione?". Risposta qui sotto.
-            </p>
-        </div>
-
-        <!-- Pipeline Topology (HTML diagram) -->
-        <div class="rounded-[2.5rem] overflow-hidden shadow-2xl border border-gray-200 dark:border-white/10 mb-20 relative bg-[#0a0a0a] p-8 md:p-12">
-            <div class="grid md:grid-cols-5 gap-4 items-center font-mono text-xs">
-                <div class="bg-[#111] border border-brand-purple/40 p-6 text-center rounded-xl">
-                    <i class="fas fa-desktop text-2xl text-brand-purple mb-3"></i>
-                    <div class="text-white font-bold uppercase mb-1">Tu Carichi</div>
-                    <div class="text-gray-500">Finestra dell'app</div>
-                </div>
-                <div class="hidden md:flex justify-center text-brand-purple text-2xl"><i class="fas fa-arrow-right"></i></div>
-                <div class="bg-[#111] border border-brand-pink/40 p-6 text-center rounded-xl">
-                    <i class="fas fa-database text-2xl text-brand-pink mb-3"></i>
-                    <div class="text-white font-bold uppercase mb-1">Stato Chiaro</div>
-                    <div class="text-gray-500">Cronologia e avanzamento</div>
-                </div>
-                <div class="hidden md:flex justify-center text-brand-pink text-2xl"><i class="fas fa-arrow-right"></i></div>
-                <div class="bg-[#111] border border-green-500/40 p-6 text-center rounded-xl">
-                    <i class="fas fa-cogs text-2xl text-green-500 mb-3"></i>
-                    <div class="text-white font-bold uppercase mb-1">Lavoro In Corso</div>
-                    <div class="text-gray-500">Elaborazione in background</div>
-                </div>
-            </div>
-            <div class="grid md:grid-cols-3 gap-4 mt-8">
-                <div class="bg-[#111] border border-white/10 p-5 rounded-xl text-center">
-                    <div class="text-yellow-500 font-bold uppercase mb-1">Preparazione</div>
-                    <div class="text-gray-500">Pronto anche per file lunghi</div>
-                </div>
-                <div class="bg-[#111] border border-white/10 p-5 rounded-xl text-center">
-                    <div class="text-green-500 font-bold uppercase mb-1">Trascrizione</div>
-                    <div class="text-gray-500">Sul tuo ambiente locale</div>
-                </div>
-                <div class="bg-[#111] border border-white/10 p-5 rounded-xl text-center">
-                    <div class="text-brand-gold font-bold uppercase mb-1">Sintesi (opt-in)</div>
-                    <div class="text-gray-500">Solo se la attivi</div>
-                </div>
-            </div>
-            <div class="absolute bottom-6 left-6 right-6">
-                <p class="text-white/60 font-mono text-xs uppercase tracking-widest">Fig 1. Flusso prima ora — panoramica</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Tech Stack Section -->
-<section class="py-24 bg-gray-50 dark:bg-brand-surface transition-colors border-b border-gray-200 dark:border-white/10">
+<section class="pt-32 pb-20 min-h-screen bg-white dark:bg-brand-dark">
     <div class="max-w-7xl mx-auto px-6">
-        <h2 class="text-3xl font-black font-display mb-16 text-center text-gray-900 dark:text-white uppercase tracking-tighter">Le tre paure che ti fermano — e le risposte</h2>
-
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white dark:bg-brand-dark p-8 rounded-3xl border border-gray-200 dark:border-white/10 hover:border-brand-purple transition-all group">
-                <div class="w-14 h-14 bg-green-500/10 rounded-2xl flex items-center justify-center text-green-500 mb-6 group-hover:scale-110 transition-transform">
-                    <i class="fas fa-microchip text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">"Sarà leggibile in italiano?"</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm">
-                    La domanda non è tecnica: "capisce il mio parlato quotidiano?". La risposta è una prova reale su call, interviste, episodi o lezioni. Se il testo è utile subito, hai già il motivo per usarlo.
-                </p>
-            </div>
-            <div class="bg-white dark:bg-brand-dark p-8 rounded-3xl border border-gray-200 dark:border-white/10 hover:border-brand-pink transition-all group">
-                <div class="w-14 h-14 bg-brand-pink/10 rounded-2xl flex items-center justify-center text-brand-pink mb-6 group-hover:scale-110 transition-transform">
-                    <i class="fas fa-bolt text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">"Mi ci perdo di sicuro"</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm">
-                    Devi vedere chiaramente cosa sta succedendo ai tuoi file, senza entrare in menu complicati. Carichi, controlli avanzamento, scarichi risultato. Per Marco e Giulia significa meno attrito operativo, per Luca e Sara meno tempo perso in strumenti poco chiari.
-                </p>
-            </div>
-            <div class="bg-white dark:bg-brand-dark p-8 rounded-3xl border border-gray-200 dark:border-white/10 hover:border-brand-purple transition-all group">
-                <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 mb-6 group-hover:scale-110 transition-transform">
-                    <i class="fas fa-arrows-rotate text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">"E dopo il primo file?"</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm">
-                    Quando la prova iniziale funziona, diventa parte della routine. Processi con costanza senza dipendere da servizi esterni a consumo. Nel footer c'è anche un riferimento tecnico per chi vuole approfondire.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Deep Dive: Worker Daemon -->
-<section class="py-24 bg-white dark:bg-brand-dark transition-colors">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-
+        <h1 class="text-4xl md:text-6xl font-black font-display text-gray-900 dark:text-white uppercase tracking-tighter mb-8">
+            La nostra <span class="text-brand-purple">Architettura</span>
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-gray-400 mb-12">Costruita per resistere a casi limite, flash crash e fallimenti delle API. Non è solo uno script, è una fortezza.</p>
+        
+        <div class="space-y-16">
             <div>
-                <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-pink/10 border-l-2 border-brand-pink text-brand-pink text-xs font-mono font-bold uppercase mb-6">
-                    FLUSSO FILE LUNGHI // DEEP DIVE
-                </div>
-                <h2 class="text-4xl font-black font-display mb-6 text-gray-900 dark:text-white uppercase tracking-tighter">Cosa cambia già dal primo file</h2>
-                <p class="text-gray-600 dark:text-gray-400 mb-6">
-                    Il problema con gli strumenti di trascrizione non è quasi mai la qualità teorica — è la frizione quotidiana. Restare davanti al monitor per ore. Un file lungo che blocca tutto. Non capire se il lavoro procede. Ricominciare da zero dopo un'interruzione. Qui il flusso evita questi punti di rottura. Carichi una registrazione reale, l'elaborazione continua in background, torni alle tue attività e riprendi quando il risultato è pronto. Marco non perde tempo fatturabile tra una riunione e l'altra. Giulia lascia lavorare i file mentre prepara pubblicazione. Luca processa interviste lunghe senza paura di perdere passaggi. Sara trasforma lezioni estese in materiale di studio senza notti davanti alla tastiera.
-                </p>
-                <p class="text-gray-600 dark:text-gray-400 mb-6">
-                    Risponde anche alle obiezioni più frequenti: "il mio PC ce la fa?", "è affidabile su file lunghi?", "i miei dati restano sotto controllo?", "è gratis davvero?". La risposta viene dal comportamento concreto: un file, validi tempi e risultato, poi aumenti gradualmente. Se il test passa, non stai più sperimentando — stai costruendo una routine che riduce lavoro manuale settimana dopo settimana. Il valore non è nella promessa tecnica, ma nella continuità dal primo giorno.
-                </p>
-                <ul class="space-y-4 mb-8">
-                    <li class="flex items-center gap-3 text-gray-900 dark:text-white font-medium">
-                        <i class="fas fa-redo text-brand-purple"></i> Continuità anche dopo pause
-                    </li>
-                    <li class="flex items-center gap-3 text-gray-900 dark:text-white font-medium">
-                        <i class="fas fa-folder-open text-brand-pink"></i> Cronologia coerente dei risultati
-                    </li>
-                    <li class="flex items-center gap-3 text-gray-900 dark:text-white font-medium">
-                        <i class="fas fa-layer-group text-green-500"></i> Gestione pratica file estesi
-                    </li>
-                </ul>
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">L1: Data Lake</h2>
+                <p class="text-gray-600 dark:text-gray-400">Il fondamento. Recupera e consolida i dati SIP da Polygon e IEX, calcolando i VWAP di sessione residenti in locale su SQLite per un replay storico immediato.</p>
             </div>
-
-            <div class="relative bg-[#0d1117] rounded-2xl overflow-hidden border border-gray-800 shadow-2xl">
-                {% include win11-titlebar.html title="HelmsmanTrading su Windows — lavori" %}
-                <div class="p-6 space-y-4 font-mono text-sm">
-                    <div class="flex items-center justify-between text-gray-300">
-                        <span class="flex items-center gap-2"><i class="fas fa-circle-check text-green-500"></i> riunione-marco-90min.mp4</span>
-                        <span class="text-green-500">Pronto · TXT+SRT</span>
-                    </div>
-                    <div>
-                        <div class="flex items-center justify-between text-gray-300 mb-1">
-                            <span class="flex items-center gap-2"><i class="fas fa-spinner text-brand-purple"></i> intervista-luca-2h.mp4</span>
-                            <span class="text-brand-purple">In corso · 68%</span>
-                        </div>
-                        <div class="w-full bg-black h-2 rounded-full overflow-hidden"><div class="bg-brand-purple h-full" style="width:68%"></div></div>
-                    </div>
-                    <div class="flex items-center justify-between text-gray-500">
-                        <span class="flex items-center gap-2"><i class="far fa-clock"></i> lezione-sara.m4a</span>
-                        <span>In coda</span>
-                    </div>
-                    <div class="pt-3 border-t border-gray-800 text-gray-500 text-xs">
-                        Chiudi pure la finestra: i lavori proseguono e li ritrovi qui al ritorno.
-                    </div>
-                </div>
+            <div>
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">L2: Plugin Skills</h2>
+                <p class="text-gray-600 dark:text-gray-400">Un registro di strategie decentralizzato. Scrivi file Python, li decori con @register, e il sistema li scopre e li carica automaticamente.</p>
             </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- Call to Action -->
-<section class="py-32 bg-gray-900 relative overflow-hidden">
-    <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-    <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
-        <h2 class="text-5xl md:text-6xl font-black font-display mb-6 text-white uppercase tracking-tighter">
-            Il tuo primo file <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple to-brand-pink">ti aspetta</span>
-        </h2>
-        <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
-            Se hai letto fin qui, il passo successivo è pratico: scarica l'app e prova il primo file reale. Conferma qualità, tempi, privacy e semplicità del flusso, poi rendilo routine. Nota tecnica: trascrizione locale nella finestra dell'app, opzioni extra solo su richiesta.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/it/download/"
-                class="px-8 py-4 bg-white text-gray-900 font-bold rounded-full hover:scale-105 transition-transform flex items-center justify-center gap-3">
-                <i class="fab fa-windows text-xl"></i>
-                Scarica per Windows
-            </a>
-            <a href="/docs/it/getting-started/first-run/"
-                class="px-8 py-4 border border-white/20 text-white font-bold rounded-full hover:bg-white/10 transition-all flex items-center justify-center gap-3">
-                Guida al primo avvio
-            </a>
-            <a href="/it/strategies/"
-                class="px-8 py-4 border border-white/20 text-white font-bold rounded-full hover:bg-white/10 transition-all flex items-center justify-center gap-3">
-                Vedi le funzionalità
-            </a>
+            <div>
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">L4: Risk Engine</h2>
+                <p class="text-gray-600 dark:text-gray-400">Il cuore di Helmsman. Applica i limiti di esposizione, gestisce gli stop-loss e agisce come un guardiano inflessibile tra le tue strategie e il mercato.</p>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">L5: Broker Bridge</h2>
+                <p class="text-gray-600 dark:text-gray-400">Esegue le transazioni attraverso Alpaca, Tradier e un PaperSim locale per backtesting totalmente offline. Gli schemi Pydantic garantiscono la coerenza delle API.</p>
+            </div>
         </div>
     </div>
 </section>

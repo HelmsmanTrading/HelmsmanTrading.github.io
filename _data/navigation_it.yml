@@ -1,13 +1,6 @@
-- title: "Chi Siamo"
-  url: "/it/about/"
-- title: "Funzionalità"
-  url: "/it/strategies/"
-- title: "Come funziona"
-  url: "/it/architecture/"
-- title: "Docs"
-  url: "/docs/it/"
-- title: "GitHub"
-  url: "https://github.com/qwibo/qwibo"
-- title: "Scarica"
-  url: "/it/download/"
-  cta: true
+﻿- title: Architettura
+  url: /it/architecture/
+- title: Strategie
+  url: /it/strategies/
+- title: GitHub
+  url: https://github.com/helmsmantrading/HelmsmanTrading
