@@ -1,45 +1,46 @@
-﻿- title: Prodotto
-  mega: true
-  groups:
-    - heading: Piattaforma
-      items:
-        - title: Come funziona
-          url: /it/come-funziona/
-          blurb: Scan, proposta, esecuzione coperta
-        - title: Scan
-          url: /it/scan/
-          blurb: Mercati liquidi, ogni sessione
-        - title: Coperture
-          url: /it/coperture/
-          blurb: Niente nudo. Sempre coperto.
-        - title: Ordini
-          url: /it/ordini/
-          blurb: Come entra e come esce
-        - title: Rischio
-          url: /it/rischio/
-          blurb: Veto, size, kill switch
-    - heading: Broker
-      items:
-        - title: Broker
-          url: /it/broker/
-          blurb: Colleghi tu il conto
-        - title: Accesso paper
-          url: /it/accesso/
-          blurb: Lista d’attesa, niente live
-    - heading: Helmsman
-      items:
-        - title: Perché Helmsman
-          url: /it/confronto/
-          blurb: Vs discretionary e bot
-        - title: Per chi
-          url: /it/per-chi/
-          blurb: Trader, non passeggeri
-        - title: Filosofia
-          url: /it/filosofia/
-          blurb: Timone, non pilota automatico
-        - title: Chi siamo
-          url: /it/chi-siamo/
-          blurb: Chi costruisce Helmsman
+﻿- title: Piattaforma
+  dropdown: true
+  items:
+    - title: Come funziona
+      url: /it/come-funziona/
+      blurb: Scan, proposta, esecuzione coperta
+    - title: Scan
+      url: /it/scan/
+      blurb: Mercati liquidi, ogni sessione
+    - title: Coperture
+      url: /it/coperture/
+      blurb: Niente nudo. Sempre coperto.
+    - title: Ordini
+      url: /it/ordini/
+      blurb: Come entra e come esce
+    - title: Rischio
+      url: /it/rischio/
+      blurb: Veto, size, kill switch
+- title: Broker
+  dropdown: true
+  items:
+    - title: Broker
+      url: /it/broker/
+      blurb: Colleghi tu il conto
+    - title: Accesso paper
+      url: /it/accesso/
+      blurb: Lista d’attesa, niente live
+- title: Helmsman
+  dropdown: true
+  align: end
+  items:
+    - title: Perché Helmsman
+      url: /it/confronto/
+      blurb: Vs discretionary e bot
+    - title: Per chi
+      url: /it/per-chi/
+      blurb: Trader, non passeggeri
+    - title: Filosofia
+      url: /it/filosofia/
+      blurb: Timone, non pilota automatico
+    - title: Chi siamo
+      url: /it/chi-siamo/
+      blurb: Chi costruisce Helmsman
 - title: FAQ
   url: /it/faq/
 - title: Accesso paper

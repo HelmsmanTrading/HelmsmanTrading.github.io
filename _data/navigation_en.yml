@@ -1,45 +1,46 @@
-﻿- title: Product
-  mega: true
-  groups:
-    - heading: Platform
-      items:
-        - title: How it works
-          url: /en/how-it-works/
-          blurb: Scan, proposal, covered execution
-        - title: Scan
-          url: /en/scan/
-          blurb: Liquid markets, every session
-        - title: Covers
-          url: /en/covered/
-          blurb: Nothing naked. Always covered.
-        - title: Orders
-          url: /en/orders/
-          blurb: How it enters and how it exits
-        - title: Risk
-          url: /en/risk/
-          blurb: Veto, size, kill switch
-    - heading: Brokers
-      items:
-        - title: Brokers
-          url: /en/brokers/
-          blurb: You connect the account
-        - title: Paper access
-          url: /en/access/
-          blurb: Waitlist, not live
-    - heading: Helmsman
-      items:
-        - title: Why Helmsman
-          url: /en/compare/
-          blurb: Vs discretionary and bots
-        - title: Who it is for
-          url: /en/who-its-for/
-          blurb: Traders, not passengers
-        - title: Philosophy
-          url: /en/philosophy/
-          blurb: Helm, not autopilot
-        - title: About
-          url: /en/about/
-          blurb: Who builds Helmsman
+﻿- title: Platform
+  dropdown: true
+  items:
+    - title: How it works
+      url: /en/how-it-works/
+      blurb: Scan, proposal, covered execution
+    - title: Scan
+      url: /en/scan/
+      blurb: Liquid markets, every session
+    - title: Covers
+      url: /en/covered/
+      blurb: Nothing naked. Always covered.
+    - title: Orders
+      url: /en/orders/
+      blurb: How it enters and how it exits
+    - title: Risk
+      url: /en/risk/
+      blurb: Veto, size, kill switch
+- title: Brokers
+  dropdown: true
+  items:
+    - title: Brokers
+      url: /en/brokers/
+      blurb: You connect the account
+    - title: Paper access
+      url: /en/access/
+      blurb: Waitlist, not live
+- title: Helmsman
+  dropdown: true
+  align: end
+  items:
+    - title: Why Helmsman
+      url: /en/compare/
+      blurb: Vs discretionary and bots
+    - title: Who it is for
+      url: /en/who-its-for/
+      blurb: Traders, not passengers
+    - title: Philosophy
+      url: /en/philosophy/
+      blurb: Helm, not autopilot
+    - title: About
+      url: /en/about/
+      blurb: Who builds Helmsman
 - title: FAQ
   url: /en/faq/
 - title: Paper access
