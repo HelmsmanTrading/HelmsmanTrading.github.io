@@ -39,16 +39,16 @@ faq_it:
 
 
 social:
-  github: "https://github.com/qwibo/qwibo"
+  github: "https://github.com/helmsmantrading/HelmsmanTrading"
   twitter: "https://x.com/antoniotrento"
 
 cta:
-  github_url: "https://github.com/qwibo/qwibo"
-  docs_url: "https://qwibo.github.io/docs"
+  github_url: "https://github.com/helmsmantrading/HelmsmanTrading"
+  docs_url: "https://helmsmantrading.github.io/en/architecture"
   # Direct installer download (GitHub Releases).
   # Pre-release alpha: URL puntuale al tag (aggiornare versione+nome file a ogni release
   # finche' non esiste una release "latest" stabile, che permetterebbe /releases/latest/download/).
-  download_url: "https://github.com/qwibo/qwibo/releases/download/v0.1.0-alpha.1/Qwibo-Setup-0.1.0-alpha.1.exe"
+  download_url: "https://github.com/helmsmantrading/HelmsmanTrading/releases/download/v0.1.0-alpha.1/Qwibo-Setup-0.1.0-alpha.1.exe"
   download_page_it: "/it/download/"
   download_page_en: "/en/download/"
 
@@ -58,7 +58,7 @@ docs:
   base_it: "/docs/it/"
 
 popup:
-  url: "https://github.com/qwibo/qwibo"
+  url: "https://github.com/helmsmantrading/HelmsmanTrading"
   en:
     url: "/en/download/"
     title: "Got a recording to transcribe?"
