@@ -1,0 +1,97 @@
+---
+layout: default
+title: "HelmsmanTrading ?" Algorithmic Trading Framework"
+lang: en
+locale: en_US
+description: "The open-source algorithmic trading framework designed for resilience, modularity, and risk control. Trade with confidence on multiple brokers."
+---
+
+<section class="relative min-h-screen flex items-center pt-32 pb-20 overflow-x-hidden bg-grid-pattern">
+    <div class="absolute inset-0 bg-white/90 dark:bg-brand-dark/90 transition-colors"></div>
+
+    <div class="max-w-7xl mx-auto hero-index__grid grid gap-8 items-start px-6 w-full relative z-10">
+        <div class="reveal active min-w-0">
+            <div
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-none bg-brand-purple/10 border-l-4 border-brand-purple text-xs font-mono tracking-widest uppercase mb-8 text-brand-purple dark:text-brand-purpleLight">
+                <span class="w-2 h-2 rounded-none bg-brand-purple animate-pulse"></span>
+                Alpaca  Tradier  PaperSim
+            </div>
+            <h1 class="hero-index__title font-black mb-6 font-display text-gray-900 dark:text-white uppercase tracking-tighter">
+                Unleash<br>
+                <span class="text-brand-purple">Quant Power</span><br>
+                <span class="text-brand-pink">Safely.</span>
+            </h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-xl lg:max-w-2xl leading-relaxed">
+                Helmsman Trading is a modular algorithmic trading framework. It features a robust multi-layer architecture (L1 Data, L2 Strategies, L4 Risk Engine, and L5 Broker Execution) designed to execute trades safely without relying solely on simple scripts. <strong>Your capital, protected.</strong>
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="https://github.com/helmsmantrading/HelmsmanTrading"
+                    class="flex items-center justify-center gap-2 px-8 py-4 bg-brand-purple text-white font-bold font-mono text-sm hover:bg-brand-pink transition-colors border border-transparent">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+                <a href="#features"
+                    class="flex items-center justify-center gap-2 px-8 py-4 border border-gray-300 dark:border-white/20 font-bold font-mono text-sm hover:bg-gray-100 dark:hover:bg-white/5 transition-colors text-gray-800 dark:text-white">
+                    Explore Architecture <i class="fas fa-arrow-down text-xs"></i>
+                </a>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-200 dark:border-white/10 grid grid-cols-2 md:grid-cols-4 gap-4 text-xs text-gray-500 uppercase">
+                <div>
+                    <div class="text-brand-purple font-bold text-lg mb-1 font-mono">L1</div>
+                    <div>Data Lake</div>
+                </div>
+                <div>
+                    <div class="text-brand-pink font-bold text-lg mb-1 font-mono">L2</div>
+                    <div>Skill Plugins</div>
+                </div>
+                <div>
+                    <div class="text-gray-900 dark:text-white font-bold text-lg mb-1 font-mono">L4</div>
+                    <div>Risk Engine</div>
+                </div>
+                <div>
+                    <div class="text-gray-900 dark:text-white font-bold text-lg mb-1 font-mono">L5</div>
+                    <div>Multi-Broker</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="relative reveal active hidden lg:block">
+            <div class="absolute inset-0 bg-brand-purple/20 blur-[100px] rounded-full"></div>
+            <img src="/assets/images/logo/logo-dark.png" alt="Helmsman Trading" class="relative z-10 w-full drop-shadow-2xl hero-waving">
+        </div>
+    </div>
+</section>
+
+<section id="features" class="py-24 bg-gray-50 dark:bg-black/20 border-t border-gray-200 dark:border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="font-display font-black text-3xl md:text-5xl uppercase tracking-tighter mb-4 text-gray-900 dark:text-white">Core Features</h2>
+            <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">A professional-grade setup built to prevent catastrophic drawdowns and execute reliably.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white dark:bg-brand-dark/50 p-8 border border-gray-200 dark:border-white/10 group hover:border-brand-purple transition-colors">
+                <div class="text-3xl mb-6">📊</div>
+                <h3 class="font-bold text-xl mb-4 text-gray-900 dark:text-white">L1 Data Lake</h3>
+                <p class="text-gray-600 dark:text-gray-400">Consolidated 1-minute SIP data from Polygon and structured IEX integration for reliable VWAP and 40+ modular indicators.</p>
+            </div>
+            <div class="bg-white dark:bg-brand-dark/50 p-8 border border-gray-200 dark:border-white/10 group hover:border-brand-purple transition-colors">
+                <div class="text-3xl mb-6">🧠</div>
+                <h3 class="font-bold text-xl mb-4 text-gray-900 dark:text-white">L2 Plugin Skills</h3>
+                <p class="text-gray-600 dark:text-gray-400">Easily expand strategies. Drop a new Python file in the skills directory, decorate with @register, and the system auto-discovers it.</p>
+            </div>
+            <div class="bg-white dark:bg-brand-dark/50 p-8 border border-gray-200 dark:border-white/10 group hover:border-brand-purple transition-colors">
+                <div class="text-3xl mb-6">🛡️</div>
+                <h3 class="font-bold text-xl mb-4 text-gray-900 dark:text-white">L4 Risk Engine</h3>
+                <p class="text-gray-600 dark:text-gray-400">Iron-clad risk management. Enforces maximum heat limits, position sizing, and dynamic stop-losses to protect your equity from erratic signals.</p>
+            </div>
+            <div class="bg-white dark:bg-brand-dark/50 p-8 border border-gray-200 dark:border-white/10 group hover:border-brand-purple transition-colors">
+                <div class="text-3xl mb-6">🌉</div>
+                <h3 class="font-bold text-xl mb-4 text-gray-900 dark:text-white">L5 Broker Bridge</h3>
+                <p class="text-gray-600 dark:text-gray-400">Trade with confidence across Alpaca (Live/Paper), Tradier, or fully offline with PaperSim. Pydantic-typed DTOs ensure API conformance.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include post-cta.html %}
