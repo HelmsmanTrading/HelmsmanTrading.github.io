@@ -1,35 +1,123 @@
-﻿---
-permalink: /it/architecture/
+---
+permalink: /en/architecture/
 layout: default
-title: "Architettura | Helmsman Trading"
+title: "Architecture | Helmsman Trading"
 lang: it
 locale: it_IT
-description: "Scopri i livelli professionali da L1 a L5 di Helmsman Trading."
+description: "Scopri i livelli professionali L1-L5 di Helmsman Trading."
 ---
-<section class="pt-32 pb-20 min-h-screen bg-white dark:bg-brand-dark">
+<section class="pt-32 pb-20 bg-gray-50 dark:bg-[#0a0a0a] min-h-screen">
     <div class="max-w-7xl mx-auto px-6">
-        <h1 class="text-4xl md:text-6xl font-black font-display text-gray-900 dark:text-white uppercase tracking-tighter mb-8">
-            La nostra <span class="text-brand-purple">Architettura</span>
-        </h1>
-        <p class="text-xl text-gray-600 dark:text-gray-400 mb-12">Costruita per resistere a casi limite, flash crash e fallimenti delle API. Non è solo uno script, è una fortezza.</p>
         
-        <div class="space-y-16">
-            <div>
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">L1: Data Lake</h2>
-                <p class="text-gray-600 dark:text-gray-400">Il fondamento. Recupera e consolida i dati SIP da Polygon e IEX, calcolando i VWAP di sessione residenti in locale su SQLite per un replay storico immediato.</p>
+        <div class="mb-20 text-center max-w-3xl mx-auto reveal active">
+            <h1 class="text-5xl md:text-7xl font-black font-display text-gray-900 dark:text-white uppercase tracking-tighter mb-6">
+                <span class="text-brand-purple">Architettura</span> di Sistema
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-400">
+                I bot monolitici falliscono durante l'alta volatilità. Helmsman Trading si basa su un'architettura a 5 livelli decentralizzata e disaccoppiata progettata per una resilienza senza compromessi.
+            </p>
+        </div>
+
+        <div class="space-y-32">
+            <!-- L1 Data -->
+            <div class="grid md:grid-cols-2 gap-12 items-center reveal active">
+                <div>
+                    <h2 class="text-brand-purple font-mono font-bold tracking-widest uppercase mb-2">Layer 1</h2>
+                    <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Il Data Lake</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">
+                        Dipendere dalle API REST per ogni calcolo degli indicatori introduce rischi di latenza di rete e rate-limit. 
+                        Il Data Lake L1 acquisisce nativamente i dati dai provider SIP (Polygon, IEX) e li convoglia in una cache SQLite e memoria locale ultraveloce.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3"><span class="text-brand-purple mt-1"><i class="fas fa-check-circle"></i></span><span class="text-gray-700 dark:text-gray-300">VWAP e Medie Mobili locali calcolati a costo di rete zero.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-brand-purple mt-1"><i class="fas fa-check-circle"></i></span><span class="text-gray-700 dark:text-gray-300">Historical Replay immediato per il backtesting offline.</span></li>
+                    </ul>
+                </div>
+                <div class="bg-white dark:bg-[#111] p-8 rounded-xl border border-gray-200 dark:border-white/10 shadow-2xl">
+                    <pre class="font-mono text-xs text-gray-800 dark:text-gray-300 overflow-x-auto"><code>[helmsman.data] Initializing L1 Lake...
+[helmsman.data] Connecting to WSS wss://delayed.polygon.io
+[helmsman.data] Subscribing to T.AAPL, T.MSFT
+[helmsman.data.sqlite] Flushed 10,000 ticks to disk.
+[helmsman.calc] VWAP(AAPL) = 184.22
+</code></pre>
+                </div>
             </div>
-            <div>
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">L2: Plugin Skills</h2>
-                <p class="text-gray-600 dark:text-gray-400">Un registro di strategie decentralizzato. Scrivi file Python, li decori con @register, e il sistema li scopre e li carica automaticamente.</p>
+
+            <!-- L2 Skills -->
+            <div class="grid md:grid-cols-2 gap-12 items-center reveal active">
+                <div class="order-2 md:order-1 bg-white dark:bg-[#111] p-8 rounded-xl border border-gray-200 dark:border-white/10 shadow-2xl">
+                    <pre class="font-mono text-xs text-gray-800 dark:text-gray-300 overflow-x-auto"><code>@register_skill(name="MomentumBreakout")
+class Breakout(BaseSkill):
+    def on_data(self, data):
+        if data.price > data.vwap * 1.02:
+            self.buy("AAPL", qty=100)</code></pre>
+                </div>
+                <div class="order-1 md:order-2">
+                    <h2 class="text-brand-pink font-mono font-bold tracking-widest uppercase mb-2">Layer 2</h2>
+                    <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Plugin Decentralizzati</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">
+                        Non dovresti dover forkare un framework per aggiungere una strategia. Helmsman usa un registro dinamico dei plugin. 
+                        Basta scrivere una classe Python, decorarla con <code>@register_skill</code> e inserirla nella cartella. Il motore la scoprirà e la eseguirà in una sandbox isolata.
+                    </p>
+                    <a href="/it/strategies/" class="text-brand-pink hover:underline font-bold inline-flex items-center gap-2">Vedi Guida per Sviluppatori <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
-            <div>
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">L4: Risk Engine</h2>
-                <p class="text-gray-600 dark:text-gray-400">Il cuore di Helmsman. Applica i limiti di esposizione, gestisce gli stop-loss e agisce come un guardiano inflessibile tra le tue strategie e il mercato.</p>
+
+            <!-- L4 Risk -->
+            <div class="grid md:grid-cols-2 gap-12 items-center reveal active">
+                <div>
+                    <h2 class="text-red-500 font-mono font-bold tracking-widest uppercase mb-2">Layer 4</h2>
+                    <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Il Guardiano del Rischio</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">
+                        Non è questione di <em>se</em> la tua strategia farà un errore, ma di <em>quando</em>. 
+                        Il Risk Engine L4 si interpone direttamente tra la tua logica e il mercato. Applica rigorosamente limiti globali di esposizione massima, stop loss dinamici e regole di trading.
+                    </p>
+                    <p class="text-gray-700 dark:text-gray-300 font-bold border-l-4 border-red-500 pl-4 py-2 bg-red-500/5">
+                        Se una strategia tenta di aprire una posizione che eccede la tua tolleranza al rischio definita, L4 bloccherà silenziosamente l'esecuzione e ti avviserà. Il tuo capitale è protetto.
+                    </p>
+                </div>
+                <div class="bg-white dark:bg-[#111] p-8 rounded-xl border border-red-500/30 shadow-[0_0_50px_rgba(239,68,68,0.1)]">
+                     <div class="flex items-center justify-between mb-4 pb-4 border-b border-gray-200 dark:border-white/10">
+                        <span class="text-gray-500 dark:text-gray-400 font-bold">Esposizione Max Portafoglio</span>
+                        <span class="text-red-500 font-mono font-bold">15.0%</span>
+                     </div>
+                     <div class="flex items-center justify-between mb-4 pb-4 border-b border-gray-200 dark:border-white/10">
+                        <span class="text-gray-500 dark:text-gray-400 font-bold">Esposizione Attuale</span>
+                        <span class="text-yellow-500 font-mono font-bold">12.4%</span>
+                     </div>
+                     <div class="flex items-center justify-between">
+                        <span class="text-gray-500 dark:text-gray-400 font-bold">Stato L4</span>
+                        <span class="bg-green-500/20 text-green-500 px-3 py-1 rounded-full text-xs font-bold uppercase">Accesso Consentito</span>
+                     </div>
+                </div>
             </div>
-            <div>
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">L5: Broker Bridge</h2>
-                <p class="text-gray-600 dark:text-gray-400">Esegue le transazioni attraverso Alpaca, Tradier e un PaperSim locale per backtesting totalmente offline. Gli schemi Pydantic garantiscono la coerenza delle API.</p>
+
+            <!-- L5 Broker -->
+            <div class="text-center max-w-4xl mx-auto pt-16 border-t border-gray-200 dark:border-white/10 reveal active">
+                <h2 class="text-gray-500 font-mono font-bold tracking-widest uppercase mb-2">Layer 5</h2>
+                <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Ponte Broker</h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-12">
+                    Helmsman astrae le API disordinate dei broker usando rigidi schemi Pydantic. Scrivi la tua strategia una volta e distribuiscila ovunque cambiando solo un flag nel `.env`.
+                </p>
+                <div class="grid sm:grid-cols-3 gap-6">
+                    <div class="p-6 bg-white dark:bg-[#111] border border-gray-200 dark:border-white/10 rounded-xl">
+                        <i class="fas fa-robot text-4xl text-brand-purple mb-4"></i>
+                        <h4 class="font-bold text-gray-900 dark:text-white mb-2">PaperSim</h4>
+                        <p class="text-sm text-gray-500">Motore di backtesting 100% offline e locale. Nessuna API key richiesta.</p>
+                    </div>
+                    <div class="p-6 bg-white dark:bg-[#111] border border-gray-200 dark:border-white/10 rounded-xl">
+                        <i class="fas fa-chart-line text-4xl text-brand-pink mb-4"></i>
+                        <h4 class="font-bold text-gray-900 dark:text-white mb-2">Alpaca</h4>
+                        <p class="text-sm text-gray-500">Integrazione completa con le API Alpaca V2 per il Paper e Live trading.</p>
+                    </div>
+                    <div class="p-6 bg-white dark:bg-[#111] border border-gray-200 dark:border-white/10 rounded-xl">
+                        <i class="fas fa-university text-4xl text-blue-500 mb-4"></i>
+                        <h4 class="font-bold text-gray-900 dark:text-white mb-2">Tradier</h4>
+                        <p class="text-sm text-gray-500">Integrazione diretta per il trading avanzato di opzioni ed azioni.</p>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
 </section>
