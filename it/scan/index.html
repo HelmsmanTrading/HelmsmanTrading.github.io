@@ -1,0 +1,53 @@
+---
+layout: default
+permalink: /it/scan/
+title: "Scan | Helmsman"
+lang: it
+locale: it_IT
+alt: /en/scan/
+description: "Helmsman sonda i mercati più liquidi e salta ciò che non è applicabile. Non inventa il trade."
+---
+<section class="page-hero">
+  <div class="page-hero__goldline"></div>
+  <div class="max-w-5xl mx-auto relative z-10">
+    <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">Scan</p>
+    <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">Cerca dove si esce. Non dove fa scena.</h1>
+    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">Le opportunità che ti interessano sono nei mercati liquidi: titoli e ETF con nastro vero, spread che non ti mangia, un book da cui puoi uscire. Helmsman sonda lì. Se una regola non batte, salta. Non completa la lista per vanità.</p>
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-[#081628] text-white">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <div class="reveal">{% include scan-radar.html %}</div>
+    <div class="sales-prose text-gray-400 leading-relaxed">
+      <h2 class="text-3xl font-black mb-5 text-white">Tre blip, non cinquanta alert</h2>
+      <p>Il radar non è un screensaver. È la metafora giusta: gira sui liquidi, accende solo chi merita una riga. Un titolo sotto la media della regola resta spento. Dati più vecchi della soglia di sessione: skipped, gli altri proseguono. Weekend e nastro morto non diventano un «segnale» per tenerti sveglio.</p>
+      <p>Le regole attive — breakout ATR, mean reversion, squeeze di volatilità — guardano il mercato, non il tuo conto. Il conto entra dopo, quando si calcola la size. Così lo scan non ti propone un long perché «hai buying power». Te lo propone se il nastro dice sì.</p>
+    </div>
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-[#050d18] text-white">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <div>
+      <h2 class="text-3xl font-black mb-4">Il nastro che merita una riga</h2>
+      <p class="text-gray-400 mb-8 leading-relaxed">Candele che si muovono, spread che non ti umilia, volume che esiste. Lo scan è una passata onesta: applicabile / non applicabile, con i motivi in chiaro. WMT sotto la SMA non diventa un trade perché «Walmart è solido». Diventa un skip. Quella onestà è il prodotto.</p>
+      {% include candle-tape.html %}
+    </div>
+    <div class="sales-prose text-gray-400 leading-relaxed">
+      <h3 class="text-2xl font-black text-white mb-4">Cosa non è uno scan</h3>
+      <p>Non è un canale segnali. Non è un ranking da influencer. Non è un backtest da 90 slide. Non è un feed che deve «trovare qualcosa» ogni mattina per giustificare l’abbonamento.</p>
+      <p>Se la giornata è vuota, la giornata è vuota. Helmsman preferisce tre proposte vere a una lista che ti tiene incollato. Il FOMO non è una feature. È il modo in cui i conti si svuotano con un sorriso.</p>
+      <p><a href="/it/come-funziona/" class="font-bold text-brand-gold hover:underline">Dal blip alla conferma →</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-white dark:bg-brand-dark">
+  <div class="max-w-5xl mx-auto sales-prose text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+    <h2 class="text-3xl font-black mb-6 text-gray-900 dark:text-white">Liquidi, perché l’uscita è il mestiere</h2>
+    <p>Entrare è facile. Uscire è il mestiere. Helmsman non va a caccia del penny stock che «stasera esplode». Va dove il book esiste ancora quando vuoi chiudere. Titoli e ETF con nastro vero. Se i dati sono stantii, lo scan si ferma — non inventa il prezzo per tenerti nella conversazione.</p>
+    <p>Poi, solo sui nomi che restano accesi, il motore di rischio fa i numeri sul tuo conto. Lo scan non dimensiona. Il motore sì. L’AI, se c’è, non fa né l’uno né l’altro.</p>
+  </div>
+</section>
+{% include cta-band.html title="Vuoi tre proposte, non cinquanta sirene?" lead="Accesso paper. Lo scan gira sui liquidi. Tu tieni il sì." %}

@@ -1,0 +1,8 @@
+<nav class="flex flex-wrap gap-x-6 gap-y-2 text-sm font-bold mb-12" aria-label="{% if page.lang == 'it' %}Pagine legali{% else %}Legal pages{% endif %}">
+  <a href="{% if page.lang == 'it' %}/it/disclaimer/{% else %}/en/disclaimer/{% endif %}"
+    class="hover:text-brand-gold {% if page.permalink contains 'disclaimer' or page.permalink contains 'legal' %}text-brand-gold{% else %}text-gray-500{% endif %}">Disclaimer</a>
+  <a href="{% if page.lang == 'it' %}/it/privacy/{% else %}/en/privacy/{% endif %}"
+    class="hover:text-brand-gold {% if page.permalink contains 'privacy' %}text-brand-gold{% else %}text-gray-500{% endif %}">Privacy</a>
+  <a href="{% if page.lang == 'it' %}/it/cookie/{% else %}/en/cookie/{% endif %}"
+    class="hover:text-brand-gold {% if page.permalink contains 'cookie' %}text-brand-gold{% else %}text-gray-500{% endif %}">Cookie</a>
+</nav>

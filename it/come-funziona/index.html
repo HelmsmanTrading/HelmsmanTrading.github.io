@@ -5,43 +5,151 @@ title: "Come funziona | Helmsman"
 lang: it
 locale: it_IT
 alt: /en/how-it-works/
-description: "Scan, proposta, tuo sì, ingresso coperto. Helmsman semplifica la giornata di trading senza toglierti il timone."
+description: "Scan sui liquidi, anteprima con size e stop, tuo sì, ingresso coperto sul broker che colleghi. Il flusso completo, senza teatro."
 ---
-<section class="pt-32 pb-20 px-6 bg-gray-50 dark:bg-[#0a0a0a] min-h-screen">
-  <div class="max-w-4xl mx-auto">
-    <p class="text-sm font-mono text-brand-gold uppercase tracking-widest mb-4">Come funziona</p>
-    <h1 class="text-4xl md:text-6xl font-black font-display text-gray-900 dark:text-white tracking-tight mb-6">Tu decidi. Lui esegue le regole.</h1>
-    <p class="text-xl text-gray-600 dark:text-gray-400 mb-16 leading-relaxed">Helmsman non è un secondo cervello che «sa il mercato». È un ponte: guarda i liquidi, propone solo dove una regola batte, calcola size e stop, e parla col broker. Il sì resta tuo.</p>
 
-    <div class="space-y-16">
-      <article>
-        <h2 class="text-2xl font-black text-gray-900 dark:text-white mb-3">1. Sonda i liquidi</h2>
-        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Cerca dove si entra e si esce senza teatro: titoli e ETF con nastro vero. Se i dati sono vecchi, se il prezzo non rispetta la regola, se il setup è «quasi» — salta. Un no onesto vale più di un trade inventato.</p>
-      </article>
-      <article>
-        <h2 class="text-2xl font-black text-gray-900 dark:text-white mb-3">2. Ti mette una riga sul tavolo</h2>
-        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Titolo, direzione, size, stop, target. È l’anteprima: nessun ordine è partito. La size non la detta un chatbot. La calcola il motore di rischio sul tuo conto, con tetti e percentuale di rischio fissi.</p>
-      </article>
-      <article>
-        <h2 class="text-2xl font-black text-gray-900 dark:text-white mb-3">3. Dici sì — o passi</h2>
-        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Helmsman è chi tiene il timone, non il capitano. Senza conferma umana l’ordine non esiste. Se nel frattempo il mercato ha cambiato size o la regola non vale più, si ferma. Niente «esegui e basta».</p>
-      </article>
-      <article>
-        <h2 class="text-2xl font-black text-gray-900 dark:text-white mb-3">4. Apre coperto, sul tuo broker</h2>
-        <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">L’ingresso va al conto che hai collegato, già con protezione. Dopo, la posizione è tua: Helmsman non rincorre lo stop al posto tuo, non «gestisce» la trade in automatico. Tu hai aperto coperto. Il resto è disciplina tua.</p>
-        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Oggi il ponte vivo è Alpaca paper. La stessa logica deve valere per ogni broker con API: regole del venue sul tavolo, niente copie di Alpaca spacciate per universali.</p>
-      </article>
-    </div>
-
-    <div class="mt-20 p-8 border border-brand-gold/30 bg-brand-gold/5">
-      <h2 class="text-xl font-black text-gray-900 dark:text-white mb-3">Cosa non è</h2>
-      <ul class="space-y-2 text-gray-600 dark:text-gray-400">
-        <li>Non è un segnale da copiare a occhi chiusi.</li>
-        <li>Non è un bot che gira mentre dormi.</li>
-        <li>Non è un framework da clonare e «scrivere skill in Python» — quello, se ti serve, sta in un repo a parte.</li>
-      </ul>
-    </div>
-
-    <div class="mt-12">{% include cta-button.html %}</div>
+<section class="page-hero">
+  <div class="page-hero__goldline"></div>
+  <div class="absolute right-[-40px] top-24 opacity-40 hidden lg:block">{% include helm-wheel.html %}</div>
+  <div class="max-w-5xl mx-auto relative z-10">
+    <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">Come funziona</p>
+    <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">Quattro gesti. Un solo sì. Zero ingressi nudi.</h1>
+    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">La giornata di un trader non è un IDE. È un book, un conto, una decisione. Helmsman toglie il circo — cercare, filtrare, dimensionare, coprire — e ti lascia il timone. Se la regola non batte, non inventa il trade. Se tu non confermi, l’ordine non esiste.</p>
   </div>
 </section>
+
+{% include broker-rail.html %}
+
+{% include pull-quote.html text="Non ti vendiamo un secondo cervello. Ti vendiamo una mattina in cui il lavoro sporco è già fatto — e l’ordine parte solo se è coperto." cite="Il prodotto, in una frase" %}
+
+<section class="py-8 px-6 bg-white dark:bg-brand-dark">
+  <div class="max-w-5xl mx-auto sales-prose text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+    <h2 class="text-3xl md:text-5xl font-black mb-8 text-gray-900 dark:text-white">Perché il flusso è corto di proposito</h2>
+    <p>Hai già tre schermi, un canale Telegram, un foglio Excel e un modello che «ti direbbe cosa fare». Il problema non è la mancanza di opinioni. È che l’opinione arriva nuda: senza size, senza stop, sul broker sbagliato, mentre il nastro è già andato. Poi «metti lo stop dopo». Dopo, il dopo non arriva. Il conto lo sa.</p>
+    <p>Helmsman inverte l’ordine. Prima sonda i titoli e gli ETF dove entrare e uscire è realistico. Poi, solo dove una regola deterministica batte, calcola size e stop sul <em>tuo</em> conto. Poi ti mette una riga sul tavolo. Poi aspetta il tuo sì. Solo allora parla col broker — Alpaca o Tradier oggi, il venue successivo quando l’adapter merita.</p>
+    <p>Non è un secondo cervello che «sa il mercato». È un ponte con regole. L’AI, se c’è, può aiutarti a leggere il contesto. Non può inventare i lotti. Non può sparare l’ordine. Il capitano sei tu. Helmsman è chi sta al timone e rifiuta la rotta se manca la copertura.</p>
+    <p>Questa pagina non è un tutorial da sviluppatore. È la giornata che stai comprando: pochi gesti, tanti veto, zero teatro. Se cerchi un bot che stampa mentre dormi, sei nel sito sbagliato — e, di solito, anche nel prodotto sbagliato.</p>
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-[#081628] text-white">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl md:text-5xl font-black mb-4">La stessa mattina, al minuto</h2>
+    <p class="text-gray-400 mb-10 max-w-2xl">Non un diagramma da slide. Quattro orari. Un sì. Lo stop è già nell’ordine quando il broker lo vede.</p>
+    {% include day-strip.html %}
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-[#050d18] text-white">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl md:text-5xl font-black mb-4">Il giro, visibile</h2>
+    <p class="text-gray-400 mb-12 max-w-2xl">Ogni passo ha un veto. I dati stantii fermano lo scan. Una regola che non batte salta il titolo. Una size che è cambiata blocca la conferma. Un market nudo non parte.</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <article class="flow-step reveal">
+        <div class="text-brand-gold font-mono text-xs tracking-widest mb-3">01 · SCAN</div>
+        <h3 class="text-xl font-black mb-3">Sonda i liquidi</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">Titoli e ETF con nastro vero. Se i dati sono vecchi, se il prezzo è sotto la media della regola, se è «quasi» — salta. Un no onesto vale più di un setup inventato per tenerti incollato.</p>
+      </article>
+      <article class="flow-step reveal delay-100">
+        <div class="text-brand-gold font-mono text-xs tracking-widest mb-3">02 · PREVIEW</div>
+        <h3 class="text-xl font-black mb-3">Una riga, numeri veri</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">Titolo, direzione, size, stop, target. Nessun ordine è partito. La size esce dal motore di rischio: percentuale fissa, tetti, buying power. Non da una chat che ha «un buon feeling su SLV».</p>
+      </article>
+      <article class="flow-step reveal delay-200">
+        <div class="text-brand-gold font-mono text-xs tracking-widest mb-3">03 · CONFERMA</div>
+        <h3 class="text-xl font-black mb-3">Il tuo sì, o niente</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">Senza conferma umana l’ordine non esiste. Se nel frattempo la size è cambiata o la regola non vale più, si ferma. Niente «esegui e basta». Niente bot che gira mentre dormi.</p>
+      </article>
+      <article class="flow-step reveal delay-300">
+        <div class="text-brand-gold font-mono text-xs tracking-widest mb-3">04 · COPERTO</div>
+        <h3 class="text-xl font-black mb-3">Apre, già protetto</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">L’ingresso va al conto che hai collegato, con stop (e target se la regola lo prevede). Poi la posizione è tua. Helmsman non «gestisce» al posto tuo. Ha aperto coperto. Il resto è disciplina.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-white dark:bg-brand-dark">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <div class="reveal">{% include scan-radar.html %}</div>
+    <div class="sales-prose text-gray-600 dark:text-gray-400 leading-relaxed">
+      <h2 class="text-3xl md:text-4xl font-black mb-5 text-gray-900 dark:text-white">Lo scan non è un canale segnali</h2>
+      <p>Il radar gira sui liquidi. Accende solo chi merita una riga. Un titolo sotto la media della regola resta spento. Dati più vecchi della soglia: skipped. Weekend e nastro morto non diventano un «segnale» per tenerti sveglio.</p>
+      <p>Le regole — breakout ATR, mean reversion, squeeze — guardano il mercato, non il tuo conto. Il conto entra dopo, quando si calcola la size. Così Helmsman non ti propone un long perché «hai buying power». Te lo propone se il nastro dice sì.</p>
+      <p><a href="/it/scan/" class="font-bold text-brand-gold hover:underline">Come sceglie i liquidi →</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-gray-50 dark:bg-brand-surface">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <div class="sales-prose text-gray-600 dark:text-gray-400 leading-relaxed">
+      <h2 class="text-3xl md:text-4xl font-black mb-5 text-gray-900 dark:text-white">Cosa vedi, in pratica</h2>
+      <p>Non un log da sviluppatore. Tre proposte, una saltata. SLV batte il breakout: size, stop, target. V batte la mean reversion, già coperta. WMT è sotto la media: non applicabile. Nessuno ti chiede di «forzare» WMT perché hai voglia di operare.</p>
+      <p>Quella riga è l’unica cosa che ti serve per dire sì o no. Se vuoi il dettaglio delle regole, c’è. Se vuoi solo la decisione, c’è. Il sito non ti vende un framework da clonare: ti vende il momento in cui il lavoro sporco è già fatto e resta il timone.</p>
+    </div>
+    <div class="reveal">{% include proposal-card.html %}</div>
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-[#081628] text-white">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <div>
+      <h2 class="text-3xl md:text-4xl font-black mb-5">L’ordine che parte — e quello che non parte mai</h2>
+      <p class="text-gray-400 leading-relaxed mb-6">Su Alpaca la copertura è OTO o bracket. Su Tradier è OTOCO. Il nome cambia. La promessa no: niente market orfani. Se il venue non copre, Helmsman non apre — anche se hai già detto sì. Il tuo capitale non è un esperimento per tenerti nella conversazione.</p>
+      {% include order-ladder.html %}
+      <p class="mt-8"><a href="/it/ordini/" class="font-bold text-brand-gold hover:underline">I tipi d’ordine, venue per venue →</a></p>
+    </div>
+    <div class="reveal p-6 border border-brand-gold/20 bg-black/30">{% include cover-chart.html %}</div>
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-white dark:bg-brand-dark">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <div class="sales-prose text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+      <h2 class="text-3xl md:text-4xl font-black mb-5 text-gray-900 dark:text-white">I veto non sono un bug. Sono il prodotto.</h2>
+      <p>Il trading si rompe quando il software «arrangia». Helmsman preferisce un no visibile a un sì nudo. Dati stantii, regola che non batte, size mossa, market senza stop: quattro porte chiuse. Dietro ciascuna c’è un conto che non è diventato un aneddoto.</p>
+      <p>Se tre errori broker di fila, o un drawdown di sessione oltre soglia, il kill-switch si arma. Preview e confirm si fermano. A disarmare sei tu. Le posizioni già aperte restano tue: l’halt non è un trailing, è un freno.</p>
+      <p><a href="/it/rischio/" class="font-bold text-brand-gold hover:underline">Chi calcola size e stop →</a></p>
+    </div>
+    {% include veto-stack.html %}
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-gray-50 dark:bg-brand-surface">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-black mb-10 text-gray-900 dark:text-white">Con e senza, la stessa mattina</h2>
+    <div class="compare-row reveal mb-4">
+      <div class="text-sm leading-relaxed"><strong class="block text-red-400 mb-2">Senza</strong>Apri tre piattaforme. Lo scan lo fai a occhio. Chiedi a una chat «quanto compro». L’ordine parte nudo. Lo stop «lo metti dopo». Dopo, il dopo non arriva.</div>
+      <div class="text-gray-800 dark:text-gray-200 text-sm leading-relaxed"><strong class="block text-brand-gold mb-2">Con Helmsman</strong>Lo scan è già sui liquidi. La riga ha size e stop. Tu confermi. Il broker riceve un ingresso coperto. La posizione è tua, non un esperimento.</div>
+    </div>
+    <div class="compare-row reveal mb-4">
+      <div class="text-sm leading-relaxed"><strong class="block text-red-400 mb-2">Senza</strong>Cambi broker, ricominci da zero: altri tasti, altri tipi d’ordine, un altro modo di bruciarti.</div>
+      <div class="text-gray-800 dark:text-gray-200 text-sm leading-relaxed"><strong class="block text-brand-gold mb-2">Con Helmsman</strong>Il sì resta uguale. Cambia l’adapter. Alpaca non è Tradier: OTOCO non è un bracket. Il ponte rispetta il venue, non lo finge.</div>
+    </div>
+    <div class="compare-row reveal">
+      <div class="text-sm leading-relaxed"><strong class="block text-red-400 mb-2">Senza</strong>Cinquanta alert. Zero coperture. Una chat che «ci prova». Tu che copi nudo perché il nastro non aspetta.</div>
+      <div class="text-gray-800 dark:text-gray-200 text-sm leading-relaxed"><strong class="block text-brand-gold mb-2">Con Helmsman</strong>Tre proposte, una saltata in chiaro. I numeri dal motore. Il tuo sì. Poi disciplina — non un autopilota da brochure.</div>
+    </div>
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-white dark:bg-brand-dark">
+  <div class="max-w-5xl mx-auto sales-prose text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+    <h2 class="text-3xl md:text-4xl font-black mb-8 text-gray-900 dark:text-white">Le obiezioni che sentiamo. Le risposte diritte.</h2>
+    <p><strong class="text-gray-900 dark:text-white">«Devo saper programmare?»</strong> No. Vedi le proposte, leggi size e stop, dici sì o no. Il codice resta sotto il cofano. Helmsman è per chi opera, non per chi scrive bot.</p>
+    <p><strong class="text-gray-900 dark:text-white">«Fa i milioni da solo?»</strong> No. Senza il tuo sì niente parte. Dopo l’ingresso non gestisce la posizione. Chi vuole il robot notturno cerca un altro prodotto — e, di solito, lo trova sul fondo del conto.</p>
+    <p><strong class="text-gray-900 dark:text-white">«Devo cambiare broker?»</strong> No. Il conto resta tuo. Oggi il ponte parla con Alpaca e Tradier. IBKR, Directa, Fineco, Schwab e gli altri sono in mappa. Dimmi da dove operi: è la coda, non un pitch per aprirti un conto nuovo.</p>
+    <div class="mt-10 flex flex-wrap gap-6 text-sm">
+      <a href="/it/coperture/" class="font-bold text-brand-gold hover:underline">Perché coperto o niente →</a>
+      <a href="/it/broker/" class="font-bold text-brand-gold hover:underline">La mappa broker →</a>
+      <a href="/it/per-chi/" class="font-bold text-brand-gold hover:underline">Per chi è (e per chi no) →</a>
+      <a href="/it/faq/" class="font-bold text-brand-gold hover:underline">FAQ →</a>
+    </div>
+  </div>
+</section>
+
+{% include cta-band.html
+  title="Vuoi questo giro sul tuo conto paper?"
+  lead="Accesso anticipato. Indica il broker che usi già: serve a far crescere il ponte, non a venderti un conto nuovo."
+%}

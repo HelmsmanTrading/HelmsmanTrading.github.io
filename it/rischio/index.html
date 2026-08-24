@@ -1,0 +1,53 @@
+---
+layout: default
+permalink: /it/rischio/
+title: "Rischio | Helmsman"
+lang: it
+locale: it_IT
+alt: /en/risk/
+description: "Size e stop li calcola il motore di rischio, non la chat. Tetti, heat, kill-switch. Tu confermi i numeri, non li inventi."
+---
+<section class="page-hero">
+  <div class="page-hero__goldline"></div>
+  <div class="max-w-5xl mx-auto relative z-10">
+    <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">Rischio</p>
+    <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">I numeri non escono dalla chat.</h1>
+    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">Un modello può aiutarti a leggere il nastro. Non può dirti quanti SLV comprare. Size, stop e target li calcola un motore con regole fisse sul tuo conto: frazione di rischio, tetti, heat, buying power. Tu vedi la riga. Poi dici sì o no.</p>
+  </div>
+</section>
+
+{% include pull-quote.html text="Il trading si rompe quando la size diventa un mood. Helmsman rende la size un calcolo. È il contrario dell’adrenalina. È il motivo per cui il prodotto esiste." %}
+
+<section class="py-24 px-6 bg-[#081628] text-white">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl font-black mb-10">Cosa tiene sotto il dito</h2>
+    <div class="space-y-8">
+      <div>
+        <div class="flex justify-between text-sm font-mono mb-2"><span class="text-gray-400">Rischio per trade</span><span class="text-brand-gold">frazione fissa</span></div>
+        <div class="gauge"><span style="width:20%"></span></div>
+      </div>
+      <div>
+        <div class="flex justify-between text-sm font-mono mb-2"><span class="text-gray-400">Heat di portafoglio</span><span class="text-brand-gold">cap</span></div>
+        <div class="gauge"><span style="width:45%"></span></div>
+      </div>
+      <div>
+        <div class="flex justify-between text-sm font-mono mb-2"><span class="text-gray-400">Kill-switch</span><span class="text-red-400">umano a disarmare</span></div>
+        <div class="gauge"><span style="width:100%;background:#7f1d1d"></span></div>
+      </div>
+    </div>
+    <p class="text-gray-400 mt-10 leading-relaxed">Se tre errori broker di fila, o un drawdown di sessione oltre soglia, lo switch si arma. Preview e confirm si fermano. A disarmare sei tu, cancellando il file — non una chat che «riprova». Le posizioni già aperte restano tue: il kill-switch non è un trailing, è un halt.</p>
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-white dark:bg-brand-dark">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <div class="sales-prose text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+      <h2 class="text-3xl font-black mb-5 text-gray-900 dark:text-white">Perché questa parte è noiosa, e deve restarlo</h2>
+      <p>Conviction bassa: rifiuta. Troppe posizioni: cap. Heat oltre il tetto: no. Skill long-only: niente short inventati. Idempotenza: niente raddoppio sullo stesso titolo. L’LLM non calcola i lotti. Non calcola lo stop. Non «aggiusta» la size perché il prompt era persuasivo.</p>
+      <p>Accesso anticipato in paper. Il live arriva quando questi veto tengono anche con soldi veri — non prima.</p>
+      <p><a href="/it/coperture/" class="font-bold text-brand-gold hover:underline">Dalla size allo stop che parte con l’ordine →</a></p>
+    </div>
+    {% include veto-stack.html %}
+  </div>
+</section>
+{% include cta-band.html title="Vuoi vedere size e stop prima di dire sì?" lead="Paper. Il motore numera. Tu tieni il timone." %}

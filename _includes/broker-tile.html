@@ -1,0 +1,19 @@
+{% comment %}Logo slide. {% include broker-tile.html broker=b %}{% endcomment %}
+{% assign b = include.broker %}
+{% assign inkhex = b.ink | replace: '#', '' %}
+<div class="broker-tile" title="{{ b.name }}">
+  <div class="broker-tile__mark" style="background:{{ b.accent }};color:{{ b.ink }}">
+    {% if b.icon %}
+    <img class="broker-tile__logo" src="https://cdn.simpleicons.org/{{ b.icon }}/{{ inkhex }}" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+    <span class="broker-tile__letter" style="display:none">{{ b.letter }}</span>
+    {% else %}
+    <span class="broker-tile__letter">{{ b.letter }}</span>
+    {% endif %}
+  </div>
+  <div class="broker-tile__meta">
+    <div class="broker-tile__name">{{ b.name }}</div>
+    <div class="broker-tile__status {% if b.status == 'live' %}is-live{% elsif b.status == 'sim' %}is-sim{% else %}is-queued{% endif %}">
+      {% if page.lang == 'it' %}{{ b.status_it }}{% else %}{{ b.status_en }}{% endif %}
+    </div>
+  </div>
+</div>

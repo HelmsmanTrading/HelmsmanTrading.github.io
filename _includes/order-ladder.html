@@ -1,0 +1,17 @@
+<div class="order-ladder" aria-hidden="true">
+  <div class="order-ticket is-reject">
+    <span class="order-ticket__tag">SIMPLE</span>
+    <strong>{% if page.lang == 'it' %}Market nudo{% else %}Naked market{% endif %}</strong>
+    <em>{% if page.lang == 'it' %}Rifiutato{% else %}Rejected{% endif %}</em>
+  </div>
+  <div class="order-ticket is-ok delay-100">
+    <span class="order-ticket__tag">OTO · BRACKET</span>
+    <strong>Alpaca</strong>
+    <em>{% if page.lang == 'it' %}Stop attaccato{% else %}Stop attached{% endif %}</em>
+  </div>
+  <div class="order-ticket is-ok delay-200">
+    <span class="order-ticket__tag">OTOCO</span>
+    <strong>Tradier</strong>
+    <em>{% if page.lang == 'it' %}Stop + target{% else %}Stop + target{% endif %}</em>
+  </div>
+</div>

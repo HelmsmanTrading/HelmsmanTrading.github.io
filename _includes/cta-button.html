@@ -6,6 +6,6 @@
   {% assign cta_label = 'Request paper access' %}
 {% endif %}
 <a href="{{ cta_href | relative_url }}"
-  class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-brand-gold text-brand-dark font-bold text-sm hover:bg-brand-goldLight transition-colors">
+  class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-brand-gold text-brand-dark font-bold text-sm hover:bg-brand-goldLight transition-colors shimmer-btn">
   {{ include.label | default: cta_label }}
 </a>

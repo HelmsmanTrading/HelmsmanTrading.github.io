@@ -1,0 +1,215 @@
+# Logo slides. `icon` = Simple Icons slug (trademark of the owner, identification only).
+# rail: false keeps a name on the grid but off the marquee (not a public venue).
+- id: alpaca
+  name: Alpaca
+  letter: A
+  accent: "#1A1A1A"
+  ink: "#F2C94C"
+  status: live
+  status_it: Adapter paper
+  status_en: Paper adapter
+  region: us
+- id: tradier
+  name: Tradier
+  letter: T
+  accent: "#0B6E4F"
+  ink: "#FFFFFF"
+  status: live
+  status_it: Adapter sandbox
+  status_en: Sandbox adapter
+  region: us
+- id: papersim
+  name: PaperSim
+  letter: P
+  accent: "#0B1F3A"
+  ink: "#C4A35A"
+  status: sim
+  status_it: Banco locale
+  status_en: Local sim
+  region: sim
+  rail: false
+- id: ibkr
+  name: Interactive Brokers
+  letter: IB
+  icon: interactivebrokers
+  accent: "#D32011"
+  ink: "#FFFFFF"
+  status: queued
+  status_it: In mappa
+  status_en: On the map
+  region: global
+- id: schwab
+  name: Charles Schwab
+  letter: S
+  icon: charles-schwab
+  accent: "#00A0DF"
+  ink: "#FFFFFF"
+  status: queued
+  status_it: In mappa
+  status_en: On the map
+  region: us
+- id: tradestation
+  name: TradeStation
+  letter: TS
+  icon: tradestation
+  accent: "#00A8A8"
+  ink: "#FFFFFF"
+  status: queued
+  status_it: In mappa
+  status_en: On the map
+  region: us
+- id: tastytrade
+  name: tastytrade
+  letter: tt
+  accent: "#111111"
+  ink: "#7CFC00"
+  status: queued
+  status_it: In mappa
+  status_en: On the map
+  region: us
+- id: etrade
+  name: E*TRADE
+  letter: E
+  icon: etrade
+  accent: "#6633CC"
+  ink: "#FFFFFF"
+  status: queued
+  status_it: In mappa
+  status_en: On the map
+  region: us
+- id: fidelity
+  name: Fidelity
+  letter: F
+  icon: fidelity
+  accent: "#3C8A3C"
+  ink: "#FFFFFF"
+  status: queued
+  status_it: In mappa
+  status_en: On the map
+  region: us
+- id: robinhood
+  name: Robinhood
+  letter: R
+  icon: robinhood
+  accent: "#000000"
+  ink: "#CCFF00"
+  status: queued
+  status_it: In mappa
+  status_en: On the map
+  region: us
+- id: webull
+  name: Webull
+  letter: W
+  icon: webull
+  accent: "#0B5FFF"
+  ink: "#FFFFFF"
+  status: queued
+  status_it: In mappa
+  status_en: On the map
+  region: us
+- id: directa
+  name: Directa
+  letter: D
+  accent: "#0033A0"
+  ink: "#FFFFFF"
+  status: queued
+  status_it: In mappa
+  status_en: On the map
+  region: eu
+- id: fineco
+  name: Fineco
+  letter: F
+  accent: "#E30613"
+  ink: "#FFFFFF"
+  status: queued
+  status_it: In mappa
+  status_en: On the map
+  region: eu
+- id: degiro
+  name: DEGIRO
+  letter: DG
+  icon: degiro
+  accent: "#FFCC00"
+  ink: "#111111"
+  status: queued
+  status_it: In mappa
+  status_en: On the map
+  region: eu
+- id: saxo
+  name: Saxo
+  letter: SX
+  icon: saxobank
+  accent: "#002B5C"
+  ink: "#FFFFFF"
+  status: queued
+  status_it: In mappa
+  status_en: On the map
+  region: eu
+- id: ig
+  name: IG
+  letter: IG
+  icon: ig
+  accent: "#E31C23"
+  ink: "#FFFFFF"
+  status: queued
+  status_it: Prossimo in codice
+  status_en: Next in code
+  region: eu
+- id: etoro
+  name: eToro
+  letter: eT
+  icon: etoro
+  accent: "#6CAC3D"
+  ink: "#FFFFFF"
+  status: queued
+  status_it: In mappa
+  status_en: On the map
+  region: eu
+- id: plus500
+  name: Plus500
+  letter: "500"
+  icon: plus500
+  accent: "#2E5BFF"
+  ink: "#FFFFFF"
+  status: queued
+  status_it: In mappa
+  status_en: On the map
+  region: eu
+- id: trading212
+  name: Trading 212
+  letter: "212"
+  icon: trading212
+  accent: "#00A7E1"
+  ink: "#FFFFFF"
+  status: queued
+  status_it: In mappa
+  status_en: On the map
+  region: eu
+- id: traderepublic
+  name: Trade Republic
+  letter: TR
+  icon: traderepublic
+  accent: "#000000"
+  ink: "#FFFFFF"
+  status: queued
+  status_it: In mappa
+  status_en: On the map
+  region: eu
+- id: swissquote
+  name: Swissquote
+  letter: SQ
+  accent: "#E30613"
+  ink: "#FFFFFF"
+  status: queued
+  status_it: In mappa
+  status_en: On the map
+  region: eu
+- id: cmc
+  name: CMC Markets
+  letter: CMC
+  accent: "#0033A0"
+  ink: "#FFFFFF"
+  status: queued
+  status_it: In mappa
+  status_en: On the map
+  region: eu

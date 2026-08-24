@@ -45,8 +45,8 @@ description: "Sonda i mercati più liquidi, ti propone le opportunità, apre sol
                     <div>Anteprima, poi un sì</div>
                 </div>
                 <div>
-                    <div class="text-gray-900 dark:text-white font-bold text-lg mb-1">Il tuo broker</div>
-                    <div>Alpaca paper, altri in arrivo</div>
+                    <div class="text-gray-900 dark:text-white font-bold text-lg mb-1">Alpaca · Tradier</div>
+                    <div>Adapter già in codice</div>
                 </div>
             </div>
         </div>
@@ -57,6 +57,10 @@ description: "Sonda i mercati più liquidi, ti propone le opportunità, apre sol
         </div>
     </div>
 </section>
+
+<div class="bg-white dark:bg-brand-dark border-y border-gray-200 dark:border-white/5">
+  {% include broker-rail.html %}
+</div>
 
 <section id="per-chi" class="py-32 px-6 bg-gray-50 dark:bg-brand-surface border-y border-gray-200 dark:border-white/10">
     <div class="max-w-7xl mx-auto">
@@ -155,17 +159,21 @@ description: "Sonda i mercati più liquidi, ti propone le opportunità, apre sol
         <div>
             <h2 class="text-sm font-mono text-brand-gold font-bold uppercase tracking-widest mb-4">Multi-broker</h2>
             <h3 class="text-4xl font-black font-display text-gray-900 dark:text-white tracking-tight mb-4">Il conto resta tuo. Il ponte si adatta.</h3>
-            <p class="text-gray-500 leading-relaxed mb-6">La filosofia è semplice: se un broker offre API, Helmsman deve poterci parlare. Oggi il ponte vivo è <strong>Alpaca in paper</strong>. Domani gli adapter che meritano. Non ti chiediamo di cambiare casa: colleghi quella che hai.</p>
-            <a href="/it/broker/" class="font-bold text-brand-gold hover:underline">Come pensiamo i broker →</a>
+            <p class="text-gray-500 leading-relaxed mb-6">Se un broker offre API, Helmsman deve poterci parlare — con le regole <em>di quel</em> venue. Oggi in codice: <strong>Alpaca paper</strong> e <strong>Tradier sandbox</strong>, più PaperSim in locale. IBKR, Schwab, Directa, Fineco e gli altri sono in mappa, non sugli sticker.</p>
+            <a href="/it/broker/" class="font-bold text-brand-gold hover:underline">La mappa completa →</a>
         </div>
         <div class="border border-gray-200 dark:border-white/10 p-8 bg-white dark:bg-[#081628]">
             <div class="flex items-center justify-between py-3 border-b border-gray-100 dark:border-white/10">
                 <span class="font-bold text-gray-900 dark:text-white">Alpaca</span>
-                <span class="text-xs font-mono uppercase text-brand-gold">Paper attivo</span>
+                <span class="text-xs font-mono uppercase text-brand-gold">Paper · adapter</span>
             </div>
             <div class="flex items-center justify-between py-3 border-b border-gray-100 dark:border-white/10">
-                <span class="text-gray-500">Altri broker con API</span>
-                <span class="text-xs font-mono uppercase text-gray-400">In coda</span>
+                <span class="font-bold text-gray-900 dark:text-white">Tradier</span>
+                <span class="text-xs font-mono uppercase text-brand-gold">Sandbox · adapter</span>
+            </div>
+            <div class="flex items-center justify-between py-3 border-b border-gray-100 dark:border-white/10">
+                <span class="text-gray-500">IBKR · Directa · Fineco · Schwab…</span>
+                <span class="text-xs font-mono uppercase text-gray-400">In mappa</span>
             </div>
             <div class="flex items-center justify-between py-3">
                 <span class="text-gray-500">Il tuo sì, sempre</span>
@@ -175,6 +183,59 @@ description: "Sonda i mercati più liquidi, ti propone le opportunità, apre sol
     </div>
 </section>
 
+<section class="py-24 px-6 bg-white dark:bg-brand-dark">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl font-black mb-10 text-gray-900 dark:text-white">Approfondisci</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <a href="/it/scan/" class="card-glow p-8 block">
+        <div class="text-brand-gold font-mono text-xs mb-3">SCAN</div>
+        <h3 class="font-black text-xl mb-2 text-gray-900 dark:text-white">Mercati liquidi</h3>
+        <p class="text-sm text-gray-500">Come sceglie, perché salta, cosa non è un canale segnali.</p>
+      </a>
+      <a href="/it/coperture/" class="card-glow p-8 block">
+        <div class="text-brand-gold font-mono text-xs mb-3">COVER</div>
+        <h3 class="font-black text-xl mb-2 text-gray-900 dark:text-white">Posizioni coperte</h3>
+        <p class="text-sm text-gray-500">Perché il market nudo non parte. Grafico nastro vs pavimento.</p>
+      </a>
+      <a href="/it/rischio/" class="card-glow p-8 block">
+        <div class="text-brand-gold font-mono text-xs mb-3">RISK</div>
+        <h3 class="font-black text-xl mb-2 text-gray-900 dark:text-white">Size e stop</h3>
+        <p class="text-sm text-gray-500">Motore, tetti, kill-switch. I numeri non escono dalla chat.</p>
+      </a>
+      <a href="/it/confronto/" class="card-glow p-8 block">
+        <div class="text-brand-gold font-mono text-xs mb-3">VS</div>
+        <h3 class="font-black text-xl mb-2 text-gray-900 dark:text-white">Perché Helmsman</h3>
+        <p class="text-sm text-gray-500">Non un bot notturno, non un altro terminale, non una chat.</p>
+      </a>
+      <a href="/it/broker/" class="card-glow p-8 block">
+        <div class="text-brand-gold font-mono text-xs mb-3">API</div>
+        <h3 class="font-black text-xl mb-2 text-gray-900 dark:text-white">Broker</h3>
+        <p class="text-sm text-gray-500">Alpaca, Tradier, e la mappa dei venue degni di nota.</p>
+      </a>
+      <a href="/it/ordini/" class="card-glow p-8 block">
+        <div class="text-brand-gold font-mono text-xs mb-3">ORDINI</div>
+        <h3 class="font-black text-xl mb-2 text-gray-900 dark:text-white">OTO, bracket, OTOCO</h3>
+        <p class="text-sm text-gray-500">La copertura è una classe d’ordine. SIMPLE non parte.</p>
+      </a>
+      <a href="/it/per-chi/" class="card-glow p-8 block">
+        <div class="text-brand-gold font-mono text-xs mb-3">PER CHI</div>
+        <h3 class="font-black text-xl mb-2 text-gray-900 dark:text-white">Elena, Davide, Sara, Paolo</h3>
+        <p class="text-sm text-gray-500">Per chi opera. Non per chi colleziona tool o bot notturni.</p>
+      </a>
+      <a href="/it/faq/" class="card-glow p-8 block">
+        <div class="text-brand-gold font-mono text-xs mb-3">FAQ</div>
+        <h3 class="font-black text-xl mb-2 text-gray-900 dark:text-white">Domande diritte</h3>
+        <p class="text-sm text-gray-500">Programmare, autopilota, live, costi: risposte senza brochure.</p>
+      </a>
+      <a href="/it/filosofia/" class="card-glow p-8 block">
+        <div class="text-brand-gold font-mono text-xs mb-3">TIMONE</div>
+        <h3 class="font-black text-xl mb-2 text-gray-900 dark:text-white">Filosofia</h3>
+        <p class="text-sm text-gray-500">Quattro invarianti. Il capitano sei tu.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
 <section id="faq" class="py-32 px-6 bg-white dark:bg-[#111]">
     <div class="max-w-4xl mx-auto">
         <div class="text-center mb-16">
@@ -182,6 +243,7 @@ description: "Sonda i mercati più liquidi, ti propone le opportunità, apre sol
             <h3 class="text-4xl lg:text-5xl font-black font-display text-gray-900 dark:text-white tracking-tight">Domande da trader, risposte diritte</h3>
         </div>
         {% include accordion-faq.html %}
+        <p class="text-center mt-10"><a href="/it/faq/" class="font-bold text-brand-gold hover:underline">Tutte le FAQ →</a></p>
     </div>
 </section>
 

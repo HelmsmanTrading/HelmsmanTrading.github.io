@@ -1,0 +1,8 @@
+<section class="relative overflow-hidden py-24 px-6 bg-brand-navy text-white">
+  <div class="absolute inset-0 opacity-30 helm-orbit" aria-hidden="true"></div>
+  <div class="max-w-4xl mx-auto text-center relative z-10">
+    <h2 class="text-3xl md:text-5xl font-black font-display tracking-tight mb-6">{{ include.title }}</h2>
+    {% if include.lead %}<p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">{{ include.lead }}</p>{% endif %}
+    {% include cta-button.html %}
+  </div>
+</section>

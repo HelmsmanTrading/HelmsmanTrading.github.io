@@ -1,0 +1,25 @@
+{% comment %}Status grid. {% include broker-grid.html %}{% endcomment %}
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+  {% for b in site.data.brokers %}
+  <div class="broker-card reveal">
+    {% include broker-tile.html broker=b %}
+    <p class="broker-card__blurb">
+      {% if b.id == 'alpaca' %}
+        {% if page.lang == 'it' %}Ponte vivo: paper, bracket e OTO, conferma umana, client id helmsman.{% else %}Live bridge: paper, bracket and OTO, human confirm, helmsman client id.{% endif %}
+      {% elsif b.id == 'tradier' %}
+        {% if page.lang == 'it' %}Secondo adapter reale: OTOCO, tag, sandbox. Non è Alpaca con un’etichetta.{% else %}Second real adapter: OTOCO, tags, sandbox. Not Alpaca with a sticker.{% endif %}
+      {% elsif b.id == 'papersim' %}
+        {% if page.lang == 'it' %}Zero rete, zero chiavi. Il banco per provare le regole senza il venue.{% else %}No network, no keys. The bench to prove the rules without a venue.{% endif %}
+      {% elsif b.id == 'ig' %}
+        {% if page.lang == 'it' %}Già previsto in factory come prossimo adapter.{% else %}Already stubbed in the factory as the next adapter.{% endif %}
+      {% elsif b.id == 'ibkr' %}
+        {% if page.lang == 'it' %}Il venue globale che i trader seri nominano per primo. Merita un adapter proprio.{% else %}The global venue serious traders name first. It deserves its own adapter.{% endif %}
+      {% elsif b.id == 'directa' or b.id == 'fineco' %}
+        {% if page.lang == 'it' %}Italia, conto vero, API da conquistare. Dimmi se operi da qui: è la coda.{% else %}Italy, a real account, APIs to earn. Tell us if you trade from here: that is the queue.{% endif %}
+      {% else %}
+        {% if page.lang == 'it' %}API, libro ordini, trader veri: merita un adapter proprio, non una copia.{% else %}APIs, a real book, real traders: it deserves its own adapter, not a copy.{% endif %}
+      {% endif %}
+    </p>
+  </div>
+  {% endfor %}
+</div>

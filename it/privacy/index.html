@@ -1,0 +1,50 @@
+---
+layout: default
+permalink: /it/privacy/
+title: "Privacy | Helmsman"
+lang: it
+locale: it_IT
+alt: /en/privacy/
+description: "Cosa facciamo con email, broker e note che ci invii da questo sito. Nessuna vendita di liste. Il conto di trading non passa da qui."
+---
+<section class="page-hero">
+  <div class="page-hero__goldline"></div>
+  <div class="max-w-5xl mx-auto relative z-10">
+    <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">Legale</p>
+    <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">Privacy</h1>
+    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">Questo sito non tiene il tuo conto. Tiene, se le scrivi tu, l’email e due note per la lista paper. Punto.</p>
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-white dark:bg-brand-dark">
+  <div class="max-w-3xl mx-auto">
+    {% include legal-nav.html %}
+    <div class="sales-prose text-lg text-gray-600 dark:text-gray-400 leading-relaxed space-y-5">
+      <p class="text-sm font-mono uppercase tracking-widest text-brand-gold">Aggiornato il 24 agosto 2026</p>
+
+      <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">Titolare</h2>
+      <p>Antonio Trento, progetto Helmsman Trading. Email: <a class="text-brand-gold hover:underline" href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>. Sito: <a class="text-brand-gold hover:underline" href="{{ site.url }}">{{ site.url }}</a>.</p>
+
+      <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">Cosa raccogliamo su questo sito</h2>
+      <p>Solo se usi il modulo di accesso paper (o ci scrivi a mano): indirizzo email, broker che indichi, eventuale messaggio. Finalità: ricontattarti per l’accesso anticipato e capire da quale venue operi — è la coda del ponte, non un CRM da revendita. Base: la tua richiesta (misure precontrattuali / consenso a essere ricontattato).</p>
+      <p>Non vendiamo quella lista. Non la usiamo per profilazione pubblicitaria. Non chiediamo carta di credito su queste pagine.</p>
+
+      <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">Cosa non raccogliamo qui</h2>
+      <p>Questo sito <strong class="text-gray-900 dark:text-white">non</strong> è il prodotto. Non riceve chiavi API del broker, non vede il tuo conto, non legge le posizioni. Collegare Alpaca, Tradier o un altro venue avviene nel software, con credenziali che restano sotto il tuo controllo. I dati di strategia non vengono «raccolti» da queste pagine statiche.</p>
+
+      <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">Chi elabora il modulo</h2>
+      <p>Il form passa da <a class="text-brand-gold hover:underline" href="https://formsubmit.co" target="_blank" rel="noopener">FormSubmit</a> e arriva a {{ site.contact_email }}. FormSubmit è un terzo: tratta il contenuto dell’invio per consegnarcelo. Puoi evitare il form e scrivere diretto alla stessa email.</p>
+
+      <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">Hosting e risorse terze</h2>
+      <p>Le pagine sono servite da GitHub Pages. GitHub può registrare log tecnici (indirizzo IP, user-agent) secondo la propria policy. Il tema carica font da Google Fonts, icone da Cloudflare (cdnjs), CSS da Tailwind CDN e, sulla mappa broker, icone da Simple Icons. Quei servizi possono vedere l’IP della richiesta. Non installiamo su questo sito tag di analytics o pixel pubblicitari nostri.</p>
+
+      <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">Conservazione e diritti</h2>
+      <p>Teniamo email e note della waitlist finché serve a gestirla, poi le cancelliamo o le anonimizziamo. Puoi chiedere accesso, rettifica, cancellazione, limitazione, opposizione, portabilità dove applicabile — scrivi a {{ site.contact_email }}. Puoi reclamo al Garante per la protezione dei dati personali.</p>
+
+      <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">Minori</h2>
+      <p>Il sito non è rivolto a chi non può operare legalmente sui mercati. Non cerchiamo dati di minori.</p>
+
+      <p>Memoria nel browser: <a class="text-brand-gold font-bold hover:underline" href="/it/cookie/">Cookie</a>. Rischio di mercato: <a class="text-brand-gold font-bold hover:underline" href="/it/disclaimer/">Disclaimer</a>.</p>
+    </div>
+  </div>
+</section>

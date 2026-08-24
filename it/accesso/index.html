@@ -7,13 +7,30 @@ locale: it_IT
 alt: /en/access/
 description: "Richiedi l’accesso anticipato in paper. Indica il broker che usi già."
 ---
-<section class="pt-32 pb-24 px-6 min-h-screen bg-gray-50 dark:bg-[#0a0a0a]">
-  <div class="max-w-xl mx-auto">
-    <p class="text-sm font-mono text-brand-gold uppercase tracking-widest mb-4">Accesso anticipato</p>
-    <h1 class="text-4xl md:text-5xl font-black font-display text-gray-900 dark:text-white tracking-tight mb-4">Paper. Coperture. Il tuo sì.</h1>
-    <p class="text-gray-600 dark:text-gray-400 mb-10 leading-relaxed">Niente listino, niente carta. Scrivi da dove operi: serve a far entrare prima chi ha già un conto collegabile, non a venderti un broker nuovo.</p>
+<section class="page-hero pb-16">
+  <div class="page-hero__goldline"></div>
+  <div class="max-w-5xl mx-auto relative z-10">
+    <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">Accesso anticipato</p>
+    <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">Paper. Coperture. Il tuo sì.</h1>
+    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">Niente listino, niente carta. Scrivi da dove operi: serve a far entrare prima chi ha già un conto collegabile, non a venderti un broker nuovo.</p>
+  </div>
+</section>
 
-    <form action="https://formsubmit.co/{{ site.contact_email }}" method="POST" class="space-y-5 bg-white dark:bg-[#081628] border border-gray-200 dark:border-white/10 p-8">
+{% include broker-rail.html kicker="off" caption="off" %}
+
+<section class="py-24 px-6 bg-gray-50 dark:bg-[#0a0a0a]">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
+    <div>
+      <h2 class="text-3xl font-black mb-5 text-gray-900 dark:text-white">Cosa stai chiedendo</h2>
+      <ul class="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed mb-10">
+        <li class="flex gap-3"><i class="fas fa-check text-brand-gold mt-1"></i><span>Scan sui liquidi, non cinquanta sirene.</span></li>
+        <li class="flex gap-3"><i class="fas fa-check text-brand-gold mt-1"></i><span>Size e stop dal motore, visibili prima del sì.</span></li>
+        <li class="flex gap-3"><i class="fas fa-check text-brand-gold mt-1"></i><span>Ingresso coperto su Alpaca o Tradier — e la coda per il tuo venue.</span></li>
+      </ul>
+      {% include proposal-card.html %}
+    </div>
+
+    <form action="https://formsubmit.co/{{ site.contact_email }}" method="POST" class="space-y-5 bg-white dark:bg-[#081628] border border-gray-200 dark:border-white/10 p-8 shadow-2xl">
       <input type="hidden" name="_subject" value="Helmsman — accesso paper">
       <input type="hidden" name="_next" value="{{ site.url }}/it/accesso/grazie/">
       <input type="hidden" name="_captcha" value="false">
@@ -29,7 +46,7 @@ description: "Richiedi l’accesso anticipato in paper. Indica il broker che usi
         <span class="text-xs font-mono uppercase tracking-widest text-gray-500">Broker che usi già</span>
         <input type="text" name="broker"
           class="mt-2 w-full px-4 py-3 bg-gray-50 dark:bg-black/40 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white"
-          placeholder="Alpaca, IBKR, altro…">
+          placeholder="Alpaca, IBKR, Directa, Fineco…">
       </label>
       <label class="block">
         <span class="text-xs font-mono uppercase tracking-widest text-gray-500">Cosa ti pesa di più oggi</span>
@@ -37,12 +54,11 @@ description: "Richiedi l’accesso anticipato in paper. Indica il broker che usi
           class="mt-2 w-full px-4 py-3 bg-gray-50 dark:bg-black/40 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white"
           placeholder="Alert, stop dimenticati, tre piattaforme aperte…"></textarea>
       </label>
-      <button type="submit" class="w-full py-4 bg-brand-gold text-brand-dark font-bold hover:bg-brand-goldLight transition-colors">
+      <button type="submit" class="w-full py-4 bg-brand-gold text-brand-dark font-bold hover:bg-brand-goldLight transition-colors shimmer-btn">
         Richiedi l’accesso paper
       </button>
       <p class="text-xs text-gray-500">O scrivi diretto a <a class="text-brand-gold hover:underline" href="mailto:{{ site.contact_email }}?subject=Helmsman%20accesso%20paper">{{ site.contact_email }}</a>.</p>
     </form>
-
-    <p class="mt-8 text-xs text-gray-500">Il trading comporta perdite. Accesso in paper. Questo non è un consiglio di investimento.</p>
   </div>
+  <p class="mt-12 text-center text-xs text-gray-500">Il trading comporta perdite. Accesso in paper. Questo non è un consiglio di investimento.</p>
 </section>

@@ -1,0 +1,54 @@
+---
+layout: default
+permalink: /it/ordini/
+title: "Tipi d’ordine | Helmsman"
+lang: it
+locale: it_IT
+alt: /en/orders/
+description: "OTO e bracket su Alpaca, OTOCO su Tradier. Niente SIMPLE. La copertura è la classe d’ordine, non una promessa."
+---
+<section class="page-hero">
+  <div class="page-hero__goldline"></div>
+  <div class="max-w-5xl mx-auto relative z-10">
+    <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">Ordini</p>
+    <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">La copertura è una classe d’ordine. Non una preghiera.</h1>
+    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">Ogni venue ha una grammatica. Helmsman la parla, non la finge. Alpaca non è Tradier. OTOCO non è un bracket. SIMPLE non parte. Mai.</p>
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-[#081628] text-white">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <div>
+      <h2 class="text-3xl font-black mb-6">Cosa parte. Cosa viene strappato.</h2>
+      {% include order-ladder.html %}
+    </div>
+    <div class="sales-prose text-gray-400 leading-relaxed">
+      <p>Un market nudo è veloce solo fino al fill. Poi sei scoperto. Helmsman rifiuta SIMPLE. Su Alpaca spedisce OTO o bracket: l’ingresso e lo stop nascono insieme. Su Tradier spedisce OTOCO: ingresso, stop e target nello stesso payload. Il nome è diverso. Il veto è lo stesso.</p>
+      <p>Se un adapter futuro non offre una classe coperta onesta, non si apre su quel venue. Non «arrangiamo» con due ordini staccati e una speranza. Due ordini staccati sono due chance di restare nudi.</p>
+    </div>
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-white dark:bg-brand-dark">
+  <div class="max-w-6xl mx-auto">
+    <div class="venue-duel reveal">
+      <article>
+        <p class="font-mono text-xs tracking-[0.25em] text-brand-gold mb-3">ALPACA</p>
+        <h3>OTO · bracket</h3>
+        <p>One-triggers-other: il fill dell’ingresso arma lo stop. Il bracket aggiunge il target. Client id <code>helmsman_…</code> per rintracciare cosa è partito da qui, non da un click impulsivo sul nastro.</p>
+      </article>
+      <article>
+        <p class="font-mono text-xs tracking-[0.25em] text-emerald-400 mb-3">TRADIER</p>
+        <h3>OTOCO</h3>
+        <p>One-triggers-one-cancels-the-other: stop e target nello stesso form. Tag igienizzato, niente underscore. Copiare il JSON di Alpaca qui significa aprire nudo. Quindi non lo copiamo.</p>
+      </article>
+    </div>
+    <div class="sales-prose text-lg text-gray-600 dark:text-gray-400 leading-relaxed mt-16 max-w-3xl">
+      <h2 class="text-3xl font-black mb-5 text-gray-900 dark:text-white">Il prossimo adapter porterà la sua grammatica</h2>
+      <p>IBKR, Directa, Fineco, Schwab: ognuno ha i suoi bracket, i suoi OCO, i suoi orari. Helmsman non pretenderà che siano Alpaca. Porterà una carta di ingaggio nuova. Tu continuerai a dire sì alla stessa riga.</p>
+      <p><a href="/it/broker/" class="font-bold text-brand-gold hover:underline">La mappa venue →</a></p>
+    </div>
+  </div>
+</section>
+{% include broker-rail.html %}
+{% include cta-band.html title="Vuoi un ingresso che nasce già protetto?" lead="Paper. Tu confermi. Il venue riceve la classe giusta." %}

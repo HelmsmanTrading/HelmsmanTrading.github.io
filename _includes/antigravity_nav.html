@@ -3,11 +3,8 @@
   <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
     <a href="{% if page.lang == 'it' %}/it/{% else %}/en/{% endif %}"
-      class="flex items-center hover:opacity-90 transition-opacity shrink-0">
-      <img src="{{ '/assets/images/logo/logo-light.png' | relative_url }}" alt="Helmsman"
-        class="h-8 sm:h-9 w-auto object-contain object-left dark:hidden">
-      <img src="{{ '/assets/images/logo/logo-dark.png' | relative_url }}" alt="Helmsman"
-        class="h-8 sm:h-9 w-auto object-contain object-left hidden dark:block">
+      class="flex items-center hover:opacity-90 transition-opacity shrink-0 min-w-0">
+      {% include brand-logo.html %}
     </a>
 
     <div class="hidden md:flex items-center gap-8">

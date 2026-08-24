@@ -1,0 +1,53 @@
+---
+layout: default
+permalink: /en/scan/
+title: "Scan | Helmsman"
+lang: en
+locale: en_US
+alt: /it/scan/
+description: "Helmsman scans the most liquid markets and skips what does not apply. It does not invent the trade."
+---
+<section class="page-hero">
+  <div class="page-hero__goldline"></div>
+  <div class="max-w-5xl mx-auto relative z-10">
+    <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">Scan</p>
+    <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">Hunt where you can exit. Not where it looks dramatic.</h1>
+    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">The setups you care about live in liquid markets: names and ETFs with a real tape, a spread that does not eat you, a book you can leave. Helmsman scans there. If a rule does not fire, it skips. It does not pad the list for vanity.</p>
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-[#081628] text-white">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <div class="reveal">{% include scan-radar.html %}</div>
+    <div class="sales-prose text-gray-400 leading-relaxed">
+      <h2 class="text-3xl font-black mb-5 text-white">Three blips, not fifty alerts</h2>
+      <p>The radar is not a screensaver. It is the right metaphor: it turns on liquid names and lights only what deserves a line. A name under the rule’s average stays dark. Data older than the session threshold: skipped, the rest proceed. A dead weekend tape does not become a «signal» to keep you awake.</p>
+      <p>The live rules — ATR breakout, mean reversion, volatility squeeze — watch the market, not your account. The account arrives later, when size is computed. The scan does not propose a long because «you have buying power». It proposes one if the tape says yes.</p>
+    </div>
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-[#050d18] text-white">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <div>
+      <h2 class="text-3xl font-black mb-4">The tape that earns a line</h2>
+      <p class="text-gray-400 mb-8 leading-relaxed">Candles that move, a spread that does not humiliate you, volume that exists. The scan is an honest pass: applicable / not applicable, reasons in the open. WMT under the SMA does not become a trade because «Walmart is solid». It becomes a skip. That honesty is the product.</p>
+      {% include candle-tape.html %}
+    </div>
+    <div class="sales-prose text-gray-400 leading-relaxed">
+      <h3 class="text-2xl font-black text-white mb-4">What a scan is not</h3>
+      <p>Not a signal channel. Not an influencer ranking. Not a 90-slide backtest. Not a feed that must «find something» every morning to justify a subscription.</p>
+      <p>If the day is empty, the day is empty. Helmsman prefers three true proposals to a list that keeps you glued. FOMO is not a feature. It is how accounts empty with a smile.</p>
+      <p><a href="/en/how-it-works/" class="font-bold text-brand-gold hover:underline">From the blip to confirm →</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-white dark:bg-brand-dark">
+  <div class="max-w-5xl mx-auto sales-prose text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+    <h2 class="text-3xl font-black mb-6 text-gray-900 dark:text-white">Liquid, because the exit is the job</h2>
+    <p>Getting in is easy. Getting out is the job. Helmsman does not hunt the penny name that «blows up tonight». It goes where the book still exists when you want to close. Names and ETFs with a real tape. If the data is stale, the scan stops — it does not invent a price to keep you in the conversation.</p>
+    <p>Then, only on the names that stay lit, the risk engine does the numbers on your account. The scan does not size. The engine does. The AI, if present, does neither.</p>
+  </div>
+</section>
+{% include cta-band.html title="Want three proposals, not fifty sirens?" lead="Paper access. The scan turns on liquid names. You keep the yes." %}

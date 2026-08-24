@@ -1,11 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Qwibo">
-  <title>Qwibo</title>
-  <rect width="64" height="64" rx="14" fill="#0f172a"/>
-  <g transform="translate(9.5,9) scale(0.72)">
-    <circle cx="22" cy="25" r="13" stroke="#38bdf8" stroke-width="6"/>
-    <circle cx="22" cy="25" r="3.5" fill="#38bdf8"/>
-    <path d="M22 38H57" stroke="#38bdf8" stroke-width="6" stroke-linecap="round"/>
-    <path d="M22 49H57" stroke="#f0f4ff" stroke-width="6" stroke-linecap="round"/>
-    <path d="M22 60H44" stroke="#f0f4ff" stroke-width="6" stroke-linecap="round"/>
-  </g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#0B1F3A"/>
+  <circle cx="32.00" cy="32.00" r="12.32" fill="none" stroke="#C4A35A" stroke-width="2.64"/>
+  <path d="M 33.10,21.00 L 33.10,13.52 L 30.90,13.52 L 30.90,21.00 Z" fill="#C4A35A"/><circle cx="32.00" cy="13.36" r="1.16" fill="#C4A35A"/><path d="M 40.56,25.00 L 45.85,19.71 L 44.29,18.15 L 39.00,23.44 Z" fill="#C4A35A"/><circle cx="45.18" cy="18.82" r="1.16" fill="#C4A35A"/><path d="M 43.00,33.10 L 50.48,33.10 L 50.48,30.90 L 43.00,30.90 Z" fill="#C4A35A"/><circle cx="50.64" cy="32.00" r="1.16" fill="#C4A35A"/><path d="M 39.00,40.56 L 44.29,45.85 L 45.85,44.29 L 40.56,39.00 Z" fill="#C4A35A"/><circle cx="45.18" cy="45.18" r="1.16" fill="#C4A35A"/><path d="M 30.90,43.00 L 30.90,50.48 L 33.10,50.48 L 33.10,43.00 Z" fill="#C4A35A"/><circle cx="32.00" cy="50.64" r="1.16" fill="#C4A35A"/><path d="M 23.44,39.00 L 18.15,44.29 L 19.71,45.85 L 25.00,40.56 Z" fill="#C4A35A"/><circle cx="18.82" cy="45.18" r="1.16" fill="#C4A35A"/><path d="M 21.00,30.90 L 13.52,30.90 L 13.52,33.10 L 21.00,33.10 Z" fill="#C4A35A"/><circle cx="13.36" cy="32.00" r="1.16" fill="#C4A35A"/><path d="M 25.00,23.44 L 19.71,18.15 L 18.15,19.71 L 23.44,25.00 Z" fill="#C4A35A"/><circle cx="18.82" cy="18.82" r="1.16" fill="#C4A35A"/>
+  <circle cx="32.00" cy="32.00" r="3.52" fill="#C4A35A"/>
+
 </svg>

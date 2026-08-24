@@ -1,9 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Qwibo">
-  <title>Qwibo</title>
-  <desc>Una bobina il cui nastro si srotola e diventa righe di testo</desc>
-  <circle cx="22" cy="25" r="13" stroke="#38bdf8" stroke-width="5"/>
-  <circle cx="22" cy="25" r="3" fill="#38bdf8"/>
-  <path d="M22 38H57" stroke="#38bdf8" stroke-width="5" stroke-linecap="round"/>
-  <path d="M22 48H57" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
-  <path d="M22 58H44" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <circle cx="512.00" cy="512.00" r="240.80" fill="none" stroke="#0B1F3A" stroke-width="51.60"/>
+  <path d="M 533.50,297.00 L 533.50,150.80 L 490.50,150.80 L 490.50,297.00 Z" fill="#0B1F3A"/><circle cx="512.00" cy="147.57" r="22.57" fill="#0B1F3A"/><path d="M 679.23,375.17 L 782.61,271.80 L 752.20,241.39 L 648.83,344.77 Z" fill="#0B1F3A"/><circle cx="769.69" cy="254.31" r="22.57" fill="#0B1F3A"/><path d="M 727.00,533.50 L 873.20,533.50 L 873.20,490.50 L 727.00,490.50 Z" fill="#0B1F3A"/><circle cx="876.42" cy="512.00" r="22.57" fill="#0B1F3A"/><path d="M 648.83,679.23 L 752.20,782.61 L 782.61,752.20 L 679.23,648.83 Z" fill="#0B1F3A"/><circle cx="769.69" cy="769.69" r="22.57" fill="#0B1F3A"/><path d="M 490.50,727.00 L 490.50,873.20 L 533.50,873.20 L 533.50,727.00 Z" fill="#0B1F3A"/><circle cx="512.00" cy="876.42" r="22.57" fill="#0B1F3A"/><path d="M 344.77,648.83 L 241.39,752.20 L 271.80,782.61 L 375.17,679.23 Z" fill="#0B1F3A"/><circle cx="254.31" cy="769.69" r="22.57" fill="#0B1F3A"/><path d="M 297.00,490.50 L 150.80,490.50 L 150.80,533.50 L 297.00,533.50 Z" fill="#0B1F3A"/><circle cx="147.57" cy="512.00" r="22.57" fill="#0B1F3A"/><path d="M 375.17,344.77 L 271.80,241.39 L 241.39,271.80 L 344.77,375.17 Z" fill="#0B1F3A"/><circle cx="254.31" cy="254.31" r="22.57" fill="#0B1F3A"/>
+  <circle cx="512.00" cy="512.00" r="68.80" fill="#C4A35A"/>
+
 </svg>

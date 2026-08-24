@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1400" height="320" viewBox="0 0 1400 320">
-
   <circle cx="140" cy="160" r="66" fill="none" stroke="#C4A35A" stroke-width="14"/>
   <path d="M 145.90,101.00 L 145.90,60.88 L 134.10,60.88 L 134.10,101.00 Z" fill="#C4A35A"/><circle cx="140.00" cy="60.00" r="6.20" fill="#C4A35A"/><path d="M 185.89,122.45 L 214.26,94.08 L 205.92,85.74 L 177.55,114.11 Z" fill="#C4A35A"/><circle cx="210.71" cy="89.29" r="6.20" fill="#C4A35A"/><path d="M 199.00,165.90 L 239.12,165.90 L 239.12,154.10 L 199.00,154.10 Z" fill="#C4A35A"/><circle cx="240.00" cy="160.00" r="6.20" fill="#C4A35A"/><path d="M 177.55,205.89 L 205.92,234.26 L 214.26,225.92 L 185.89,197.55 Z" fill="#C4A35A"/><circle cx="210.71" cy="230.71" r="6.20" fill="#C4A35A"/><path d="M 134.10,219.00 L 134.10,259.12 L 145.90,259.12 L 145.90,219.00 Z" fill="#C4A35A"/><circle cx="140.00" cy="260.00" r="6.20" fill="#C4A35A"/><path d="M 94.11,197.55 L 65.74,225.92 L 74.08,234.26 L 102.45,205.89 Z" fill="#C4A35A"/><circle cx="69.29" cy="230.71" r="6.20" fill="#C4A35A"/><path d="M 81.00,154.10 L 40.88,154.10 L 40.88,165.90 L 81.00,165.90 Z" fill="#C4A35A"/><circle cx="40.00" cy="160.00" r="6.20" fill="#C4A35A"/><path d="M 102.45,114.11 L 74.08,85.74 L 65.74,94.08 L 94.11,122.45 Z" fill="#C4A35A"/><circle cx="69.29" cy="89.29" r="6.20" fill="#C4A35A"/>
-  <circle cx="140" cy="160" r="19" fill="none" stroke="#C4A35A" stroke-width="9"/>
+  <circle cx="140" cy="160" r="19" fill="#C4A35A"/>
   <text x="280" y="148" font-family="Segoe UI" font-weight="700" font-size="108"
         fill="#FFFFFF" letter-spacing="4">HELMSMAN</text>
-  <text x="730" y="198" font-family="Segoe UI" font-weight="600" font-size="26"
-        fill="#7A8BA3" letter-spacing="16">TRADING</text>
+  <line x1="280.00" y1="198.00" x2="458.00" y2="198.00" stroke="#7A8BA3" stroke-width="2"/>
+  <text x="605.50" y="214" text-anchor="middle" font-family="Segoe UI" font-weight="600" font-size="44" fill="#7A8BA3" letter-spacing="12">TRADING</text>
+  <line x1="753.00" y1="198.00" x2="931.00" y2="198.00" stroke="#7A8BA3" stroke-width="2"/>
 
 </svg>

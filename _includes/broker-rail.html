@@ -1,0 +1,31 @@
+{% comment %}Sliding logo deck. Drop anywhere: {% include broker-rail.html %}{% endcomment %}
+<section class="broker-rail {% if include.pad != 'none' %}py-12{% endif %}" aria-label="{% if page.lang == 'it' %}Loghi broker in mappa{% else %}Broker logos on the map{% endif %}">
+  {% unless include.kicker == 'off' %}
+  <p class="text-center text-[10px] font-mono uppercase tracking-[0.35em] text-brand-gold mb-7">
+    {% if page.lang == 'it' %}Slide multi-broker · adapter veri + venue degni di nota{% else %}Multi-broker slides · live adapters + venues worth mapping{% endif %}
+  </p>
+  {% endunless %}
+  <div class="broker-marquee">
+    <div class="broker-marquee__track">
+      {% for b in site.data.brokers %}
+        {% unless b.rail == false %}
+          {% include broker-tile.html broker=b %}
+        {% endunless %}
+      {% endfor %}
+      {% for b in site.data.brokers %}
+        {% unless b.rail == false %}
+          {% include broker-tile.html broker=b %}
+        {% endunless %}
+      {% endfor %}
+    </div>
+  </div>
+  {% unless include.caption == 'off' %}
+  <p class="text-center text-xs text-gray-500 mt-7 max-w-3xl mx-auto px-6">
+    {% if page.lang == 'it' %}
+    I marchi appartengono ai rispettivi titolari: servono a nominare i venue, non a fingere una partnership. Alpaca e Tradier hanno già l’adapter. Gli altri sono la mappa.
+    {% else %}
+    Marks belong to their owners: they name the venues, they do not imply a partnership. Alpaca and Tradier already have adapters. The rest is the map.
+    {% endif %}
+  </p>
+  {% endunless %}
+</section>

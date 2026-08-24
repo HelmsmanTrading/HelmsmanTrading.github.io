@@ -1,0 +1,54 @@
+---
+layout: default
+permalink: /en/orders/
+title: "Order types | Helmsman"
+lang: en
+locale: en_US
+alt: /it/ordini/
+description: "OTO and brackets on Alpaca, OTOCO on Tradier. No SIMPLE. The cover is the order class, not a promise."
+---
+<section class="page-hero">
+  <div class="page-hero__goldline"></div>
+  <div class="max-w-5xl mx-auto relative z-10">
+    <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">Orders</p>
+    <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">The cover is an order class. Not a prayer.</h1>
+    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">Every venue has a grammar. Helmsman speaks it; it does not fake it. Alpaca is not Tradier. OTOCO is not a bracket. SIMPLE does not leave. Ever.</p>
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-[#081628] text-white">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <div>
+      <h2 class="text-3xl font-black mb-6">What leaves. What gets torn up.</h2>
+      {% include order-ladder.html %}
+    </div>
+    <div class="sales-prose text-gray-400 leading-relaxed">
+      <p>A naked market is fast only until the fill. Then you are uncovered. Helmsman refuses SIMPLE. On Alpaca it sends OTO or a bracket: the entry and the stop are born together. On Tradier it sends OTOCO: entry, stop and target in the same payload. The name is different. The veto is the same.</p>
+      <p>If a future adapter cannot offer an honest covered class, it does not open on that venue. We do not «make it work» with two detached orders and a hope. Two detached orders are two chances to stay naked.</p>
+    </div>
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-white dark:bg-brand-dark">
+  <div class="max-w-6xl mx-auto">
+    <div class="venue-duel reveal">
+      <article>
+        <p class="font-mono text-xs tracking-[0.25em] text-brand-gold mb-3">ALPACA</p>
+        <h3>OTO · bracket</h3>
+        <p>One-triggers-other: the entry fill arms the stop. The bracket adds the target. A <code>helmsman_…</code> client id so you can trace what left from here, not from an impulsive click on the tape.</p>
+      </article>
+      <article>
+        <p class="font-mono text-xs tracking-[0.25em] text-emerald-400 mb-3">TRADIER</p>
+        <h3>OTOCO</h3>
+        <p>One-triggers-one-cancels-the-other: stop and target in the same form. A sanitised tag, no underscores. Pasting Alpaca’s JSON here means opening naked. So we do not paste it.</p>
+      </article>
+    </div>
+    <div class="sales-prose text-lg text-gray-600 dark:text-gray-400 leading-relaxed mt-16 max-w-3xl">
+      <h2 class="text-3xl font-black mb-5 text-gray-900 dark:text-white">The next adapter will bring its own grammar</h2>
+      <p>IBKR, Directa, Fineco, Schwab: each has its brackets, its OCO, its session clock. Helmsman will not pretend they are Alpaca. It will carry a new engagement card. You will still say yes to the same line.</p>
+      <p><a href="/en/brokers/" class="font-bold text-brand-gold hover:underline">The venue map →</a></p>
+    </div>
+  </div>
+</section>
+{% include broker-rail.html %}
+{% include cta-band.html title="Want an entry that is born already protected?" lead="Paper. You confirm. The venue gets the right class." %}

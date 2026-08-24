@@ -7,13 +7,26 @@ locale: it_IT
 alt: /en/about/
 description: "Helmsman è chi tiene il timone: tu dai la rotta, le regole sterzano. L’AI non è il capitano."
 ---
-<section class="pt-32 pb-20 px-6 min-h-screen bg-white dark:bg-brand-dark">
-  <div class="max-w-3xl mx-auto">
-    <p class="text-sm font-mono text-brand-gold uppercase tracking-widest mb-4">Chi siamo</p>
-    <h1 class="text-4xl md:text-5xl font-black font-display text-gray-900 dark:text-white tracking-tight mb-6">Il timone, non l’autopilota.</h1>
-    <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-6">Helmsman, in inglese, è chi sta al timone. Non l’equipaggio che rema a caso, non il pilota automatico. Nel prodotto sei tu a dare la rotta: Helmsman sonda, propone, copre, parla col broker. L’AI, se c’è, non calcola i lotti e non sparisce l’ordine.</p>
-    <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">Nasce per trader che vogliono una giornata più semplice: mercati liquidi, posizioni coperte, un sì umano, il conto dove lo tieni già. Non per chi cerca un altro framework da quant o un bot che «fa i milioni mentre dormi».</p>
-    <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-10">Progetto di <a class="text-brand-gold hover:underline" href="https://antoniotrento.net" target="_blank" rel="noopener">Antonio Trento</a>. Accesso anticipato in paper. Il live arriva quando merita.</p>
-    {% include cta-button.html %}
+<section class="page-hero">
+  <div class="page-hero__goldline"></div>
+  <div class="absolute right-[-40px] top-24 opacity-40 hidden lg:block">{% include helm-wheel.html %}</div>
+  <div class="max-w-5xl mx-auto relative z-10">
+    <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">Chi siamo</p>
+    <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">Il timone, non l’autopilota.</h1>
+    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">Helmsman, in inglese, è chi sta al timone. Non l’equipaggio che rema a caso, non il pilota automatico. Nel prodotto sei tu a dare la rotta: Helmsman sonda, propone, copre, parla col broker. L’AI, se c’è, non calcola i lotti e non spara l’ordine.</p>
   </div>
 </section>
+
+{% include pull-quote.html text="Nasce per trader che vogliono una giornata più semplice: mercati liquidi, posizioni coperte, un sì umano, il conto dove lo tieni già." %}
+
+<section class="py-24 px-6 bg-white dark:bg-brand-dark">
+  <div class="max-w-5xl mx-auto sales-prose text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+    <h2 class="text-3xl font-black mb-6 text-gray-900 dark:text-white">Perché esiste</h2>
+    <p>Perché il mercato è pieno di opinioni nude. Perché «poi metto lo stop» è una frase che i conti ricordano. Perché cambiare broker non dovrebbe significare reimparare a bruciarsi. Perché un modello linguistico è bravo a parlare e pessimo a dimensionare.</p>
+    <p>Helmsman è il ponte: scan sui liquidi, numeri dal motore, tuo sì, ingresso coperto sul venue che colleghi. Oggi Alpaca paper e Tradier sandbox. Domani la mappa. Il live quando merita — non per chiudere un deal.</p>
+    <p>Progetto di <a class="text-brand-gold hover:underline" href="https://antoniotrento.net" target="_blank" rel="noopener">Antonio Trento</a>. Accesso anticipato in paper.</p>
+    <p class="mt-8"><a href="/it/filosofia/" class="font-bold text-brand-gold hover:underline">Le quattro invarianti →</a></p>
+  </div>
+</section>
+{% include broker-rail.html %}
+{% include cta-band.html title="Vuoi il giro, non un altro framework?" lead="Paper. Indica il broker. Tieni il timone." %}

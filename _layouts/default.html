@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ page.title | default: site.title }}</title>
     
-    <link rel="icon" type="image/png" href="{{ '/assets/images/logo/icon.png' | relative_url }}">
-    <link rel="apple-touch-icon" href="{{ '/assets/images/logo/icon.png' | relative_url }}">
+    <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/logo/favicon.svg' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/logo/favicon-32.png' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="512x512" href="{{ '/assets/images/logo/icon.png' | relative_url }}">
+    <link rel="shortcut icon" href="{{ '/assets/images/logo/favicon.ico' | relative_url }}">
+    <link rel="apple-touch-icon" href="{{ '/assets/images/logo/apple-touch-icon.png' | relative_url }}">
     {% include seo.html %}
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <script>
@@ -75,6 +78,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="{{ '/assets/css/helmsman.css' | relative_url }}">
     <style>
         body {
             font-family: 'Inter', system-ui, sans-serif;

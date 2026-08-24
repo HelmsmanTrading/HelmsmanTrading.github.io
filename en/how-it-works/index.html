@@ -5,43 +5,151 @@ title: "How it works | Helmsman"
 lang: en
 locale: en_US
 alt: /it/come-funziona/
-description: "Scan, proposal, your yes, covered entry. Helmsman simplifies the trading day without taking the helm from you."
+description: "Scan on liquid names, preview with size and stop, your yes, covered entry at the broker you connect. The full loop, no theatre."
 ---
-<section class="pt-32 pb-20 px-6 bg-gray-50 dark:bg-[#0a0a0a] min-h-screen">
-  <div class="max-w-4xl mx-auto">
-    <p class="text-sm font-mono text-brand-gold uppercase tracking-widest mb-4">How it works</p>
-    <h1 class="text-4xl md:text-6xl font-black font-display text-gray-900 dark:text-white tracking-tight mb-6">You decide. He runs the rules.</h1>
-    <p class="text-xl text-gray-600 dark:text-gray-400 mb-16 leading-relaxed">Helmsman is not a second brain that «knows the tape». It is a bridge: it watches liquid names, proposes only where a rule fires, computes size and stop, and talks to the broker. The yes stays yours.</p>
 
-    <div class="space-y-16">
-      <article>
-        <h2 class="text-2xl font-black text-gray-900 dark:text-white mb-3">1. Scan the liquid tape</h2>
-        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">It looks where getting in and out is realistic: names and ETFs with a real book. Stale data, a rule that does not fire, a «almost» setup — skip. An honest no beats an invented trade.</p>
-      </article>
-      <article>
-        <h2 class="text-2xl font-black text-gray-900 dark:text-white mb-3">2. One line on the table</h2>
-        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Symbol, side, size, stop, target. That is the preview: nothing has been sent. Size is not dictated by a chatbot. The risk engine computes it on your account, with caps and a fixed risk fraction.</p>
-      </article>
-      <article>
-        <h2 class="text-2xl font-black text-gray-900 dark:text-white mb-3">3. You say yes — or you pass</h2>
-        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Helmsman holds the helm; you are still captain. Without a human confirm, there is no order. If size moved or the rule no longer applies, it stops. There is no «just execute».</p>
-      </article>
-      <article>
-        <h2 class="text-2xl font-black text-gray-900 dark:text-white mb-3">4. Open covered, at your broker</h2>
-        <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">The entry hits the account you connected, already protected. After that the position is yours: Helmsman does not chase the stop for you, does not «manage» the trade on autopilot. You opened covered. The rest is your discipline.</p>
-        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">The live bridge today is Alpaca paper. The same logic should hold for every broker with an API: venue rules on the table, no Alpaca copy pasted as universal law.</p>
-      </article>
-    </div>
-
-    <div class="mt-20 p-8 border border-brand-gold/30 bg-brand-gold/5">
-      <h2 class="text-xl font-black text-gray-900 dark:text-white mb-3">What it is not</h2>
-      <ul class="space-y-2 text-gray-600 dark:text-gray-400">
-        <li>Not a signal to copy with your eyes closed.</li>
-        <li>Not a bot that runs while you sleep.</li>
-        <li>Not a framework to clone so you can «write skills in Python» — that, if you need it, lives in a repo on the side.</li>
-      </ul>
-    </div>
-
-    <div class="mt-12">{% include cta-button.html %}</div>
+<section class="page-hero">
+  <div class="page-hero__goldline"></div>
+  <div class="absolute right-[-40px] top-24 opacity-40 hidden lg:block">{% include helm-wheel.html %}</div>
+  <div class="max-w-5xl mx-auto relative z-10">
+    <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">How it works</p>
+    <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">Four moves. One yes. Zero naked entries.</h1>
+    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">A trader’s day is not an IDE. It is a book, an account, a decision. Helmsman takes the circus — scan, filter, size, cover — and leaves you the helm. If the rule does not fire, it does not invent the trade. If you do not confirm, there is no order.</p>
   </div>
 </section>
+
+{% include broker-rail.html %}
+
+{% include pull-quote.html text="We are not selling a second brain. We are selling a morning where the dirty work is done — and the order leaves only if it is covered." cite="The product, in one line" %}
+
+<section class="py-8 px-6 bg-white dark:bg-brand-dark">
+  <div class="max-w-5xl mx-auto sales-prose text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+    <h2 class="text-3xl md:text-5xl font-black mb-8 text-gray-900 dark:text-white">Why the loop is short on purpose</h2>
+    <p>You already have three screens, a Telegram channel, a spreadsheet, and a model that «would tell you what to do». The shortage is not opinions. It is that the opinion arrives naked: no size, no stop, on the wrong broker, after the tape has moved. Then you «add the stop next». Next never comes. The account knows.</p>
+    <p>Helmsman reverses the order. First it scans names and ETFs where getting in and out is realistic. Then, only where a deterministic rule fires, it computes size and stop on <em>your</em> account. Then it puts one line on the table. Then it waits for your yes. Only then it talks to the broker — Alpaca or Tradier today, the next venue when the adapter earns it.</p>
+    <p>It is not a second brain that «knows the market». It is a bridge with rules. The AI, if present, can help you read context. It cannot invent lots. It cannot fire the order. You are captain. Helmsman holds the helm and refuses the course if the cover is missing.</p>
+    <p>This page is not a developer tutorial. It is the day you are buying: few moves, many vetoes, zero theatre. If you want a bot that prints while you sleep, you are on the wrong site — and, usually, hunting the wrong product.</p>
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-[#081628] text-white">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl md:text-5xl font-black mb-4">The same morning, to the minute</h2>
+    <p class="text-gray-400 mb-10 max-w-2xl">Not a slide-deck diagram. Four timestamps. One yes. The stop is already in the order when the broker sees it.</p>
+    {% include day-strip.html %}
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-[#050d18] text-white">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl md:text-5xl font-black mb-4">The loop, visible</h2>
+    <p class="text-gray-400 mb-12 max-w-2xl">Every step has a veto. Stale data stops the scan. A rule that does not fire skips the name. Size that moved blocks confirm. A naked market never leaves.</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <article class="flow-step reveal">
+        <div class="text-brand-gold font-mono text-xs tracking-widest mb-3">01 · SCAN</div>
+        <h3 class="text-xl font-black mb-3">Scan the liquid tape</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">Names and ETFs with a real book. Stale data, price under the rule’s average, an «almost» — skip. An honest no beats a setup invented to keep you glued.</p>
+      </article>
+      <article class="flow-step reveal delay-100">
+        <div class="text-brand-gold font-mono text-xs tracking-widest mb-3">02 · PREVIEW</div>
+        <h3 class="text-xl font-black mb-3">One line, real numbers</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">Symbol, side, size, stop, target. Nothing has been sent. Size comes from the risk engine: a fixed fraction, caps, buying power. Not from a chat with «a good feeling on SLV».</p>
+      </article>
+      <article class="flow-step reveal delay-200">
+        <div class="text-brand-gold font-mono text-xs tracking-widest mb-3">03 · CONFIRM</div>
+        <h3 class="text-xl font-black mb-3">Your yes, or nothing</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">Without a human confirm there is no order. If size moved or the rule no longer applies, it stops. No «just execute». No bot running while you sleep.</p>
+      </article>
+      <article class="flow-step reveal delay-300">
+        <div class="text-brand-gold font-mono text-xs tracking-widest mb-3">04 · COVERED</div>
+        <h3 class="text-xl font-black mb-3">Opens, already protected</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">The entry hits the account you connected, with a stop (and a target if the rule calls for one). Then the position is yours. Helmsman does not «manage» it for you. It opened covered. The rest is discipline.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-white dark:bg-brand-dark">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <div class="reveal">{% include scan-radar.html %}</div>
+    <div class="sales-prose text-gray-600 dark:text-gray-400 leading-relaxed">
+      <h2 class="text-3xl md:text-4xl font-black mb-5 text-gray-900 dark:text-white">The scan is not a signal channel</h2>
+      <p>The radar turns on liquid names. It lights only what deserves a line. A name under the rule’s average stays dark. Data older than the session threshold: skipped. A dead weekend tape does not become a «signal» to keep you awake.</p>
+      <p>The rules — ATR breakout, mean reversion, squeeze — watch the market, not your account. The account arrives later, when size is computed. Helmsman does not propose a long because «you have buying power». It proposes one if the tape says yes.</p>
+      <p><a href="/en/scan/" class="font-bold text-brand-gold hover:underline">How it picks liquid names →</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-gray-50 dark:bg-brand-surface">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <div class="sales-prose text-gray-600 dark:text-gray-400 leading-relaxed">
+      <h2 class="text-3xl md:text-4xl font-black mb-5 text-gray-900 dark:text-white">What you actually see</h2>
+      <p>Not a developer log. Three proposals, one skipped. SLV fires the breakout: size, stop, target. V fires mean reversion, already covered. WMT sits under the average: not applicable. Nobody asks you to «force» WMT because you feel like trading.</p>
+      <p>That line is all you need to say yes or no. If you want the rule detail, it is there. If you want the decision, it is there. The site is not selling a framework to clone: it is selling the moment when the dirty work is done and the helm is still yours.</p>
+    </div>
+    <div class="reveal">{% include proposal-card.html %}</div>
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-[#081628] text-white">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <div>
+      <h2 class="text-3xl md:text-4xl font-black mb-5">The order that leaves — and the one that never does</h2>
+      <p class="text-gray-400 leading-relaxed mb-6">On Alpaca the cover is OTO or a bracket. On Tradier it is OTOCO. The name changes. The promise does not: no orphan markets. If the venue cannot cover, Helmsman does not open — even if you already said yes. Your capital is not an experiment to keep you in the conversation.</p>
+      {% include order-ladder.html %}
+      <p class="mt-8"><a href="/en/orders/" class="font-bold text-brand-gold hover:underline">Order types, venue by venue →</a></p>
+    </div>
+    <div class="reveal p-6 border border-brand-gold/20 bg-black/30">{% include cover-chart.html %}</div>
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-white dark:bg-brand-dark">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <div class="sales-prose text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+      <h2 class="text-3xl md:text-4xl font-black mb-5 text-gray-900 dark:text-white">The vetoes are not a bug. They are the product.</h2>
+      <p>Trading breaks when software «makes it work». Helmsman prefers a visible no to a naked yes. Stale data, a rule that does not fire, size that moved, a market with no stop: four closed doors. Behind each one is an account that did not become an anecdote.</p>
+      <p>If three broker errors land in a row, or session drawdown clears a threshold, the kill-switch arms. Preview and confirm stop. You disarm it. Positions already open stay yours: the halt is not a trailing stop, it is a brake.</p>
+      <p><a href="/en/risk/" class="font-bold text-brand-gold hover:underline">Who computes size and stop →</a></p>
+    </div>
+    {% include veto-stack.html %}
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-gray-50 dark:bg-brand-surface">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-black mb-10 text-gray-900 dark:text-white">The same morning, with and without</h2>
+    <div class="compare-row reveal mb-4">
+      <div class="text-sm leading-relaxed"><strong class="block text-red-400 mb-2">Without</strong>Three platforms. You scan by eye. You ask a chat «how many do I buy». The order goes out naked. The stop is «next». Next never comes.</div>
+      <div class="text-gray-800 dark:text-gray-200 text-sm leading-relaxed"><strong class="block text-brand-gold mb-2">With Helmsman</strong>The scan is already on liquid names. The line has size and stop. You confirm. The broker gets a covered entry. The position is yours, not an experiment.</div>
+    </div>
+    <div class="compare-row reveal mb-4">
+      <div class="text-sm leading-relaxed"><strong class="block text-red-400 mb-2">Without</strong>You switch brokers and start over: new buttons, new order types, a new way to get burned.</div>
+      <div class="text-gray-800 dark:text-gray-200 text-sm leading-relaxed"><strong class="block text-brand-gold mb-2">With Helmsman</strong>The yes stays the same. The adapter changes. Alpaca is not Tradier: OTOCO is not a bracket. The bridge respects the venue; it does not fake it.</div>
+    </div>
+    <div class="compare-row reveal">
+      <div class="text-sm leading-relaxed"><strong class="block text-red-400 mb-2">Without</strong>Fifty alerts. Zero covers. A chat that «gives it a go». You copy naked because the tape will not wait.</div>
+      <div class="text-gray-800 dark:text-gray-200 text-sm leading-relaxed"><strong class="block text-brand-gold mb-2">With Helmsman</strong>Three proposals, one skip in the open. Numbers from the engine. Your yes. Then discipline — not brochure autopilot.</div>
+    </div>
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-white dark:bg-brand-dark">
+  <div class="max-w-5xl mx-auto sales-prose text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+    <h2 class="text-3xl md:text-4xl font-black mb-8 text-gray-900 dark:text-white">The objections we hear. Straight answers.</h2>
+    <p><strong class="text-gray-900 dark:text-white">«Do I need to code?»</strong> No. You see proposals, read size and stop, say yes or no. The stack stays under the hood. Helmsman is for people who trade, not people who write bots.</p>
+    <p><strong class="text-gray-900 dark:text-white">«Does it print while I sleep?»</strong> No. Without your yes nothing leaves. After entry it does not manage the position. Anyone hunting a night robot is looking for another product — and, usually, finds it at the bottom of the account.</p>
+    <p><strong class="text-gray-900 dark:text-white">«Do I have to switch brokers?»</strong> No. The account stays yours. Today the bridge speaks Alpaca and Tradier. IBKR, Directa, Fineco, Schwab and the rest are on the map. Tell us where you already trade: that is the queue, not a pitch for a new account.</p>
+    <div class="mt-10 flex flex-wrap gap-6 text-sm">
+      <a href="/en/covered/" class="font-bold text-brand-gold hover:underline">Why covered or nothing →</a>
+      <a href="/en/brokers/" class="font-bold text-brand-gold hover:underline">The broker map →</a>
+      <a href="/en/who-its-for/" class="font-bold text-brand-gold hover:underline">Who it is for (and who it is not) →</a>
+      <a href="/en/faq/" class="font-bold text-brand-gold hover:underline">FAQ →</a>
+    </div>
+  </div>
+</section>
+
+{% include cta-band.html
+  title="Want this loop on your paper account?"
+  lead="Early access. Tell us which broker you already use: it grows the bridge, it does not sell you a new account."
+%}

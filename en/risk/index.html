@@ -1,0 +1,53 @@
+---
+layout: default
+permalink: /en/risk/
+title: "Risk | Helmsman"
+lang: en
+locale: en_US
+alt: /it/rischio/
+description: "Size and stops come from the risk engine, not the chat. Caps, heat, kill-switch. You confirm the numbers; you do not invent them."
+---
+<section class="page-hero">
+  <div class="page-hero__goldline"></div>
+  <div class="max-w-5xl mx-auto relative z-10">
+    <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">Risk</p>
+    <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">The numbers do not come from chat.</h1>
+    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">A model can help you read the tape. It cannot tell you how many SLV to buy. Size, stop and target come from an engine with fixed rules on your account: a risk fraction, caps, heat, buying power. You see the line. Then you say yes or no.</p>
+  </div>
+</section>
+
+{% include pull-quote.html text="Trading breaks when size becomes a mood. Helmsman makes size a calculation. It is the opposite of adrenaline. It is why the product exists." %}
+
+<section class="py-24 px-6 bg-[#081628] text-white">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl font-black mb-10">What it holds under the thumb</h2>
+    <div class="space-y-8">
+      <div>
+        <div class="flex justify-between text-sm font-mono mb-2"><span class="text-gray-400">Risk per trade</span><span class="text-brand-gold">fixed fraction</span></div>
+        <div class="gauge"><span style="width:20%"></span></div>
+      </div>
+      <div>
+        <div class="flex justify-between text-sm font-mono mb-2"><span class="text-gray-400">Portfolio heat</span><span class="text-brand-gold">cap</span></div>
+        <div class="gauge"><span style="width:45%"></span></div>
+      </div>
+      <div>
+        <div class="flex justify-between text-sm font-mono mb-2"><span class="text-gray-400">Kill-switch</span><span class="text-red-400">human to disarm</span></div>
+        <div class="gauge"><span style="width:100%;background:#7f1d1d"></span></div>
+      </div>
+    </div>
+    <p class="text-gray-400 mt-10 leading-relaxed">If three broker errors land in a row, or session drawdown clears a threshold, the switch arms. Preview and confirm stop. You disarm it by clearing the file — not a chat that «tries again». Positions already open stay yours: the kill-switch is not a trailing stop, it is a halt.</p>
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-white dark:bg-brand-dark">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <div class="sales-prose text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+      <h2 class="text-3xl font-black mb-5 text-gray-900 dark:text-white">Why this part is boring, and must stay boring</h2>
+      <p>Low conviction: refuse. Too many positions: cap. Heat over the ceiling: no. Long-only skill: no invented shorts. Idempotency: no doubling the same name. The LLM does not compute lots. It does not compute the stop. It does not «nudge» size because the prompt was persuasive.</p>
+      <p>Early access is paper. Live comes when these vetoes still hold with real money — not before.</p>
+      <p><a href="/en/covered/" class="font-bold text-brand-gold hover:underline">From size to the stop that leaves with the order →</a></p>
+    </div>
+    {% include veto-stack.html %}
+  </div>
+</section>
+{% include cta-band.html title="Want to see size and stop before you say yes?" lead="Paper. The engine numbers. You hold the helm." %}

@@ -1,0 +1,14 @@
+{% comment %}theme: auto (nav) | dark (footer on navy) | light{% endcomment %}
+{% assign theme = include.theme | default: 'auto' %}
+{% if theme == 'dark' %}
+<img src="{{ '/assets/images/logo/logo-dark.png' | relative_url }}" alt="Helmsman"
+  class="brand-logo" width="220" height="64">
+{% elsif theme == 'light' %}
+<img src="{{ '/assets/images/logo/logo-light.png' | relative_url }}" alt="Helmsman"
+  class="brand-logo" width="220" height="64">
+{% else %}
+<img src="{{ '/assets/images/logo/logo-light.png' | relative_url }}" alt="Helmsman"
+  class="brand-logo dark:hidden" width="220" height="64">
+<img src="{{ '/assets/images/logo/logo-dark.png' | relative_url }}" alt=""
+  class="brand-logo hidden dark:block" width="220" height="64" aria-hidden="true">
+{% endif %}
