@@ -1,0 +1,109 @@
+# Identification only. Marks belong to their owners; not a recommendation.
+groups:
+  - id: us_tech
+    title: US Tech
+    copy_it: "Il cuore dello scan di default. Megacap con nastro vero, opzioni liquide, spread che non umilia. Dove trend e squeeze hanno spazio per esistere senza inventarsi il volume."
+    copy_en: "The default scan heart. Megacaps with a real tape, liquid options, a spread that does not humiliate. Where trend and squeeze have room to exist without inventing volume."
+    names:
+      - { symbol: AAPL, name: Apple, domain: apple.com }
+      - { symbol: MSFT, name: Microsoft, domain: microsoft.com }
+      - { symbol: NVDA, name: NVIDIA, domain: nvidia.com }
+      - { symbol: GOOGL, name: Alphabet, domain: abc.xyz }
+      - { symbol: AMZN, name: Amazon, domain: amazon.com }
+      - { symbol: META, name: Meta, domain: meta.com }
+      - { symbol: TSLA, name: Tesla, domain: tesla.com }
+      - { symbol: NFLX, name: Netflix, domain: netflix.com }
+      - { symbol: AMD, name: AMD, domain: amd.com }
+      - { symbol: INTC, name: Intel, domain: intel.com }
+
+  - id: semis
+    title: Semiconductors
+    copy_it: "Beta alta, flussi istituzionali, notizie che muovono il book. Ideali per reclaim AVWAP e momentum — non per penny semi da forum."
+    copy_en: "High beta, institutional flow, news that moves the book. Built for AVWAP reclaim and momentum — not forum penny semis."
+    names:
+      - { symbol: TSM, name: TSMC, domain: tsmc.com }
+      - { symbol: AVGO, name: Broadcom, domain: broadcom.com }
+      - { symbol: QCOM, name: Qualcomm, domain: qualcomm.com }
+      - { symbol: ASML, name: ASML, domain: asml.com }
+
+  - id: blue_chip
+    title: US Blue Chip
+    copy_it: "Nomi che sopravvivono alle mode. Mean reversion e quality dip trovano pavimento qui — non perché sono solidi in brochure, ma perché il book c’è quando vuoi uscire."
+    copy_en: "Names that outlive fads. Mean reversion and quality dip find a floor here — not because brochure solidity, but because the book is still there when you want out."
+    names:
+      - { symbol: JPM, name: JPMorgan, domain: jpmorganchase.com }
+      - { symbol: V, name: Visa, domain: visa.com }
+      - { symbol: JNJ, name: Johnson & Johnson, domain: jnj.com }
+      - { symbol: WMT, name: Walmart, domain: walmart.com }
+      - { symbol: PG, name: Procter & Gamble, domain: pg.com }
+      - { symbol: HD, name: Home Depot, domain: homedepot.com }
+      - { symbol: CVX, name: Chevron, domain: chevron.com }
+      - { symbol: UNH, name: UnitedHealth, domain: unitedhealthgroup.com }
+      - { symbol: KO, name: Coca-Cola, domain: coca-colacompany.com }
+      - { symbol: DIS, name: Disney, domain: disney.com }
+
+  - id: finance
+    title: Finance
+    copy_it: "Banche e pagamenti con tape denso. Quando la regola batte, lo stop ha un mercato dietro — non un vuoto alle 15:59."
+    copy_en: "Banks and payments with a dense tape. When the rule fires, the stop has a market behind it — not a void at 15:59."
+    names:
+      - { symbol: MA, name: Mastercard, domain: mastercard.com }
+      - { symbol: BAC, name: Bank of America, domain: bankofamerica.com }
+      - { symbol: WFC, name: Wells Fargo, domain: wellsfargo.com }
+      - { symbol: GS, name: Goldman Sachs, domain: goldmansachs.com }
+      - { symbol: MS, name: Morgan Stanley, domain: morganstanley.com }
+
+  - id: healthcare
+    title: Healthcare
+    copy_it: "Pharma liquida. Swing e dip su nomi che il mercato conosce — non biotech da 2 dollari con tre market maker."
+    copy_en: "Liquid pharma. Swings and dips on names the market knows — not a $2 biotech with three market makers."
+    names:
+      - { symbol: LLY, name: Eli Lilly, domain: lilly.com }
+      - { symbol: PFE, name: Pfizer, domain: pfizer.com }
+      - { symbol: ABBV, name: AbbVie, domain: abbvie.com }
+      - { symbol: MRK, name: Merck, domain: merck.com }
+
+  - id: consumer
+    title: Consumer
+    copy_it: "Difensivi liquidi. Pochi, di proposito: qualità del nastro prima della quantità dei ticker."
+    copy_en: "Liquid defensives. Few, on purpose: tape quality before ticker quantity."
+    names:
+      - { symbol: PEP, name: PepsiCo, domain: pepsico.com }
+      - { symbol: COST, name: Costco, domain: costco.com }
+
+  - id: energy
+    title: Energy & Industrial
+    copy_it: "Ciclici con profondità. Trend e squeeze hanno candele vere; l’uscita non dipende da un tweet."
+    copy_en: "Cyclicals with depth. Trend and squeeze get real candles; the exit does not depend on a tweet."
+    names:
+      - { symbol: XOM, name: ExxonMobil, domain: exxonmobil.com }
+      - { symbol: GE, name: GE, domain: ge.com }
+      - { symbol: BA, name: Boeing, domain: boeing.com }
+      - { symbol: CAT, name: Caterpillar, domain: caterpillar.com }
+
+  - id: telecom
+    title: Telecom & Media
+    copy_it: "Yield e volume istituzionale. Non glamour — liquidità. Helmsman preferisce il noioso che si può chiudere."
+    copy_en: "Yield and institutional volume. Not glamour — liquidity. Helmsman prefers the boring name you can still close."
+    names:
+      - { symbol: T, name: AT&T, domain: att.com }
+      - { symbol: VZ, name: Verizon, domain: verizon.com }
+      - { symbol: CMCSA, name: Comcast, domain: comcast.com }
+
+  - id: etf
+    title_it: ETF
+    title_en: ETFs
+    wide: true
+    copy_it: "Indici, settori, metalli, energy, bond. Il terreno naturale di AVWAP e degli setup istituzionali: flusso aggregato, spread stretto, book che esiste anche quando il singolo titolo gapà. Se cerchi il mercato senza cacciare il singolo headline, parti da qui."
+    copy_en: "Indexes, sectors, metals, energy, bonds. Natural ground for AVWAP and institutional setups: aggregated flow, tight spreads, a book that still exists when a single name gaps. If you want the market without chasing one headline, start here."
+    names:
+      - { symbol: SPY, name: SPDR S&P 500, file: SPY.svg }
+      - { symbol: QQQ, name: Invesco QQQ, file: QQQ.svg }
+      - { symbol: DIA, name: SPDR Dow Jones, file: DIA.svg }
+      - { symbol: IWM, name: iShares Russell 2000, file: IWM.svg }
+      - { symbol: GLD, name: SPDR Gold, file: GLD.svg }
+      - { symbol: SLV, name: iShares Silver, file: SLV.svg }
+      - { symbol: USO, name: US Oil Fund, file: USO.svg }
+      - { symbol: TLT, name: iShares 20+ Treasury, file: TLT.svg }
+      - { symbol: XLK, name: Technology Select SPDR, file: XLK.svg }
+      - { symbol: XLF, name: Financial Select SPDR, file: XLF.svg }

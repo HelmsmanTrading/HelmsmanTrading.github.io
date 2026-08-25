@@ -1,0 +1,18 @@
+<div class="uni-grid">
+  {% for g in site.data.universe.groups %}
+  <article class="uni-card{% if g.wide %} uni-card--wide{% endif %}">
+    <h3>{% if page.lang == 'it' %}{{ g.title_it | default: g.title }}{% else %}{{ g.title_en | default: g.title }}{% endif %}</h3>
+    <p class="uni-card__count">{{ g.names.size }} {% if page.lang == 'it' %}nomi{% else %}names{% endif %}</p>
+    <ul class="uni-chips">
+      {% for n in g.names %}
+      <li class="uni-chip" title="{{ n.name }}">
+        {% if n.file %}{% assign mark = n.file %}{% else %}{% assign mark = n.symbol | append: '.png' %}{% endif %}
+        <img src="/assets/images/tickers/{{ mark }}" alt="" width="18" height="18" loading="lazy" decoding="async">
+        <span>{{ n.symbol }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+    <p>{% if page.lang == 'it' %}{{ g.copy_it }}{% else %}{{ g.copy_en }}{% endif %}</p>
+  </article>
+  {% endfor %}
+</div>

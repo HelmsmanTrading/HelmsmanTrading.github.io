@@ -2372,6 +2372,42 @@ footer .brand-logo {
   margin-bottom: 0.85rem !important;
   letter-spacing: 0.02em;
 }
+.uni-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.38rem;
+  list-style: none;
+  margin: 0 0 0.95rem;
+  padding: 0;
+}
+.uni-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.48rem 0.2rem 0.22rem;
+  border: 1px solid rgba(196,163,90,0.22);
+  background: rgba(255,255,255,0.04);
+  border-radius: 999px;
+}
+.uni-chip img {
+  display: block;
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: #fff;
+}
+.uni-chip img[src$=".svg"] {
+  background: #0B1F3A;
+}
+.uni-chip span {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: #E6D3A1;
+  font-weight: 600;
+}
 @media (max-width: 800px) {
   .skill-grid,
   .uni-grid { grid-template-columns: 1fr; }
