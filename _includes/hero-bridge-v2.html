@@ -1,0 +1,186 @@
+{% comment %}
+Archived 2026-08-25 — cinematic 4-scene hero (scan / propose / confirm / cover).
+Restore with: {% include hero-bridge-v2.html %}
+Earlier: hero-bridge-v1.html (dashboard loop), hero-visual-v1.html (static card).
+{% endcomment %}
+{% if page.lang == 'it' %}
+  {% assign hc_aria = 'Quattro passi: Helmsman sonda, propone coperto, tu confermi, apre o rifiuta il nudo' %}
+  {% assign hc_live = 'Paper' %}
+  {% assign hc_k1 = '01 · Sonda' %}
+  {% assign hc_t1 = 'Guarda i liquidi. Il resto si salta.' %}
+  {% assign hc_skip = 'Saltato' %}
+  {% assign hc_lock = 'Preso' %}
+  {% assign hc_why_skip_a = 'Regola non batte' %}
+  {% assign hc_why_skip_b = 'Sotto la media' %}
+  {% assign hc_why_hit = 'Breakout ATR' %}
+  {% assign hc_k2 = '02 · Propone' %}
+  {% assign hc_t2 = 'Una riga. Stop già attaccato.' %}
+  {% assign hc_covered = 'Coperto' %}
+  {% assign hc_size = 'Size' %}
+  {% assign hc_wait = 'Aspetta il tuo sì' %}
+  {% assign hc_k3 = '03 · Tu confermi' %}
+  {% assign hc_t3 = 'Senza di te, l’ordine non parte.' %}
+  {% assign hc_yes = 'Confermo' %}
+  {% assign hc_helm = 'Il timone è tuo' %}
+  {% assign hc_k4 = '04 · Apre coperto' %}
+  {% assign hc_t4 = 'Coperto, o niente.' %}
+  {% assign hc_sent = 'Inviato al broker' %}
+  {% assign hc_oto = 'Stop attaccato · Alpaca paper' %}
+  {% assign hc_naked = 'Market nudo' %}
+  {% assign hc_reject = 'Rifiutato' %}
+  {% assign hc_s1 = 'Sonda' %}
+  {% assign hc_s2 = 'Propone' %}
+  {% assign hc_s3 = 'Tu confermi' %}
+  {% assign hc_s4 = 'Apre coperto' %}
+{% else %}
+  {% assign hc_aria = 'Four beats: Helmsman scans, proposes covered, you confirm, opens or rejects naked' %}
+  {% assign hc_live = 'Paper' %}
+  {% assign hc_k1 = '01 · Scan' %}
+  {% assign hc_t1 = 'Watch the liquid names. Skip the rest.' %}
+  {% assign hc_skip = 'Skipped' %}
+  {% assign hc_lock = 'Locked' %}
+  {% assign hc_why_skip_a = 'Rule did not fire' %}
+  {% assign hc_why_skip_b = 'Below the average' %}
+  {% assign hc_why_hit = 'ATR breakout' %}
+  {% assign hc_k2 = '02 · Propose' %}
+  {% assign hc_t2 = 'One line. Stop already on it.' %}
+  {% assign hc_covered = 'Covered' %}
+  {% assign hc_size = 'Size' %}
+  {% assign hc_wait = 'Waiting for your yes' %}
+  {% assign hc_k3 = '03 · You confirm' %}
+  {% assign hc_t3 = 'Without you, nothing is sent.' %}
+  {% assign hc_yes = 'Confirm' %}
+  {% assign hc_helm = 'You hold the helm' %}
+  {% assign hc_k4 = '04 · Open covered' %}
+  {% assign hc_t4 = 'Covered, or nothing.' %}
+  {% assign hc_sent = 'Sent to the broker' %}
+  {% assign hc_oto = 'Stop attached · Alpaca paper' %}
+  {% assign hc_naked = 'Naked market' %}
+  {% assign hc_reject = 'Rejected' %}
+  {% assign hc_s1 = 'Scan' %}
+  {% assign hc_s2 = 'Propose' %}
+  {% assign hc_s3 = 'You confirm' %}
+  {% assign hc_s4 = 'Open covered' %}
+{% endif %}
+
+<figure class="hero-cine" data-hero-cine data-scene="scan" role="img" aria-label="{{ hc_aria }}">
+  <div class="hero-cine__glow" aria-hidden="true"></div>
+  <div class="hero-cine__console">
+    <header class="hero-cine__chrome">
+      <span class="hero-cine__dot"></span>
+      <strong>Helmsman</strong>
+      <em>{{ hc_live }}</em>
+    </header>
+
+    <div class="hero-cine__stage">
+      <section class="hero-cine__scene" data-scene-id="scan">
+        <p class="hero-cine__kicker">{{ hc_k1 }}</p>
+        <h3 class="hero-cine__title">{{ hc_t1 }}</h3>
+        <div class="hero-cine__scan">
+          <div class="hero-cine__radar" aria-hidden="true">
+            <span class="hero-cine__sweep"></span>
+            <span class="hero-cine__blip"></span>
+          </div>
+          <ul class="hero-cine__names">
+            <li class="is-skip"><b>NVDA</b><span>{{ hc_why_skip_a }}</span><i>{{ hc_skip }}</i></li>
+            <li class="is-skip"><b>WMT</b><span>{{ hc_why_skip_b }}</span><i>{{ hc_skip }}</i></li>
+            <li class="is-hit"><b>SLV</b><span>{{ hc_why_hit }}</span><i>{{ hc_lock }}</i></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="hero-cine__scene" data-scene-id="propose">
+        <p class="hero-cine__kicker">{{ hc_k2 }}</p>
+        <h3 class="hero-cine__title">{{ hc_t2 }}</h3>
+        <article class="hero-cine__ticket">
+          <div class="hero-cine__ticket-head">
+            <b>SLV</b>
+            <span>{{ hc_covered }}</span>
+          </div>
+          <div class="hero-cine__metrics">
+            <div><em>{{ hc_size }}</em><strong>887</strong></div>
+            <div><em>Stop</em><strong class="is-sl">58.76</strong></div>
+            <div><em>Target</em><strong class="is-tp">61.70</strong></div>
+          </div>
+          <p class="hero-cine__wait">{{ hc_wait }}</p>
+        </article>
+      </section>
+
+      <section class="hero-cine__scene" data-scene-id="confirm">
+        <p class="hero-cine__kicker">{{ hc_k3 }}</p>
+        <h3 class="hero-cine__title">{{ hc_t3 }}</h3>
+        <div class="hero-cine__helm-wrap">
+          <div class="hero-cine__ring" aria-hidden="true"></div>
+          <svg class="hero-cine__helm" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+            <circle cx="60" cy="60" r="28" stroke="#C4A35A" stroke-width="6"/>
+            <circle cx="60" cy="60" r="9" fill="#C4A35A"/>
+            <g stroke="#C4A35A" stroke-width="5" stroke-linecap="round">
+              <line x1="60" y1="8" x2="60" y2="28"/><circle cx="60" cy="8" r="5" fill="#C4A35A" stroke="none"/>
+              <line x1="60" y1="92" x2="60" y2="112"/><circle cx="60" cy="112" r="5" fill="#C4A35A" stroke="none"/>
+              <line x1="8" y1="60" x2="28" y2="60"/><circle cx="8" cy="60" r="5" fill="#C4A35A" stroke="none"/>
+              <line x1="92" y1="60" x2="112" y2="60"/><circle cx="112" cy="60" r="5" fill="#C4A35A" stroke="none"/>
+              <line x1="23" y1="23" x2="38" y2="38"/><circle cx="23" cy="23" r="5" fill="#C4A35A" stroke="none"/>
+              <line x1="82" y1="82" x2="97" y2="97"/><circle cx="97" cy="97" r="5" fill="#C4A35A" stroke="none"/>
+              <line x1="97" y1="23" x2="82" y2="38"/><circle cx="97" cy="23" r="5" fill="#C4A35A" stroke="none"/>
+              <line x1="23" y1="97" x2="38" y2="82"/><circle cx="23" cy="97" r="5" fill="#C4A35A" stroke="none"/>
+            </g>
+          </svg>
+          <span class="hero-cine__yes">{{ hc_yes }}</span>
+        </div>
+        <p class="hero-cine__sub">{{ hc_helm }}</p>
+      </section>
+
+      <section class="hero-cine__scene" data-scene-id="cover">
+        <p class="hero-cine__kicker">{{ hc_k4 }}</p>
+        <h3 class="hero-cine__title">{{ hc_t4 }}</h3>
+        <div class="hero-cine__split">
+          <article class="is-ok">
+            <b>{{ hc_sent }}</b>
+            <span>SLV · 887</span>
+            <em>{{ hc_oto }}</em>
+          </article>
+          <article class="is-no">
+            <b>{{ hc_reject }}</b>
+            <span>{{ hc_naked }}</span>
+            <em>L5</em>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <ol class="hero-cine__steps">
+      <li data-step="scan"><i>01</i>{{ hc_s1 }}</li>
+      <li data-step="propose"><i>02</i>{{ hc_s2 }}</li>
+      <li data-step="confirm"><i>03</i>{{ hc_s3 }}</li>
+      <li data-step="cover"><i>04</i>{{ hc_s4 }}</li>
+    </ol>
+  </div>
+</figure>
+
+<script>
+  (function () {
+    var root = document.querySelector('[data-hero-cine]');
+    if (!root) return;
+    var order = ['scan', 'propose', 'confirm', 'cover'];
+    var hold = { scan: 4200, propose: 4600, confirm: 4400, cover: 5200 };
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      root.setAttribute('data-scene', 'propose');
+      return;
+    }
+    var i = 0;
+    var timer;
+    function show() {
+      window.clearTimeout(timer);
+      root.setAttribute('data-scene', order[i]);
+      timer = window.setTimeout(function () {
+        i = (i + 1) % order.length;
+        show();
+      }, hold[order[i]]);
+    }
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) window.clearTimeout(timer);
+      else show();
+    });
+    show();
+  })();
+</script>
