@@ -199,6 +199,36 @@ footer .brand-logo {
   .page-hero__seal { margin-left: 0; margin-right: 0; }
 }
 
+.page-hero__course {
+  flex-shrink: 0;
+  width: 220px;
+  margin: 0 auto;
+}
+.page-hero__compass {
+  width: 220px;
+  height: 220px;
+  overflow: hidden;
+}
+.page-hero__compass svg {
+  display: block;
+  width: 220px;
+  height: 220px;
+  max-width: 220px;
+  max-height: 220px;
+}
+.page-hero__course-legend {
+  margin: 0.7rem 0 0;
+  text-align: center;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(196,163,90,0.75);
+}
+@media (min-width: 1024px) {
+  .page-hero__course { margin-left: 0; margin-right: 0; }
+}
+
 .helm-orbit {
   background:
     radial-gradient(circle at 20% 20%, rgba(196,163,90,0.18), transparent 40%),
@@ -2155,6 +2185,7 @@ footer .brand-logo {
 @media (prefers-reduced-motion: reduce) {
   .broker-marquee__track,
   .helm-wheel,
+  .page-hero__compass animateTransform,
   .radar__sweep,
   .cover-chart .line-naked,
   .cover-chart .line-cover,
