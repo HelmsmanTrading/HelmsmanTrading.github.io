@@ -28,9 +28,9 @@
     - title: Brokers
       url: /en/brokers/
       blurb: You connect the account
-    - title: Paper access
+    - title: Early access
       url: /en/access/
-      blurb: Waitlist, not live
+      blurb: Pre-register, not live
 - title: Helmsman
   dropdown: true
   align: end
@@ -49,6 +49,6 @@
       blurb: Who builds Helmsman
 - title: FAQ
   url: /en/faq/
-- title: Paper access
+- title: Pre-register
   url: /en/access/
   cta: true

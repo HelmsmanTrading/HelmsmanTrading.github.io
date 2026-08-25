@@ -28,9 +28,9 @@
     - title: Broker
       url: /it/broker/
       blurb: Colleghi tu il conto
-    - title: Accesso paper
+    - title: Accesso anticipato
       url: /it/accesso/
-      blurb: Lista d’attesa, niente live
+      blurb: Pre-registrazione, non live
 - title: Helmsman
   dropdown: true
   align: end
@@ -49,6 +49,6 @@
       blurb: Chi costruisce Helmsman
 - title: FAQ
   url: /it/faq/
-- title: Accesso paper
+- title: Pre-registrati
   url: /it/accesso/
   cta: true
