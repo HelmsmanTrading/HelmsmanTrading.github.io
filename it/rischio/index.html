@@ -7,14 +7,11 @@ locale: it_IT
 alt: /en/risk/
 description: "Size e stop li calcola il motore di rischio, non la chat. Tetti, heat, kill-switch. Tu confermi i numeri, non li inventi."
 ---
-<section class="page-hero">
-  <div class="page-hero__goldline"></div>
-  <div class="max-w-5xl mx-auto relative z-10">
-    <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">Rischio</p>
-    <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">I numeri non escono dalla chat.</h1>
-    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">Un modello può aiutarti a leggere il nastro. Non può dirti quanti SLV comprare. Size, stop e target li calcola un motore con regole fisse sul tuo conto: frazione di rischio, tetti, heat, buying power. Tu vedi la riga. Poi dici sì o no.</p>
-  </div>
-</section>
+{% include page-hero-sea.html
+  kicker="Rischio"
+  title="I numeri non escono dalla chat."
+  lead="Un modello può aiutarti a leggere il nastro. Non può dirti quanti SLV comprare. Size, stop e target li calcola un motore con regole fisse sul tuo conto: frazione di rischio, tetti, heat, buying power. Tu vedi la riga. Poi dici sì o no."
+%}
 
 {% include pull-quote.html text="Il trading si rompe quando la size diventa un mood. Helmsman rende la size un calcolo. È il contrario dell’adrenalina. È il motivo per cui il prodotto esiste." %}
 

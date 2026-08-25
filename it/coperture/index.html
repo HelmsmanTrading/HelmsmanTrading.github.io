@@ -7,14 +7,11 @@ locale: it_IT
 alt: /en/covered/
 description: "Ogni ingresso ha stop. Niente market nudi. Se il venue non copre, Helmsman non apre."
 ---
-<section class="page-hero">
-  <div class="page-hero__goldline"></div>
-  <div class="max-w-5xl mx-auto relative z-10">
-    <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">Coperture</p>
-    <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">Niente ingressi nudi. Punto.</h1>
-    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">Un market senza stop non è «veloce». È scoperto. Helmsman apre solo se la protezione parte insieme all’ingresso. Se il broker o la regola non coprono, l’ordine non esiste — anche se hai già detto sì.</p>
-  </div>
-</section>
+{% include page-hero-sea.html
+  kicker="Coperture"
+  title="Niente ingressi nudi. Punto."
+  lead="Un market senza stop non è veloce. È scoperto. Helmsman apre solo se la protezione parte insieme all’ingresso. Se il broker o la regola non coprono, l’ordine non esiste — anche se hai già detto sì."
+%}
 
 {% include broker-rail.html caption="off" %}
 

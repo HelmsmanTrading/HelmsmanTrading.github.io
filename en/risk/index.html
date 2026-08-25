@@ -7,14 +7,11 @@ locale: en_US
 alt: /it/rischio/
 description: "Size and stops come from the risk engine, not the chat. Caps, heat, kill-switch. You confirm the numbers; you do not invent them."
 ---
-<section class="page-hero">
-  <div class="page-hero__goldline"></div>
-  <div class="max-w-5xl mx-auto relative z-10">
-    <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">Risk</p>
-    <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">The numbers do not come from chat.</h1>
-    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">A model can help you read the tape. It cannot tell you how many SLV to buy. Size, stop and target come from an engine with fixed rules on your account: a risk fraction, caps, heat, buying power. You see the line. Then you say yes or no.</p>
-  </div>
-</section>
+{% include page-hero-sea.html
+  kicker="Risk"
+  title="The numbers do not come from chat."
+  lead="A model can help you read the tape. It cannot tell you how many SLV to buy. Size, stop and target come from an engine with fixed rules on your account: a risk fraction, caps, heat, buying power. You see the line. Then you say yes or no."
+%}
 
 {% include pull-quote.html text="Trading breaks when size becomes a mood. Helmsman makes size a calculation. It is the opposite of adrenaline. It is why the product exists." %}
 

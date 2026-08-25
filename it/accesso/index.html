@@ -7,14 +7,12 @@ locale: it_IT
 alt: /en/access/
 description: "Richiedi l’accesso anticipato in paper. Indica il broker che usi già."
 ---
-<section class="page-hero pb-16">
-  <div class="page-hero__goldline"></div>
-  <div class="max-w-5xl mx-auto relative z-10">
-    <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">Accesso anticipato</p>
-    <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">Paper. Coperture. Il tuo sì.</h1>
-    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">Niente listino, niente carta. Scrivi da dove operi: serve a far entrare prima chi ha già un conto collegabile, non a venderti un broker nuovo.</p>
-  </div>
-</section>
+{% include page-hero-sea.html
+  extra_class="pb-16"
+  kicker="Accesso anticipato"
+  title="Paper. Coperture. Il tuo sì."
+  lead="Niente listino, niente carta. Scrivi da dove operi: serve a far entrare prima chi ha già un conto collegabile, non a venderti un broker nuovo."
+%}
 
 {% include broker-rail.html kicker="off" caption="off" %}
 

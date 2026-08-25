@@ -7,14 +7,11 @@ locale: en_US
 alt: /it/coperture/
 description: "Every entry has a stop. No naked markets. If the venue cannot cover, Helmsman does not open."
 ---
-<section class="page-hero">
-  <div class="page-hero__goldline"></div>
-  <div class="max-w-5xl mx-auto relative z-10">
-    <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">Covers</p>
-    <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">No naked entries. Period.</h1>
-    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">A market with no stop is not «fast». It is uncovered. Helmsman opens only if protection leaves with the entry. If the broker or the rule cannot cover, there is no order — even if you already said yes.</p>
-  </div>
-</section>
+{% include page-hero-sea.html
+  kicker="Covers"
+  title="No naked entries. Period."
+  lead="A market with no stop is not fast. It is uncovered. Helmsman opens only if protection leaves with the entry. If the broker or the rule cannot cover, there is no order — even if you already said yes."
+%}
 
 {% include broker-rail.html caption="off" %}
 

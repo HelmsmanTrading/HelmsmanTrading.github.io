@@ -7,14 +7,11 @@ locale: en_US
 alt: /it/faq/
 description: "Trader questions: covers, brokers, paper, size, autopilot. Straight answers, no brochure."
 ---
-<section class="page-hero">
-  <div class="page-hero__goldline"></div>
-  <div class="max-w-5xl mx-auto relative z-10">
-    <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">FAQ</p>
-    <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">Straight answers. No brochure.</h1>
-    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">If the question is «does it print while I sleep», the answer is no. If it is «does it open covered at my broker, with my yes», you are in the right place.</p>
-  </div>
-</section>
+{% include page-hero-sea.html
+  kicker="FAQ"
+  title="Straight answers. No brochure."
+  lead="If the question is whether it prints while you sleep, the answer is no. If it is whether it opens covered at your broker, with your yes, you are in the right place."
+%}
 
 <section class="py-24 px-6 bg-gray-50 dark:bg-[#111]">
   <div class="max-w-4xl mx-auto">{% include accordion-faq.html %}</div>

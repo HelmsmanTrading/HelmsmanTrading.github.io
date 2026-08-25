@@ -7,14 +7,11 @@ locale: it_IT
 alt: /en/orders/
 description: "OTO e bracket su Alpaca, OTOCO su Tradier. Niente SIMPLE. La copertura è la classe d’ordine, non una promessa."
 ---
-<section class="page-hero">
-  <div class="page-hero__goldline"></div>
-  <div class="max-w-5xl mx-auto relative z-10">
-    <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">Ordini</p>
-    <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">La copertura è una classe d’ordine. Non una preghiera.</h1>
-    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">Ogni venue ha una grammatica. Helmsman la parla, non la finge. Alpaca non è Tradier. OTOCO non è un bracket. SIMPLE non parte. Mai.</p>
-  </div>
-</section>
+{% include page-hero-sea.html
+  kicker="Ordini"
+  title="La copertura è una classe d’ordine. Non una preghiera."
+  lead="Ogni venue ha una grammatica. Helmsman la parla, non la finge. Alpaca non è Tradier. OTOCO non è un bracket. SIMPLE non parte. Mai."
+%}
 
 <section class="py-24 px-6 bg-[#081628] text-white">
   <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">

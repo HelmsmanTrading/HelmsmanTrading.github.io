@@ -7,14 +7,12 @@ locale: en_US
 alt: /it/accesso/
 description: "Request early paper access. Tell us which broker you already use."
 ---
-<section class="page-hero pb-16">
-  <div class="page-hero__goldline"></div>
-  <div class="max-w-5xl mx-auto relative z-10">
-    <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">Early access</p>
-    <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">Paper. Covers. Your yes.</h1>
-    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">No fake price list, no card. Tell us where you already trade: we let in people with a connectable account first — we are not selling you a new broker.</p>
-  </div>
-</section>
+{% include page-hero-sea.html
+  extra_class="pb-16"
+  kicker="Early access"
+  title="Paper. Covers. Your yes."
+  lead="No fake price list, no card. Tell us where you already trade: we let in people with a connectable account first — we are not selling you a new broker."
+%}
 
 {% include broker-rail.html kicker="off" caption="off" %}
 
