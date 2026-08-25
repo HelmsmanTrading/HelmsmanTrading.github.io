@@ -129,8 +129,11 @@ footer .brand-logo {
     radial-gradient(circle at 80% 80%, rgba(61,90,158,0.2), transparent 42%);
 }
 .helm-wheel {
+  display: block;
   width: 220px;
   height: 220px;
+  max-width: 220px;
+  max-height: 220px;
   animation: helm-spin 28s linear infinite;
 }
 @keyframes helm-spin {
@@ -2084,12 +2087,6 @@ footer .brand-logo {
   .page-hero__goldline,
   .page-hero::before,
   .page-hero::after,
-  .mark-hero__goldline,
-  .mark-hero__orbit,
-  .mark-hero__wheel,
-  .mark-hero__needle,
-  .mark-hero__bloom,
-  .mark-hero__veil,
   .candle,
   .order-ticket,
   .veto-card__no,
@@ -2380,127 +2377,4 @@ footer .brand-logo {
   .uni-grid { grid-template-columns: 1fr; }
   .skill-card--wide,
   .uni-card--wide { grid-column: auto; }
-}
-
-/* —— Mark hero (instrument / course) —— */
-.mark-hero {
-  position: relative;
-  overflow: hidden;
-  padding: 10rem 1.5rem 5.25rem;
-  background: #081628;
-  color: #fff;
-}
-.mark-hero__goldline {
-  position: absolute;
-  left: 0; right: 0; top: 0;
-  height: 2px;
-  z-index: 5;
-  background: linear-gradient(90deg, transparent, #C4A35A, transparent);
-  animation: gold-scan 3.5s ease-in-out infinite;
-}
-.mark-hero__veil {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse 70% 80% at 12% 20%, rgba(196,163,90,0.14), transparent 52%),
-    radial-gradient(ellipse 50% 60% at 88% 42%, rgba(61,90,158,0.28), transparent 55%),
-    radial-gradient(circle at 70% 18%, rgba(255,255,255,0.05), transparent 26%);
-  animation: aurora-drift 18s ease-in-out infinite alternate;
-}
-.mark-hero__meridian {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 26%;
-  width: 1px;
-  background: linear-gradient(180deg, transparent, rgba(196,163,90,0.35) 28%, rgba(196,163,90,0.08) 72%, transparent);
-  pointer-events: none;
-  z-index: 1;
-}
-.mark-hero__grid {
-  position: relative;
-  z-index: 3;
-  max-width: 72rem;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(17rem, 22rem);
-  gap: 3rem;
-  align-items: center;
-}
-.mark-hero__copy {
-  position: relative;
-  z-index: 4;
-  min-width: 0;
-}
-.mark-hero__kicker {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: #C4A35A;
-  margin-bottom: 1.2rem;
-}
-.mark-hero__title {
-  font-size: clamp(2.05rem, 4.6vw, 3.6rem);
-  font-weight: 900;
-  letter-spacing: -0.035em;
-  line-height: 1.07;
-  margin-bottom: 1.25rem;
-}
-.mark-hero__lead {
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: #b7c4d4;
-  max-width: 36rem;
-}
-.mark-hero__dial {
-  position: relative;
-  z-index: 2;
-  width: 22rem;
-  max-width: 100%;
-  overflow: hidden;
-  isolation: isolate;
-}
-.mark-hero__bloom {
-  position: absolute;
-  inset: 18%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(196,163,90,0.2), transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-}
-.mark-hero__svg {
-  position: relative;
-  z-index: 1;
-  display: block;
-  width: 100%;
-  height: auto;
-  overflow: visible;
-}
-.mark-hero__legend {
-  margin: 0.85rem 0 0;
-  text-align: center;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: rgba(196,163,90,0.75);
-}
-@media (max-width: 900px) {
-  .mark-hero { padding: 8.5rem 1.25rem 3.5rem; }
-  .mark-hero__grid {
-    grid-template-columns: 1fr;
-    gap: 1.75rem;
-  }
-  .mark-hero__dial {
-    width: 16rem;
-    justify-self: center;
-    opacity: 0.92;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .mark-hero__goldline,
-  .mark-hero__veil { animation: none !important; }
-  .mark-hero animateTransform { display: none; }
 }

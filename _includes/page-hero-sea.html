@@ -1,21 +1,15 @@
 <section class="page-hero" aria-label="{{ include.kicker | default: 'Helmsman' }}">
   <div class="page-hero__goldline"></div>
-  <div class="max-w-6xl mx-auto relative z-10 flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-16">
-    <div class="min-w-0 flex-1">
-      {% if include.kicker %}
-      <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">{{ include.kicker }}</p>
-      {% endif %}
-      <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">{{ include.title }}</h1>
-      {% if include.lead %}
-      <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">{{ include.lead }}</p>
-      {% endif %}
-    </div>
-    <div class="relative mx-auto lg:mx-0 shrink-0" style="width:220px;height:220px;flex-shrink:0" aria-hidden="true">
-      <span class="absolute rounded-full border border-brand-gold/20 pointer-events-none" style="inset:-28px"></span>
-      <span class="absolute rounded-full border border-dashed border-brand-gold/15 pointer-events-none" style="inset:-12px"></span>
-      <div class="w-[220px] h-[220px] overflow-hidden">
-        {% include helm-wheel.html %}
-      </div>
-    </div>
+  <div class="absolute right-[-40px] top-24 opacity-40 hidden lg:block" style="width:220px;height:220px;overflow:hidden">
+    {% include helm-wheel.html %}
+  </div>
+  <div class="max-w-5xl mx-auto relative z-10">
+    {% if include.kicker %}
+    <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">{{ include.kicker }}</p>
+    {% endif %}
+    <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">{{ include.title }}</h1>
+    {% if include.lead %}
+    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">{{ include.lead }}</p>
+    {% endif %}
   </div>
 </section>
