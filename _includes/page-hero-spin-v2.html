@@ -10,13 +10,12 @@
       <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">{{ include.lead }}</p>
       {% endif %}
     </div>
-    <div class="page-hero__seal" aria-hidden="true">
-      <span class="page-hero__seal-ring page-hero__seal-ring--outer"></span>
-      <span class="page-hero__seal-ring page-hero__seal-ring--cover"></span>
-      <span class="page-hero__seal-axis"></span>
-      <span class="page-hero__seal-tick"></span>
-      <span class="page-hero__seal-hub"></span>
-      <span class="page-hero__seal-word">{% if page.lang == 'it' %}Coperto{% else %}Covered{% endif %}</span>
+    <div class="relative mx-auto lg:mx-0 shrink-0" style="width:220px;height:220px;flex-shrink:0" aria-hidden="true">
+      <span class="absolute rounded-full pointer-events-none" style="inset:-28px;border:1px solid rgba(196,163,90,0.2)"></span>
+      <span class="absolute rounded-full pointer-events-none" style="inset:-12px;border:1px dashed rgba(196,163,90,0.15)"></span>
+      <div style="width:220px;height:220px;overflow:hidden">
+        {% include helm-wheel.html %}
+      </div>
     </div>
   </div>
 </section>

@@ -123,6 +123,82 @@ footer .brand-logo {
   0%, 100% { opacity: 0.35; transform: scaleX(0.4); }
   50% { opacity: 1; transform: scaleX(1); }
 }
+
+/* Inner-page lockup: entry inside cover. Hard 220px box. No spin, no SVG transform. */
+.page-hero__seal {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  flex-shrink: 0;
+  overflow: hidden;
+  margin: 0 auto;
+  background: radial-gradient(circle at 50% 46%, rgba(196,163,90,0.14), transparent 58%);
+}
+.page-hero__seal-ring {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+.page-hero__seal-ring--outer {
+  inset: 16px;
+  border: 1px solid rgba(196,163,90,0.28);
+}
+.page-hero__seal-ring--cover {
+  inset: 44px;
+  border: 1.5px solid rgba(196,163,90,0.7);
+}
+.page-hero__seal-axis {
+  position: absolute;
+  left: 50%;
+  top: 24px;
+  bottom: 52px;
+  width: 1px;
+  margin-left: -0.5px;
+  background: linear-gradient(180deg, rgba(196,163,90,0.7), rgba(196,163,90,0.08) 70%, transparent);
+  pointer-events: none;
+}
+.page-hero__seal-tick {
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  width: 2px;
+  height: 18px;
+  margin-left: -1px;
+  background: #C4A35A;
+  border-radius: 1px;
+  pointer-events: none;
+}
+.page-hero__seal-hub {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  border-radius: 50%;
+  background: #C4A35A;
+  box-shadow: 0 0 0 5px #081628, 0 0 0 6px rgba(196,163,90,0.75);
+  pointer-events: none;
+}
+.page-hero__seal-word {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 28px;
+  margin: 0;
+  text-align: center;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: rgba(196,163,90,0.88);
+  pointer-events: none;
+}
+@media (min-width: 1024px) {
+  .page-hero__seal { margin-left: 0; margin-right: 0; }
+}
+
 .helm-orbit {
   background:
     radial-gradient(circle at 20% 20%, rgba(196,163,90,0.18), transparent 40%),
