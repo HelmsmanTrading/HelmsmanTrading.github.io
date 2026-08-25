@@ -2692,7 +2692,7 @@ html:not(.dark) .veto-card__no {
 
 html:not(.dark) .bg-white .compare-row,
 html:not(.dark) .bg-gray-50 .compare-row {
-  border-color: rgba(11, 31, 58, 0.12);
+  border-color: rgba(11, 31, 58, 0.32);
 }
 html:not(.dark) .bg-white .compare-row div:last-child,
 html:not(.dark) .bg-gray-50 .compare-row div:last-child {
@@ -2704,11 +2704,57 @@ html:not(.dark) .bg-gray-50 .compare-row .text-brand-gold {
 }
 
 html:not(.dark) .broker-card {
-  border-color: rgba(11, 31, 58, 0.12);
+  border-color: rgba(11, 31, 58, 0.32);
   background: linear-gradient(180deg, rgba(11, 31, 58, 0.04), transparent 40%);
 }
 html:not(.dark) [class*="bg-[#081628]"] .broker-card,
 html:not(.dark) [class*="bg-[#050d18]"] .broker-card {
   border-color: rgba(196, 163, 90, 0.18);
   background: linear-gradient(180deg, rgba(196, 163, 90, 0.06), transparent 40%);
+}
+
+/* Paper: titles and edges use brand navy, not gray-900 / gray-200 */
+html:not(.dark) .text-gray-900,
+html:not(.dark) .hero-index__title,
+html:not(.dark) .bg-white h1,
+html:not(.dark) .bg-white h2,
+html:not(.dark) .bg-white h3,
+html:not(.dark) .bg-white h4,
+html:not(.dark) .bg-gray-50 h1,
+html:not(.dark) .bg-gray-50 h2,
+html:not(.dark) .bg-gray-50 h3,
+html:not(.dark) .bg-gray-50 h4,
+html:not(.dark) .bg-white summary,
+html:not(.dark) details.bg-white > summary {
+  color: #0B1F3A;
+}
+
+html:not(.dark) .border-gray-100,
+html:not(.dark) .border-gray-200,
+html:not(.dark) .border-gray-300 {
+  border-color: rgba(11, 31, 58, 0.32);
+}
+
+html:not(.dark) #navbar {
+  border-bottom-color: rgba(11, 31, 58, 0.32);
+}
+
+html:not(.dark) form.bg-white,
+html:not(.dark) form.bg-white input,
+html:not(.dark) form.bg-white textarea,
+html:not(.dark) form.bg-white select {
+  border-color: rgba(11, 31, 58, 0.32);
+}
+
+html:not(.dark) .mega__panel {
+  border-color: rgba(11, 31, 58, 0.32);
+}
+
+html:not(.dark) .mobile-nav__acc,
+html:not(.dark) .mobile-nav__top {
+  border-bottom-color: rgba(11, 31, 58, 0.22);
+}
+
+html:not(.dark) .pull-quote {
+  border-block-color: #0B1F3A;
 }
