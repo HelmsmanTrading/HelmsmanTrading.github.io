@@ -378,7 +378,12 @@
 
     {{ content }}
 
-    {% unless page.hide_middleware_band %}
+    {% assign _pl = page.permalink | default: page.url | default: '' %}
+    {% assign _hide_mw = page.hide_middleware_band %}
+    {% if _pl contains '/disclaimer/' or _pl contains '/termini/' or _pl contains '/terms/' or _pl contains '/privacy/' or _pl contains '/cookie/' or _pl contains '/legal/' %}
+      {% assign _hide_mw = true %}
+    {% endif %}
+    {% unless _hide_mw %}
     {% include middleware-band.html %}
     {% endunless %}
     {% include disclaimer-strip.html %}
