@@ -5,14 +5,14 @@ title: "Disclaimer | Helmsman"
 lang: it
 locale: it_IT
 alt: /en/disclaimer/
-description: "Helmsman non è consulenza in investimenti, non è un broker e non promette risultati. Il trading comporta perdite."
+description: "Helmsman è middleware: non è consulenza, non è l’LLM, non è il broker. L’esecutore finale è il tuo intermediario. Il trading comporta perdite."
 ---
 <section class="page-hero">
   <div class="page-hero__goldline"></div>
   <div class="max-w-5xl mx-auto relative z-10">
     <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">Legale</p>
     <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">Disclaimer</h1>
-    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">Il trading può bruciare il capitale. Helmsman è un ponte con regole, non una garanzia e non un consiglio su cosa comprare.</p>
+    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">Il trading può bruciare il capitale. Helmsman è un tubo con regole: traduce, veta, inoltra. Non decide. Non esegue. Non tiene il tuo conto.</p>
   </div>
 </section>
 
@@ -20,14 +20,26 @@ description: "Helmsman non è consulenza in investimenti, non è un broker e non
   <div class="max-w-3xl mx-auto">
     {% include legal-nav.html %}
     <div class="sales-prose text-lg text-gray-600 dark:text-gray-400 leading-relaxed space-y-5">
-      <p class="text-sm font-mono uppercase tracking-widest text-brand-gold">Aggiornato il 24 agosto 2026</p>
+      <p class="text-sm font-mono uppercase tracking-widest text-brand-gold">Aggiornato il 25 agosto 2026</p>
 
       <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">Rischio</h2>
-      <p>Operare su titoli, ETF e altri strumenti finanziari comporta un rischio elevato di perdita, inclusa la perdita dell’intero capitale. I mercati gapano, gli stop possono slittare, un venue può rifiutare o ritardare un ordine. Nessuno — né Helmsman, né un modello linguistico, né questo sito — può togliere quel rischio.</p>
+      <p>Operare su titoli, ETF e altri strumenti finanziari comporta un rischio elevato di perdita, inclusa la perdita dell’intero capitale. I mercati gapano, gli stop possono slittare, un venue può rifiutare o ritardare un ordine. Nessuno — né Helmsman, né un modello linguistico, né questo sito — può togliere quel rischio. Ti assumi la responsabilità di ogni operazione che passa dal ponte, confermata da te o nata da un modello di terze parti.</p>
+
+      <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">Ponte tecnologico</h2>
+      <p>Helmsman è <strong class="text-gray-900 dark:text-white">middleware</strong>: un’infrastruttura di routing. Traduce, filtra, inoltra. Non genera da solo la decisione di mercato. Non è un consulente. Non è l’intelligenza artificiale. Non è l’esecutore finale. Se un ordine esiste, esiste sul <em>tuo</em> conto presso il <em>tuo</em> broker, dopo il <em>tuo</em> sì. I termini di uso stanno in <a class="text-brand-gold font-bold hover:underline" href="/it/termini/">Termini</a>.</p>
 
       <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">Cosa Helmsman non è</h2>
       <p>Non è consulenza in investimenti. Non è una raccomandazione personalizzata. Non è un’offerta di servizi di investimento o di gestione patrimoniale. Non è un intermediario: non teniamo il tuo conto, non spostiamo il patrimonio, non diventiamo il tuo broker. Il conto resta presso chi scegli tu.</p>
       <p>Non è un autopilota. Senza una conferma umana l’ordine non parte. Dopo l’ingresso Helmsman non «gestisce» la posizione al posto tuo. L’AI, se presente nel prodotto, non calcola size né stop e non spara l’ordine.</p>
+
+      <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">L’LLM non è Helmsman</h2>
+      <p>Claude, Cursor o un altro client parlano con un modello di terze parti (Anthropic, OpenAI, altri). Quei modelli allucinano: inventano ticker, sbagliano i numeri, trattano un «quasi» come un sì. Helmsman declina ogni responsabilità per perdite nate da interpretazioni errate del modello o da un tool invocato male. Il ponte inoltra. Non firma la tesi.</p>
+
+      <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">Guardrail, bug, AS IS</h2>
+      <p>Le regole di copertura e di size sono un filtro, non una polizza. Un bug, una latenza, un timeout possono far fallire un veto. Il software è fornito <strong class="text-gray-900 dark:text-white">così com’è</strong>: niente garanzia di uptime, di latenza, di assenza di errori. Se Anthropic, il client, il broker o l’hosting cadono in un crollo, Helmsman non chiude le posizioni al posto tuo e non rimborsa il capitale.</p>
+
+      <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">Chiavi</h2>
+      <p>Le API del broker restano tue. Non le deposiamo in un database Helmsman. Sei responsabile di emetterle con prelievi disabilitati e limiti stretti, e della macchina su cui girano. Un furto sul tuo PC non diventa un debito nostro.</p>
 
       <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">Paper, non magia sul live</h2>
       <p>L’accesso anticipato descritto su questo sito è in <strong class="text-gray-900 dark:text-white">paper</strong> (capitale di prova). Il live arriva solo se coperture, adapter e regole di ingaggio sono all’altezza. Niente in queste pagine è una sollecitazione a depositare denaro reale.</p>
@@ -39,7 +51,7 @@ description: "Helmsman non è consulenza in investimenti, non è un broker e non
       <p>Alpaca, Tradier, Interactive Brokers, Directa, Fineco e gli altri nomi in mappa appartengono ai rispettivi titolari. Helmsman non è affiliato, sponsorizzato o approvato da quei venue, salvo diverso accordo scritto. Un logo sulla slide non è una partnership. In codice, oggi, gli adapter vivi sono Alpaca (paper) e Tradier (sandbox), più un banco locale. Il resto è mappa.</p>
 
       <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">Questo sito</h2>
-      <p>È un sito di presentazione, ospitato su GitHub Pages. Non esegue il trading. Per come trattiamo i dati che ci scrivi, vedi <a class="text-brand-gold font-bold hover:underline" href="/it/privacy/">Privacy</a>. Per memoria locale del browser, <a class="text-brand-gold font-bold hover:underline" href="/it/cookie/">Cookie</a>.</p>
+      <p>È un sito di presentazione, ospitato su GitHub Pages. Non esegue il trading. Per come trattiamo i dati che ci scrivi, vedi <a class="text-brand-gold font-bold hover:underline" href="/it/privacy/">Privacy</a>. Per memoria locale del browser, <a class="text-brand-gold font-bold hover:underline" href="/it/cookie/">Cookie</a>. Per il ruolo di Helmsman come ponte, <a class="text-brand-gold font-bold hover:underline" href="/it/termini/">Termini</a>.</p>
       <p>Titolare del progetto: Antonio Trento. <a class="text-brand-gold hover:underline" href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>.</p>
     </div>
   </div>

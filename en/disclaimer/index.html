@@ -5,14 +5,14 @@ title: "Disclaimer | Helmsman"
 lang: en
 locale: en_US
 alt: /it/disclaimer/
-description: "Helmsman is not investment advice, not a broker, and not a promise of results. Trading involves loss."
+description: "Helmsman is middleware: not advice, not the LLM, not the broker. The final executor is your venue. Trading involves loss."
 ---
 <section class="page-hero">
   <div class="page-hero__goldline"></div>
   <div class="max-w-5xl mx-auto relative z-10">
     <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">Legal</p>
     <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">Disclaimer</h1>
-    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">Trading can wipe capital. Helmsman is a bridge with rules, not a guarantee and not advice on what to buy.</p>
+    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">Trading can wipe capital. Helmsman is a pipe with rules: it translates, vetoes, forwards. It does not decide. It does not execute. It does not hold your book.</p>
   </div>
 </section>
 
@@ -20,14 +20,26 @@ description: "Helmsman is not investment advice, not a broker, and not a promise
   <div class="max-w-3xl mx-auto">
     {% include legal-nav.html %}
     <div class="sales-prose text-lg text-gray-600 dark:text-gray-400 leading-relaxed space-y-5">
-      <p class="text-sm font-mono uppercase tracking-widest text-brand-gold">Updated 24 August 2026</p>
+      <p class="text-sm font-mono uppercase tracking-widest text-brand-gold">Updated 25 August 2026</p>
 
       <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">Risk</h2>
-      <p>Trading stocks, ETFs and other instruments involves a high risk of loss, including loss of all capital. Markets gap, stops can slip, a venue can reject or delay an order. Nobody — not Helmsman, not a language model, not this site — can take that risk away.</p>
+      <p>Trading stocks, ETFs and other instruments involves a high risk of loss, including loss of all capital. Markets gap, stops can slip, a venue can reject or delay an order. Nobody — not Helmsman, not a language model, not this site — can take that risk away. You take full responsibility for every operation that passes the bridge, whether you confirmed it or a third-party model generated it.</p>
+
+      <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">Technological bridge</h2>
+      <p>Helmsman is <strong class="text-gray-900 dark:text-white">middleware</strong>: routing infrastructure. It translates, filters, forwards. It does not originate the market call. It is not an adviser. It is not the AI. It is not the final executor. If an order exists, it exists on <em>your</em> account at <em>your</em> broker, after <em>your</em> yes. The frame of use lives in <a class="text-brand-gold font-bold hover:underline" href="/en/terms/">Terms</a>.</p>
 
       <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">What Helmsman is not</h2>
       <p>Not investment advice. Not a personal recommendation. Not an offer of investment services or discretionary management. Not a broker: we do not hold your account, we do not move your book, we do not become your intermediary. The account stays with whoever you already chose.</p>
       <p>Not autopilot. Without a human confirm there is no order. After entry Helmsman does not «manage» the position for you. The AI, if present in the product, does not compute size or stops and does not fire the order.</p>
+
+      <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">The LLM is not Helmsman</h2>
+      <p>Claude, Cursor or another client talks to a third-party model (Anthropic, OpenAI, others). Those models hallucinate: they invent tickers, botch numbers, treat an «almost» as a yes. Helmsman declines liability for losses born of a model’s misread or a badly invoked tool. The bridge forwards. It does not sign the thesis.</p>
+
+      <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">Guardrails, bugs, AS IS</h2>
+      <p>Cover and size rules are a filter, not a policy. A bug, a lag, a timeout can miss a veto. The software is provided <strong class="text-gray-900 dark:text-white">as is</strong>: no warranty of uptime, latency, or freedom from error. If Anthropic, the client, the broker or the host dies in a crash, Helmsman does not flatten your book for you and does not refund capital.</p>
+
+      <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">Keys</h2>
+      <p>Broker APIs stay yours. We do not deposit them in a Helmsman database. You are responsible for issuing them with withdrawals disabled and tight limits, and for the machine they run on. A theft on your PC does not become our debt.</p>
 
       <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">Paper, not live magic</h2>
       <p>Early access described on this site is <strong class="text-gray-900 dark:text-white">paper</strong> (practice capital). Live comes only if covers, adapters and engagement rules deserve it. Nothing here solicits a live deposit.</p>
@@ -39,7 +51,7 @@ description: "Helmsman is not investment advice, not a broker, and not a promise
       <p>Alpaca, Tradier, Interactive Brokers, Directa, Fineco and the other names on the map belong to their owners. Helmsman is not affiliated with, sponsored by, or endorsed by those venues unless a written agreement says otherwise. A logo on the slide is not a partnership. In code today the live adapters are Alpaca (paper) and Tradier (sandbox), plus a local bench. The rest is the map.</p>
 
       <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">This site</h2>
-      <p>This is a marketing site on GitHub Pages. It does not execute trades. How we handle what you send us: <a class="text-brand-gold font-bold hover:underline" href="/en/privacy/">Privacy</a>. Local browser storage: <a class="text-brand-gold font-bold hover:underline" href="/en/cookie/">Cookies</a>.</p>
+      <p>This is a marketing site on GitHub Pages. It does not execute trades. How we handle what you send us: <a class="text-brand-gold font-bold hover:underline" href="/en/privacy/">Privacy</a>. Local browser storage: <a class="text-brand-gold font-bold hover:underline" href="/en/cookie/">Cookies</a>. Helmsman’s role as a bridge: <a class="text-brand-gold font-bold hover:underline" href="/en/terms/">Terms</a>.</p>
       <p>Project owner: Antonio Trento. <a class="text-brand-gold hover:underline" href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>.</p>
     </div>
   </div>

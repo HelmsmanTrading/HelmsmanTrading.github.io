@@ -6,6 +6,7 @@ lang: en
 locale: en_US
 alt: /it/privacy/
 description: "What we do with the email, broker and notes you send from this site. No list-selling. Your trading account does not pass through here."
+hide_middleware_band: true
 ---
 <section class="page-hero">
   <div class="page-hero__goldline"></div>
@@ -30,7 +31,7 @@ description: "What we do with the email, broker and notes you send from this sit
       <p>We do not sell that list. We do not use it for ad profiling. We do not ask for a credit card on these pages.</p>
 
       <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">What we do not collect here</h2>
-      <p>This site is <strong class="text-gray-900 dark:text-white">not</strong> the product. It does not receive broker API keys, it does not see your account, it does not read positions. Wiring Alpaca, Tradier or another venue happens in the software, with credentials you control. Strategy data is not harvested by these static pages.</p>
+      <p>This site is <strong class="text-gray-900 dark:text-white">not</strong> the product. It does not receive broker API keys, it does not see your account, it does not read positions. Wiring Alpaca, Tradier or another venue happens in the software, with credentials you control. Helmsman is middleware: it does not deposit keys in our database. Strategy data is not harvested by these static pages.</p>
 
       <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">Who processes the form</h2>
       <p>The form goes through <a class="text-brand-gold hover:underline" href="https://formsubmit.co" target="_blank" rel="noopener">FormSubmit</a> and lands at {{ site.contact_email }}. FormSubmit is a third party: it handles the submission so it can deliver it. You can skip the form and write that address directly.</p>
@@ -44,7 +45,7 @@ description: "What we do with the email, broker and notes you send from this sit
       <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">Children</h2>
       <p>The site is not aimed at people who cannot legally trade. We do not seek children’s data.</p>
 
-      <p>Browser storage: <a class="text-brand-gold font-bold hover:underline" href="/en/cookie/">Cookies</a>. Market risk: <a class="text-brand-gold font-bold hover:underline" href="/en/disclaimer/">Disclaimer</a>.</p>
+      <p>Browser storage: <a class="text-brand-gold font-bold hover:underline" href="/en/cookie/">Cookies</a>. Risk and role: <a class="text-brand-gold font-bold hover:underline" href="/en/disclaimer/">Disclaimer</a>. Software use: <a class="text-brand-gold font-bold hover:underline" href="/en/terms/">Terms</a>.</p>
     </div>
   </div>
 </section>

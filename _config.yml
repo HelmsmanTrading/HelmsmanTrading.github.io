@@ -34,15 +34,21 @@ popup:
   en:
     url: "/en/access/"
     title: "Want setups — not another terminal?"
-    body: "Early paper access: Helmsman scans liquid names, you confirm, every entry has a stop."
+    body: "Early paper access: Helmsman is the bridge — you confirm, every entry has a stop. Not advice. Not the broker."
     button: "Request paper access"
   it:
     url: "/it/accesso/"
     title: "Vuoi le opportunità, non un altro terminale?"
-    body: "Accesso paper: Helmsman sonda i liquidi, tu confermi, ogni ingresso ha lo stop."
+    body: "Accesso paper: Helmsman è il ponte — tu confermi, ogni ingresso ha lo stop. Non consulenza. Non il broker."
     button: "Richiedi l'accesso paper"
 
 faq_it:
+  - question: "Chi esegue l’ordine — e di chi è la responsabilità?"
+    answer: "Il broker sul tuo conto è l’esecutore finale. Helmsman è middleware: traduce, veta, inoltra. L’LLM (Claude o altro) può sbagliare; tu tieni il sì e le chiavi. Non siamo consulenti, non siamo il modello, non siamo il venue. Se l’ordine esiste, esiste dopo il tuo sì — e la responsabilità del capitale resta tua."
+  - question: "Quali skill ci sono?"
+    answer: "Cinque long-only: ATR-BREAKOUT (trend), CONNORS-MR (compra il dip), VOL-SQUEEZE (compressione), QUALITY-DIP (megacap ipervendute), AVWAP-RETEST (reclaim istituzionale). Altre in coda — validate sui mercati liquidi di riferimento prima di entrare in catalogo. Non sono tip: sono bool sì/no sul nastro."
+  - question: "Su quali ticker gira?"
+    answer: "Su un universo curato di 52 titoli e ETF liquidi — tech, blue chip, settori, indici e metalli. Non screenerà diecimila simboli: le skill funzionano dove il book esiste. Dettaglio nella pagina Universo."
   - question: "Devo saper programmare?"
     answer: "No. Helmsman è per chi fa trading, non per chi scrive bot. Vedi le proposte, leggi size e stop, dici di sì o di no. Il codice resta sotto il cofano."
   - question: "Apre da solo, senza di me?"
@@ -67,6 +73,12 @@ faq_it:
     answer: "No. Il conto resta tuo. Il ponte si allunga verso il broker che usi già. Nella richiesta paper indica quale: è la coda, non un pitch."
 
 faq_en:
+  - question: "Who executes the order — and who is liable?"
+    answer: "The broker on your account is the final executor. Helmsman is middleware: it translates, vetoes, forwards. The LLM (Claude or other) can be wrong; you hold the yes and the keys. We are not advisers, not the model, not the venue. If the order exists, it exists after your yes — and capital risk stays yours."
+  - question: "Which skills are live?"
+    answer: "Five long-only: ATR-BREAKOUT (trend), CONNORS-MR (buy the dip), VOL-SQUEEZE (compression), QUALITY-DIP (oversold megacaps), AVWAP-RETEST (institutional reclaim). More in the queue — validated on liquid reference markets before they ship. Not tips: yes/no bools on the tape."
+  - question: "Which tickers does it scan?"
+    answer: "A curated universe of 52 liquid names and ETFs — tech, blue chips, sectors, indexes and metals. It will not screen ten thousand symbols: skills work where the book exists. Detail on the Universe page."
   - question: "Do I need to code?"
     answer: "No. Helmsman is for traders, not bot authors. You see proposals, read size and stop, say yes or no. The stack stays under the hood."
   - question: "Does it trade without me?"

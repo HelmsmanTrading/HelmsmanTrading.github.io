@@ -1,0 +1,44 @@
+---
+layout: default
+permalink: /it/termini/
+title: "Termini di uso | Helmsman"
+lang: it
+locale: it_IT
+alt: /en/terms/
+description: "Helmsman è un ponte tecnologico. Non è consulente, non è broker, non è l’esecutore finale. Usi il software AS IS."
+---
+<section class="page-hero">
+  <div class="page-hero__goldline"></div>
+  <div class="max-w-5xl mx-auto relative z-10">
+    <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">Legale</p>
+    <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">Termini di uso</h1>
+    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">Un tubo con regole. Non un mandato a gestire i tuoi soldi. Usando il sito o il software, accetti questo inquadramento.</p>
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-white dark:bg-brand-dark">
+  <div class="max-w-3xl mx-auto">
+    {% include legal-nav.html %}
+    <div class="sales-prose text-lg text-gray-600 dark:text-gray-400 leading-relaxed space-y-5">
+      <p class="text-sm font-mono uppercase tracking-widest text-brand-gold">Bozza · 25 agosto 2026</p>
+      <p class="text-sm">Questi termini descrivono il ruolo del software come è progettato — anche nella bozza SaaS. Non sostituiscono il parere di un avvocato. Il titolare può aggiornarli. L’uso continuato vale come accettazione.</p>
+
+      <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">1. Ponte, non mandato</h2>
+      <p>Helmsman Trading è un’<strong class="text-gray-900 dark:text-white">infrastruttura di routing</strong> (middleware / pass-through). Non è un consulente finanziario, non è un intermediario autorizzato, non è un gestore di patrimoni, non è un exchange. Non genera da solo la decisione di mercato: <em>traduce, filtra e inoltra</em> comandi tra (a) un modello linguistico di terze parti, (b) te, (c) l’API del broker che colleghi tu.</p>
+
+      <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">2. Chi fa cosa</h2>
+      <p><strong class="text-gray-900 dark:text-white">Tu</strong> tieni il conto, le chiavi, la conferma umana, i parametri di rischio, il rispetto delle leggi del tuo Paese. <strong class="text-gray-900 dark:text-white">L’LLM</strong> (Anthropic, OpenAI o altro client) può sbagliare. <strong class="text-gray-900 dark:text-white">Il broker</strong> è l’esecutore finale: accetta, rifiuta, ritarda, gappa. <strong class="text-gray-900 dark:text-white">Helmsman</strong> non è nessuno di quei tre ruoli.</p>
+
+      <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">3. Allucinazioni e software AS IS</h2>
+      <p>I modelli linguistici inventano dati, sbagliano la matematica, non sono deterministici. Helmsman declina ogni responsabilità per perdite nate da interpretazioni errate del modello, da tool invocati male, da un «quasi» che l’IA ha trattato come un sì. Il software è fornito <strong class="text-gray-900 dark:text-white">così com’è</strong>, senza garanzia di uptime, di latenza, di assenza di bug. Un guardrail può fallire. Una rete può ritardare. In quel caso non nasciamo noi il tuo rimborso.</p>
+
+      <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">4. Chiavi, rischio, terze parti</h2>
+      <p>Le chiavi API del broker restano tue. Non teniamo il tuo book. Sei responsabile di emetterle con prelievi disabilitati e limiti stretti. Dipendiamo da Anthropic, dal tuo client (Claude Code, Cursor, altro), dal venue, dall’hosting. Se uno di loro cade in un crollo, Helmsman non chiude le posizioni al posto tuo e non risponde del capitale perso.</p>
+
+      <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">5. Paper e live</h2>
+      <p>L’accesso descritto oggi è in paper. Il live, se arriverà, resta lo stesso inquadramento: middleware, tuo sì, esecutore = broker. Niente in questi termini è un’offerta di servizi di investimento.</p>
+
+      <p>Il resto — rischio di mercato, esempi, marchi — sta nel <a class="text-brand-gold font-bold hover:underline" href="/it/disclaimer/">Disclaimer</a>. Titolare: Antonio Trento · <a class="text-brand-gold hover:underline" href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>.</p>
+    </div>
+  </div>
+</section>

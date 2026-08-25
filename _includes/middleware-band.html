@@ -1,0 +1,64 @@
+{% if page.lang == 'it' %}
+  {% assign mw_kicker = 'Ponte tecnologico' %}
+  {% assign mw_title = 'Non siamo chi decide. Non siamo chi esegue.' %}
+  {% assign mw_lead = 'Helmsman è middleware: traduce, veta, inoltra. L’LLM propone. Tu confermi. Il broker — sul tuo conto — è l’esecutore finale.' %}
+  {% assign mw_a_h = 'L’LLM' %}
+  {% assign mw_a_s = 'Non siamo noi' %}
+  {% assign mw_a_p = 'Claude o un altro modello di terze parti può allucinare, sbagliare i numeri, inventare un titolo. Quella decisione non è Helmsman.' %}
+  {% assign mw_b_h = 'Il ponte' %}
+  {% assign mw_b_s = 'Siamo qui' %}
+  {% assign mw_b_p = 'Routing, regole, coperture. Se manca lo stop, se la size è cambiata, se tu non hai detto sì — il tubo si chiude. Non teniamo il tuo capitale.' %}
+  {% assign mw_c_h = 'Il broker' %}
+  {% assign mw_c_s = 'Esecutore finale' %}
+  {% assign mw_c_p = 'Alpaca, Tradier, o il venue che colleghi tu. L’ordine, se parte, parte dal loro book. Helmsman non è intermediario e non è la banca.' %}
+  {% assign mw_quote = 'Se l’ordine esiste, esiste sul tuo conto, dopo il tuo sì. Helmsman è il tubo. Non il capitano. Non la cassa.' %}
+  {% assign mw_link = 'Disclaimer e termini →' %}
+  {% assign mw_href = '/it/disclaimer/' %}
+{% else %}
+  {% assign mw_kicker = 'Pass-through' %}
+  {% assign mw_title = 'We do not decide. We do not execute.' %}
+  {% assign mw_lead = 'Helmsman is middleware: it translates, vetoes, forwards. The LLM proposes. You confirm. The broker — on your account — is the final executor.' %}
+  {% assign mw_a_h = 'The LLM' %}
+  {% assign mw_a_s = 'Not us' %}
+  {% assign mw_a_p = 'Claude or another third-party model can hallucinate, botch the numbers, invent a name. That call is not Helmsman.' %}
+  {% assign mw_b_h = 'The bridge' %}
+  {% assign mw_b_s = 'This is us' %}
+  {% assign mw_b_p = 'Routing, rules, covers. If the stop is missing, if size moved, if you did not say yes — the pipe closes. We do not hold your book.' %}
+  {% assign mw_c_h = 'The broker' %}
+  {% assign mw_c_s = 'Final executor' %}
+  {% assign mw_c_p = 'Alpaca, Tradier, or the venue you connect. If an order exists, it exists on their book. Helmsman is not your intermediary and not your bank.' %}
+  {% assign mw_quote = 'If the order exists, it exists on your account, after your yes. Helmsman is the pipe. Not the captain. Not the till.' %}
+  {% assign mw_link = 'Disclaimer and terms →' %}
+  {% assign mw_href = '/en/disclaimer/' %}
+{% endif %}
+
+<section class="mw-band" aria-label="{% if page.lang == 'it' %}Ruolo di Helmsman{% else %}Helmsman’s role{% endif %}">
+  <div class="mw-band__gold" aria-hidden="true"></div>
+  <div class="mw-band__inner">
+    <p class="mw-band__kicker">{{ mw_kicker }}</p>
+    <h2 class="mw-band__title">{{ mw_title }}</h2>
+    <p class="mw-band__lead">{{ mw_lead }}</p>
+    <div class="mw-pillars">
+      <article>
+        <span>01</span>
+        <h3>{{ mw_a_h }}</h3>
+        <em>{{ mw_a_s }}</em>
+        <p>{{ mw_a_p }}</p>
+      </article>
+      <article class="is-us">
+        <span>02</span>
+        <h3>{{ mw_b_h }}</h3>
+        <em>{{ mw_b_s }}</em>
+        <p>{{ mw_b_p }}</p>
+      </article>
+      <article>
+        <span>03</span>
+        <h3>{{ mw_c_h }}</h3>
+        <em>{{ mw_c_s }}</em>
+        <p>{{ mw_c_p }}</p>
+      </article>
+    </div>
+    <blockquote class="mw-band__quote">{{ mw_quote }}</blockquote>
+    <p class="mw-band__more"><a href="{{ mw_href }}">{{ mw_link }}</a></p>
+  </div>
+</section>

@@ -1,0 +1,44 @@
+---
+layout: default
+permalink: /en/terms/
+title: "Terms of use | Helmsman"
+lang: en
+locale: en_US
+alt: /it/termini/
+description: "Helmsman is a technological bridge. Not an adviser, not a broker, not the final executor. Software as-is."
+---
+<section class="page-hero">
+  <div class="page-hero__goldline"></div>
+  <div class="max-w-5xl mx-auto relative z-10">
+    <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">Legal</p>
+    <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">Terms of use</h1>
+    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">A pipe with rules. Not a mandate to run your money. Using the site or the software means you accept this frame.</p>
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-white dark:bg-brand-dark">
+  <div class="max-w-3xl mx-auto">
+    {% include legal-nav.html %}
+    <div class="sales-prose text-lg text-gray-600 dark:text-gray-400 leading-relaxed space-y-5">
+      <p class="text-sm font-mono uppercase tracking-widest text-brand-gold">Draft · 25 August 2026</p>
+      <p class="text-sm">These terms describe the software’s role as designed — including the SaaS architecture draft. They are not a substitute for legal advice. The owner may update them. Continued use is acceptance.</p>
+
+      <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">1. Bridge, not a mandate</h2>
+      <p>Helmsman Trading is <strong class="text-gray-900 dark:text-white">routing infrastructure</strong> (middleware / pass-through). It is not an investment adviser, not a licensed intermediary, not an asset manager, not an exchange. It does not originate the market call by itself: it <em>translates, filters and forwards</em> between (a) a third-party language model, (b) you, (c) the API of the broker you connect.</p>
+
+      <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">2. Who does what</h2>
+      <p><strong class="text-gray-900 dark:text-white">You</strong> hold the account, the keys, the human confirm, the risk parameters, and the law of your country. <strong class="text-gray-900 dark:text-white">The LLM</strong> (Anthropic, OpenAI or another client) can be wrong. <strong class="text-gray-900 dark:text-white">The broker</strong> is the final executor: it accepts, rejects, delays, gaps. <strong class="text-gray-900 dark:text-white">Helmsman</strong> is none of those three roles.</p>
+
+      <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">3. Hallucinations and software AS IS</h2>
+      <p>Language models invent data, botch maths, and are not deterministic. Helmsman declines liability for losses born of a model’s misread, a badly invoked tool, or an «almost» the AI treated as a yes. The software is provided <strong class="text-gray-900 dark:text-white">as is</strong>, with no warranty of uptime, latency, or freedom from bugs. A guardrail can fail. A network can lag. We do not become your refund.</p>
+
+      <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">4. Keys, risk, third parties</h2>
+      <p>Broker API keys stay yours. We do not hold your book. You are responsible for issuing them with withdrawals disabled and tight limits. We depend on Anthropic, your client (Claude Code, Cursor, other), the venue, and hosting. If one of them dies in a crash, Helmsman does not flatten your book for you and does not answer for lost capital.</p>
+
+      <h2 class="text-2xl font-black text-gray-900 dark:text-white pt-4">5. Paper and live</h2>
+      <p>Access described today is paper. Live, if it comes, keeps the same frame: middleware, your yes, executor = broker. Nothing here is an offer of investment services.</p>
+
+      <p>Market risk, examples, marks: <a class="text-brand-gold font-bold hover:underline" href="/en/disclaimer/">Disclaimer</a>. Owner: Antonio Trento · <a class="text-brand-gold hover:underline" href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>.</p>
+    </div>
+  </div>
+</section>

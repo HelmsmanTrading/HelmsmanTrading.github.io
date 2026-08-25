@@ -378,6 +378,10 @@
 
     {{ content }}
 
+    {% unless page.hide_middleware_band %}
+    {% include middleware-band.html %}
+    {% endunless %}
+    {% include disclaimer-strip.html %}
     {% include antigravity_footer.html %}
     {% include popup-down.html %}
 

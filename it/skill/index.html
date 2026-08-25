@@ -1,0 +1,152 @@
+---
+layout: default
+permalink: /it/skill/
+title: "Skill | Helmsman"
+lang: it
+locale: it_IT
+alt: /en/skills/
+description: "Cinque skill long-only su mercati liquidi: trend, mean reversion, squeeze, quality dip, AVWAP. Altre in arrivo, validate sui mercati di riferimento."
+---
+<section class="page-hero">
+  <div class="page-hero__goldline"></div>
+  <div class="max-w-5xl mx-auto relative z-10">
+    <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">Skill</p>
+    <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">Regole che dicono sì o no. Non opinioni vestite da segnali.</h1>
+    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">Una skill Helmsman è una regola deterministica sul nastro: applicabile o no. Non un tip. Non un ranking. Non una chat che «ha un feeling su SLV». Cinque oggi. Altre in coda — tutte costruite e validate sui mercati liquidi di riferimento.</p>
+  </div>
+</section>
+
+{% include pull-quote.html text="L’LLM può proporre. La skill decide se la tesi esiste. Il motore numera. Tu tieni il sì. Il broker esegue." cite="Il ruolo della skill, senza teatro" %}
+
+<section class="py-20 px-6 bg-white dark:bg-brand-dark">
+  <div class="max-w-5xl mx-auto sales-prose text-lg text-gray-600 dark:text-gray-400 leading-relaxed space-y-5">
+    <h2 class="text-3xl md:text-5xl font-black text-gray-900 dark:text-white">Perché le skill esistono</h2>
+    <p>Il mercato non manca di opinioni. Manca di filtri. Hai un modello che ti racconta una storia, un canale che ti sparisce dieci ticker, un foglio che «dovrebbe» dire la size. Poi l’ingresso parte nudo. Poi lo stop «dopo». Poi il conto sa.</p>
+    <p>Helmsman inverte l’ordine. Prima lo <a class="text-brand-gold font-bold hover:underline" href="/it/scan/">scan</a> guarda l’<a class="text-brand-gold font-bold hover:underline" href="/it/universo/">universo liquido</a>. Poi ogni skill risponde con un bool: sì o no. Solo se sì, nasce l’anteprima con size e stop. Solo se tu confermi, l’ordine arriva al broker — già coperto.</p>
+    <p>Non stiamo vendendo «cinque strategie magiche». Stiamo vendendo cinque veto onesti. Se la giornata è vuota, la giornata è vuota. Il FOMO non è una feature.</p>
+  </div>
+</section>
+
+<section class="py-20 px-6 bg-[#081628] text-white">
+  <div class="max-w-6xl mx-auto">
+    <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-4">Catalogo vivo</p>
+    <h2 class="text-3xl md:text-5xl font-black mb-4">Cinque skill. Long-only. Nessuna size inventata in chat.</h2>
+    <p class="text-gray-400 max-w-3xl mb-14 leading-relaxed">Ogni skill ha un orizzonte, una logica di ingresso, uno stop e un target. I numeri di size restano al motore di rischio sul <em>tuo</em> conto. L’LLM non li scrive. Tu li vedi prima del sì.</p>
+
+    <div class="skill-grid">
+      <article class="skill-card">
+        <div class="skill-card__meta">
+          <span>01</span>
+          <em>multi-day · GTC</em>
+        </div>
+        <h3>ATR-BREAKOUT</h3>
+        <p class="skill-card__tag">Trend + momentum</p>
+        <p>Non è il breakout da libro di testo sul massimo del range. È la tesi più sobria: prezzo sopra la media primaria, RSI in zona sana, trend di fondo non contrario. Lo stop nasce dall’ATR. Il target cerca un R:R 1:2. Se il titolo rimbalza dentro un downtrend, la skill dice no — anche se la chat «lo sente forte».</p>
+        <ul>
+          <li><strong>Entra quando</strong> last sopra EMA20, RSI tra 50 e 70, last sopra SMA200</li>
+          <li><strong>Stop</strong> 2× ATR(14)</li>
+          <li><strong>Target</strong> 2× lo stop</li>
+          <li><strong>Universo</strong> book liquido completo</li>
+        </ul>
+      </article>
+
+      <article class="skill-card">
+        <div class="skill-card__meta">
+          <span>02</span>
+          <em>short-term · GTC</em>
+        </div>
+        <h3>CONNORS-MR</h3>
+        <p class="skill-card__tag">Mean reversion · compra il dip</p>
+        <p>Quando il nastro è ancora sopra la media di medio periodo ma l’RSI ultracorto è andato a fondo, la skill cerca il rimbalzo — non la caccia al coltello senza pavimento. Stop largo di proposito: la mean reversion odia gli stop stretti. Target sul bounce, non sul «doppio in una settimana».</p>
+        <ul>
+          <li><strong>Entra quando</strong> last sopra SMA50 e RSI(2) sotto 10</li>
+          <li><strong>Stop</strong> 5% fisso</li>
+          <li><strong>Target</strong> 4% fisso</li>
+          <li><strong>Universo</strong> book liquido completo</li>
+        </ul>
+      </article>
+
+      <article class="skill-card">
+        <div class="skill-card__meta">
+          <span>03</span>
+          <em>momentum · GTC</em>
+        </div>
+        <h3>VOL-SQUEEZE</h3>
+        <p class="skill-card__tag">Compressione · bias long</p>
+        <p>Bollinger dentro Keltner: il mercato sta trattenendo il fiato. Helmsman non aspetta lo «scoppio» da screenshot. Entra <em>durante</em> la compressione, se l’istogramma MACD è già positivo. Stop stretto: se la tesi muore, muore presto. Target più largo: cattura l’espansione quando arriva.</p>
+        <ul>
+          <li><strong>Entra quando</strong> squeeze ON e MACD hist &gt; 0</li>
+          <li><strong>Stop</strong> 1,5%</li>
+          <li><strong>Target</strong> 4,5% (≈ 1:3)</li>
+          <li><strong>Universo</strong> book liquido completo</li>
+        </ul>
+      </article>
+
+      <article class="skill-card">
+        <div class="skill-card__meta">
+          <span>04</span>
+          <em>swing · GTC</em>
+        </div>
+        <h3>QUALITY-DIP</h3>
+        <p class="skill-card__tag">Contrarian · megacap ipervendute</p>
+        <p>L’opposto del trend skill. Compra un nome di qualità profondamente oversold, anche sotto la media lunga. Non è «qualsiasi titolo a sconto»: è una whitelist curata — i fondamentali non escono dall’OHLCV. Stop largo, size piccola: falling knife con pavimento istituzionale, non lottery ticket.</p>
+        <ul>
+          <li><strong>Entra quando</strong> ticker in whitelist qualità, RSI(14) &lt; 30, last sotto SMA200</li>
+          <li><strong>Stop</strong> 8%</li>
+          <li><strong>Target</strong> 12% (≈ 1,5 R)</li>
+          <li><strong>Universo</strong> solo megacap / blue chip di qualità</li>
+        </ul>
+      </article>
+
+      <article class="skill-card skill-card--wide">
+        <div class="skill-card__meta">
+          <span>05</span>
+          <em>swing · GTC</em>
+        </div>
+        <h3>AVWAP-RETEST</h3>
+        <p class="skill-card__tag">Setup istituzionale · reclaim + retest</p>
+        <p>Anchored VWAP dal minimo del trimestre: il prezzo medio pagato da chi ha accumulato dalla base. Se il titolo ha riconquistato quella linea e la sta ritestando da sopra — senza aver già corso troppo — la skill accende. Funziona dove il flusso istituzionale domina. Sui sottili non ha senso: per questo gira solo sulla whitelist più liquida.</p>
+        <ul>
+          <li><strong>Entra quando</strong> sopra AVWAP daily, retest entro +4%, base reale (≥8% sotto)</li>
+          <li><strong>Stop</strong> appena sotto la linea (clamp 3–10%)</li>
+          <li><strong>Target</strong> banda +2σ, o 2× SL se il R:R non regge</li>
+          <li><strong>Universo</strong> ETF e megacap ultra-liquidi</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 px-6 bg-white dark:bg-brand-dark">
+  <div class="max-w-5xl mx-auto sales-prose text-lg text-gray-600 dark:text-gray-400 leading-relaxed space-y-5">
+    <h2 class="text-3xl md:text-4xl font-black text-gray-900 dark:text-white">Come entra nel tuo giorno</h2>
+    <p><strong class="text-gray-900 dark:text-white">1. Scan.</strong> Helmsman passa i ticker dell’universo. Per ciascuno, le skill rispondono applicabile / non applicabile. Motivi in chiaro. Niente padding.</p>
+    <p><strong class="text-gray-900 dark:text-white">2. Preview.</strong> Solo dove una skill ha detto sì, nasce una riga: titolo, direzione, size, stop, target. Nessun ordine è partito. Se nel frattempo la size è cambiata o la regola non vale più, si ferma.</p>
+    <p><strong class="text-gray-900 dark:text-white">3. Tuo sì.</strong> Senza conferma umana l’ordine non esiste. Helmsman è middleware, non capitano.</p>
+    <p><strong class="text-gray-900 dark:text-white">4. Ingresso coperto.</strong> L’ordine va al broker che colleghi tu — OTO o bracket — già con lo stop. Poi la posizione è disciplina tua.</p>
+    <p><a class="text-brand-gold font-bold hover:underline" href="/it/come-funziona/">Il flusso completo →</a></p>
+  </div>
+</section>
+
+<section class="py-20 px-6 bg-[#050d18] text-white">
+  <div class="max-w-5xl mx-auto sales-prose text-lg text-gray-400 leading-relaxed space-y-5">
+    <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em]">Validazione</p>
+    <h2 class="text-3xl md:text-5xl font-black text-white mb-2">Sui mercati di riferimento. Non su un universo inventato.</h2>
+    <p>Una skill non entra in catalogo perché «suona bene in chat». Entra se ha senso sul book liquido che Helmsman sonda davvero: megacap, blue chip, ETF dove lo spread non ti umilia e l’uscita esiste. Le regole attive sono state costruite e validate su quei mercati di riferimento — gli stessi ticker dell’universo, non un dataset di vanity.</p>
+    <p>Non ti vendiamo un backtest da 90 slide con CAGR da brochure. Ti vendiamo onestà operativa: bool sul nastro, numeri dal motore, tuo sì, esecuzione sul tuo broker. Le performance passate non predicono il futuro. Il rischio resta tuo. Helmsman resta il ponte.</p>
+    <p><a class="text-brand-gold font-bold hover:underline" href="/it/universo/">Perché questi ticker →</a></p>
+  </div>
+</section>
+
+<section class="py-20 px-6 bg-white dark:bg-brand-dark">
+  <div class="max-w-5xl mx-auto sales-prose text-lg text-gray-600 dark:text-gray-400 leading-relaxed space-y-5">
+    <h2 class="text-3xl md:text-4xl font-black text-gray-900 dark:text-white">Altre skill in arrivo</h2>
+    <p>Il catalogo non è chiuso. In coda ci sono setup VWAP di sessione — fade e bounce — pensati per i nomi più liquidi (indici, megacap high-beta). Stessa regola di ingresso in prodotto: devono reggere sui mercati di riferimento, con gli stessi veto di copertura e lo stesso umano al timone.</p>
+    <p>Quando una skill nuova merita di entrare, entra. Quando non merita, resta fuori. Preferiamo un catalogo corto e onesto a una vetrina che deve «trovare qualcosa» ogni mattina per giustificare l’abbonamento.</p>
+    <div class="gold-rule"></div>
+    <p><strong class="text-gray-900 dark:text-white">Cosa non sono le skill.</strong> Non sono consulenza. Non sono ranking. Non sono l’LLM. Non sono il broker. Sono regole. Helmsman le applica; tu confermi; il venue esegue.</p>
+  </div>
+</section>
+
+{% include broker-rail.html kicker="off" caption="off" %}
+{% include cta-band.html title="Vuoi vedere le skill sul tuo broker paper?" lead="Accesso anticipato. Indica il venue. Tu tieni il sì." %}

@@ -15,9 +15,9 @@
             </p>
             <p class="text-gray-400 text-sm mb-6 leading-relaxed">
                 {% if page.lang == 'it' %}
-                Helmsman sonda i mercati liquidi, ti propone le opportunità e apre solo posizioni coperte — sul broker che colleghi tu.
+                Helmsman è il ponte: sonda i liquidi, propone, veta. Apre solo coperto — sul broker che colleghi tu. L’esecutore finale è il venue, non noi.
                 {% else %}
-                Helmsman scans liquid markets, proposes the setups, and opens only covered positions — at the broker you connect.
+                Helmsman is the bridge: it scans liquid names, proposes, vetoes. It opens only covered — at the broker you connect. The final executor is the venue, not us.
                 {% endif %}
             </p>
             <div class="flex gap-2">
@@ -48,6 +48,18 @@
                         <li>
                             <a href="{% if page.lang == 'it' %}/it/scan/{% else %}/en/scan/{% endif %}"
                                 class="hover:text-brand-gold transition-colors">Scan</a>
+                        </li>
+                        <li>
+                            <a href="{% if page.lang == 'it' %}/it/skill/{% else %}/en/skills/{% endif %}"
+                                class="hover:text-brand-gold transition-colors">
+                                {% if page.lang == 'it' %}Skill{% else %}Skills{% endif %}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% if page.lang == 'it' %}/it/universo/{% else %}/en/universe/{% endif %}"
+                                class="hover:text-brand-gold transition-colors">
+                                {% if page.lang == 'it' %}Universo{% else %}Universe{% endif %}
+                            </a>
                         </li>
                         <li>
                             <a href="{% if page.lang == 'it' %}/it/coperture/{% else %}/en/covered/{% endif %}"
@@ -127,6 +139,12 @@
                             class="hover:text-brand-gold transition-colors">Disclaimer</a>
                     </li>
                     <li>
+                        <a href="{% if page.lang == 'it' %}/it/termini/{% else %}/en/terms/{% endif %}"
+                            class="hover:text-brand-gold transition-colors">
+                            {% if page.lang == 'it' %}Termini{% else %}Terms{% endif %}
+                        </a>
+                    </li>
+                    <li>
                         <a href="{% if page.lang == 'it' %}/it/privacy/{% else %}/en/privacy/{% endif %}"
                             class="hover:text-brand-gold transition-colors">Privacy</a>
                     </li>
@@ -144,16 +162,16 @@
         <p>
             &copy; {{ site.time | date: '%Y' }} Helmsman Trading.
             {% if page.lang == 'it' %}
-            Il trading comporta perdite. Questo non è un consiglio di investimento.
+            Il trading comporta perdite. Helmsman è middleware, non consulenza, non l’LLM, non il broker.
             {% else %}
-            Trading involves loss. This is not investment advice.
+            Trading involves loss. Helmsman is middleware — not advice, not the LLM, not the broker.
             {% endif %}
         </p>
         <p class="md:text-right max-w-lg">
             {% if page.lang == 'it' %}
-            Accesso anticipato in paper. Live solo quando coperture e regole sono pronte.
+            Accesso anticipato in paper. L’esecutore finale è il tuo intermediario, dopo il tuo sì.
             {% else %}
-            Early access is paper. Live only when covers and rules are ready.
+            Early access is paper. The final executor is your venue, after your yes.
             {% endif %}
         </p>
     </div>
