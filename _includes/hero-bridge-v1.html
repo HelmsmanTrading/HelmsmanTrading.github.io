@@ -1,0 +1,137 @@
+{% comment %}
+Archived 2026-08-25 — first animated home hero (crowded dashboard loop).
+Restore with: {% include hero-bridge-v1.html %}
+Still earlier: {% include hero-visual-v1.html %} (static proposal card).
+{% endcomment %}
+{% if page.lang == 'it' %}
+  {% assign hb_aria = 'Helmsman in azione: scan, proposta coperta, conferma, ingresso al broker' %}
+  {% assign hb_scan = 'Scan · mercati liquidi' %}
+  {% assign hb_live = 'Live paper' %}
+  {% assign hb_skip = 'Saltato' %}
+  {% assign hb_lock = 'Lock' %}
+  {% assign hb_covered = 'Coperto' %}
+  {% assign hb_preview = 'Anteprima · aspetti il tuo sì' %}
+  {% assign hb_yes = 'Confermo' %}
+  {% assign hb_waiting = 'In attesa' %}
+  {% assign hb_sent = 'Inviato · stop attaccato' %}
+  {% assign hb_naked = 'Market nudo' %}
+  {% assign hb_reject = 'Rifiutato' %}
+  {% assign hb_s1 = 'Sonda' %}
+  {% assign hb_s2 = 'Propone' %}
+  {% assign hb_s3 = 'Tu confermi' %}
+  {% assign hb_s4 = 'Apre coperto' %}
+  {% assign hb_rule = 'Breakout ATR · multi-day' %}
+  {% assign hb_size = 'Size' %}
+{% else %}
+  {% assign hb_aria = 'Helmsman in action: scan, covered proposal, confirm, broker entry' %}
+  {% assign hb_scan = 'Scan · liquid names' %}
+  {% assign hb_live = 'Live paper' %}
+  {% assign hb_skip = 'Skipped' %}
+  {% assign hb_lock = 'Lock' %}
+  {% assign hb_covered = 'Covered' %}
+  {% assign hb_preview = 'Preview · waiting for your yes' %}
+  {% assign hb_yes = 'Confirm' %}
+  {% assign hb_waiting = 'Waiting' %}
+  {% assign hb_sent = 'Sent · stop attached' %}
+  {% assign hb_naked = 'Naked market' %}
+  {% assign hb_reject = 'Rejected' %}
+  {% assign hb_s1 = 'Scan' %}
+  {% assign hb_s2 = 'Propose' %}
+  {% assign hb_s3 = 'You confirm' %}
+  {% assign hb_s4 = 'Open covered' %}
+  {% assign hb_rule = 'ATR breakout · multi-day' %}
+  {% assign hb_size = 'Size' %}
+{% endif %}
+
+<figure class="hero-bridge" role="img" aria-label="{{ hb_aria }}">
+  <div class="hero-bridge__glow" aria-hidden="true"></div>
+  <div class="hero-bridge__console">
+    <header class="hero-bridge__chrome">
+      <span class="hero-bridge__mark"></span>
+      <span class="hero-bridge__title">Helmsman Bridge</span>
+      <span class="hero-bridge__scanline">{{ hb_scan }}</span>
+      <span class="hero-bridge__live"><i></i>{{ hb_live }}</span>
+    </header>
+    <div class="hero-bridge__stage">
+      <div class="hero-bridge__radar" aria-hidden="true">
+        <span class="hero-bridge__ring"></span>
+        <span class="hero-bridge__ring hero-bridge__ring--2"></span>
+        <span class="hero-bridge__sweep"></span>
+        <span class="hero-bridge__blip is-a"></span>
+        <span class="hero-bridge__blip is-b"></span>
+        <span class="hero-bridge__blip is-c"></span>
+        <span class="hero-bridge__blip is-lock"></span>
+      </div>
+      <ul class="hero-bridge__names">
+        <li class="is-skip" style="--i:0"><span>NVDA</span><em>{{ hb_skip }}</em></li>
+        <li class="is-skip" style="--i:1"><span>WMT</span><em>{{ hb_skip }}</em></li>
+        <li class="is-hit" style="--i:2"><span>SLV</span><em>{{ hb_lock }}</em></li>
+        <li class="is-skip" style="--i:3"><span>SPY</span><em>{{ hb_skip }}</em></li>
+      </ul>
+      <svg class="hero-bridge__chart" viewBox="0 0 360 168" fill="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="hbFillV1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#C4A35A" stop-opacity="0.28"/>
+            <stop offset="100%" stop-color="#C4A35A" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <path class="hero-bridge__fill" d="M12 118 C 48 112, 72 96, 108 88 C 150 78, 168 92, 198 70 C 228 50, 258 58, 292 42 C 318 30, 338 36, 348 28 L 348 150 L 12 150 Z" fill="url(#hbFillV1)"/>
+        <path class="hero-bridge__price" d="M12 118 C 48 112, 72 96, 108 88 C 150 78, 168 92, 198 70 C 228 50, 258 58, 292 42 C 318 30, 338 36, 348 28" stroke="#F7F4EE" stroke-width="2"/>
+        <line class="hero-bridge__stop" x1="12" y1="132" x2="348" y2="132"/>
+        <text class="hero-bridge__stop-label" x="12" y="148">STOP 58.76</text>
+        <circle class="hero-bridge__entry" cx="198" cy="70" r="4"/>
+        <line class="hero-bridge__target" x1="198" y1="70" x2="330" y2="38"/>
+      </svg>
+      <article class="hero-bridge__ticket">
+        <div class="hero-bridge__ticket-top">
+          <div>
+            <strong>SLV</strong>
+            <span>{{ hb_rule }}</span>
+          </div>
+          <b>{{ hb_covered }}</b>
+        </div>
+        <div class="hero-bridge__metrics">
+          <div>{{ hb_size }}<strong>887</strong></div>
+          <div>Stop<strong class="is-sl">58.76</strong></div>
+          <div>Target<strong class="is-tp">61.70</strong></div>
+        </div>
+        <div class="hero-bridge__confirm">
+          <span class="hero-bridge__wait">{{ hb_preview }}</span>
+          <span class="hero-bridge__yes">{{ hb_yes }}</span>
+          <span class="hero-bridge__sent">{{ hb_sent }}</span>
+        </div>
+      </article>
+      <div class="hero-bridge__helm" aria-hidden="true">
+        <svg viewBox="0 0 120 120" fill="none">
+          <circle cx="60" cy="60" r="28" stroke="#C4A35A" stroke-width="6"/>
+          <circle cx="60" cy="60" r="9" fill="#C4A35A"/>
+          <g stroke="#C4A35A" stroke-width="5" stroke-linecap="round">
+            <line x1="60" y1="8" x2="60" y2="28"/><circle cx="60" cy="8" r="5" fill="#C4A35A" stroke="none"/>
+            <line x1="60" y1="92" x2="60" y2="112"/><circle cx="60" cy="112" r="5" fill="#C4A35A" stroke="none"/>
+            <line x1="8" y1="60" x2="28" y2="60"/><circle cx="8" cy="60" r="5" fill="#C4A35A" stroke="none"/>
+            <line x1="92" y1="60" x2="112" y2="60"/><circle cx="112" cy="60" r="5" fill="#C4A35A" stroke="none"/>
+            <line x1="23" y1="23" x2="38" y2="38"/><circle cx="23" cy="23" r="5" fill="#C4A35A" stroke="none"/>
+            <line x1="82" y1="82" x2="97" y2="97"/><circle cx="97" cy="97" r="5" fill="#C4A35A" stroke="none"/>
+            <line x1="97" y1="23" x2="82" y2="38"/><circle cx="97" cy="23" r="5" fill="#C4A35A" stroke="none"/>
+            <line x1="23" y1="97" x2="38" y2="82"/><circle cx="23" cy="97" r="5" fill="#C4A35A" stroke="none"/>
+          </g>
+        </svg>
+      </div>
+      <div class="hero-bridge__packet" aria-hidden="true"></div>
+      <div class="hero-bridge__brokers">
+        <div class="hero-bridge__chip is-alpaca">Alpaca<span>paper</span></div>
+        <div class="hero-bridge__chip is-tradier">Tradier<span>sandbox</span></div>
+      </div>
+      <div class="hero-bridge__veto" aria-hidden="true">
+        <strong>{{ hb_naked }}</strong>
+        <em>{{ hb_reject }}</em>
+      </div>
+    </div>
+    <ol class="hero-bridge__steps">
+      <li class="is-1"><i>01</i>{{ hb_s1 }}</li>
+      <li class="is-2"><i>02</i>{{ hb_s2 }}</li>
+      <li class="is-3"><i>03</i>{{ hb_s3 }}</li>
+      <li class="is-4"><i>04</i>{{ hb_s4 }}</li>
+    </ol>
+  </div>
+</figure>
