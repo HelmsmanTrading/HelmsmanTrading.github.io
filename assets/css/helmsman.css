@@ -2386,7 +2386,7 @@ footer .brand-logo {
 .mark-hero {
   position: relative;
   overflow: hidden;
-  padding: 9.25rem 1.5rem 5.25rem;
+  padding: 10rem 1.5rem 5.25rem;
   background: #081628;
   color: #fff;
 }
@@ -2424,9 +2424,14 @@ footer .brand-logo {
   max-width: 72rem;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  gap: 2.5rem;
+  grid-template-columns: minmax(0, 1.15fr) minmax(17rem, 22rem);
+  gap: 3rem;
   align-items: center;
+}
+.mark-hero__copy {
+  position: relative;
+  z-index: 4;
+  min-width: 0;
 }
 .mark-hero__kicker {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
@@ -2451,37 +2456,27 @@ footer .brand-logo {
 }
 .mark-hero__dial {
   position: relative;
-  justify-self: end;
-  width: min(26rem, 100%);
+  z-index: 2;
+  width: 22rem;
+  max-width: 100%;
+  overflow: hidden;
+  isolation: isolate;
 }
 .mark-hero__bloom {
   position: absolute;
-  inset: 12%;
+  inset: 18%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(196,163,90,0.22), transparent 68%);
-  filter: blur(8px);
-  animation: mark-bloom 7s ease-in-out infinite;
+  background: radial-gradient(circle, rgba(196,163,90,0.2), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
 }
 .mark-hero__svg {
   position: relative;
+  z-index: 1;
   display: block;
   width: 100%;
   height: auto;
-}
-.mark-hero__orbit {
-  transform-origin: 200px 200px;
-  transform-box: view-box;
-  animation: helm-spin 28s linear infinite;
-}
-.mark-hero__wheel {
-  transform-origin: 200px 200px;
-  transform-box: view-box;
-  animation: helm-spin 48s linear infinite reverse;
-}
-.mark-hero__needle {
-  transform-origin: 200px 200px;
-  transform-box: view-box;
-  animation: mark-hold 9s ease-in-out infinite;
+  overflow: visible;
 }
 .mark-hero__legend {
   margin: 0.85rem 0 0;
@@ -2492,32 +2487,20 @@ footer .brand-logo {
   text-transform: uppercase;
   color: rgba(196,163,90,0.75);
 }
-@keyframes mark-bloom {
-  0%, 100% { opacity: 0.65; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.06); }
-}
-@keyframes mark-hold {
-  0%, 100% { transform: rotate(-3.5deg); }
-  50% { transform: rotate(2.8deg); }
-}
 @media (max-width: 900px) {
-  .mark-hero { padding: 8.25rem 1.25rem 3.5rem; }
+  .mark-hero { padding: 8.5rem 1.25rem 3.5rem; }
   .mark-hero__grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.75rem;
   }
   .mark-hero__dial {
+    width: 16rem;
     justify-self: center;
-    width: min(18rem, 70vw);
-    opacity: 0.88;
+    opacity: 0.92;
   }
-  .mark-hero__meridian { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   .mark-hero__goldline,
-  .mark-hero__orbit,
-  .mark-hero__wheel,
-  .mark-hero__needle,
-  .mark-hero__bloom,
   .mark-hero__veil { animation: none !important; }
+  .mark-hero animateTransform { display: none; }
 }
