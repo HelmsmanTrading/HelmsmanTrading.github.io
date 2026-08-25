@@ -1,26 +1,44 @@
 {% if page.lang == 'it' %}
-  {% assign cc_aria = 'Sessione Claude Code vera: scan_market, preview_trade, conferma umana, confirm_trade su Alpaca paper' %}
+  {% assign cc_aria = 'Sessione Claude Code: Helmsman sonda, propone coperto, tu confermi, apre su Alpaca paper' %}
   {% assign cc_prompt = 'scansiona i liquidi. proponi solo se coperto.' %}
   {% assign cc_yes = 'conferma' %}
-  {% assign cc_think = 'Pensando…' %}
-  {% assign cc_ask = 'SLV long, 887 pezzi, stop 58.76, target 61.70. OTO su Alpaca paper. Nessun ordine è partito. Confermi?' %}
-  {% assign cc_ok = 'Inviato. Stop attaccato. La posizione è tua.' %}
-  {% assign cc_skip = 'skipped' %}
+  {% assign cc_think = 'Sta sondando i mercati liquidi…' %}
+  {% assign cc_gate = 'Nessun ordine è partito. Il timone è tuo.' %}
+  {% assign cc_ok = 'Aperto. Stop già attaccato. La posizione è tua.' %}
+  {% assign cc_skip = 'saltato' %}
+  {% assign cc_lock = 'preso' %}
   {% assign cc_none = 'nessun ordine inviato' %}
   {% assign cc_ph = 'Chiedi a Claude…' %}
+  {% assign cc_s1 = 'Sonda' %}
+  {% assign cc_s2 = 'Propone' %}
+  {% assign cc_s3 = 'Tu confermi' %}
+  {% assign cc_s4 = 'Apre coperto' %}
+  {% assign cc_c1 = '01 · Sonda — guarda i liquidi, salta il resto.' %}
+  {% assign cc_c2 = '02 · Propone — una riga vera. Stop già calcolato.' %}
+  {% assign cc_c3 = '03 · Tu confermi — senza il tuo sì, non parte.' %}
+  {% assign cc_c4 = '04 · Apre coperto — OTO su Alpaca paper.' %}
 {% else %}
-  {% assign cc_aria = 'A real Claude Code session: scan_market, preview_trade, human confirm, confirm_trade on Alpaca paper' %}
+  {% assign cc_aria = 'Claude Code session: Helmsman scans, proposes covered, you confirm, opens on Alpaca paper' %}
   {% assign cc_prompt = 'scan the liquid names. propose only if covered.' %}
   {% assign cc_yes = 'confirm' %}
-  {% assign cc_think = 'Thinking…' %}
-  {% assign cc_ask = 'SLV long, 887 shares, stop 58.76, target 61.70. OTO on Alpaca paper. No order sent. Confirm?' %}
-  {% assign cc_ok = 'Submitted. Stop attached. The position is yours.' %}
+  {% assign cc_think = 'Scanning liquid markets…' %}
+  {% assign cc_gate = 'No order has been sent. You hold the helm.' %}
+  {% assign cc_ok = 'Opened. Stop already attached. The position is yours.' %}
   {% assign cc_skip = 'skipped' %}
+  {% assign cc_lock = 'locked' %}
   {% assign cc_none = 'no order sent' %}
   {% assign cc_ph = 'Ask Claude…' %}
+  {% assign cc_s1 = 'Scan' %}
+  {% assign cc_s2 = 'Propose' %}
+  {% assign cc_s3 = 'You confirm' %}
+  {% assign cc_s4 = 'Open covered' %}
+  {% assign cc_c1 = '01 · Scan — watch the liquid names, skip the rest.' %}
+  {% assign cc_c2 = '02 · Propose — one true line. Stop already computed.' %}
+  {% assign cc_c3 = '03 · You confirm — without your yes, nothing is sent.' %}
+  {% assign cc_c4 = '04 · Open covered — OTO on Alpaca paper.' %}
 {% endif %}
 
-<figure class="cc-win" data-claude-code role="img" aria-label="{{ cc_aria }}">
+<figure class="cc-win" data-claude-code data-beat="idle" role="img" aria-label="{{ cc_aria }}">
   <div class="cc-win__glow" aria-hidden="true"></div>
   <div class="cc-win__frame">
     <header class="cc-win__bar">
@@ -38,53 +56,62 @@
       <span>Alpaca paper</span>
     </div>
 
-    <div class="cc-win__body" id="cc-body">
-      <div class="cc-row" data-cc="boot">
+    <p class="cc-caption" data-cc-caption>{{ cc_c1 }}</p>
+
+    <div class="cc-win__body">
+      <div class="cc-row" data-cc="boot" data-beat="idle">
         <p class="cc-boot">HelmsmanTrading <span>main</span></p>
       </div>
 
-      <div class="cc-row is-user" data-cc="u1">
+      <div class="cc-row is-user" data-cc="u1" data-beat="scan" data-caption="{{ cc_c1 }}">
         <span class="cc-prompt">❯</span>
         <span class="cc-typed" data-type="{{ cc_prompt }}"></span>
       </div>
 
-      <div class="cc-row" data-cc="think">
+      <div class="cc-row" data-cc="think" data-beat="scan" data-caption="{{ cc_c1 }}">
         <span class="cc-spin" aria-hidden="true"></span>
         <span>{{ cc_think }}</span>
       </div>
 
-      <div class="cc-row" data-cc="scan">
+      <div class="cc-row" data-cc="scan" data-beat="scan" data-caption="{{ cc_c1 }}">
         <div class="cc-tool">
-          <div class="cc-tool__name"><i>⏺</i> scan_market</div>
+          <div class="cc-tool__name"><i>⏺</i> scan_market <span>liquidi</span></div>
           <div class="cc-tool__out">
-            <div><span class="cc-dim">⎿</span> WMT <em>{{ cc_skip }}</em> below SMA</div>
-            <div><span class="cc-dim">⎿</span> NVDA <em>{{ cc_skip }}</em> rule did not fire</div>
-            <div><span class="cc-dim">⎿</span> SLV <b>applicable</b> ATR breakout · long</div>
+            <div class="is-skip"><span class="cc-dim">⎿</span> WMT <i>{{ cc_skip }}</i> below SMA</div>
+            <div class="is-skip"><span class="cc-dim">⎿</span> NVDA <i>{{ cc_skip }}</i> rule did not fire</div>
+            <div class="is-hit"><span class="cc-dim">⎿</span> SLV <b>{{ cc_lock }}</b> ATR breakout · long</div>
           </div>
         </div>
       </div>
 
-      <div class="cc-row" data-cc="preview">
+      <div class="cc-row" data-cc="preview" data-beat="propose" data-caption="{{ cc_c2 }}">
         <div class="cc-tool">
           <div class="cc-tool__name"><i>⏺</i> preview_trade <span>SLV · multi-day</span></div>
+          <div class="cc-ticket">
+            <div><em>Size</em><strong>887</strong></div>
+            <div><em>Stop</em><strong class="is-sl">58.76</strong></div>
+            <div><em>Target</em><strong class="is-tp">61.70</strong></div>
+          </div>
           <div class="cc-tool__out">
             <div><span class="cc-dim">⎿</span> preview_id <code>pv_8f3a91</code></div>
-            <div><span class="cc-dim">⎿</span> size <b>887</b> · stop <b class="is-sl">58.76</b> · target <b class="is-tp">61.70</b></div>
-            <div><span class="cc-dim">⎿</span> <em>{{ cc_none }}</em></div>
+            <div class="cc-banner">{{ cc_none }}</div>
           </div>
         </div>
       </div>
 
-      <div class="cc-row" data-cc="ask">
-        <p class="cc-say">{{ cc_ask }}</p>
+      <div class="cc-row" data-cc="ask" data-beat="confirm" data-caption="{{ cc_c3 }}">
+        <div class="cc-gate">
+          <p>{{ cc_gate }}</p>
+          <b>{% if page.lang == 'it' %}Confermi?{% else %}Confirm?{% endif %}</b>
+        </div>
       </div>
 
-      <div class="cc-row is-user" data-cc="u2">
+      <div class="cc-row is-user" data-cc="u2" data-beat="confirm" data-caption="{{ cc_c3 }}">
         <span class="cc-prompt">❯</span>
         <span class="cc-typed" data-type="{{ cc_yes }}"></span>
       </div>
 
-      <div class="cc-row" data-cc="confirm">
+      <div class="cc-row" data-cc="confirm" data-beat="cover" data-caption="{{ cc_c4 }}">
         <div class="cc-tool is-ok">
           <div class="cc-tool__name"><i>⏺</i> confirm_trade <span>pv_8f3a91</span></div>
           <div class="cc-tool__out">
@@ -93,9 +120,16 @@
             <div><span class="cc-dim">⎿</span> OTO · stop attached</div>
           </div>
         </div>
-        <p class="cc-say">{{ cc_ok }}</p>
+        <p class="cc-say is-win">{{ cc_ok }}</p>
       </div>
     </div>
+
+    <ol class="cc-steps">
+      <li data-step="scan"><i>01</i>{{ cc_s1 }}</li>
+      <li data-step="propose"><i>02</i>{{ cc_s2 }}</li>
+      <li data-step="confirm"><i>03</i>{{ cc_s3 }}</li>
+      <li data-step="cover"><i>04</i>{{ cc_s4 }}</li>
+    </ol>
 
     <div class="cc-win__composer">
       <span class="cc-prompt">❯</span>
@@ -111,6 +145,7 @@
     if (!root) return;
     var rows = root.querySelectorAll('[data-cc]');
     var composer = root.querySelector('.cc-win__composer');
+    var caption = root.querySelector('[data-cc-caption]');
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var timer;
 
@@ -120,16 +155,25 @@
       function tick() {
         i += 1;
         el.textContent = text.slice(0, i);
-        if (i < text.length) timer = window.setTimeout(tick, 22 + Math.random() * 28);
+        if (i < text.length) timer = window.setTimeout(tick, 18 + Math.random() * 24);
         else if (done) done();
       }
       tick();
+    }
+
+    function setBeat(row) {
+      var beat = row.getAttribute('data-beat') || 'idle';
+      var text = row.getAttribute('data-caption');
+      root.setAttribute('data-beat', beat);
+      if (caption && text) caption.textContent = text;
     }
 
     function reset() {
       rows.forEach(function (r) { r.classList.remove('is-in'); });
       root.querySelectorAll('.cc-typed').forEach(function (t) { t.textContent = ''; });
       composer.classList.remove('is-busy');
+      root.setAttribute('data-beat', 'idle');
+      root.classList.remove('is-flash');
     }
 
     function play() {
@@ -141,28 +185,35 @@
           t.textContent = t.getAttribute('data-type') || '';
         });
         composer.classList.add('is-busy');
+        root.setAttribute('data-beat', 'cover');
+        if (caption) caption.textContent = root.querySelector('[data-cc="confirm"]').getAttribute('data-caption');
         return;
       }
       var seq = [
-        { id: 'boot', wait: 400 },
-        { id: 'u1', wait: 280, type: true, hold: 900 },
-        { id: 'think', wait: 1400 },
-        { id: 'scan', wait: 1600 },
-        { id: 'preview', wait: 1700 },
-        { id: 'ask', wait: 2200 },
-        { id: 'u2', wait: 200, type: true, hold: 700 },
-        { id: 'confirm', wait: 3200 }
+        { id: 'boot', wait: 350 },
+        { id: 'u1', type: true, hold: 700 },
+        { id: 'think', wait: 1300 },
+        { id: 'scan', wait: 1800 },
+        { id: 'preview', wait: 2200 },
+        { id: 'ask', wait: 2400 },
+        { id: 'u2', type: true, hold: 650 },
+        { id: 'confirm', wait: 3400, flash: true }
       ];
       var i = 0;
       function next() {
         if (i >= seq.length) {
-          timer = window.setTimeout(play, 2600);
+          timer = window.setTimeout(play, 2400);
           return;
         }
         var step = seq[i++];
         var row = root.querySelector('[data-cc="' + step.id + '"]');
         if (!row) { next(); return; }
         row.classList.add('is-in');
+        setBeat(row);
+        if (step.flash) {
+          root.classList.add('is-flash');
+          window.setTimeout(function () { root.classList.remove('is-flash'); }, 900);
+        }
         var body = root.querySelector('.cc-win__body');
         if (body) body.scrollTop = body.scrollHeight;
         composer.classList.add('is-busy');

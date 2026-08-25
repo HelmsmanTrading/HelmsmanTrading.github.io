@@ -1,0 +1,192 @@
+{% comment %}
+Archived 2026-08-25 — first Claude Code window (faithful TUI, quieter).
+Restore with: {% include hero-bridge-v3.html %}
+Earlier: v2 cinematic scenes, v1 dashboard, visual-v1 static card.
+{% endcomment %}
+{% if page.lang == 'it' %}
+  {% assign cc_aria = 'Sessione Claude Code vera: scan_market, preview_trade, conferma umana, confirm_trade su Alpaca paper' %}
+  {% assign cc_prompt = 'scansiona i liquidi. proponi solo se coperto.' %}
+  {% assign cc_yes = 'conferma' %}
+  {% assign cc_think = 'Pensando…' %}
+  {% assign cc_ask = 'SLV long, 887 pezzi, stop 58.76, target 61.70. OTO su Alpaca paper. Nessun ordine è partito. Confermi?' %}
+  {% assign cc_ok = 'Inviato. Stop attaccato. La posizione è tua.' %}
+  {% assign cc_skip = 'skipped' %}
+  {% assign cc_none = 'nessun ordine inviato' %}
+  {% assign cc_ph = 'Chiedi a Claude…' %}
+{% else %}
+  {% assign cc_aria = 'A real Claude Code session: scan_market, preview_trade, human confirm, confirm_trade on Alpaca paper' %}
+  {% assign cc_prompt = 'scan the liquid names. propose only if covered.' %}
+  {% assign cc_yes = 'confirm' %}
+  {% assign cc_think = 'Thinking…' %}
+  {% assign cc_ask = 'SLV long, 887 shares, stop 58.76, target 61.70. OTO on Alpaca paper. No order sent. Confirm?' %}
+  {% assign cc_ok = 'Submitted. Stop attached. The position is yours.' %}
+  {% assign cc_skip = 'skipped' %}
+  {% assign cc_none = 'no order sent' %}
+  {% assign cc_ph = 'Ask Claude…' %}
+{% endif %}
+
+<figure class="cc-win" data-claude-code role="img" aria-label="{{ cc_aria }}">
+  <div class="cc-win__glow" aria-hidden="true"></div>
+  <div class="cc-win__frame">
+    <header class="cc-win__bar">
+      <span class="cc-win__spark" aria-hidden="true">✻</span>
+      <span class="cc-win__title">Claude Code — HelmsmanTrading</span>
+      <div class="cc-win__ctrls" aria-hidden="true"><span>&#8722;</span><span>&#9633;</span><span>&#10005;</span></div>
+    </header>
+
+    <div class="cc-win__meta">
+      <span class="cc-win__spark">✻</span>
+      <span>Opus 4.6</span>
+      <span class="cc-win__sep">·</span>
+      <span>MCP-BROKER-BRIDGE</span>
+      <span class="cc-win__sep">·</span>
+      <span>Alpaca paper</span>
+    </div>
+
+    <div class="cc-win__body" id="cc-body">
+      <div class="cc-row" data-cc="boot">
+        <p class="cc-boot">HelmsmanTrading <span>main</span></p>
+      </div>
+
+      <div class="cc-row is-user" data-cc="u1">
+        <span class="cc-prompt">❯</span>
+        <span class="cc-typed" data-type="{{ cc_prompt }}"></span>
+      </div>
+
+      <div class="cc-row" data-cc="think">
+        <span class="cc-spin" aria-hidden="true"></span>
+        <span>{{ cc_think }}</span>
+      </div>
+
+      <div class="cc-row" data-cc="scan">
+        <div class="cc-tool">
+          <div class="cc-tool__name"><i>⏺</i> scan_market</div>
+          <div class="cc-tool__out">
+            <div><span class="cc-dim">⎿</span> WMT <em>{{ cc_skip }}</em> below SMA</div>
+            <div><span class="cc-dim">⎿</span> NVDA <em>{{ cc_skip }}</em> rule did not fire</div>
+            <div><span class="cc-dim">⎿</span> SLV <b>applicable</b> ATR breakout · long</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cc-row" data-cc="preview">
+        <div class="cc-tool">
+          <div class="cc-tool__name"><i>⏺</i> preview_trade <span>SLV · multi-day</span></div>
+          <div class="cc-tool__out">
+            <div><span class="cc-dim">⎿</span> preview_id <code>pv_8f3a91</code></div>
+            <div><span class="cc-dim">⎿</span> size <b>887</b> · stop <b class="is-sl">58.76</b> · target <b class="is-tp">61.70</b></div>
+            <div><span class="cc-dim">⎿</span> <em>{{ cc_none }}</em></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cc-row" data-cc="ask">
+        <p class="cc-say">{{ cc_ask }}</p>
+      </div>
+
+      <div class="cc-row is-user" data-cc="u2">
+        <span class="cc-prompt">❯</span>
+        <span class="cc-typed" data-type="{{ cc_yes }}"></span>
+      </div>
+
+      <div class="cc-row" data-cc="confirm">
+        <div class="cc-tool is-ok">
+          <div class="cc-tool__name"><i>⏺</i> confirm_trade <span>pv_8f3a91</span></div>
+          <div class="cc-tool__out">
+            <div><span class="cc-dim">⎿</span> submitted Alpaca paper</div>
+            <div><span class="cc-dim">⎿</span> client_order_id <code>helmsman_a1b2c3d4e5f6</code></div>
+            <div><span class="cc-dim">⎿</span> OTO · stop attached</div>
+          </div>
+        </div>
+        <p class="cc-say">{{ cc_ok }}</p>
+      </div>
+    </div>
+
+    <div class="cc-win__composer">
+      <span class="cc-prompt">❯</span>
+      <span class="cc-caret" aria-hidden="true"></span>
+      <span class="cc-ph">{{ cc_ph }}</span>
+    </div>
+  </div>
+</figure>
+
+<script>
+  (function () {
+    var root = document.querySelector('[data-claude-code]');
+    if (!root) return;
+    var rows = root.querySelectorAll('[data-cc]');
+    var composer = root.querySelector('.cc-win__composer');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var timer;
+
+    function typeInto(el, text, done) {
+      var i = 0;
+      el.textContent = '';
+      function tick() {
+        i += 1;
+        el.textContent = text.slice(0, i);
+        if (i < text.length) timer = window.setTimeout(tick, 22 + Math.random() * 28);
+        else if (done) done();
+      }
+      tick();
+    }
+
+    function reset() {
+      rows.forEach(function (r) { r.classList.remove('is-in'); });
+      root.querySelectorAll('.cc-typed').forEach(function (t) { t.textContent = ''; });
+      composer.classList.remove('is-busy');
+    }
+
+    function play() {
+      window.clearTimeout(timer);
+      reset();
+      if (reduce) {
+        rows.forEach(function (r) { r.classList.add('is-in'); });
+        root.querySelectorAll('.cc-typed').forEach(function (t) {
+          t.textContent = t.getAttribute('data-type') || '';
+        });
+        composer.classList.add('is-busy');
+        return;
+      }
+      var seq = [
+        { id: 'boot', wait: 400 },
+        { id: 'u1', wait: 280, type: true, hold: 900 },
+        { id: 'think', wait: 1400 },
+        { id: 'scan', wait: 1600 },
+        { id: 'preview', wait: 1700 },
+        { id: 'ask', wait: 2200 },
+        { id: 'u2', wait: 200, type: true, hold: 700 },
+        { id: 'confirm', wait: 3200 }
+      ];
+      var i = 0;
+      function next() {
+        if (i >= seq.length) {
+          timer = window.setTimeout(play, 2600);
+          return;
+        }
+        var step = seq[i++];
+        var row = root.querySelector('[data-cc="' + step.id + '"]');
+        if (!row) { next(); return; }
+        row.classList.add('is-in');
+        var body = root.querySelector('.cc-win__body');
+        if (body) body.scrollTop = body.scrollHeight;
+        composer.classList.add('is-busy');
+        var typed = row.querySelector('.cc-typed');
+        if (step.type && typed) {
+          typeInto(typed, typed.getAttribute('data-type') || '', function () {
+            timer = window.setTimeout(next, step.hold || 600);
+          });
+        } else {
+          timer = window.setTimeout(next, step.wait);
+        }
+      }
+      next();
+    }
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) window.clearTimeout(timer);
+      else play();
+    });
+    play();
+  })();
+</script>
