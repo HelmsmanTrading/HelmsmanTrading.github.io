@@ -237,9 +237,10 @@ footer .brand-logo {
   .page-hero__course { margin-left: 0; margin-right: 0; }
 }
 
-/* Inner-page hero wash: full wheel, left, top-aligned with copy, behind type.
+/* Inner-page hero wash: full wheel, right, top-aligned with copy, behind type.
    Diameter = the largest square that still fits (no crop). Hero fills the viewport
-   on desktop so the dial can drop to the fold. Hidden on small screens. */
+   on desktop so the dial can drop to the fold. Copy may overlap; that's fine.
+   Hidden on small screens. */
 .page-hero--wash {
   isolation: isolate;
 }
@@ -292,8 +293,8 @@ footer .brand-logo {
   .page-hero__wash {
     display: block;
     top: 9rem;
-    left: 1.5rem;
-    right: auto;
+    left: auto;
+    right: 1.5rem;
     width: min(calc(100vw - 3rem), calc(100dvh - 9rem));
     height: min(calc(100vw - 3rem), calc(100dvh - 9rem));
     transform: none;
