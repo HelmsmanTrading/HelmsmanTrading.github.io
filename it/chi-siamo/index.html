@@ -7,15 +7,11 @@ locale: it_IT
 alt: /en/about/
 description: "Helmsman è chi tiene il timone: tu dai la rotta, le regole sterzano. L’AI non è il capitano."
 ---
-<section class="page-hero">
-  <div class="page-hero__goldline"></div>
-  <div class="absolute right-[-40px] top-24 opacity-40 hidden lg:block">{% include helm-wheel.html %}</div>
-  <div class="max-w-5xl mx-auto relative z-10">
-    <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">Chi siamo</p>
-    <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">Il timone, non l’autopilota.</h1>
-    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">Helmsman, in inglese, è chi sta al timone. Non l’equipaggio che rema a caso, non il pilota automatico. Nel prodotto sei tu a dare la rotta: Helmsman sonda, propone, copre, parla col broker. L’AI, se c’è, non calcola i lotti e non spara l’ordine.</p>
-  </div>
-</section>
+{% include page-hero-sea.html
+  kicker="Chi siamo"
+  title="Il timone, non l’autopilota."
+  lead="Helmsman, in inglese, è chi sta al timone. Non l’equipaggio che rema a caso, non il pilota automatico. Nel prodotto sei tu a dare la rotta: Helmsman sonda, propone, copre, parla col broker. L’AI, se c’è, non calcola i lotti e non spara l’ordine."
+%}
 
 {% include pull-quote.html text="Nasce per trader che vogliono una giornata più semplice: mercati liquidi, posizioni coperte, un sì umano, il conto dove lo tieni già." %}
 

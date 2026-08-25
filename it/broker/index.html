@@ -8,15 +8,11 @@ alt: /en/brokers/
 description: "Alpaca e Tradier hanno già l’adapter. L’obiettivo è ogni broker con API degne di nota — IBKR, Schwab, Directa, Fineco, DEGIRO, Robinhood e gli altri."
 ---
 
-<section class="page-hero">
-  <div class="page-hero__goldline"></div>
-  <div class="absolute right-[-48px] top-20 opacity-35 hidden lg:block">{% include helm-wheel.html %}</div>
-  <div class="max-w-5xl mx-auto relative z-10">
-    <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">Multi-broker</p>
-    <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">Il conto resta tuo. Il ponte impara il venue.</h1>
-    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">Non ti chiediamo di cambiare casa. Ti chiediamo le chiavi del ponte. Se un broker espone API, Helmsman deve poterci parlare — con <em>le sue</em> regole, non con un copincolla di Alpaca. Oggi due adapter reali. Domani la mappa che scorre qui sotto.</p>
-  </div>
-</section>
+{% include page-hero-sea.html
+  kicker="Multi-broker"
+  title="Il conto resta tuo. Il ponte impara il venue."
+  lead="Non ti chiediamo di cambiare casa. Ti chiediamo le chiavi del ponte. Se un broker espone API, Helmsman deve poterci parlare — con <em>le sue</em> regole, non con un copincolla di Alpaca. Oggi due adapter reali. Domani la mappa che scorre qui sotto."
+%}
 
 {% include broker-rail.html kicker="off" %}
 

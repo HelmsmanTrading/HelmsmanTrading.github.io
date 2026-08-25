@@ -1,0 +1,59 @@
+<section class="sea-hero" aria-label="{{ include.kicker | default: 'Helmsman' }}">
+  <div class="sea-hero__goldline"></div>
+
+  <div class="sea-hero__sky" aria-hidden="true">
+    <span class="sea-hero__moon"></span>
+    <span class="sea-hero__star s1"></span>
+    <span class="sea-hero__star s2"></span>
+    <span class="sea-hero__star s3"></span>
+    <span class="sea-hero__star s4"></span>
+    <span class="sea-hero__star s5"></span>
+    <span class="sea-hero__star s6"></span>
+  </div>
+
+  <div class="sea-hero__stage" aria-hidden="true">
+    <svg class="sea-hero__compass" viewBox="0 0 200 200" fill="none">
+      <circle cx="100" cy="100" r="92" stroke="rgba(196,163,90,0.18)" stroke-width="1"/>
+      <circle cx="100" cy="100" r="68" stroke="rgba(196,163,90,0.12)" stroke-width="1" stroke-dasharray="2 6"/>
+      <path d="M100 18 L104 100 L100 46 L96 100 Z" fill="rgba(196,163,90,0.35)"/>
+      <path d="M100 182 L104 100 L100 154 L96 100 Z" fill="rgba(138,155,176,0.25)"/>
+      <path d="M18 100 L100 104 L46 100 L100 96 Z" fill="rgba(138,155,176,0.18)"/>
+      <path d="M182 100 L100 104 L154 100 L100 96 Z" fill="rgba(138,155,176,0.18)"/>
+    </svg>
+    <div class="sea-hero__helm">{% include helm-wheel.html %}</div>
+    <svg class="sea-hero__anchor" viewBox="0 0 80 120" fill="none">
+      <path d="M40 8 v62" stroke="#C4A35A" stroke-width="3.2" stroke-linecap="round"/>
+      <circle cx="40" cy="14" r="8" stroke="#C4A35A" stroke-width="3"/>
+      <path d="M28 14 h24" stroke="#C4A35A" stroke-width="3" stroke-linecap="round"/>
+      <path d="M22 52 h36" stroke="#C4A35A" stroke-width="3.2" stroke-linecap="round"/>
+      <path d="M40 70 C18 70 12 88 12 102" stroke="#C4A35A" stroke-width="3.2" stroke-linecap="round"/>
+      <path d="M40 70 C62 70 68 88 68 102" stroke="#C4A35A" stroke-width="3.2" stroke-linecap="round"/>
+      <path d="M12 102 l-8 -10 M12 102 l10 -4" stroke="#C4A35A" stroke-width="3" stroke-linecap="round"/>
+      <path d="M68 102 l8 -10 M68 102 l-10 -4" stroke="#C4A35A" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="40" cy="70" r="4" fill="#C4A35A"/>
+    </svg>
+    <span class="sea-hero__chain"></span>
+  </div>
+
+  <div class="sea-hero__water" aria-hidden="true">
+    <span class="sea-hero__wake"></span>
+    <svg class="sea-hero__wave w1" viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path fill="rgba(8,28,52,0.85)" d="M0,64 C240,112 480,16 720,56 C960,96 1200,24 1440,64 L1440,120 L0,120 Z"/>
+    </svg>
+    <svg class="sea-hero__wave w2" viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path fill="rgba(11,31,58,0.9)" d="M0,72 C180,24 420,104 720,64 C1020,24 1260,96 1440,48 L1440,120 L0,120 Z"/>
+    </svg>
+    <svg class="sea-hero__wave w3" viewBox="0 0 1440 90" preserveAspectRatio="none">
+      <path fill="#050d18" d="M0,40 C320,80 560,8 880,44 C1120,72 1280,20 1440,52 L1440,90 L0,90 Z"/>
+    </svg>
+  </div>
+
+  <div class="sea-hero__copy-wrap">
+    <div class="sea-hero__copy">
+      {% if include.kicker %}<p class="sea-hero__kicker">{{ include.kicker }}</p>{% endif %}
+      <h1 class="sea-hero__title">{{ include.title }}</h1>
+      {% if include.lead %}<p class="sea-hero__lead">{{ include.lead }}</p>{% endif %}
+      <p class="sea-hero__caption">{% if page.lang == 'it' %}Timone e ancora. Tu tieni la rotta nelle acque del mercato.{% else %}Helm and anchor. You hold the course on the market’s water.{% endif %}</p>
+    </div>
+  </div>
+</section>

@@ -7,15 +7,11 @@ locale: en_US
 alt: /it/chi-siamo/
 description: "Helmsman is who holds the helm: you set the course, rules steer. The AI is not the captain."
 ---
-<section class="page-hero">
-  <div class="page-hero__goldline"></div>
-  <div class="absolute right-[-40px] top-24 opacity-40 hidden lg:block">{% include helm-wheel.html %}</div>
-  <div class="max-w-5xl mx-auto relative z-10">
-    <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">About</p>
-    <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">The helm, not the autopilot.</h1>
-    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">A helmsman holds the wheel. Not the crew rowing at random, not the autopilot. In the product you set the course: Helmsman scans, proposes, covers, talks to the broker. The AI, if present, does not pick size and does not fire the order.</p>
-  </div>
-</section>
+{% include page-hero-sea.html
+  kicker="About"
+  title="The helm, not the autopilot."
+  lead="A helmsman holds the wheel. Not the crew rowing at random, not the autopilot. In the product you set the course: Helmsman scans, proposes, covers, talks to the broker. The AI, if present, does not pick size and does not fire the order."
+%}
 
 {% include pull-quote.html text="Built for traders who want a simpler day: liquid markets, covered positions, a human yes, the account you already keep." %}
 

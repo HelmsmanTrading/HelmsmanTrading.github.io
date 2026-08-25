@@ -7,15 +7,11 @@ locale: it_IT
 alt: /en/philosophy/
 description: "Il timoniere non è il capitano. L’AI non calcola i lotti. Coperto o niente. Il conto resta tuo."
 ---
-<section class="page-hero">
-  <div class="page-hero__goldline"></div>
-  <div class="absolute right-[-40px] top-24 opacity-40 hidden lg:block">{% include helm-wheel.html %}</div>
-  <div class="max-w-5xl mx-auto relative z-10">
-    <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-5">Filosofia</p>
-    <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6">Il timone, non l’autopilota.</h1>
-    <p class="text-xl text-gray-300 max-w-3xl leading-relaxed">Helmsman, in inglese, è chi sta al timone. Non l’equipaggio che rema a caso. Non il pilota automatico. Tu dai la rotta. Le regole sterzano. Se manca la copertura, si rifiuta la manovra.</p>
-  </div>
-</section>
+{% include page-hero-sea.html
+  kicker="Filosofia"
+  title="Il timone, non l’autopilota."
+  lead="Helmsman, in inglese, è chi sta al timone. Non l’equipaggio che rema a caso. Non il pilota automatico. Tu dai la rotta. Le regole sterzano. Se manca la copertura, si rifiuta la manovra."
+%}
 
 {% include pull-quote.html text="Il capitano sei tu. Helmsman è chi sta al timone e rifiuta la rotta se manca la copertura." cite="La metafora, presa sul serio" %}
 
