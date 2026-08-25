@@ -203,6 +203,7 @@ footer .brand-logo {
   flex-shrink: 0;
   width: 220px;
   margin: 0 auto;
+  padding: 0;
 }
 .page-hero__compass {
   width: 220px;
@@ -217,13 +218,20 @@ footer .brand-logo {
   max-height: 220px;
 }
 .page-hero__course-legend {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 220px;
   margin: 0.7rem 0 0;
+  padding: 0 0.15rem;
   text-align: center;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 0.62rem;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.08em;
+  line-height: 1.45;
   text-transform: uppercase;
   color: rgba(196,163,90,0.75);
+  overflow-wrap: break-word;
 }
 @media (min-width: 1024px) {
   .page-hero__course { margin-left: 0; margin-right: 0; }
@@ -2526,4 +2534,181 @@ footer .brand-logo {
   .uni-grid { grid-template-columns: 1fr; }
   .skill-card--wide,
   .uni-card--wide { grid-column: auto; }
+}
+
+/* —— Light theme only. Dark (html.dark) is untouched. ——
+   White / gray paper: navy ink, never ochre.
+   Navy islands that stay dark in light: keep cream/gold, do not invert text. */
+html:not(.dark) {
+  --gold-ink: #0B1F3A;
+}
+
+html:not(.dark) .text-brand-gold,
+html:not(.dark) .text-brand-goldLight {
+  color: var(--gold-ink);
+}
+html:not(.dark) .hover\:text-brand-gold:hover {
+  color: var(--gold-ink);
+}
+html:not(.dark) .border-brand-gold {
+  border-color: #0B1F3A;
+}
+html:not(.dark) .bg-brand-gold\/10 {
+  background-color: rgba(11, 31, 58, 0.08);
+}
+html:not(.dark) .bg-brand-gold\/5 {
+  background-color: rgba(11, 31, 58, 0.05);
+}
+
+html:not(.dark) .page-hero .text-brand-gold,
+html:not(.dark) .page-hero .text-brand-goldLight,
+html:not(.dark) .broker-rail .text-brand-gold,
+html:not(.dark) [class*="bg-[#081628]"] .text-brand-goldLight,
+html:not(.dark) [class*="bg-[#050d18]"] .text-brand-goldLight,
+html:not(.dark) .mw-band .text-brand-gold,
+html:not(.dark) .mw-strip .text-brand-gold,
+html:not(.dark) .bg-brand-navy .text-brand-gold,
+html:not(.dark) .bg-brand-dark .text-brand-gold,
+html:not(.dark) footer .text-brand-gold,
+html:not(.dark) [class*="bg-[#081628]"] .text-brand-gold,
+html:not(.dark) [class*="bg-[#050d18]"] .text-brand-gold,
+html:not(.dark) .hero-bridge .text-brand-gold,
+html:not(.dark) .cc-win .text-brand-gold,
+html:not(.dark) .proposal-card .text-brand-gold {
+  color: #C4A35A;
+}
+html:not(.dark) .page-hero .hover\:text-brand-gold:hover,
+html:not(.dark) .broker-rail .hover\:text-brand-gold:hover,
+html:not(.dark) .mw-band .hover\:text-brand-gold:hover,
+html:not(.dark) .mw-strip .hover\:text-brand-gold:hover,
+html:not(.dark) .bg-brand-navy .hover\:text-brand-gold:hover,
+html:not(.dark) .bg-brand-dark .hover\:text-brand-gold:hover,
+html:not(.dark) footer .hover\:text-brand-gold:hover,
+html:not(.dark) [class*="bg-[#081628]"] .hover\:text-brand-gold:hover,
+html:not(.dark) [class*="bg-[#050d18]"] .hover\:text-brand-gold:hover {
+  color: #C4A35A;
+}
+html:not(.dark) .page-hero .border-brand-gold,
+html:not(.dark) .broker-rail .border-brand-gold,
+html:not(.dark) .bg-brand-navy .border-brand-gold,
+html:not(.dark) [class*="bg-[#081628]"] .border-brand-gold,
+html:not(.dark) [class*="bg-[#050d18]"] .border-brand-gold,
+html:not(.dark) .hero-bridge .border-brand-gold {
+  border-color: #C4A35A;
+}
+html:not(.dark) [class*="bg-[#081628]"] .bg-brand-gold\/10,
+html:not(.dark) [class*="bg-[#050d18]"] .bg-brand-gold\/10,
+html:not(.dark) .bg-brand-navy .bg-brand-gold\/10 {
+  background-color: rgba(196, 163, 90, 0.1);
+}
+
+/* White card sitting on a navy band */
+html:not(.dark) [class*="bg-[#081628]"] .bg-white .text-brand-gold,
+html:not(.dark) form.bg-white .text-brand-gold {
+  color: var(--gold-ink);
+}
+html:not(.dark) [class*="bg-[#081628]"] .bg-white .hover\:text-brand-gold:hover,
+html:not(.dark) form.bg-white .hover\:text-brand-gold:hover {
+  color: var(--gold-ink);
+}
+
+html:not(.dark) .mega__btn.is-active {
+  color: var(--gold-ink);
+}
+html:not(.dark) .mega__link:hover,
+html:not(.dark) .mega__link.is-active {
+  background: rgba(11, 31, 58, 0.06);
+}
+html:not(.dark) .mobile-nav__acc summary,
+html:not(.dark) .mobile-nav__top {
+  color: #0B1F3A;
+}
+html:not(.dark) .mobile-nav__acc summary::after {
+  border-right-color: #0B1F3A;
+  border-bottom-color: #0B1F3A;
+}
+
+html:not(.dark) .broker-tile__status.is-live {
+  color: var(--gold-ink);
+}
+html:not(.dark) .broker-rail .broker-tile__status.is-live {
+  color: #C4A35A;
+}
+
+html:not(.dark) .gold-rule {
+  background: linear-gradient(90deg, transparent, #0B1F3A, transparent);
+}
+
+html:not(.dark) .pull-quote {
+  border-block: 2px solid rgba(11, 31, 58, 0.18);
+}
+html:not(.dark) .pull-quote blockquote {
+  color: #0B1F3A;
+}
+html:not(.dark) .pull-quote figcaption {
+  color: #4b5563;
+}
+
+/* Radar on paper: navy rings, not ochre */
+html:not(.dark) .bg-white .radar,
+html:not(.dark) .bg-gray-50 .radar {
+  background:
+    repeating-radial-gradient(circle, rgba(11, 31, 58, 0.2) 0 1px, transparent 1px 18%),
+    #f3f4f6;
+  border-color: rgba(11, 31, 58, 0.35);
+  box-shadow: 0 22px 48px rgba(11, 31, 58, 0.1);
+}
+html:not(.dark) .bg-white .radar__sweep,
+html:not(.dark) .bg-gray-50 .radar__sweep {
+  background: conic-gradient(from 0deg, transparent 0 70%, rgba(11, 31, 58, 0.4) 85%, transparent 100%);
+}
+html:not(.dark) .bg-white .radar__blip,
+html:not(.dark) .bg-gray-50 .radar__blip {
+  background: #0B1F3A;
+  box-shadow: 0 0 12px rgba(11, 31, 58, 0.45);
+}
+
+html:not(.dark) .hero-bridge__glow {
+  background: radial-gradient(ellipse at 50% 40%, rgba(11, 31, 58, 0.2), transparent 62%);
+}
+
+/* Veto cards keep a navy island: cream text, never black-on-navy */
+html:not(.dark) .veto-card {
+  background: #081628;
+  border-color: rgba(196, 163, 90, 0.22);
+  color: #F7F4EE;
+  box-shadow: 0 14px 32px rgba(11, 31, 58, 0.16);
+}
+html:not(.dark) .veto-card strong {
+  color: #F7F4EE;
+}
+html:not(.dark) .veto-card p {
+  color: #9ca3af;
+}
+html:not(.dark) .veto-card__no {
+  color: #fca5a5;
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+html:not(.dark) .bg-white .compare-row,
+html:not(.dark) .bg-gray-50 .compare-row {
+  border-color: rgba(11, 31, 58, 0.12);
+}
+html:not(.dark) .bg-white .compare-row div:last-child,
+html:not(.dark) .bg-gray-50 .compare-row div:last-child {
+  background: rgba(11, 31, 58, 0.04);
+}
+html:not(.dark) .bg-white .compare-row .text-brand-gold,
+html:not(.dark) .bg-gray-50 .compare-row .text-brand-gold {
+  color: var(--gold-ink);
+}
+
+html:not(.dark) .broker-card {
+  border-color: rgba(11, 31, 58, 0.12);
+  background: linear-gradient(180deg, rgba(11, 31, 58, 0.04), transparent 40%);
+}
+html:not(.dark) [class*="bg-[#081628]"] .broker-card,
+html:not(.dark) [class*="bg-[#050d18]"] .broker-card {
+  border-color: rgba(196, 163, 90, 0.18);
+  background: linear-gradient(180deg, rgba(196, 163, 90, 0.06), transparent 40%);
 }

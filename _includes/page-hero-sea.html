@@ -11,8 +11,8 @@
       {% endif %}
     </div>
 
-    <div class="page-hero__course" aria-hidden="true">
-      <div class="page-hero__compass">
+    <figure class="page-hero__course">
+      <div class="page-hero__compass" aria-hidden="true">
         <svg width="220" height="220" viewBox="0 0 400 400" fill="none">
           <defs>
             <linearGradient id="mhGold" x1="80" y1="40" x2="320" y2="360" gradientUnits="userSpaceOnUse">
@@ -75,7 +75,7 @@
           </g>
         </svg>
       </div>
-      <p class="page-hero__course-legend">{% if page.lang == 'it' %}La rotta resta tua{% else %}The course stays yours{% endif %}</p>
-    </div>
+      <figcaption class="page-hero__course-legend">{% if page.lang == 'it' %}La rotta resta tua{% else %}The course stays yours{% endif %}</figcaption>
+    </figure>
   </div>
 </section>
