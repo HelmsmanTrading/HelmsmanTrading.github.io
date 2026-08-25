@@ -5,7 +5,7 @@
     {% include broker-tile.html broker=b %}
     <p class="broker-card__blurb">
       {% if b.id == 'alpaca' %}
-        {% if page.lang == 'it' %}Ponte vivo: paper, bracket e OTO, conferma umana, client id helmsman.{% else %}Live bridge: paper, bracket and OTO, human confirm, helmsman client id.{% endif %}
+        {% if page.lang == 'it' %}Adapter vivo: ambiente paper, bracket e OTO, conferma umana, client id helmsman.{% else %}Live adapter: paper environment, bracket and OTO, human confirm, helmsman client id.{% endif %}
       {% elsif b.id == 'tradier' %}
         {% if page.lang == 'it' %}Secondo adapter reale: OTOCO, tag, sandbox. Non è Alpaca con un’etichetta.{% else %}Second real adapter: OTOCO, tags, sandbox. Not Alpaca with a sticker.{% endif %}
       {% elsif b.id == 'papersim' %}
@@ -15,7 +15,7 @@
       {% elsif b.id == 'ibkr' %}
         {% if page.lang == 'it' %}Il venue globale che i trader seri nominano per primo. Merita un adapter proprio.{% else %}The global venue serious traders name first. It deserves its own adapter.{% endif %}
       {% elsif b.id == 'directa' or b.id == 'fineco' %}
-        {% if page.lang == 'it' %}Italia, conto vero, API da conquistare. Dimmi se operi da qui: è la coda.{% else %}Italy, a real account, APIs to earn. Tell us if you trade from here: that is the queue.{% endif %}
+        {% if page.lang == 'it' %}Italia, conto vero, API da conquistare. Pre-registrati se operi da qui: è la coda.{% else %}Italy, a real account, APIs to earn. Pre-register if you trade from here: that is the queue.{% endif %}
       {% else %}
         {% if page.lang == 'it' %}API, libro ordini, trader veri: merita un adapter proprio, non una copia.{% else %}APIs, a real book, real traders: it deserves its own adapter, not a copy.{% endif %}
       {% endif %}
