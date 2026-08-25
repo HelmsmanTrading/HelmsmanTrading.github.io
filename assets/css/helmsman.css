@@ -237,23 +237,20 @@ footer .brand-logo {
   .page-hero__course { margin-left: 0; margin-right: 0; }
 }
 
-/* Inner-page hero wash: dial is a clipped background. Hero height follows the copy. */
+/* Inner-page hero wash: full wheel, left, top-aligned with copy, behind type.
+   Diameter = the largest square that still fits (no crop). Hero fills the viewport
+   on desktop so the dial can drop to the fold. Hidden on small screens. */
 .page-hero--wash {
   isolation: isolate;
 }
 .page-hero__wash {
+  display: none;
   position: absolute;
   z-index: 0;
-  top: 50%;
-  right: -7rem;
-  left: auto;
-  width: 36rem;
-  height: 36rem;
   margin: 0;
   padding: 0;
-  transform: translateY(-50%);
   pointer-events: none;
-  overflow: hidden;
+  overflow: visible;
 }
 .page-hero__wash-glow {
   position: absolute;
@@ -288,19 +285,18 @@ footer .brand-logo {
   0%, 100% { opacity: 0.55; transform: scale(1); }
   50% { opacity: 1; transform: scale(1.06); }
 }
-@media (min-width: 1280px) {
-  .page-hero__wash {
-    right: -5rem;
-    width: 42rem;
-    height: 42rem;
+@media (min-width: 1024px) {
+  .page-hero--wash {
+    min-height: 100dvh;
   }
-}
-@media (max-width: 1023px) {
   .page-hero__wash {
-    right: -10rem;
-    width: 24rem;
-    height: 24rem;
-    opacity: 0.5;
+    display: block;
+    top: 9rem;
+    left: 1.5rem;
+    right: auto;
+    width: min(calc(100vw - 3rem), calc(100dvh - 9rem));
+    height: min(calc(100vw - 3rem), calc(100dvh - 9rem));
+    transform: none;
   }
 }
 
