@@ -1,0 +1,126 @@
+{% if page.lang == 'it' %}
+  {% assign sp_id = 'proponi' %}
+  {% assign sp_kicker = 'Proponi una skill' %}
+  {% assign sp_title = 'Hai una regola. Non un feeling.' %}
+  {% assign sp_lead = 'Se la tesi è deterministica — entra / non entra, stop, target, su quali liquidi — proponila. Helmsman la mette alla prova sui mercati di riferimento. Se merita il catalogo, chi l’ha scritta la usa gratis.' %}
+  {% assign sp_s1 = 'Scrivi la regola. Ingresso, stop, target, universo. Niente ranking, niente «lo sento forte».' %}
+  {% assign sp_s2 = 'La validiamo sul book liquido vero — gli stessi ticker dell’universo, non un dataset di vanity. Se non regge, resta fuori. Niente CAGR da brochure.' %}
+  {% assign sp_s3 = 'Se entra, chi l’ha proposta la tiene gratis. Il livello della skill decide su quali piani la mostriamo, quando esisterà un listino.' %}
+  {% assign sp_s4 = 'Chi l’ha proposta prende commissione sulle vendite di quella skill. Lo split lo costruiamo dopo, in modo onesto: oggi questo form è il contatto, non un payout già acceso.' %}
+  {% assign sp_sub = 'Helmsman — proposta skill' %}
+  {% assign sp_next = '/it/skill/grazie/' %}
+  {% assign sp_mail = 'Helmsman%20proposta%20skill' %}
+  {% assign sp_l_email = 'Email' %}
+  {% assign sp_ph_email = 'tu@email.com' %}
+  {% assign sp_l_name = 'Nome' %}
+  {% assign sp_ph_name = 'Come ti chiamiamo' %}
+  {% assign sp_l_skill = 'Nome della skill' %}
+  {% assign sp_ph_skill = 'es. VWAP-FADE, OPENING-DRIVE…' %}
+  {% assign sp_l_entry = 'Entra quando' %}
+  {% assign sp_ph_entry = 'Condizioni sul nastro, in chiaro. Bool, non un racconto.' %}
+  {% assign sp_l_stop = 'Stop' %}
+  {% assign sp_ph_stop = 'ATR, %, sotto la linea…' %}
+  {% assign sp_l_target = 'Target' %}
+  {% assign sp_ph_target = 'R:R, %, banda…' %}
+  {% assign sp_l_uni = 'Universo' %}
+  {% assign sp_ph_uni = 'Book completo, megacap, ETF, altro' %}
+  {% assign sp_l_notes = 'Note' %}
+  {% assign sp_ph_notes = 'Orizzonte, eccezioni, perché non è un duplicato delle cinque già in catalogo…' %}
+  {% assign sp_cta = 'Invia la proposta' %}
+  {% assign sp_or = 'O scrivi diretto a' %}
+  {% assign sp_foot = 'Non è consulenza. Non tutte le proposte entrano. Validazione sui liquidi di riferimento; il rischio resta di chi opera. Commissioni e piani: modello previsto, non un payout live.' %}
+{% else %}
+  {% assign sp_id = 'propose' %}
+  {% assign sp_kicker = 'Propose a skill' %}
+  {% assign sp_title = 'You have a rule. Not a feeling.' %}
+  {% assign sp_lead = 'If the thesis is deterministic — enters / does not, stop, target, which liquid names — send it. Helmsman will test it on the reference markets. If it earns a place in the catalog, the person who wrote it uses it free.' %}
+  {% assign sp_s1 = 'Write the rule. Entry, stop, target, universe. No ranking, no «I feel it hard».' %}
+  {% assign sp_s2 = 'We validate it on the real liquid book — the same tickers as the universe, not a vanity dataset. If it does not hold, it stays out. No brochure CAGR.' %}
+  {% assign sp_s3 = 'If it ships, the proposer keeps it free. The skill’s level decides which plans see it, when a price list exists.' %}
+  {% assign sp_s4 = 'The proposer takes a commission on sales of that skill. We will build the split later, honestly: today this form is the contact, not a live payout.' %}
+  {% assign sp_sub = 'Helmsman — skill proposal' %}
+  {% assign sp_next = '/en/skills/thanks/' %}
+  {% assign sp_mail = 'Helmsman%20skill%20proposal' %}
+  {% assign sp_l_email = 'Email' %}
+  {% assign sp_ph_email = 'you@email.com' %}
+  {% assign sp_l_name = 'Name' %}
+  {% assign sp_ph_name = 'What we call you' %}
+  {% assign sp_l_skill = 'Skill name' %}
+  {% assign sp_ph_skill = 'e.g. VWAP-FADE, OPENING-DRIVE…' %}
+  {% assign sp_l_entry = 'Enters when' %}
+  {% assign sp_ph_entry = 'Tape conditions, in the open. A bool, not a story.' %}
+  {% assign sp_l_stop = 'Stop' %}
+  {% assign sp_ph_stop = 'ATR, %, under the line…' %}
+  {% assign sp_l_target = 'Target' %}
+  {% assign sp_ph_target = 'R:R, %, band…' %}
+  {% assign sp_l_uni = 'Universe' %}
+  {% assign sp_ph_uni = 'Full book, megacaps, ETFs, other' %}
+  {% assign sp_l_notes = 'Notes' %}
+  {% assign sp_ph_notes = 'Horizon, exceptions, why it is not a duplicate of the five already in the catalog…' %}
+  {% assign sp_cta = 'Send the proposal' %}
+  {% assign sp_or = 'Or write directly to' %}
+  {% assign sp_foot = 'Not advice. Not every proposal ships. Validation on liquid reference markets; risk stays with whoever trades. Commissions and plans: the intended model, not a live payout.' %}
+{% endif %}
+{% assign sp_field = 'mt-2 w-full px-4 py-3 bg-gray-50 dark:bg-black/40 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white' %}
+
+<section id="{{ sp_id }}" class="py-20 px-6 bg-[#081628] text-white">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
+    <div>
+      <p class="text-sm font-mono text-brand-gold uppercase tracking-[0.3em] mb-4">{{ sp_kicker }}</p>
+      <h2 class="text-3xl md:text-5xl font-black mb-5">{{ sp_title }}</h2>
+      <p class="text-gray-400 leading-relaxed mb-10">{{ sp_lead }}</p>
+      <ol class="space-y-5 text-gray-300 leading-relaxed">
+        <li class="flex gap-4"><span class="font-mono text-brand-gold shrink-0">01</span><span>{{ sp_s1 }}</span></li>
+        <li class="flex gap-4"><span class="font-mono text-brand-gold shrink-0">02</span><span>{{ sp_s2 }}</span></li>
+        <li class="flex gap-4"><span class="font-mono text-brand-gold shrink-0">03</span><span>{{ sp_s3 }}</span></li>
+        <li class="flex gap-4"><span class="font-mono text-brand-gold shrink-0">04</span><span>{{ sp_s4 }}</span></li>
+      </ol>
+    </div>
+
+    <form action="https://formsubmit.co/{{ site.contact_email }}" method="POST" class="space-y-4 bg-white dark:bg-[#0b1a2c] border border-white/10 p-8 shadow-2xl text-gray-900 dark:text-white">
+      <input type="hidden" name="_subject" value="{{ sp_sub }}">
+      <input type="hidden" name="_next" value="{{ site.url }}{{ sp_next }}">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="tipo" value="proposta-skill">
+      <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off">
+
+      <label class="block">
+        <span class="text-xs font-mono uppercase tracking-widest text-gray-500">{{ sp_l_email }}</span>
+        <input required type="email" name="email" autocomplete="email" class="{{ sp_field }}" placeholder="{{ sp_ph_email }}">
+      </label>
+      <label class="block">
+        <span class="text-xs font-mono uppercase tracking-widest text-gray-500">{{ sp_l_name }}</span>
+        <input type="text" name="nome" autocomplete="name" class="{{ sp_field }}" placeholder="{{ sp_ph_name }}">
+      </label>
+      <label class="block">
+        <span class="text-xs font-mono uppercase tracking-widest text-gray-500">{{ sp_l_skill }}</span>
+        <input required type="text" name="skill" class="{{ sp_field }}" placeholder="{{ sp_ph_skill }}">
+      </label>
+      <label class="block">
+        <span class="text-xs font-mono uppercase tracking-widest text-gray-500">{{ sp_l_entry }}</span>
+        <textarea required name="ingresso" rows="3" class="{{ sp_field }}" placeholder="{{ sp_ph_entry }}"></textarea>
+      </label>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <label class="block">
+          <span class="text-xs font-mono uppercase tracking-widest text-gray-500">{{ sp_l_stop }}</span>
+          <input required type="text" name="stop" class="{{ sp_field }}" placeholder="{{ sp_ph_stop }}">
+        </label>
+        <label class="block">
+          <span class="text-xs font-mono uppercase tracking-widest text-gray-500">{{ sp_l_target }}</span>
+          <input required type="text" name="target" class="{{ sp_field }}" placeholder="{{ sp_ph_target }}">
+        </label>
+      </div>
+      <label class="block">
+        <span class="text-xs font-mono uppercase tracking-widest text-gray-500">{{ sp_l_uni }}</span>
+        <input type="text" name="universo" class="{{ sp_field }}" placeholder="{{ sp_ph_uni }}">
+      </label>
+      <label class="block">
+        <span class="text-xs font-mono uppercase tracking-widest text-gray-500">{{ sp_l_notes }}</span>
+        <textarea name="note" rows="3" class="{{ sp_field }}" placeholder="{{ sp_ph_notes }}"></textarea>
+      </label>
+      <button type="submit" class="w-full py-4 bg-brand-gold text-brand-dark font-bold hover:bg-brand-goldLight transition-colors shimmer-btn">{{ sp_cta }}</button>
+      <p class="text-xs text-gray-500">{{ sp_or }} <a class="text-brand-gold hover:underline" href="mailto:{{ site.contact_email }}?subject={{ sp_mail }}">{{ site.contact_email }}</a>.</p>
+      <p class="text-xs text-gray-500 leading-relaxed">{{ sp_foot }}</p>
+    </form>
+  </div>
+</section>
