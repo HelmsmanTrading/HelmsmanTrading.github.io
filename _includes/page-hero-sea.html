@@ -1,59 +1,64 @@
-<section class="sea-hero" aria-label="{{ include.kicker | default: 'Helmsman' }}">
-  <div class="sea-hero__goldline"></div>
+<section class="mark-hero" aria-label="{{ include.kicker | default: 'Helmsman' }}">
+  <div class="mark-hero__goldline"></div>
+  <div class="mark-hero__veil" aria-hidden="true"></div>
+  <div class="mark-hero__meridian" aria-hidden="true"></div>
 
-  <div class="sea-hero__sky" aria-hidden="true">
-    <span class="sea-hero__moon"></span>
-    <span class="sea-hero__star s1"></span>
-    <span class="sea-hero__star s2"></span>
-    <span class="sea-hero__star s3"></span>
-    <span class="sea-hero__star s4"></span>
-    <span class="sea-hero__star s5"></span>
-    <span class="sea-hero__star s6"></span>
-  </div>
+  <div class="mark-hero__grid">
+    <div class="mark-hero__copy">
+      {% if include.kicker %}<p class="mark-hero__kicker">{{ include.kicker }}</p>{% endif %}
+      <h1 class="mark-hero__title">{{ include.title }}</h1>
+      {% if include.lead %}<p class="mark-hero__lead">{{ include.lead }}</p>{% endif %}
+    </div>
 
-  <div class="sea-hero__stage" aria-hidden="true">
-    <svg class="sea-hero__compass" viewBox="0 0 200 200" fill="none">
-      <circle cx="100" cy="100" r="92" stroke="rgba(196,163,90,0.18)" stroke-width="1"/>
-      <circle cx="100" cy="100" r="68" stroke="rgba(196,163,90,0.12)" stroke-width="1" stroke-dasharray="2 6"/>
-      <path d="M100 18 L104 100 L100 46 L96 100 Z" fill="rgba(196,163,90,0.35)"/>
-      <path d="M100 182 L104 100 L100 154 L96 100 Z" fill="rgba(138,155,176,0.25)"/>
-      <path d="M18 100 L100 104 L46 100 L100 96 Z" fill="rgba(138,155,176,0.18)"/>
-      <path d="M182 100 L100 104 L154 100 L100 96 Z" fill="rgba(138,155,176,0.18)"/>
-    </svg>
-    <div class="sea-hero__helm">{% include helm-wheel.html %}</div>
-    <svg class="sea-hero__anchor" viewBox="0 0 80 120" fill="none">
-      <path d="M40 8 v62" stroke="#C4A35A" stroke-width="3.2" stroke-linecap="round"/>
-      <circle cx="40" cy="14" r="8" stroke="#C4A35A" stroke-width="3"/>
-      <path d="M28 14 h24" stroke="#C4A35A" stroke-width="3" stroke-linecap="round"/>
-      <path d="M22 52 h36" stroke="#C4A35A" stroke-width="3.2" stroke-linecap="round"/>
-      <path d="M40 70 C18 70 12 88 12 102" stroke="#C4A35A" stroke-width="3.2" stroke-linecap="round"/>
-      <path d="M40 70 C62 70 68 88 68 102" stroke="#C4A35A" stroke-width="3.2" stroke-linecap="round"/>
-      <path d="M12 102 l-8 -10 M12 102 l10 -4" stroke="#C4A35A" stroke-width="3" stroke-linecap="round"/>
-      <path d="M68 102 l8 -10 M68 102 l-10 -4" stroke="#C4A35A" stroke-width="3" stroke-linecap="round"/>
-      <circle cx="40" cy="70" r="4" fill="#C4A35A"/>
-    </svg>
-    <span class="sea-hero__chain"></span>
-  </div>
+    <div class="mark-hero__dial" aria-hidden="true">
+      <span class="mark-hero__bloom"></span>
+      <svg class="mark-hero__svg" viewBox="0 0 400 400" fill="none">
+        <defs>
+          <linearGradient id="mhGold" x1="80" y1="40" x2="320" y2="360" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#E8D5A3"/>
+            <stop offset="55%" stop-color="#C4A35A"/>
+            <stop offset="100%" stop-color="#8A7038"/>
+          </linearGradient>
+        </defs>
 
-  <div class="sea-hero__water" aria-hidden="true">
-    <span class="sea-hero__wake"></span>
-    <svg class="sea-hero__wave w1" viewBox="0 0 1440 120" preserveAspectRatio="none">
-      <path fill="rgba(8,28,52,0.85)" d="M0,64 C240,112 480,16 720,56 C960,96 1200,24 1440,64 L1440,120 L0,120 Z"/>
-    </svg>
-    <svg class="sea-hero__wave w2" viewBox="0 0 1440 120" preserveAspectRatio="none">
-      <path fill="rgba(11,31,58,0.9)" d="M0,72 C180,24 420,104 720,64 C1020,24 1260,96 1440,48 L1440,120 L0,120 Z"/>
-    </svg>
-    <svg class="sea-hero__wave w3" viewBox="0 0 1440 90" preserveAspectRatio="none">
-      <path fill="#050d18" d="M0,40 C320,80 560,8 880,44 C1120,72 1280,20 1440,52 L1440,90 L0,90 Z"/>
-    </svg>
-  </div>
+        <g stroke="url(#mhGold)" stroke-linecap="round" opacity="0.5">
+          <g stroke-width="1.6">{% assign ticks = "0,15,30,45,60,75,90,105,120,135,150,165,180,195,210,225,240,255,270,285,300,315,330,345" | split: "," %}
+          {% for t in ticks %}
+          <line x1="200" y1="22" x2="200" y2="36" transform="rotate({{ t }} 200 200)"/>
+          {% endfor %}</g>
+          <g stroke-width="0.6" opacity="0.7">
+          {% assign ticks2 = "7.5,22.5,37.5,52.5,67.5,82.5,97.5,112.5,127.5,142.5,157.5,172.5,187.5,202.5,217.5,232.5,247.5,262.5,277.5,292.5,307.5,322.5,337.5,352.5" | split: "," %}
+          {% for t in ticks2 %}
+          <line x1="200" y1="24" x2="200" y2="31" transform="rotate({{ t }} 200 200)"/>
+          {% endfor %}</g>
+        </g>
 
-  <div class="sea-hero__copy-wrap">
-    <div class="sea-hero__copy">
-      {% if include.kicker %}<p class="sea-hero__kicker">{{ include.kicker }}</p>{% endif %}
-      <h1 class="sea-hero__title">{{ include.title }}</h1>
-      {% if include.lead %}<p class="sea-hero__lead">{{ include.lead }}</p>{% endif %}
-      <p class="sea-hero__caption">{% if page.lang == 'it' %}Timone e ancora. Tu tieni la rotta nelle acque del mercato.{% else %}Helm and anchor. You hold the course on the market’s water.{% endif %}</p>
+        <circle cx="200" cy="200" r="172" stroke="rgba(196,163,90,0.22)" stroke-width="0.75"/>
+        <circle cx="200" cy="200" r="138" stroke="rgba(196,163,90,0.14)" stroke-width="0.75" stroke-dasharray="1.2 8"/>
+        <circle cx="200" cy="200" r="102" stroke="rgba(196,163,90,0.32)" stroke-width="1"/>
+
+        <circle class="mark-hero__orbit" cx="200" cy="200" r="172" stroke="url(#mhGold)" stroke-width="1.35" stroke-dasharray="22 340" stroke-linecap="round"/>
+
+        <g class="mark-hero__wheel">
+          <circle cx="200" cy="200" r="56" stroke="#C4A35A" stroke-width="5.5"/>
+          <g transform="rotate(0 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+          <g transform="rotate(45 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+          <g transform="rotate(90 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+          <g transform="rotate(135 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+          <g transform="rotate(180 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+          <g transform="rotate(225 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+          <g transform="rotate(270 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+          <g transform="rotate(315 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+          <circle cx="200" cy="200" r="17" fill="#C4A35A"/>
+          <circle cx="200" cy="200" r="6.5" fill="#0B1F3A"/>
+        </g>
+
+        <g class="mark-hero__needle">
+          <line x1="200" y1="38" x2="200" y2="198" stroke="#E8D5A3" stroke-width="1.35" stroke-linecap="round"/>
+          <circle cx="200" cy="38" r="2.8" fill="#E8D5A3"/>
+        </g>
+      </svg>
+      <p class="mark-hero__legend">{% if page.lang == 'it' %}La rotta resta tua{% else %}The course stays yours{% endif %}</p>
     </div>
   </div>
 </section>
