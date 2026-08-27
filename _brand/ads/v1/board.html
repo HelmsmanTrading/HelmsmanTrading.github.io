@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Helmsman — Ads v1 (interno)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0B1F3A;
+      --ink: #081628;
+      --gold: #C4A35A;
+      --gold-light: #D4B87A;
+      --paper: #F7F4EE;
+      --muted: #8A9BB0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background: #12263F;
+      color: var(--paper);
+      padding: 2.5rem 1.5rem 4rem;
+    }
+    .wrap { max-width: 1280px; margin: 0 auto; }
+    header { margin-bottom: 2rem; }
+    header p.k {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+    header h1 { font-weight: 900; font-size: 1.75rem; letter-spacing: -0.03em; }
+    header .note { color: var(--muted); font-size: 0.875rem; margin-top: 0.5rem; max-width: 40rem; line-height: 1.5; }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    @media (max-width: 980px) { .grid { grid-template-columns: 1fr; } }
+    figure { margin: 0; }
+    figcaption {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.75rem;
+    }
+    .ad {
+      position: relative;
+      overflow: hidden;
+      background: var(--ink);
+      color: var(--paper);
+    }
+    .ad::before {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; top: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .sq { width: 100%; max-width: 540px; aspect-ratio: 1; }
+    .land { width: 100%; max-width: 600px; aspect-ratio: 1200 / 628; }
+    .story { width: 270px; aspect-ratio: 9 / 16; }
+    .ad-inner {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 9%;
+    }
+    .land .ad-inner { padding: 7% 8%; }
+    .story .ad-inner { padding: 12% 10%; }
+    .dial {
+      position: absolute;
+      right: -18%;
+      bottom: -22%;
+      width: 72%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 1px solid rgba(196,163,90,0.22);
+      pointer-events: none;
+    }
+    .dial::after {
+      content: "";
+      position: absolute;
+      inset: 18%;
+      border-radius: 50%;
+      border: 1.5px solid rgba(196,163,90,0.45);
+    }
+    .hub {
+      position: absolute;
+      left: 50%; top: 50%;
+      width: 7%; height: 7%;
+      margin: -3.5% 0 0 -3.5%;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+    .kicker {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .story .kicker { font-size: 0.48rem; letter-spacing: 0.22em; }
+    .logo { height: 28px; width: auto; display: block; margin-bottom: 1.1rem; }
+    .story .logo { height: 22px; margin-bottom: 1.4rem; }
+    h2 {
+      font-weight: 900;
+      font-size: 1.85rem;
+      letter-spacing: -0.035em;
+      line-height: 1.12;
+      margin: 0.85rem 0 0.7rem;
+    }
+    .sq h2 { font-size: clamp(1.6rem, 5.2vw, 2.05rem); }
+    .land h2 { font-size: 1.35rem; margin: 0.35rem 0 0.4rem; }
+    .story h2 { font-size: 1.35rem; margin: 0.8rem 0 0.7rem; }
+    .body { font-size: 0.82rem; line-height: 1.45; color: #b8c0cc; max-width: 28rem; }
+    .land .body { font-size: 0.72rem; max-width: 70%; }
+    .story .body { font-size: 0.72rem; }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 1rem;
+      padding: 0.65rem 1.25rem;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.72rem;
+      border-radius: 9999px;
+    }
+    .story .cta { margin-top: 1.25rem; font-size: 0.65rem; }
+    .base { font-size: 0.55rem; line-height: 1.4; color: var(--muted); margin-top: 0.85rem; max-width: 26rem; }
+    .row-story { display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 2.5rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p class="k">v1 · plancia · interno</p>
+      <h1>Ad board — Il timone</h1>
+      <p class="note">Versione 1: sobria, si legge ferma. Headline a due colpi. Nessuna barca da brochure. Vedi anche la v2.</p>
+    </header>
+    <div class="grid">
+      <figure>
+        <div class="ad sq">
+          <div class="dial"><span class="hub"></span></div>
+          <div class="ad-inner">
+            <div>
+              <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
+              <p class="kicker">Il timone · non l’autopilota</p>
+              <h2>Helmsman indica la rotta.<br>Tu tieni il timone.</h2>
+              <p class="body">Scan sui liquidi. Preview con size e stop. Il tuo sì — o niente. L’ingresso, se parte, parte già coperto.</p>
+            </div>
+            <div>
+              <span class="cta">Pre-registrati</span>
+              <p class="base">Trading comporta perdite. Helmsman è middleware: non consulenza, non l’LLM, non il broker.</p>
+            </div>
+          </div>
+        </div>
+        <figcaption>1080×1080 · feed</figcaption>
+      </figure>
+      <figure>
+        <div class="ad land">
+          <div class="dial"><span class="hub"></span></div>
+          <div class="ad-inner">
+            <div>
+              <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
+              <p class="kicker">Il timone · non l’autopilota</p>
+              <h2>Indica la rotta. Tu tieni il timone.</h2>
+              <p class="body">Coperto, o non parte. Sul broker che colleghi tu.</p>
+              <span class="cta">Pre-registrati</span>
+            </div>
+          </div>
+        </div>
+        <figcaption>1200×628 · landscape</figcaption>
+      </figure>
+    </div>
+    <div class="row-story">
+      <figure>
+        <div class="ad story">
+          <div class="dial"><span class="hub"></span></div>
+          <div class="ad-inner">
+            <div>
+              <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
+              <p class="kicker">Il timone</p>
+              <h2>Indica la rotta.<br>Tu tieni il timone.</h2>
+              <p class="body">Niente ordine senza il tuo sì. Niente ingresso nudo.</p>
+            </div>
+            <div>
+              <span class="cta">Pre-registrati</span>
+              <p class="base">Perdite possibili. Non è consulenza.</p>
+            </div>
+          </div>
+        </div>
+        <figcaption>9:16 · story / reels</figcaption>
+      </figure>
+    </div>
+  </div>
+</body>
+</html>

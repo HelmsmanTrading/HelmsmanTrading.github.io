@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Helmsman — Ads v2 Notte in coperta</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0B1F3A;
+      --ink: #050d18;
+      --gold: #C4A35A;
+      --gold-light: #E8D5A3;
+      --paper: #F7F4EE;
+      --muted: #8A9BB0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background: #02060c;
+      color: var(--paper);
+      padding: 2.5rem 1.5rem 5rem;
+    }
+    .wrap { max-width: 1400px; margin: 0 auto; }
+    header { margin-bottom: 2.2rem; }
+    header .k {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 10px;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.65rem;
+    }
+    header h1 { font-weight: 900; font-size: 2rem; letter-spacing: -0.04em; }
+    header .note { color: var(--muted); font-size: 0.9rem; margin-top: 0.55rem; max-width: 44rem; line-height: 1.55; }
+    figure { margin: 0; }
+    figcaption {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.8rem;
+    }
+
+    /* —— night stage —— */
+    .stage {
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(120% 80% at 70% 0%, #12263F 0%, #081628 38%, #050d18 70%, #02060c 100%);
+      color: var(--paper);
+    }
+    .goldline {
+      position: absolute; left: 0; right: 0; top: 0; height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      transform-origin: center;
+      animation: goldscan 3.5s ease-in-out infinite;
+    }
+    @keyframes goldscan {
+      0%, 100% { opacity: 0.35; transform: scaleX(0.42); }
+      50% { opacity: 1; transform: scaleX(1); }
+    }
+    .stars, .stars span { pointer-events: none; }
+    .stars span {
+      position: absolute;
+      width: 2px; height: 2px;
+      background: rgba(232,213,163,0.55);
+      border-radius: 50%;
+      animation: twinkle 4.8s ease-in-out infinite;
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 0.9; }
+    }
+    .horizon {
+      position: absolute; left: -10%; right: -10%; bottom: 0;
+      height: 42%;
+      background:
+        linear-gradient(180deg, transparent 0%, rgba(11,31,58,0.15) 18%, rgba(8,22,40,0.85) 48%, #02060c 100%);
+    }
+    .horizon::before {
+      content: "";
+      position: absolute; left: 10%; right: 10%; top: 8%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(196,163,90,0.45), transparent);
+    }
+    .wake {
+      position: absolute; left: 50%; bottom: 0;
+      width: 38%; height: 36%;
+      transform: translateX(-20%);
+      background: radial-gradient(ellipse at 50% 0%, rgba(196,163,90,0.22), transparent 62%);
+      animation: wake 8s ease-in-out infinite;
+    }
+    @keyframes wake {
+      0%, 100% { opacity: 0.45; transform: translateX(-20%) scaleX(1); }
+      50% { opacity: 0.8; transform: translateX(-18%) scaleX(1.08); }
+    }
+
+    .compass {
+      position: absolute;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .compass svg { width: 100%; height: 100%; display: block; }
+
+    .inner {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .kicker {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .logo { height: 30px; width: auto; display: block; }
+    h2 {
+      font-weight: 900;
+      letter-spacing: -0.042em;
+      line-height: 1.06;
+    }
+    h2 em {
+      font-style: normal;
+      color: var(--gold);
+      display: block;
+    }
+    .body { color: #b7c2d0; line-height: 1.5; }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.72rem 1.4rem;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.78rem;
+      border-radius: 9999px;
+      box-shadow: 0 0 0 1px rgba(196,163,90,0.4), 0 12px 40px rgba(196,163,90,0.18);
+    }
+    .base { color: var(--muted); line-height: 1.45; }
+
+    .ticket {
+      border: 1px solid rgba(196,163,90,0.28);
+      background: linear-gradient(180deg, rgba(8,22,40,0.92), rgba(5,13,24,0.88));
+      padding: 0.85rem 1rem;
+      min-width: 13.5rem;
+    }
+    .ticket .tk {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 9px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.45rem;
+    }
+    .ticket ul { list-style: none; }
+    .ticket li {
+      display: flex;
+      justify-content: space-between;
+      gap: 1.2rem;
+      font-size: 0.68rem;
+      padding: 0.22rem 0;
+      border-top: 1px solid rgba(196,163,90,0.12);
+      color: #9ca3af;
+    }
+    .ticket li:first-of-type { border-top: 0; }
+    .ticket li b { color: var(--paper); font-weight: 700; }
+    .ticket .wait {
+      margin-top: 0.55rem;
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+
+    /* sizes */
+    .cinema {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      margin-bottom: 2.4rem;
+    }
+    .cinema .inner { padding: 6% 6.5%; }
+    .cinema .logo { height: 34px; margin-bottom: 1.4rem; }
+    .cinema .kicker { font-size: 0.68rem; }
+    .cinema h2 { font-size: clamp(2rem, 4.6vw, 3.35rem); margin: 0.55rem 0 0.8rem; max-width: 16ch; }
+    .cinema .body { font-size: 1rem; max-width: 32rem; }
+    .cinema .cta { margin-top: 1.15rem; }
+    .cinema .base { font-size: 0.62rem; margin-top: 0.85rem; max-width: 28rem; }
+    .cinema .compass { width: min(52%, 560px); right: -6%; top: 50%; transform: translateY(-48%); }
+    .cinema .foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: start;
+    }
+    @media (max-width: 960px) { .row { grid-template-columns: 1fr; } }
+
+    .sq { width: 100%; max-width: 560px; aspect-ratio: 1; }
+    .sq .inner { padding: 8.5%; }
+    .sq .logo { margin-bottom: 1.1rem; }
+    .sq .kicker { font-size: 0.55rem; }
+    .sq h2 { font-size: clamp(1.7rem, 5vw, 2.25rem); margin: 0.7rem 0 0.65rem; }
+    .sq .body { font-size: 0.82rem; max-width: 24rem; }
+    .sq .compass { width: 78%; right: -28%; bottom: -26%; }
+    .sq .ticket { margin-top: 1rem; }
+
+    .story { width: 280px; aspect-ratio: 9 / 16; }
+    .story .inner { padding: 12% 10%; }
+    .story .logo { height: 22px; margin-bottom: 1.3rem; }
+    .story .kicker { font-size: 0.48rem; letter-spacing: 0.22em; }
+    .story h2 { font-size: 1.55rem; margin: 0.9rem 0 0.7rem; }
+    .story .body { font-size: 0.72rem; }
+    .story .compass { width: 140%; left: -28%; bottom: -18%; }
+    .story .cta { margin-top: 1.1rem; font-size: 0.68rem; }
+    .story .base { font-size: 0.5rem; margin-top: 0.7rem; }
+    .story .ticket { margin-top: 0.9rem; padding: 0.7rem 0.8rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p class="k">v2 · notte in coperta · interno</p>
+      <h1>Ad board — spettacolo della ghiera</h1>
+      <p class="note">Stessa tesi della v1. Mare, ruota viva, ticket in attesa del sì. Nessuno yacht, nessun PnL. Lo spettacolo è la plancia di notte — chi ha la barca la riconosce, chi la sogna ci sale dal gesto.</p>
+    </header>
+
+    <figure>
+      <div class="stage cinema">
+        <div class="goldline"></div>
+        <div class="stars" aria-hidden="true">
+          <span style="left:12%;top:14%"></span>
+          <span style="left:22%;top:9%;animation-delay:.6s"></span>
+          <span style="left:41%;top:18%"></span>
+          <span style="left:58%;top:11%;animation-delay:1.2s"></span>
+          <span style="left:8%;top:28%"></span>
+          <span style="left:33%;top:7%;width:1px;height:1px"></span>
+        </div>
+        <div class="horizon"></div>
+        <div class="wake"></div>
+        <div class="compass" aria-hidden="true">
+          <svg viewBox="0 0 400 400" fill="none">
+            <defs>
+              <linearGradient id="g1" x1="80" y1="40" x2="320" y2="360" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#E8D5A3"/>
+                <stop offset="55%" stop-color="#C4A35A"/>
+                <stop offset="100%" stop-color="#8A7038"/>
+              </linearGradient>
+            </defs>
+            <g stroke="url(#g1)" stroke-linecap="round" opacity="0.45" stroke-width="1.5">
+              <line x1="200" y1="22" x2="200" y2="36" transform="rotate(0 200 200)"/>
+              <line x1="200" y1="22" x2="200" y2="36" transform="rotate(15 200 200)"/>
+              <line x1="200" y1="22" x2="200" y2="36" transform="rotate(30 200 200)"/>
+              <line x1="200" y1="22" x2="200" y2="36" transform="rotate(45 200 200)"/>
+              <line x1="200" y1="22" x2="200" y2="36" transform="rotate(60 200 200)"/>
+              <line x1="200" y1="22" x2="200" y2="36" transform="rotate(75 200 200)"/>
+              <line x1="200" y1="22" x2="200" y2="36" transform="rotate(90 200 200)"/>
+              <line x1="200" y1="22" x2="200" y2="36" transform="rotate(105 200 200)"/>
+              <line x1="200" y1="22" x2="200" y2="36" transform="rotate(120 200 200)"/>
+              <line x1="200" y1="22" x2="200" y2="36" transform="rotate(135 200 200)"/>
+              <line x1="200" y1="22" x2="200" y2="36" transform="rotate(150 200 200)"/>
+              <line x1="200" y1="22" x2="200" y2="36" transform="rotate(165 200 200)"/>
+              <line x1="200" y1="22" x2="200" y2="36" transform="rotate(180 200 200)"/>
+              <line x1="200" y1="22" x2="200" y2="36" transform="rotate(195 200 200)"/>
+              <line x1="200" y1="22" x2="200" y2="36" transform="rotate(210 200 200)"/>
+              <line x1="200" y1="22" x2="200" y2="36" transform="rotate(225 200 200)"/>
+              <line x1="200" y1="22" x2="200" y2="36" transform="rotate(240 200 200)"/>
+              <line x1="200" y1="22" x2="200" y2="36" transform="rotate(255 200 200)"/>
+              <line x1="200" y1="22" x2="200" y2="36" transform="rotate(270 200 200)"/>
+              <line x1="200" y1="22" x2="200" y2="36" transform="rotate(285 200 200)"/>
+              <line x1="200" y1="22" x2="200" y2="36" transform="rotate(300 200 200)"/>
+              <line x1="200" y1="22" x2="200" y2="36" transform="rotate(315 200 200)"/>
+              <line x1="200" y1="22" x2="200" y2="36" transform="rotate(330 200 200)"/>
+              <line x1="200" y1="22" x2="200" y2="36" transform="rotate(345 200 200)"/>
+            </g>
+            <circle cx="200" cy="200" r="172" stroke="rgba(196,163,90,0.22)" stroke-width="0.75"/>
+            <circle cx="200" cy="200" r="138" stroke="rgba(196,163,90,0.14)" stroke-width="0.75" stroke-dasharray="1.2 8"/>
+            <circle cx="200" cy="200" r="102" stroke="rgba(196,163,90,0.32)" stroke-width="1"/>
+            <g>
+              <circle cx="200" cy="200" r="172" stroke="url(#g1)" stroke-width="1.35" stroke-dasharray="22 1060" stroke-linecap="round"/>
+              <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="28s" repeatCount="indefinite"/>
+            </g>
+            <g>
+              <circle cx="200" cy="200" r="56" stroke="#C4A35A" stroke-width="5.5"/>
+              <g transform="rotate(0 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+              <g transform="rotate(45 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+              <g transform="rotate(90 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+              <g transform="rotate(135 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+              <g transform="rotate(180 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+              <g transform="rotate(225 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+              <g transform="rotate(270 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+              <g transform="rotate(315 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+              <circle cx="200" cy="200" r="17" fill="#C4A35A"/>
+              <circle cx="200" cy="200" r="6.5" fill="#0B1F3A"/>
+              <animateTransform attributeName="transform" type="rotate" from="360 200 200" to="0 200 200" dur="48s" repeatCount="indefinite"/>
+            </g>
+            <g>
+              <line x1="200" y1="38" x2="200" y2="198" stroke="#E8D5A3" stroke-width="1.35" stroke-linecap="round"/>
+              <circle cx="200" cy="38" r="2.8" fill="#E8D5A3"/>
+              <animateTransform attributeName="transform" type="rotate" values="-3.2 200 200; 2.6 200 200; -3.2 200 200" dur="9s" repeatCount="indefinite"/>
+            </g>
+          </svg>
+        </div>
+        <div class="inner">
+          <div>
+            <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
+            <p class="kicker">Notte in coperta · non in autopilota</p>
+            <h2>Helmsman indica la rotta.<em>Tu tieni il timone.</em></h2>
+            <p class="body">Quattro gesti. Scan. Preview. Il tuo sì. Coperto — o non parte.</p>
+          </div>
+          <div class="foot">
+            <div>
+              <span class="cta">Pre-registrati</span>
+              <p class="base">Trading comporta perdite. Helmsman è middleware: non consulenza, non l’LLM, non il broker.</p>
+            </div>
+            <aside class="ticket">
+              <p class="tk">Preview · non è un ordine</p>
+              <ul>
+                <li><span>Direzione</span><b>Lungo</b></li>
+                <li><span>Size</span><b>Motore di rischio</b></li>
+                <li><span>Stop</span><b>Parte con l’ingresso</b></li>
+              </ul>
+              <p class="wait">In attesa del sì</p>
+            </aside>
+          </div>
+        </div>
+      </div>
+      <figcaption>16:9 · cinema · master v2</figcaption>
+    </figure>
+
+    <div class="row">
+      <figure>
+        <div class="stage sq">
+          <div class="goldline"></div>
+          <div class="horizon"></div>
+          <div class="wake"></div>
+          <div class="compass" aria-hidden="true">
+            <svg viewBox="0 0 400 400" fill="none">
+              <circle cx="200" cy="200" r="172" stroke="rgba(196,163,90,0.22)" stroke-width="0.75"/>
+              <circle cx="200" cy="200" r="102" stroke="rgba(196,163,90,0.32)" stroke-width="1"/>
+              <g>
+                <circle cx="200" cy="200" r="56" stroke="#C4A35A" stroke-width="5.5"/>
+                <g transform="rotate(0 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                <g transform="rotate(45 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                <g transform="rotate(90 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                <g transform="rotate(135 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                <g transform="rotate(180 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                <g transform="rotate(225 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                <g transform="rotate(270 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                <g transform="rotate(315 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                <circle cx="200" cy="200" r="17" fill="#C4A35A"/>
+                <circle cx="200" cy="200" r="6.5" fill="#0B1F3A"/>
+                <animateTransform attributeName="transform" type="rotate" from="360 200 200" to="0 200 200" dur="48s" repeatCount="indefinite"/>
+              </g>
+            </svg>
+          </div>
+          <div class="inner">
+            <div>
+              <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
+              <p class="kicker">Notte in coperta</p>
+              <h2>Helmsman indica la rotta.<em>Tu tieni il timone.</em></h2>
+              <p class="body">Scan. Preview. Il tuo sì — o niente. Coperto, o non parte.</p>
+              <aside class="ticket">
+                <p class="tk">Preview</p>
+                <ul>
+                  <li><span>Size</span><b>Motore</b></li>
+                  <li><span>Stop</span><b>Con l’ingresso</b></li>
+                </ul>
+                <p class="wait">In attesa del sì</p>
+              </aside>
+            </div>
+            <div>
+              <span class="cta">Pre-registrati</span>
+              <p class="base">Perdite possibili. Non è consulenza.</p>
+            </div>
+          </div>
+        </div>
+        <figcaption>1:1 · feed</figcaption>
+      </figure>
+
+      <figure>
+        <div class="stage story">
+          <div class="goldline"></div>
+          <div class="horizon"></div>
+          <div class="wake"></div>
+          <div class="compass" aria-hidden="true">
+            <svg viewBox="0 0 400 400" fill="none">
+              <g>
+                <circle cx="200" cy="200" r="56" stroke="#C4A35A" stroke-width="5.5"/>
+                <g transform="rotate(0 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                <g transform="rotate(45 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                <g transform="rotate(90 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                <g transform="rotate(135 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                <g transform="rotate(180 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                <g transform="rotate(225 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                <g transform="rotate(270 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                <g transform="rotate(315 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                <circle cx="200" cy="200" r="17" fill="#C4A35A"/>
+                <animateTransform attributeName="transform" type="rotate" from="360 200 200" to="0 200 200" dur="48s" repeatCount="indefinite"/>
+              </g>
+            </svg>
+          </div>
+          <div class="inner">
+            <div>
+              <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
+              <p class="kicker">Notte in coperta</p>
+              <h2>Indica la rotta.<em>Tu tieni il timone.</em></h2>
+              <p class="body">Niente ordine senza il tuo sì.</p>
+              <aside class="ticket">
+                <p class="tk">Preview</p>
+                <p class="wait">In attesa del sì</p>
+              </aside>
+            </div>
+            <div>
+              <span class="cta">Pre-registrati</span>
+              <p class="base">Perdite possibili. Non è consulenza.</p>
+            </div>
+          </div>
+        </div>
+        <figcaption>9:16 · story</figcaption>
+      </figure>
+    </div>
+  </div>
+</body>
+</html>

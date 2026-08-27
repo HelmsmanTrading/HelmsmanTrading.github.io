@@ -121,3 +121,6 @@ highlighter: rouge
 include:
   - assets
   - robots.txt
+
+exclude:
+  - _brand

@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Helmsman — Ads v3 Entra in coperta</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0B1F3A;
+      --ink: #050d18;
+      --gold: #C4A35A;
+      --gold-light: #E8D5A3;
+      --paper: #F7F4EE;
+      --muted: #8A9BB0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background: #02060c;
+      color: var(--paper);
+      padding: 2.5rem 1.5rem 5rem;
+    }
+    .wrap { max-width: 1400px; margin: 0 auto; }
+    header { margin-bottom: 2.2rem; }
+    header .k {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 10px;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.65rem;
+    }
+    header h1 { font-weight: 900; font-size: 2rem; letter-spacing: -0.04em; }
+    header .note { color: var(--muted); font-size: 0.9rem; margin-top: 0.55rem; max-width: 46rem; line-height: 1.55; }
+    figure { margin: 0 0 2.4rem; }
+    figcaption {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.8rem;
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: start;
+    }
+    @media (max-width: 960px) { .row { grid-template-columns: 1fr; } }
+
+    /* —— stage —— */
+    .stage {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(90% 70% at 18% 0%, rgba(18,38,63,0.95) 0%, transparent 55%),
+        radial-gradient(70% 80% at 88% 20%, rgba(196,163,90,0.08) 0%, transparent 50%),
+        radial-gradient(120% 80% at 70% 100%, #081628 0%, #050d18 55%, #02060c 100%);
+      color: var(--paper);
+    }
+    .stage::after {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border: 1px solid rgba(196,163,90,0.28);
+      pointer-events: none;
+      z-index: 4;
+    }
+    .goldline {
+      position: absolute; left: 0; right: 0; top: 0; height: 3px; z-index: 5;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      transform-origin: center;
+      animation: goldscan 3.8s ease-in-out infinite;
+    }
+    @keyframes goldscan {
+      0%, 100% { opacity: 0.4; transform: scaleX(0.38); }
+      50% { opacity: 1; transform: scaleX(1); }
+    }
+    .horizon {
+      position: absolute; left: -8%; right: -8%; bottom: 0;
+      height: 28%;
+      background: linear-gradient(180deg, transparent 0%, rgba(8,22,40,0.55) 40%, #02060c 100%);
+      pointer-events: none;
+    }
+    .horizon::before {
+      content: "";
+      position: absolute; left: 18%; right: 18%; top: 18%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(196,163,90,0.35), transparent);
+    }
+    .wake {
+      position: absolute; left: 50%; bottom: 0;
+      width: 28%; height: 22%;
+      transform: translateX(-10%);
+      background: radial-gradient(ellipse at 50% 0%, rgba(196,163,90,0.16), transparent 68%);
+      animation: wake 8s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes wake {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.75; }
+    }
+
+    .inner { position: relative; z-index: 2; height: 100%; }
+    .logo { height: 30px; width: auto; display: block; }
+    .kicker {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    h2 {
+      font-weight: 900;
+      letter-spacing: -0.042em;
+      line-height: 1.05;
+    }
+    h2 em { font-style: normal; color: var(--gold); display: block; }
+    .body { color: #b7c2d0; line-height: 1.5; }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      list-style: none;
+      border: 1px solid rgba(196,163,90,0.22);
+      background: rgba(5,13,24,0.55);
+    }
+    .steps li {
+      padding: 0.62rem 0.7rem 0.7rem;
+      border-right: 1px solid rgba(196,163,90,0.14);
+      color: var(--paper);
+      font-size: 0.72rem;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+    .steps li:last-child { border-right: 0; }
+    .steps i {
+      display: block;
+      font-style: normal;
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      margin-bottom: 0.22rem;
+    }
+    .steps li:nth-child(1) { animation: stepglow 8s ease-in-out infinite; }
+    .steps li:nth-child(2) { animation: stepglow 8s ease-in-out 2s infinite; }
+    .steps li:nth-child(3) { animation: stepglow 8s ease-in-out 4s infinite; }
+    .steps li:nth-child(4) { animation: stepglow 8s ease-in-out 6s infinite; }
+    @keyframes stepglow {
+      0%, 18%, 100% { background: transparent; }
+      8%, 14% { background: rgba(196,163,90,0.12); }
+    }
+
+    .reasons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem 1.1rem;
+      color: var(--muted);
+      font-size: 0.72rem;
+    }
+    .reasons span { display: inline-flex; align-items: center; gap: 0.4rem; }
+    .reasons span::before {
+      content: "";
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 3px rgba(196,163,90,0.15);
+    }
+
+    .cta-block { display: flex; flex-direction: column; align-items: flex-start; gap: 0.45rem; }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.78rem 1.55rem;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.82rem;
+      border-radius: 9999px;
+      box-shadow: 0 0 0 1px rgba(196,163,90,0.45), 0 14px 36px rgba(196,163,90,0.22);
+    }
+    .micro {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+    .base { color: var(--muted); line-height: 1.45; }
+
+    .cluster {
+      position: relative;
+      width: 100%;
+      max-width: 340px;
+      margin-left: auto;
+    }
+    .well {
+      position: relative;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 1px solid rgba(196,163,90,0.38);
+      background:
+        radial-gradient(circle at 50% 42%, rgba(196,163,90,0.14), transparent 42%),
+        radial-gradient(circle at 50% 50%, #0d1c30 0%, #050d18 72%);
+      box-shadow: 0 0 0 10px rgba(196,163,90,0.05), inset 0 0 40px rgba(0,0,0,0.35);
+      overflow: hidden;
+    }
+    .well svg { width: 86%; height: 86%; position: absolute; left: 7%; top: 7%; }
+    .ticket {
+      position: relative;
+      z-index: 3;
+      margin: -2.4rem 0 0 auto;
+      width: 88%;
+      border: 1px solid rgba(196,163,90,0.32);
+      background: linear-gradient(180deg, rgba(8,22,40,0.96), rgba(5,13,24,0.94));
+      padding: 0.85rem 1rem;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+    }
+    .ticket .tk {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 9px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.45rem;
+    }
+    .ticket ul { list-style: none; }
+    .ticket li {
+      display: flex;
+      justify-content: space-between;
+      gap: 1.1rem;
+      font-size: 0.68rem;
+      padding: 0.22rem 0;
+      border-top: 1px solid rgba(196,163,90,0.12);
+      color: #9ca3af;
+    }
+    .ticket li:first-of-type { border-top: 0; }
+    .ticket li b { color: var(--paper); font-weight: 700; }
+    .ticket .wait {
+      margin-top: 0.55rem;
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+
+    /* cinema 16:9 */
+    .cinema { width: 100%; aspect-ratio: 16 / 9; }
+    .cinema .inner {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 4%;
+      align-items: center;
+      padding: 5.5% 6.5%;
+    }
+    .cinema .logo { height: 32px; margin-bottom: 1.15rem; }
+    .cinema .kicker { font-size: 0.62rem; }
+    .cinema h2 { font-size: clamp(1.85rem, 3.8vw, 3.05rem); margin: 0.5rem 0 0.85rem; max-width: 14ch; }
+    .cinema .steps { margin: 0 0 0.95rem; max-width: 34rem; }
+    .cinema .reasons { margin-bottom: 1.15rem; }
+    .cinema .base { font-size: 0.58rem; margin-top: 0.7rem; max-width: 28rem; }
+    .cinema .cluster { max-width: 320px; }
+
+    /* meta 1200×628 */
+    .meta { width: 100%; aspect-ratio: 1200 / 628; }
+    .meta .inner {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3%;
+      align-items: center;
+      padding: 5.2% 5.8%;
+    }
+    .meta::after { inset: 8px; }
+    .meta .logo { height: 26px; margin-bottom: 0.7rem; }
+    .meta .kicker { font-size: 0.52rem; }
+    .meta h2 { font-size: clamp(1.35rem, 3.1vw, 2.05rem); margin: 0.35rem 0 0.65rem; max-width: 16ch; }
+    .meta .steps { margin-bottom: 0.75rem; }
+    .meta .steps li { font-size: 0.62rem; padding: 0.45rem 0.5rem 0.5rem; }
+    .meta .cta { padding: 0.62rem 1.25rem; font-size: 0.74rem; }
+    .meta .base { font-size: 0.5rem; margin-top: 0.45rem; max-width: 26rem; }
+    .meta .cluster { max-width: 250px; }
+    .meta .ticket { margin-top: -1.6rem; padding: 0.65rem 0.8rem; }
+    .meta .ticket li { font-size: 0.6rem; }
+
+    /* feed 1:1 */
+    .sq { width: 100%; max-width: 560px; aspect-ratio: 1; }
+    .sq .inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 8%;
+      height: 100%;
+    }
+    .sq .logo { height: 28px; margin-bottom: 0.9rem; }
+    .sq .kicker { font-size: 0.5rem; }
+    .sq h2 { font-size: clamp(1.55rem, 4.6vw, 2.15rem); margin: 0.45rem 0 0.8rem; }
+    .sq .steps { margin-bottom: 0.85rem; }
+    .sq .steps li { font-size: 0.6rem; padding: 0.42rem 0.45rem 0.48rem; }
+    .sq .mid {
+      display: grid;
+      grid-template-columns: 1fr 0.85fr;
+      gap: 1rem;
+      align-items: end;
+    }
+    .sq .cluster { max-width: none; margin: 0; }
+    .sq .ticket { width: 100%; margin-top: -1.8rem; }
+    .sq .base { font-size: 0.5rem; margin-top: 0.55rem; }
+    .sq::after { inset: 9px; }
+
+    /* story */
+    .story { width: 280px; aspect-ratio: 9 / 16; }
+    .story::after { inset: 8px; }
+    .story .inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 12% 10%;
+      height: 100%;
+    }
+    .story .logo { height: 22px; margin-bottom: 1.1rem; }
+    .story .kicker { font-size: 0.44rem; letter-spacing: 0.2em; }
+    .story h2 { font-size: 1.48rem; margin: 0.55rem 0 0.85rem; }
+    .story .steps {
+      grid-template-columns: 1fr;
+      margin-bottom: 0.9rem;
+    }
+    .story .steps li {
+      border-right: 0;
+      border-bottom: 1px solid rgba(196,163,90,0.14);
+      font-size: 0.68rem;
+      padding: 0.42rem 0.55rem;
+    }
+    .story .steps li:last-child { border-bottom: 0; }
+    .story .cluster { max-width: none; margin: 0 0 0.9rem; }
+    .story .well { display: none; }
+    .story .ticket { width: 100%; margin: 0; }
+    .story .cta { font-size: 0.7rem; padding: 0.62rem 1.15rem; }
+    .story .base { font-size: 0.48rem; }
+
+    /* leaderboard */
+    .lb { width: 100%; max-width: 728px; aspect-ratio: 728 / 90; }
+    .lb::after { inset: 5px; }
+    .lb .horizon, .lb .wake { display: none; }
+    .lb .inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0 1.4rem;
+      height: 100%;
+    }
+    .lb .logo { height: 22px; margin: 0 0 0.15rem; }
+    .lb .kicker { font-size: 0.42rem; letter-spacing: 0.22em; }
+    .lb h2 {
+      font-size: 0.95rem;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin: 0;
+    }
+    .lb h2 em { display: inline; }
+    .lb .cta { padding: 0.48rem 1.05rem; font-size: 0.68rem; box-shadow: none; }
+    .lb .copy { display: flex; flex-direction: column; gap: 0.15rem; min-width: 0; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p class="k">v3 · entra in coperta · interno</p>
+      <h1>Ad board — offerta e strumento</h1>
+      <p class="note">Stessa tesi. Due masse bilanciate: a sinistra la lista (kicker, headline, nastro, CTA), a destra la prova (ghiera nel pozzo, ticket in attesa del sì). Niente yacht, niente PnL, niente posti finti. Si vende il posto in coperta — non lo scafo.</p>
+    </header>
+
+    <figure>
+      <div class="stage cinema">
+        <div class="goldline"></div>
+        <div class="horizon"></div>
+        <div class="wake"></div>
+        <div class="inner">
+          <div>
+            <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
+            <p class="kicker">Lista d’accesso · non in autopilota</p>
+            <h2>Helmsman indica la rotta.<em>Tu tieni il timone.</em></h2>
+            <ol class="steps">
+              <li><i>01</i>Scan</li>
+              <li><i>02</i>Preview</li>
+              <li><i>03</i>Il tuo sì</li>
+              <li><i>04</i>Coperto</li>
+            </ol>
+            <p class="reasons">
+              <span>Il sì è tuo</span>
+              <span>Coperto o niente</span>
+              <span>Il conto resta tuo</span>
+            </p>
+            <div class="cta-block">
+              <span class="cta">Pre-registrati</span>
+              <p class="micro">Lista d’accesso · il conto resta tuo</p>
+              <p class="base">Trading comporta perdite. Helmsman è middleware: non consulenza, non l’LLM, non il broker.</p>
+            </div>
+          </div>
+          <div class="cluster" aria-hidden="true">
+            <div class="well">
+              <svg viewBox="0 0 400 400" fill="none">
+                <defs>
+                  <linearGradient id="g3c" x1="80" y1="40" x2="320" y2="360" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#E8D5A3"/>
+                    <stop offset="55%" stop-color="#C4A35A"/>
+                    <stop offset="100%" stop-color="#8A7038"/>
+                  </linearGradient>
+                </defs>
+                <circle cx="200" cy="200" r="178" stroke="rgba(196,163,90,0.22)" stroke-width="0.8"/>
+                <circle cx="200" cy="200" r="138" stroke="rgba(196,163,90,0.14)" stroke-width="0.75" stroke-dasharray="1.2 8"/>
+                <circle cx="200" cy="200" r="102" stroke="rgba(196,163,90,0.38)" stroke-width="1.1"/>
+                <g>
+                  <circle cx="200" cy="200" r="172" stroke="url(#g3c)" stroke-width="1.4" stroke-dasharray="22 1060" stroke-linecap="round"/>
+                  <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="28s" repeatCount="indefinite"/>
+                </g>
+                <g>
+                  <circle cx="200" cy="200" r="56" stroke="#C4A35A" stroke-width="5.5"/>
+                  <g transform="rotate(0 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <g transform="rotate(45 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <g transform="rotate(90 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <g transform="rotate(135 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <g transform="rotate(180 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <g transform="rotate(225 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <g transform="rotate(270 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <g transform="rotate(315 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <circle cx="200" cy="200" r="17" fill="#C4A35A"/>
+                  <circle cx="200" cy="200" r="6.5" fill="#0B1F3A"/>
+                  <animateTransform attributeName="transform" type="rotate" from="360 200 200" to="0 200 200" dur="48s" repeatCount="indefinite"/>
+                </g>
+              </svg>
+            </div>
+            <aside class="ticket">
+              <p class="tk">Preview · non è un ordine</p>
+              <ul>
+                <li><span>Direzione</span><b>Lungo</b></li>
+                <li><span>Size</span><b>Motore di rischio</b></li>
+                <li><span>Stop</span><b>Parte con l’ingresso</b></li>
+              </ul>
+              <p class="wait">In attesa del sì</p>
+            </aside>
+          </div>
+        </div>
+      </div>
+      <figcaption>16:9 · cinema · master v3</figcaption>
+    </figure>
+
+    <figure>
+      <div class="stage meta">
+        <div class="goldline"></div>
+        <div class="horizon"></div>
+        <div class="inner">
+          <div>
+            <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
+            <p class="kicker">Lista d’accesso · non in autopilota</p>
+            <h2>Indica la rotta.<em>Tu tieni il timone.</em></h2>
+            <ol class="steps">
+              <li><i>01</i>Scan</li>
+              <li><i>02</i>Preview</li>
+              <li><i>03</i>Il tuo sì</li>
+              <li><i>04</i>Coperto</li>
+            </ol>
+            <div class="cta-block">
+              <span class="cta">Pre-registrati</span>
+              <p class="micro">Il conto resta tuo</p>
+              <p class="base">Perdite possibili. Middleware, non consulenza.</p>
+            </div>
+          </div>
+          <div class="cluster" aria-hidden="true">
+            <div class="well">
+              <svg viewBox="0 0 400 400" fill="none">
+                <circle cx="200" cy="200" r="172" stroke="rgba(196,163,90,0.28)" stroke-width="1"/>
+                <circle cx="200" cy="200" r="102" stroke="rgba(196,163,90,0.35)" stroke-width="1"/>
+                <g>
+                  <circle cx="200" cy="200" r="56" stroke="#C4A35A" stroke-width="5.5"/>
+                  <g transform="rotate(0 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <g transform="rotate(45 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <g transform="rotate(90 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <g transform="rotate(135 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <g transform="rotate(180 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <g transform="rotate(225 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <g transform="rotate(270 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <g transform="rotate(315 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <circle cx="200" cy="200" r="17" fill="#C4A35A"/>
+                  <circle cx="200" cy="200" r="6.5" fill="#0B1F3A"/>
+                  <animateTransform attributeName="transform" type="rotate" from="360 200 200" to="0 200 200" dur="48s" repeatCount="indefinite"/>
+                </g>
+              </svg>
+            </div>
+            <aside class="ticket">
+              <p class="tk">Preview</p>
+              <ul>
+                <li><span>Size</span><b>Motore</b></li>
+                <li><span>Stop</span><b>Con l’ingresso</b></li>
+              </ul>
+              <p class="wait">In attesa del sì</p>
+            </aside>
+          </div>
+        </div>
+      </div>
+      <figcaption>1200×628 · Meta / LinkedIn · pezzo da comprare</figcaption>
+    </figure>
+
+    <div class="row">
+      <figure>
+        <div class="stage sq">
+          <div class="goldline"></div>
+          <div class="horizon"></div>
+          <div class="inner">
+            <div>
+              <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
+              <p class="kicker">Lista d’accesso</p>
+              <h2>Helmsman indica la rotta.<em>Tu tieni il timone.</em></h2>
+              <ol class="steps">
+                <li><i>01</i>Scan</li>
+                <li><i>02</i>Preview</li>
+                <li><i>03</i>Sì</li>
+                <li><i>04</i>Coperto</li>
+              </ol>
+            </div>
+            <div class="mid">
+              <div class="cta-block">
+                <span class="cta">Pre-registrati</span>
+                <p class="micro">Il conto resta tuo</p>
+                <p class="base">Perdite possibili. Non è consulenza.</p>
+              </div>
+              <div class="cluster" aria-hidden="true">
+                <div class="well">
+                  <svg viewBox="0 0 400 400" fill="none">
+                    <circle cx="200" cy="200" r="168" stroke="rgba(196,163,90,0.3)" stroke-width="1"/>
+                    <g>
+                      <circle cx="200" cy="200" r="56" stroke="#C4A35A" stroke-width="5.5"/>
+                      <g transform="rotate(0 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                      <g transform="rotate(45 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                      <g transform="rotate(90 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                      <g transform="rotate(135 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                      <g transform="rotate(180 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                      <g transform="rotate(225 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                      <g transform="rotate(270 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                      <g transform="rotate(315 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                      <circle cx="200" cy="200" r="17" fill="#C4A35A"/>
+                      <animateTransform attributeName="transform" type="rotate" from="360 200 200" to="0 200 200" dur="48s" repeatCount="indefinite"/>
+                    </g>
+                  </svg>
+                </div>
+                <aside class="ticket">
+                  <p class="tk">Preview</p>
+                  <p class="wait">In attesa del sì</p>
+                </aside>
+              </div>
+            </div>
+          </div>
+        </div>
+        <figcaption>1:1 · feed</figcaption>
+      </figure>
+
+      <figure>
+        <div class="stage story">
+          <div class="goldline"></div>
+          <div class="horizon"></div>
+          <div class="inner">
+            <div>
+              <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
+              <p class="kicker">Lista d’accesso</p>
+              <h2>Indica la rotta.<em>Tu tieni il timone.</em></h2>
+              <ol class="steps">
+                <li><i>01</i>Scan sui liquidi</li>
+                <li><i>02</i>Preview con size e stop</li>
+                <li><i>03</i>Il tuo sì — o niente</li>
+                <li><i>04</i>Coperto, o non parte</li>
+              </ol>
+              <div class="cluster">
+                <aside class="ticket">
+                  <p class="tk">Preview</p>
+                  <p class="wait">In attesa del sì</p>
+                </aside>
+              </div>
+            </div>
+            <div>
+              <span class="cta">Pre-registrati</span>
+              <p class="micro" style="margin-top:0.55rem">Il conto resta tuo</p>
+              <p class="base">Perdite possibili. Non è consulenza.</p>
+            </div>
+          </div>
+        </div>
+        <figcaption>9:16 · story · CTA in zona pollice</figcaption>
+      </figure>
+    </div>
+
+    <figure>
+      <div class="stage lb">
+        <div class="goldline"></div>
+        <div class="inner">
+          <div class="copy">
+            <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
+            <p class="kicker">Lista d’accesso</p>
+          </div>
+          <h2>Indica la rotta. <em>Tu tieni il timone.</em></h2>
+          <span class="cta">Pre-registrati</span>
+        </div>
+      </div>
+      <figcaption>728×90 · leaderboard</figcaption>
+    </figure>
+  </div>
+</body>
+</html>
