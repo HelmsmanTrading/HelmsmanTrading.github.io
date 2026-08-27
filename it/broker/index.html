@@ -5,32 +5,32 @@ title: "Broker | Helmsman"
 lang: it
 locale: it_IT
 alt: /en/brokers/
-description: "Alpaca e Tradier hanno già l’adapter. L’obiettivo è ogni broker con API degne di nota — IBKR, Schwab, Directa, Fineco, DEGIRO, Robinhood e gli altri."
+description: "Alpaca, Tradier, IG e IBKR hanno già l’adapter. Saxo, OANDA, lemon.markets e gli altri con API retail restano da costruire. Fineco, DEGIRO, Robinhood non hanno API trading ufficiale: non entrano nella slide."
 ---
 
 {% include page-hero-sea.html
   kicker="Multi-broker"
   title="Il conto resta tuo. Il ponte impara il venue."
-  lead="Non ti chiediamo di cambiare casa. Ti chiediamo le chiavi del ponte. Se un broker espone API, Helmsman deve poterci parlare — con le sue regole, non con un copincolla di Alpaca. Oggi due adapter reali. La mappa è in rapido sviluppo."
+  lead="Non ti chiediamo di cambiare casa. Ti chiediamo le chiavi del ponte — se quel ponte esiste. Quattro adapter già in codice. Poi solo i venue con un’API retail che il modello può parlare. Il resto non è «in mappa»: è fuori."
 %}
 
 {% include broker-rail.html kicker="off" %}
 
-{% include pull-quote.html text="Un logo sulla landing è facile. Farci arrivare un ordine coperto è un altro mestiere. Per questo la slide dice i nomi — e il codice dice chi è davvero collegato." cite="Adapter ≠ partnership" %}
+{% include pull-quote.html text="Un logo sulla landing è facile. Farci arrivare un ordine coperto è un altro mestiere. Per questo la slide dice i nomi che si possono collegare — e il codice dice chi è davvero collegato." cite="Adapter ≠ partnership" %}
 
 <section class="py-16 px-6 bg-white dark:bg-brand-dark">
   <div class="max-w-5xl mx-auto sales-prose text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
     <h2 class="text-3xl md:text-5xl font-black mb-8 text-gray-900 dark:text-white">Un adapter non è un logo</h2>
     <p>Mettere il marchio di Interactive Brokers, Directa o Schwab su una pagina è un pomeriggio di CSS. Far arrivare lì un ingresso con stop è un contratto, un payload, un orario di sessione, un modo di leggere la lista ordini. Alpaca vuole bracket e OTO, un client id <code class="text-brand-gold">helmsman_…</code>. Tradier vuole un OTOCO in un form, un tag senza underscore, un bearer token. Idempotenza, market closed, come si riconcilia uno stop: tutto diverso.</p>
-    <p>Se copi Alpaca su Tradier, apri nudo e chiami il disastro «multi-broker». Helmsman non finge che il mondo sia un’unica API. Ogni adapter porta la propria carta di ingaggio: come si entra, come non si entra, cosa succede a mercato chiuso. Tu resti cliente di chi ti dà il book. Noi allunghiamo il ponte venue per venue.</p>
-    <p>In codice, oggi: <strong class="text-gray-900 dark:text-white">Alpaca</strong> (paper) e <strong class="text-gray-900 dark:text-white">Tradier</strong> (sandbox), più <strong class="text-gray-900 dark:text-white">PaperSim</strong> in locale per provare le regole a rete spenta. IG è già previsto in factory come prossimo. Interactive Brokers, Schwab, TradeStation, tastytrade, E*TRADE, Fidelity, Robinhood, Webull, Directa, Fineco, DEGIRO, Saxo, eToro, Plus500, Trading 212, Trade Republic, Swissquote, CMC: sono i nomi che i trader usano davvero. Meritano un adapter proprio quando contratto e API reggono — non uno sticker.</p>
-    <p>I marchi che vedi appartengono ai rispettivi titolari. Servono a nominare i venue, non a venderti una partnership che non esiste. Oro sulla tile = ponte vivo. Grigio = in mappa. Nessuna finta «integrazione certificata».</p>
+    <p>Se copi Alpaca su Tradier, apri nudo e chiami il disastro «multi-broker». Helmsman non finge che il mondo sia un’unica API. Ogni adapter porta la propria carta di ingaggio: come si entra, come non si entra, cosa succede a mercato chiuso. Tu resti cliente di chi ti dà il book. Noi allunghiamo il ponte venue per venue — e solo se il venue espone un’API che il modello può rispettare.</p>
+    <p>In codice, oggi: <strong class="text-gray-900 dark:text-white">Alpaca</strong> (paper), <strong class="text-gray-900 dark:text-white">Tradier</strong> (sandbox), <strong class="text-gray-900 dark:text-white">IG</strong> (demo) e <strong class="text-gray-900 dark:text-white">Interactive Brokers</strong> (mock-tested, live in sospeso), più <strong class="text-gray-900 dark:text-white">PaperSim</strong> in locale per provare le regole a rete spenta. Saxo, OANDA, lemon.markets: i prossimi. Poi Schwab, cTrader, Tiger, Tradovate, Questrade, MetaApi e gli altri con API che calzano. Directa, eToro, Trading 212, moomoo: integrabili, con attriti. Fineco, DEGIRO, Robinhood, Fidelity, Trade Republic, Plus500: nessuna API trading retail ufficiale — non li fingiamo con uno sticker.</p>
+    <p>I marchi che vedi appartengono ai rispettivi titolari. Servono a nominare i venue, non a venderti una partnership che non esiste. Oro sulla tile = ponte già in codice. Grigio = da costruire. Ambra = con attriti. Nessuna finta «integrazione certificata».</p>
   </div>
 </section>
 
 <section class="py-24 px-6 bg-[#081628] text-white">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl md:text-5xl font-black mb-3">Due adapter veri. Due grammatiche.</h2>
+    <h2 class="text-3xl md:text-5xl font-black mb-3">Quattro adapter. Quattro grammatiche.</h2>
     <p class="text-gray-400 mb-12 max-w-2xl">Stesso sì umano. Stessa copertura. Payload diversi. Se il ponte non rispetta il venue, non è un ponte: è un bug con un logo.</p>
     <div class="venue-duel reveal">
       <article>
@@ -53,42 +53,86 @@ description: "Alpaca e Tradier hanno già l’adapter. L’obiettivo è ogni bro
           <li>— Stesso flusso preview → confirm</li>
         </ul>
       </article>
+      <article>
+        <p class="font-mono text-xs tracking-[0.25em] text-red-400 mb-3">ADAPTER · DEMO</p>
+        <h3>IG</h3>
+        <p>Terzo ponte. L’adapter è fatto: gira in demo. Il live è una chiave, non un altro mestiere. Stessa tesi di Tradier: CFD e sessioni proprie, niente copia di Alpaca.</p>
+        <ul>
+          <li>— Demo già in codice</li>
+          <li>— Live = credenziali, non un rewrite</li>
+          <li>— Grammatica CFD, non equity US</li>
+        </ul>
+      </article>
+      <article>
+        <p class="font-mono text-xs tracking-[0.25em] text-orange-300 mb-3">ADAPTER · MOCK</p>
+        <h3>Interactive Brokers</h3>
+        <p>Quarto ponte. Mock-tested: il gateway c’è, il go-live no. IBKR non è REST da brochure: è TWS/Gateway in macchina. Per questo il live resta in sospeso finché coperture e sessione sono oneste.</p>
+        <ul>
+          <li>— Adapter fatto, non uno sticker</li>
+          <li>— Live in sospeso</li>
+          <li>— Gateway locale, non un JSON copiato</li>
+        </ul>
+      </article>
     </div>
     <p class="mt-10 text-sm text-gray-400">PaperSim resta il banco: zero chiavi, zero rete, per far battere le regole prima di toccare un venue. Non è un broker. È l’officina.</p>
   </div>
 </section>
 
 <section class="py-24 px-6 bg-[#050d18] text-white">
-  <div class="max-w-7xl mx-auto">
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-      <div>
-        <h2 class="text-3xl md:text-5xl font-black mb-3">La mappa</h2>
-        <p class="text-gray-400 max-w-xl">Oro = ponte vivo. Indaco = banco locale. Grigio = in mappa, non ancora collegato. Se operi da uno di questi conti, scrivilo nella pre-registrazione.</p>
-      </div>
+  <div class="max-w-7xl mx-auto space-y-16">
+    <div>
+      <p class="font-mono text-xs text-brand-gold tracking-[0.3em] mb-3">TIER A</p>
+      <h2 class="text-3xl md:text-5xl font-black mb-3">Adapter già in codice</h2>
+      <p class="text-gray-400 max-w-xl mb-8">Oro = ponte già scritto. Paper, sandbox, demo o mock: l’ordine coperto ha una grammatica, non un logo.</p>
+      {% include broker-grid.html tier="a" %}
     </div>
-    {% include broker-grid.html %}
+    <div>
+      <p class="font-mono text-xs text-brand-gold tracking-[0.3em] mb-3">TIER B</p>
+      <h2 class="text-3xl md:text-4xl font-black mb-3">Il modello calza. Da costruire.</h2>
+      <p class="text-gray-400 max-w-xl mb-8">API REST, sandbox, bracket o OCO. Saxo, OANDA, lemon.markets: i prossimi. cTrader e MetaApi sono un adapter, tanti venue. Gli altri seguono la stessa barra: contratto e API, poi il ponte.</p>
+      {% include broker-grid.html tier="b" %}
+    </div>
+    <div>
+      <p class="font-mono text-xs tracking-[0.3em] mb-3 text-amber-500/90">TIER C</p>
+      <h2 class="text-3xl md:text-4xl font-black mb-3">Integrabili, con attriti</h2>
+      <p class="text-gray-400 max-w-xl mb-8">Si può fare. Non è lo stesso mestiere di Schwab. Directa e moomoo sono un gateway in locale; Trading 212 è una beta; eToro è CFD/social.</p>
+      {% include broker-grid.html tier="c" %}
+    </div>
   </div>
 </section>
 
 <section class="py-24 px-6 bg-white dark:bg-brand-dark">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl md:text-4xl font-black mb-10 text-gray-900 dark:text-white">Due oceani. La stessa promessa.</h2>
-    <div class="grid md:grid-cols-2 gap-8">
+    <h2 class="text-3xl md:text-4xl font-black mb-10 text-gray-900 dark:text-white">Due oceani, più i tubi. La stessa promessa — se l’API c’è.</h2>
+    <div class="grid md:grid-cols-3 gap-8">
       <div class="p-8 border border-gray-200 dark:border-white/10 card-glow">
         <p class="font-mono text-xs text-brand-gold tracking-widest mb-3">STATI UNITI</p>
-        <h3 class="text-2xl font-black mb-4 text-gray-900 dark:text-white">Alpaca, Tradier, poi IBKR e il resto del nastro US</h3>
-        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Qui sta il primo adapter: Alpaca in paper. Schwab, TradeStation, tastytrade, E*TRADE, Fidelity, Robinhood, Webull: API pubbliche, trader veri, grammatiche diverse. Un adapter nuovo porta le sue regole, non una traduzione pigra.</p>
+        <h3 class="text-2xl font-black mb-4 text-gray-900 dark:text-white">Alpaca, Tradier, IBKR, poi il nastro che calza</h3>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Tre adapter già in codice. Schwab, TradeStation, tastytrade, Webull, E*TRADE, Tradovate: API pubbliche, da costruire. Fidelity e Robinhood restano fuori dalla slide.</p>
       </div>
       <div class="p-8 border border-gray-200 dark:border-white/10 card-glow">
         <p class="font-mono text-xs text-brand-gold tracking-widest mb-3">EUROPA · ITALIA</p>
-        <h3 class="text-2xl font-black mb-4 text-gray-900 dark:text-white">Directa, Fineco, DEGIRO, Saxo, IG</h3>
-        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Il conto italiano non è un afterthought. Directa e Fineco sono in mappa perché è da lì che operano i trader che ci scrivono. DEGIRO, Saxo, Trade Republic, Trading 212, eToro, Plus500, CMC, Swissquote: stessi criteri. Contratto e API, poi il ponte — non lo sticker.</p>
+        <h3 class="text-2xl font-black mb-4 text-gray-900 dark:text-white">IG, Saxo, lemon.markets — non Fineco</h3>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">IG ha già l’adapter in demo. Saxo e lemon.markets sono i prossimi. Directa è in coda con attriti (Darwin in locale). Fineco è solo PSD2. DEGIRO non ha API ufficiale.</p>
+      </div>
+      <div class="p-8 border border-gray-200 dark:border-white/10 card-glow">
+        <p class="font-mono text-xs text-brand-gold tracking-widest mb-3">GLOBALE · FX · FUTURES</p>
+        <h3 class="text-2xl font-black mb-4 text-gray-900 dark:text-white">OANDA, cTrader, MetaApi, Tiger</h3>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">OANDA calza come IG. cTrader è un’API, tanti broker (Pepperstone, IC Markets, FxPro). MetaApi apre MT4/MT5. Questrade è il Canada. moomoo è OpenD in macchina: attriti, come IBKR.</p>
       </div>
     </div>
   </div>
 </section>
 
 <section class="py-24 px-6 bg-gray-50 dark:bg-brand-surface">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-black mb-4 text-gray-900 dark:text-white">Cosa non entra nella slide</h2>
+    <p class="text-gray-600 dark:text-gray-400 mb-12 max-w-2xl leading-relaxed">Helmsman non reverse-engineera il browser e non viola i ToS. Se manca un’API trading retail ufficiale, il nome non gira sulla marquee.</p>
+    {% include broker-out.html %}
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-white dark:bg-brand-dark">
   <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-12">
     <div>
       <h2 class="text-3xl font-black mb-4 text-gray-900 dark:text-white">Cosa non facciamo</h2>
@@ -97,17 +141,18 @@ description: "Alpaca e Tradier hanno già l’adapter. L’obiettivo è ogni bro
         <li class="flex gap-3"><i class="fas fa-times text-red-400 mt-1"></i><span>Non spaciamo un broker «partner» come l’unico modo per usare Helmsman.</span></li>
         <li class="flex gap-3"><i class="fas fa-times text-red-400 mt-1"></i><span>Non apriamo live su un venue finché coperture e regole di ingaggio non sono oneste lì.</span></li>
         <li class="flex gap-3"><i class="fas fa-times text-red-400 mt-1"></i><span>Non copiamo le regole di Alpaca su tutti. Tradier l’ha già dimostrato: o rispetti il venue, o menti.</span></li>
+        <li class="flex gap-3"><i class="fas fa-times text-red-400 mt-1"></i><span>Non fingiamo un adapter dove manca l’API, o dove i ToS lo vietano.</span></li>
       </ul>
     </div>
     <div class="sales-prose text-gray-600 dark:text-gray-400 leading-relaxed">
       <h2 class="text-3xl font-black mb-4 text-gray-900 dark:text-white">Cosa ti chiediamo</h2>
-      <p>Nella pre-registrazione indica il broker che usi già. Non è un pitch per aprirti un conto nuovo. È la coda: chi ha Directa, IBKR, Fineco o Schwab ci dice dove allungare il ponte dopo Alpaca e Tradier. Gli adapter sono in rapido sviluppo.</p>
-      <p>Il tuo sì resta uguale. Cambia solo chi riceve l’ordine coperto. Quella è l’unica invariante che ci interessa venderti.</p>
+      <p>Nella pre-registrazione indica il broker che usi già. Non è un pitch per aprirti un conto nuovo. È la coda: chi ha Saxo, OANDA, lemon.markets, Directa o IBKR ci dice dove allungare il ponte dopo i quattro già in codice. Se operi da Fineco o DEGIRO, dillo lo stesso: sappiamo che il ponte lì non c’è.</p>
+      <p>Il tuo sì resta uguale. Cambia solo chi riceve l’ordine coperto — e solo se quel chi espone un’API. Quella è l’unica invariante che ci interessa venderti.</p>
     </div>
   </div>
 </section>
 
 {% include cta-band.html
-  title="Di’ da dove operi. Allunghiamo il ponte."
+  title="Di’ da dove operi. Allunghiamo il ponte — se il ponte esiste."
   lead="Siamo in accesso anticipato. Skill e adapter in rapido sviluppo: puoi pre-registrarti."
 %}

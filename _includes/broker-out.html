@@ -1,0 +1,23 @@
+{% comment %}Venues we will not fake. {% include broker-out.html %}{% endcomment %}
+<div class="grid md:grid-cols-2 gap-10">
+  <div>
+    <p class="font-mono text-xs text-brand-gold tracking-widest mb-3">{% if page.lang == 'it' %}TIER D · SOLO ISTITUZIONALE{% else %}TIER D · INSTITUTIONAL ONLY{% endif %}</p>
+    <ul class="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+      {% for b in site.data.brokers %}
+      {% if b.tier == 'd' %}
+      <li><strong class="text-gray-900 dark:text-white">{{ b.name }}.</strong> {% if page.lang == 'it' %}{{ b.blurb_it }}{% else %}{{ b.blurb_en }}{% endif %}</li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+  <div>
+    <p class="font-mono text-xs tracking-widest mb-3 text-red-400/80">{% if page.lang == 'it' %}TIER E · NON INTEGRABILI{% else %}TIER E · NOT INTEGRABLE{% endif %}</p>
+    <ul class="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+      {% for b in site.data.brokers %}
+      {% if b.tier == 'e' %}
+      <li><strong class="text-gray-900 dark:text-white">{{ b.name }}.</strong> {% if page.lang == 'it' %}{{ b.blurb_it }}{% else %}{{ b.blurb_en }}{% endif %}</li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>

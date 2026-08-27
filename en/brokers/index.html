@@ -5,32 +5,32 @@ title: "Brokers | Helmsman"
 lang: en
 locale: en_US
 alt: /it/broker/
-description: "Alpaca and Tradier already have adapters. The aim is every notable broker with an API — IBKR, Schwab, Directa, Fineco, DEGIRO, Robinhood and the rest."
+description: "Alpaca, Tradier, IG and IBKR already have adapters. Saxo, OANDA, lemon.markets and the other retail APIs are to build. Fineco, DEGIRO, Robinhood have no official trading API: they stay off the slide."
 ---
 
 {% include page-hero-sea.html
   kicker="Multi-broker"
   title="Your account stays yours. The bridge learns the venue."
-  lead="We are not asking you to move house. We are asking for the bridge keys. If a broker exposes an API, Helmsman should speak it — with its rules, not an Alpaca paste. Today: two real adapters. The map is moving fast."
+  lead="We are not asking you to move house. We are asking for the bridge keys — if that bridge exists. Four adapters already in code. Then only venues with a retail API the model can speak. The rest is not «on the map»: it is off it."
 %}
 
 {% include broker-rail.html kicker="off" %}
 
-{% include pull-quote.html text="A logo on a landing page is easy. Landing a covered order there is another craft. That is why the slide names the venues — and the code says who is actually wired." cite="Adapter ≠ partnership" %}
+{% include pull-quote.html text="A logo on a landing page is easy. Landing a covered order there is another craft. That is why the slide names the venues that can be wired — and the code says who is actually wired." cite="Adapter ≠ partnership" %}
 
 <section class="py-16 px-6 bg-white dark:bg-brand-dark">
   <div class="max-w-5xl mx-auto sales-prose text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
     <h2 class="text-3xl md:text-5xl font-black mb-8 text-gray-900 dark:text-white">An adapter is not a logo</h2>
     <p>Putting Interactive Brokers, Directa or Schwab on a page is an afternoon of CSS. Getting a stop-attached entry there is a contract, a payload, a session clock, a way to read the order list. Alpaca wants brackets and OTO, a <code class="text-brand-gold">helmsman_…</code> client id. Tradier wants OTOCO in a form payload, a hyphenated tag, a bearer token. Idempotency, a closed cash session, how a stop is reconciled: all different.</p>
-    <p>Paste Alpaca onto Tradier and you open naked while calling the mess «multi-broker». Helmsman does not pretend the world is one API. Every adapter carries its own engagement card: how you enter, how you must not, what happens when the session is closed. You stay a client of whoever gives you the book. We lengthen the bridge, venue by venue.</p>
-    <p>In code today: <strong class="text-gray-900 dark:text-white">Alpaca</strong> (paper) and <strong class="text-gray-900 dark:text-white">Tradier</strong> (sandbox), plus <strong class="text-gray-900 dark:text-white">PaperSim</strong> locally to prove the rules with the network off. IG is already stubbed in the factory. Interactive Brokers, Schwab, TradeStation, tastytrade, E*TRADE, Fidelity, Robinhood, Webull, Directa, Fineco, DEGIRO, Saxo, eToro, Plus500, Trading 212, Trade Republic, Swissquote, CMC: names traders actually use. They deserve their own adapter when contract and APIs hold — not a sticker.</p>
-    <p>The marks you see belong to their owners. They name the venues; they do not sell a partnership that does not exist. Gold on the tile = live bridge. Grey = on the map. No fake «certified integration».</p>
+    <p>Paste Alpaca onto Tradier and you open naked while calling the mess «multi-broker». Helmsman does not pretend the world is one API. Every adapter carries its own engagement card: how you enter, how you must not, what happens when the session is closed. You stay a client of whoever gives you the book. We lengthen the bridge, venue by venue — and only if the venue exposes an API the model can respect.</p>
+    <p>In code today: <strong class="text-gray-900 dark:text-white">Alpaca</strong> (paper), <strong class="text-gray-900 dark:text-white">Tradier</strong> (sandbox), <strong class="text-gray-900 dark:text-white">IG</strong> (demo) and <strong class="text-gray-900 dark:text-white">Interactive Brokers</strong> (mock-tested, live pending), plus <strong class="text-gray-900 dark:text-white">PaperSim</strong> locally to prove the rules with the network off. Saxo, OANDA, lemon.markets: next. Then Schwab, cTrader, Tiger, Tradovate, Questrade, MetaApi and the other APIs that fit. Directa, eToro, Trading 212, moomoo: integrable, with friction. Fineco, DEGIRO, Robinhood, Fidelity, Trade Republic, Plus500: no official retail trading API — we will not fake them with a sticker.</p>
+    <p>The marks you see belong to their owners. They name the venues; they do not sell a partnership that does not exist. Gold on the tile = bridge already in code. Grey = to build. Amber = with friction. No fake «certified integration».</p>
   </div>
 </section>
 
 <section class="py-24 px-6 bg-[#081628] text-white">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl md:text-5xl font-black mb-3">Two real adapters. Two grammars.</h2>
+    <h2 class="text-3xl md:text-5xl font-black mb-3">Four adapters. Four grammars.</h2>
     <p class="text-gray-400 mb-12 max-w-2xl">The same human yes. The same cover. Different payloads. If the bridge does not respect the venue, it is not a bridge: it is a bug with a logo.</p>
     <div class="venue-duel reveal">
       <article>
@@ -53,40 +53,86 @@ description: "Alpaca and Tradier already have adapters. The aim is every notable
           <li>— The same preview → confirm loop</li>
         </ul>
       </article>
+      <article>
+        <p class="font-mono text-xs tracking-[0.25em] text-red-400 mb-3">ADAPTER · DEMO</p>
+        <h3>IG</h3>
+        <p>Third bridge. The adapter is done: it runs in demo. Live is a key, not another craft. Same thesis as Tradier: its own CFDs and sessions, no Alpaca paste.</p>
+        <ul>
+          <li>— Demo already in code</li>
+          <li>— Live = credentials, not a rewrite</li>
+          <li>— CFD grammar, not US equity</li>
+        </ul>
+      </article>
+      <article>
+        <p class="font-mono text-xs tracking-[0.25em] text-orange-300 mb-3">ADAPTER · MOCK</p>
+        <h3>Interactive Brokers</h3>
+        <p>Fourth bridge. Mock-tested: the gateway is there, go-live is not. IBKR is not brochure REST: it is TWS/Gateway on the machine. That is why live stays pending until covers and session are honest.</p>
+        <ul>
+          <li>— Adapter done, not a sticker</li>
+          <li>— Live pending</li>
+          <li>— Local gateway, not a pasted JSON</li>
+        </ul>
+      </article>
     </div>
     <p class="mt-10 text-sm text-gray-400">PaperSim stays the bench: no keys, no network, so the rules can fire before a venue is touched. It is not a broker. It is the workshop.</p>
   </div>
 </section>
 
 <section class="py-24 px-6 bg-[#050d18] text-white">
-  <div class="max-w-7xl mx-auto">
-    <div class="mb-12">
-      <h2 class="text-3xl md:text-5xl font-black mb-3">The map</h2>
-      <p class="text-gray-400 max-w-xl">Gold = live bridge. Indigo = local bench. Grey = on the map, not wired yet. If you already trade from one of these accounts, write it on the pre-registration.</p>
+  <div class="max-w-7xl mx-auto space-y-16">
+    <div>
+      <p class="font-mono text-xs text-brand-gold tracking-[0.3em] mb-3">TIER A</p>
+      <h2 class="text-3xl md:text-5xl font-black mb-3">Adapters already in code</h2>
+      <p class="text-gray-400 max-w-xl mb-8">Gold = a bridge already written. Paper, sandbox, demo or mock: a covered order has a grammar, not a logo.</p>
+      {% include broker-grid.html tier="a" %}
     </div>
-    {% include broker-grid.html %}
+    <div>
+      <p class="font-mono text-xs text-brand-gold tracking-[0.3em] mb-3">TIER B</p>
+      <h2 class="text-3xl md:text-4xl font-black mb-3">The model fits. Still to build.</h2>
+      <p class="text-gray-400 max-w-xl mb-8">REST APIs, sandboxes, brackets or OCO. Saxo, OANDA, lemon.markets: next. cTrader and MetaApi are one adapter, many venues. The others meet the same bar: contract and API, then the bridge.</p>
+      {% include broker-grid.html tier="b" %}
+    </div>
+    <div>
+      <p class="font-mono text-xs tracking-[0.3em] mb-3 text-amber-500/90">TIER C</p>
+      <h2 class="text-3xl md:text-4xl font-black mb-3">Integrable, with friction</h2>
+      <p class="text-gray-400 max-w-xl mb-8">It can be done. It is not the same craft as Schwab. Directa and moomoo are a local gateway; Trading 212 is a beta; eToro is CFD/social.</p>
+      {% include broker-grid.html tier="c" %}
+    </div>
   </div>
 </section>
 
 <section class="py-24 px-6 bg-white dark:bg-brand-dark">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl md:text-4xl font-black mb-10 text-gray-900 dark:text-white">Two oceans. The same promise.</h2>
-    <div class="grid md:grid-cols-2 gap-8">
+    <h2 class="text-3xl md:text-4xl font-black mb-10 text-gray-900 dark:text-white">Two oceans, plus the pipes. The same promise — if the API exists.</h2>
+    <div class="grid md:grid-cols-3 gap-8">
       <div class="p-8 border border-gray-200 dark:border-white/10 card-glow">
         <p class="font-mono text-xs text-brand-gold tracking-widest mb-3">UNITED STATES</p>
-        <h3 class="text-2xl font-black mb-4 text-gray-900 dark:text-white">Alpaca, Tradier, then IBKR and the rest of the US tape</h3>
-        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">The first adapter sits here: Alpaca in paper. Schwab, TradeStation, tastytrade, E*TRADE, Fidelity, Robinhood, Webull: public APIs, real traders, different grammars. A new adapter brings its own rules, not a lazy translation.</p>
+        <h3 class="text-2xl font-black mb-4 text-gray-900 dark:text-white">Alpaca, Tradier, IBKR, then the tape that fits</h3>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Three adapters already in code. Schwab, TradeStation, tastytrade, Webull, E*TRADE, Tradovate: public APIs, still to build. Fidelity and Robinhood stay off the slide.</p>
       </div>
       <div class="p-8 border border-gray-200 dark:border-white/10 card-glow">
         <p class="font-mono text-xs text-brand-gold tracking-widest mb-3">EUROPE · ITALY</p>
-        <h3 class="text-2xl font-black mb-4 text-gray-900 dark:text-white">Directa, Fineco, DEGIRO, Saxo, IG</h3>
-        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">The Italian account is not an afterthought. Directa and Fineco are on the map because that is where the traders who write to us already sit. DEGIRO, Saxo, Trade Republic, Trading 212, eToro, Plus500, CMC, Swissquote: same bar. Contract and APIs, then the bridge — not the sticker.</p>
+        <h3 class="text-2xl font-black mb-4 text-gray-900 dark:text-white">IG, Saxo, lemon.markets — not Fineco</h3>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">IG already has the demo adapter. Saxo and lemon.markets are next. Directa is in the friction queue (Darwin on the machine). Fineco is PSD2 only. DEGIRO has no official API.</p>
+      </div>
+      <div class="p-8 border border-gray-200 dark:border-white/10 card-glow">
+        <p class="font-mono text-xs text-brand-gold tracking-widest mb-3">GLOBAL · FX · FUTURES</p>
+        <h3 class="text-2xl font-black mb-4 text-gray-900 dark:text-white">OANDA, cTrader, MetaApi, Tiger</h3>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">OANDA fits like IG. cTrader is one API, many brokers (Pepperstone, IC Markets, FxPro). MetaApi opens MT4/MT5. Questrade is Canada. moomoo is OpenD on the machine: friction, like IBKR.</p>
       </div>
     </div>
   </div>
 </section>
 
 <section class="py-24 px-6 bg-gray-50 dark:bg-brand-surface">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-black mb-4 text-gray-900 dark:text-white">What stays off the slide</h2>
+    <p class="text-gray-600 dark:text-gray-400 mb-12 max-w-2xl leading-relaxed">Helmsman does not reverse-engineer the browser and does not break ToS. If there is no official retail trading API, the name does not run on the marquee.</p>
+    {% include broker-out.html %}
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-white dark:bg-brand-dark">
   <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-12">
     <div>
       <h2 class="text-3xl font-black mb-4 text-gray-900 dark:text-white">What we will not do</h2>
@@ -95,17 +141,18 @@ description: "Alpaca and Tradier already have adapters. The aim is every notable
         <li class="flex gap-3"><i class="fas fa-times text-red-400 mt-1"></i><span>We will not sell a «partner» venue as the only way to use Helmsman.</span></li>
         <li class="flex gap-3"><i class="fas fa-times text-red-400 mt-1"></i><span>We will not go live on a venue until covers and engagement rules are honest there.</span></li>
         <li class="flex gap-3"><i class="fas fa-times text-red-400 mt-1"></i><span>We will not paste Alpaca’s rules onto everyone. Tradier already proved it: respect the venue, or lie.</span></li>
+        <li class="flex gap-3"><i class="fas fa-times text-red-400 mt-1"></i><span>We will not fake an adapter where the API is missing, or where the ToS forbid it.</span></li>
       </ul>
     </div>
     <div class="sales-prose text-gray-600 dark:text-gray-400 leading-relaxed">
       <h2 class="text-3xl font-black mb-4 text-gray-900 dark:text-white">What we ask</h2>
-      <p>On the pre-registration, name the broker you already use. It is not a pitch to open a new account. It is the queue: Directa, IBKR, Fineco, Schwab tell us where to lengthen the bridge after Alpaca and Tradier. Adapters are moving fast.</p>
-      <p>Your yes stays the same. Only who receives the covered order changes. That is the only invariant we are selling you.</p>
+      <p>On the pre-registration, name the broker you already use. It is not a pitch to open a new account. It is the queue: Saxo, OANDA, lemon.markets, Directa or IBKR tell us where to lengthen the bridge after the four already in code. If you trade from Fineco or DEGIRO, say so anyway: we know the bridge is not there.</p>
+      <p>Your yes stays the same. Only who receives the covered order changes — and only if that who exposes an API. That is the only invariant we are selling you.</p>
     </div>
   </div>
 </section>
 
 {% include cta-band.html
-  title="Tell us where you already trade. We lengthen the bridge."
+  title="Tell us where you already trade. We lengthen the bridge — if the bridge exists."
   lead="We are in early access. Skills and adapters are moving fast: you can pre-register."
 %}

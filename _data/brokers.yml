@@ -1,5 +1,6 @@
-# Logo slides. `icon` = Simple Icons slug (trademark of the owner, identification only).
-# rail: false keeps a name on the grid but off the marquee (not a public venue).
+# Venue map. `icon` = Simple Icons slug (trademark of the owner, identification only).
+# tier: a live adapter · b fits now · c friction · d institutional · e not integrable · sim bench
+# rail: false keeps a name off the marquee. grid: false keeps it off the status cards.
 - id: alpaca
   name: Alpaca
   letter: A
@@ -8,7 +9,10 @@
   status: live
   status_it: Adapter paper
   status_en: Paper adapter
+  tier: a
   region: us
+  blurb_it: "Adapter vivo: ambiente paper, bracket e OTO, conferma umana, client id helmsman."
+  blurb_en: "Live adapter: paper environment, bracket and OTO, human confirm, helmsman client id."
 - id: tradier
   name: Tradier
   letter: T
@@ -17,7 +21,250 @@
   status: live
   status_it: Adapter sandbox
   status_en: Sandbox adapter
+  tier: a
   region: us
+  blurb_it: "Secondo adapter reale: OTOCO, tag, sandbox. Non è Alpaca con un’etichetta."
+  blurb_en: "Second real adapter: OTOCO, tags, sandbox. Not Alpaca with a sticker."
+- id: ig
+  name: IG
+  letter: IG
+  icon: ig
+  accent: "#E31C23"
+  ink: "#FFFFFF"
+  status: live
+  status_it: Adapter demo
+  status_en: Demo adapter
+  tier: a
+  region: eu
+  blurb_it: "Adapter fatto. Demo già in codice; il live è una chiave, non un altro mestiere."
+  blurb_en: "Adapter done. Demo already in code; live is a key, not another craft."
+- id: ibkr
+  name: Interactive Brokers
+  letter: IB
+  icon: interactivebrokers
+  accent: "#D32011"
+  ink: "#FFFFFF"
+  status: live
+  status_it: Adapter mock
+  status_en: Mock adapter
+  tier: a
+  region: global
+  blurb_it: "Adapter fatto, mock-tested. Il live resta in sospeso: il gateway c’è, il go-live no."
+  blurb_en: "Adapter done, mock-tested. Live is pending: the gateway is there, go-live is not."
+- id: saxo
+  name: Saxo
+  letter: SX
+  icon: saxobank
+  accent: "#002B5C"
+  ink: "#FFFFFF"
+  status: next
+  status_it: Prossimo
+  status_en: Next
+  tier: b
+  star: true
+  region: global
+  blurb_it: "OpenAPI REST, SIM da 100k, related orders. Il modello calza: è il prossimo da costruire."
+  blurb_en: "OpenAPI REST, $100k SIM, related orders. The model fits: this is the next one to build."
+- id: oanda
+  name: OANDA
+  letter: OA
+  accent: "#006D77"
+  ink: "#FFFFFF"
+  status: next
+  status_it: Prossimo
+  status_en: Next
+  tier: b
+  star: true
+  region: global
+  blurb_it: "v20 REST, Practice account, coperture native. Calza come IG: FX con una grammatica onesta."
+  blurb_en: "v20 REST, Practice account, native covers. Fits like IG: FX with an honest grammar."
+- id: lemon
+  name: lemon.markets
+  letter: Lm
+  accent: "#111111"
+  ink: "#F5C518"
+  status: next
+  status_it: Prossimo
+  status_en: Next
+  tier: b
+  star: true
+  region: eu
+  blurb_it: "REST developer-first, paper gratis, azioni ed ETF. Broker EU che parla come un adapter, non come un terminal."
+  blurb_en: "Developer-first REST, free paper, stocks and ETFs. An EU broker that speaks like an adapter, not a terminal."
+- id: ctrader
+  name: cTrader
+  letter: cT
+  accent: "#2680EB"
+  ink: "#FFFFFF"
+  status: queued
+  status_it: Da costruire
+  status_en: To build
+  tier: b
+  region: global
+  blurb_it: "Una Open API, tanti venue: Pepperstone, IC Markets, FxPro. Un adapter, il book resta dal broker che hai già."
+  blurb_en: "One Open API, many venues: Pepperstone, IC Markets, FxPro. One adapter, the book stays with the broker you already have."
+- id: tiger
+  name: Tiger Brokers
+  letter: TB
+  accent: "#FF5A00"
+  ink: "#FFFFFF"
+  status: queued
+  status_it: Da costruire
+  status_en: To build
+  tier: b
+  region: global
+  blurb_it: "Open API, paper account. REST che calza, da costruire."
+  blurb_en: "Open API, paper account. REST that fits, still to build."
+- id: tradovate
+  name: Tradovate
+  letter: TV
+  accent: "#0B7EC8"
+  ink: "#FFFFFF"
+  status: queued
+  status_it: Da costruire
+  status_en: To build
+  tier: b
+  region: us
+  blurb_it: "REST sui futures. Il nastro US che non è equity: stessa barra, grammatica diversa."
+  blurb_en: "REST for futures. The US tape that is not equity: the same bar, a different grammar."
+- id: questrade
+  name: Questrade
+  letter: Q
+  accent: "#003057"
+  ink: "#FFFFFF"
+  status: queued
+  status_it: Da costruire
+  status_en: To build
+  tier: b
+  region: ca
+  blurb_it: "REST OAuth2, Canada. API retail che calza. Da costruire."
+  blurb_en: "REST OAuth2, Canada. A retail API that fits. To build."
+- id: metaapi
+  name: MetaApi
+  letter: MA
+  accent: "#5B4B8A"
+  ink: "#FFFFFF"
+  status: queued
+  status_it: Da costruire
+  status_en: To build
+  tier: b
+  region: global
+  blurb_it: "REST su MT4/MT5: un ponte, migliaia di broker. Non è il venue — è il tubo verso chi gira MetaTrader."
+  blurb_en: "REST over MT4/MT5: one bridge, thousands of brokers. Not the venue — the pipe to whoever runs MetaTrader."
+- id: schwab
+  name: Charles Schwab
+  letter: S
+  icon: charles-schwab
+  accent: "#00A0DF"
+  ink: "#FFFFFF"
+  status: queued
+  status_it: Da costruire
+  status_en: To build
+  tier: b
+  region: us
+  blurb_it: "Trader API, OAuth2, sandbox, bracket. Calza. Da costruire."
+  blurb_en: "Trader API, OAuth2, sandbox, brackets. Fits. To build."
+- id: tradestation
+  name: TradeStation
+  letter: TS
+  icon: tradestation
+  accent: "#00A8A8"
+  ink: "#FFFFFF"
+  status: queued
+  status_it: Da costruire
+  status_en: To build
+  tier: b
+  region: us
+  blurb_it: "WebAPI REST, simulator, OCO/OSO. Calza. Da costruire."
+  blurb_en: "WebAPI REST, simulator, OCO/OSO. Fits. To build."
+- id: tastytrade
+  name: tastytrade
+  letter: tt
+  accent: "#111111"
+  ink: "#7CFC00"
+  status: queued
+  status_it: Da costruire
+  status_en: To build
+  tier: b
+  region: us
+  blurb_it: "Open API, OAuth2, sandbox, bracket. Calza. Da costruire."
+  blurb_en: "Open API, OAuth2, sandbox, brackets. Fits. To build."
+- id: webull
+  name: Webull
+  letter: W
+  icon: webull
+  accent: "#0B5FFF"
+  ink: "#FFFFFF"
+  status: queued
+  status_it: Da costruire
+  status_en: To build
+  tier: b
+  region: us
+  blurb_it: "OpenAPI REST, sandbox, OTOCO nativo. Calza. Da costruire."
+  blurb_en: "OpenAPI REST, sandbox, native OTOCO. Fits. To build."
+- id: etrade
+  name: E*TRADE
+  letter: E
+  icon: etrade
+  accent: "#6633CC"
+  ink: "#FFFFFF"
+  status: queued
+  status_it: Da costruire
+  status_en: To build
+  tier: b
+  region: us
+  blurb_it: "REST OAuth1 legacy, sandbox, preview/place. Calza, con la polvere dell’OAuth1. Da costruire."
+  blurb_en: "Legacy OAuth1 REST, sandbox, preview/place. Fits, with OAuth1 dust. To build."
+- id: trading212
+  name: Trading 212
+  letter: "212"
+  icon: trading212
+  accent: "#00A7E1"
+  ink: "#FFFFFF"
+  status: friction
+  status_it: Con attriti
+  status_en: With friction
+  tier: c
+  region: eu
+  blurb_it: "Public API in beta, demo, Market+Limit+Stop. Solo Invest/ISA. Integrabile, con attriti."
+  blurb_en: "Public API in beta, demo, market+limit+stop. Invest/ISA only. Integrable, with friction."
+- id: etoro
+  name: eToro
+  letter: eT
+  icon: etoro
+  accent: "#6CAC3D"
+  ink: "#FFFFFF"
+  status: friction
+  status_it: Con attriti
+  status_en: With friction
+  tier: c
+  region: eu
+  blurb_it: "Public API nuova: demo, market + SL/TP sulla posizione. Modello CFD/social, come IG. Integrabile, con attriti."
+  blurb_en: "New public API: demo, market + SL/TP on the position. CFD/social model, like IG. Integrable, with friction."
+- id: directa
+  name: Directa
+  letter: D
+  accent: "#0033A0"
+  ink: "#FFFFFF"
+  status: friction
+  status_it: Con attriti
+  status_en: With friction
+  tier: c
+  region: eu
+  blurb_it: "dAPI reale, ma socket TCP locali su Darwin — gateway in macchina, non REST. Integrabile, con attriti."
+  blurb_en: "A real dAPI, but local TCP sockets on Darwin — a machine gateway, not REST. Integrable, with friction."
+- id: moomoo
+  name: moomoo
+  letter: m
+  accent: "#FF6A00"
+  ink: "#FFFFFF"
+  status: friction
+  status_it: Con attriti
+  status_en: With friction
+  tier: c
+  region: global
+  blurb_it: "OpenAPI Futu via gateway OpenD in macchina — stesso mestiere di IBKR, non un REST da browser. Integrabile, con attriti."
+  blurb_en: "Futu OpenAPI via the OpenD gateway on the machine — the same craft as IBKR, not browser REST. Integrable, with friction."
 - id: papersim
   name: PaperSim
   letter: P
@@ -26,190 +273,125 @@
   status: sim
   status_it: Banco locale
   status_en: Local sim
+  tier: sim
   region: sim
   rail: false
-- id: ibkr
-  name: Interactive Brokers
-  letter: IB
-  icon: interactivebrokers
-  accent: "#D32011"
+  blurb_it: "Zero rete, zero chiavi. Il banco per provare le regole senza il venue."
+  blurb_en: "No network, no keys. The bench to prove the rules without a venue."
+- id: swissquote
+  name: Swissquote
+  letter: SQ
+  accent: "#E30613"
   ink: "#FFFFFF"
-  status: queued
-  status_it: In mappa
-  status_en: On the map
-  region: global
-- id: schwab
-  name: Charles Schwab
-  letter: S
-  icon: charles-schwab
-  accent: "#00A0DF"
+  status: institutional
+  status_it: Solo istituzionale
+  status_en: Institutional only
+  tier: d
+  region: eu
+  rail: false
+  grid: false
+  blurb_it: "REST/FIX esistono, ma da partner istituzionale. Niente self-serve retail."
+  blurb_en: "REST/FIX exist, but as an institutional partner. No retail self-serve."
+- id: cmc
+  name: CMC Markets
+  letter: CMC
+  accent: "#0033A0"
   ink: "#FFFFFF"
-  status: queued
-  status_it: In mappa
-  status_en: On the map
-  region: us
-- id: tradestation
-  name: TradeStation
-  letter: TS
-  icon: tradestation
-  accent: "#00A8A8"
-  ink: "#FFFFFF"
-  status: queued
-  status_it: In mappa
-  status_en: On the map
-  region: us
-- id: tastytrade
-  name: tastytrade
-  letter: tt
-  accent: "#111111"
-  ink: "#7CFC00"
-  status: queued
-  status_it: In mappa
-  status_en: On the map
-  region: us
-- id: etrade
-  name: E*TRADE
-  letter: E
-  icon: etrade
-  accent: "#6633CC"
-  ink: "#FFFFFF"
-  status: queued
-  status_it: In mappa
-  status_en: On the map
-  region: us
+  status: institutional
+  status_it: Solo istituzionale
+  status_en: Institutional only
+  tier: d
+  region: eu
+  rail: false
+  grid: false
+  blurb_it: "CMC Connect è FIX istituzionale. API retail programmatica assente."
+  blurb_en: "CMC Connect is institutional FIX. No retail programmatic API."
 - id: fidelity
   name: Fidelity
   letter: F
   icon: fidelity
   accent: "#3C8A3C"
   ink: "#FFFFFF"
-  status: queued
-  status_it: In mappa
-  status_en: On the map
+  status: blocked
+  status_it: Non integrabile
+  status_en: Not integrable
+  tier: e
   region: us
+  rail: false
+  grid: false
+  blurb_it: "Nessuna API trading retail. Solo automazione del browser: non lo facciamo."
+  blurb_en: "No retail trading API. Browser automation only: we will not do that."
 - id: robinhood
   name: Robinhood
   letter: R
   icon: robinhood
   accent: "#000000"
   ink: "#CCFF00"
-  status: queued
-  status_it: In mappa
-  status_en: On the map
+  status: blocked
+  status_it: Non integrabile
+  status_en: Not integrable
+  tier: e
   region: us
-- id: webull
-  name: Webull
-  letter: W
-  icon: webull
-  accent: "#0B5FFF"
-  ink: "#FFFFFF"
-  status: queued
-  status_it: In mappa
-  status_en: On the map
-  region: us
-- id: directa
-  name: Directa
-  letter: D
-  accent: "#0033A0"
-  ink: "#FFFFFF"
-  status: queued
-  status_it: In mappa
-  status_en: On the map
-  region: eu
+  rail: false
+  grid: false
+  blurb_it: "API ufficiale solo crypto. L’equity è vietata dai ToS."
+  blurb_en: "Official API is crypto only. Equity is forbidden by the ToS."
 - id: fineco
   name: Fineco
   letter: F
   accent: "#E30613"
   ink: "#FFFFFF"
-  status: queued
-  status_it: In mappa
-  status_en: On the map
+  status: blocked
+  status_it: Non integrabile
+  status_en: Not integrable
+  tier: e
   region: eu
+  rail: false
+  grid: false
+  blurb_it: "Solo Open Banking PSD2 (conto e pagamenti). Nessuna API trading."
+  blurb_en: "Open Banking PSD2 only (account and payments). No trading API."
 - id: degiro
   name: DEGIRO
   letter: DG
   icon: degiro
   accent: "#FFCC00"
   ink: "#111111"
-  status: queued
-  status_it: In mappa
-  status_en: On the map
+  status: blocked
+  status_it: Non integrabile
+  status_en: Not integrable
+  tier: e
   region: eu
-- id: saxo
-  name: Saxo
-  letter: SX
-  icon: saxobank
-  accent: "#002B5C"
-  ink: "#FFFFFF"
-  status: queued
-  status_it: In mappa
-  status_en: On the map
-  region: eu
-- id: ig
-  name: IG
-  letter: IG
-  icon: ig
-  accent: "#E31C23"
-  ink: "#FFFFFF"
-  status: queued
-  status_it: Prossimo in codice
-  status_en: Next in code
-  region: eu
-- id: etoro
-  name: eToro
-  letter: eT
-  icon: etoro
-  accent: "#6CAC3D"
-  ink: "#FFFFFF"
-  status: queued
-  status_it: In mappa
-  status_en: On the map
-  region: eu
-- id: plus500
-  name: Plus500
-  letter: "500"
-  icon: plus500
-  accent: "#2E5BFF"
-  ink: "#FFFFFF"
-  status: queued
-  status_it: In mappa
-  status_en: On the map
-  region: eu
-- id: trading212
-  name: Trading 212
-  letter: "212"
-  icon: trading212
-  accent: "#00A7E1"
-  ink: "#FFFFFF"
-  status: queued
-  status_it: In mappa
-  status_en: On the map
-  region: eu
+  rail: false
+  grid: false
+  blurb_it: "Solo librerie non ufficiali, reverse-engineered. Rischio ban: non lo facciamo."
+  blurb_en: "Unofficial reverse-engineered libraries only. Ban risk: we will not do that."
 - id: traderepublic
   name: Trade Republic
   letter: TR
   icon: traderepublic
   accent: "#000000"
   ink: "#FFFFFF"
-  status: queued
-  status_it: In mappa
-  status_en: On the map
+  status: blocked
+  status_it: Non integrabile
+  status_en: Not integrable
+  tier: e
   region: eu
-- id: swissquote
-  name: Swissquote
-  letter: SQ
-  accent: "#E30613"
+  rail: false
+  grid: false
+  blurb_it: "Solo API non ufficiali. Non entra nella slide."
+  blurb_en: "Unofficial APIs only. It does not enter the slide."
+- id: plus500
+  name: Plus500
+  letter: "500"
+  icon: plus500
+  accent: "#2E5BFF"
   ink: "#FFFFFF"
-  status: queued
-  status_it: In mappa
-  status_en: On the map
+  status: blocked
+  status_it: Non integrabile
+  status_en: Not integrable
+  tier: e
   region: eu
-- id: cmc
-  name: CMC Markets
-  letter: CMC
-  accent: "#0033A0"
-  ink: "#FFFFFF"
-  status: queued
-  status_it: In mappa
-  status_en: On the map
-  region: eu
+  rail: false
+  grid: false
+  blurb_it: "Il CFD retail non ha API. Plus500 Futures Technologies è un altro prodotto B2B."
+  blurb_en: "Retail CFD has no API. Plus500 Futures Technologies is a different B2B product."

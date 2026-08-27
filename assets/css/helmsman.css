@@ -79,6 +79,15 @@ footer .brand-logo {
 }
 .broker-tile__status.is-live { color: #C4A35A; }
 .broker-tile__status.is-sim { color: #3D5A9E; }
+.broker-tile__status.is-next { color: #C4A35A; }
+.broker-tile__status.is-friction { color: #C48A3A; }
+.broker-tile__status.is-blocked { color: #B45353; }
+.broker-tile__status.is-institutional { color: #8A9BB0; }
+.broker-tile__star {
+  color: #C4A35A;
+  font-size: 0.72em;
+  vertical-align: 0.12em;
+}
 
 .broker-card {
   padding: 1.25rem;
@@ -690,11 +699,16 @@ footer .brand-logo {
 .venue-duel article {
   padding: 2rem 1.75rem;
 }
-.venue-duel article:first-child {
+.venue-duel article:nth-child(odd) {
   border-right: 1px solid rgba(196,163,90,0.2);
+}
+.venue-duel article:nth-child(-n+2) {
+  border-bottom: 1px solid rgba(196,163,90,0.2);
+}
+.venue-duel article:nth-child(1) {
   background: linear-gradient(180deg, rgba(242,201,76,0.08), transparent);
 }
-.venue-duel article:last-child {
+.venue-duel article:nth-child(2) {
   background: linear-gradient(180deg, rgba(11,110,79,0.16), transparent);
 }
 .venue-duel h3 { font-size: 1.5rem; font-weight: 900; margin-bottom: 0.35rem; }
@@ -718,8 +732,13 @@ footer .brand-logo {
     grid-template-columns: 1fr;
   }
   .day-strip__tick,
-  .venue-duel article:first-child {
+  .venue-duel article:nth-child(odd) {
     border-right: 0;
+  }
+  .venue-duel article:nth-child(-n+2) {
+    border-bottom: 1px solid rgba(196,163,90,0.18);
+  }
+  .venue-duel article:not(:last-child) {
     border-bottom: 1px solid rgba(196,163,90,0.18);
   }
   .order-ticket {
@@ -2694,10 +2713,12 @@ html:not(.dark) .mobile-nav__acc summary::after {
   border-bottom-color: #0B1F3A;
 }
 
-html:not(.dark) .broker-tile__status.is-live {
+html:not(.dark) .broker-tile__status.is-live,
+html:not(.dark) .broker-tile__status.is-next {
   color: var(--gold-ink);
 }
-html:not(.dark) .broker-rail .broker-tile__status.is-live {
+html:not(.dark) .broker-rail .broker-tile__status.is-live,
+html:not(.dark) .broker-rail .broker-tile__status.is-next {
   color: #C4A35A;
 }
 
