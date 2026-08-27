@@ -1,4 +1,5 @@
 # Compatible models and clients. `icon` = Simple Icons slug (identification only).
+# `logo` = local asset when Simple Icons has no mark (Grok Bot face).
 # kind: client (where you type) · model (who proposes)
 # tier: a native · b tool-calling fits · c friction · e cannot sit at the table
 # rail: false keeps a name off the marquee.
@@ -44,6 +45,20 @@
   star: true
   blurb_it: "Stesso modello, altro tavolo. MCP verso Helmsman: allacciato, testato, funzionante. Non è da costruire. È già il ponte."
   blurb_en: "The same model, another table. MCP into Helmsman: wired, tested, working. Not to build. It is already the bridge."
+- id: grok-bot
+  name: Grok Bot
+  letter: GB
+  logo: /assets/images/llm/grok-bot.svg
+  accent: "#E7D9C2"
+  ink: "#1A1612"
+  status: live
+  status_it: Chat nativa
+  status_en: Native in chat
+  kind: client
+  tier: a
+  star: true
+  blurb_it: "xAI. Si autoconfigura in chat sulla prima versione di Helmsman: niente MCP da avvitare a mano. Il sì resta tuo. Un bridge locale per il SaaS viene dopo — non è questa slide."
+  blurb_en: "xAI. It self-configures in chat on Helmsman v1: no MCP to screw in by hand. The yes stays yours. A local SaaS bridge comes later — not this slide."
 - id: cursor
   name: Cursor
   letter: Cu
@@ -94,8 +109,8 @@
   status_en: With friction
   kind: model
   tier: c
-  blurb_it: "xAI. Entra solo se il client gli dà i tool e gli fa aspettare il sì. Senza tool è una chat. Una chat non è Helmsman."
-  blurb_en: "xAI. It enters only if the client gives it tools and makes it wait for the yes. Without tools it is a chat. A chat is not Helmsman."
+  blurb_it: "xAI, il modello. Non è Grok Bot: quello è il tavolo. Questo peso entra solo se il client gli dà i tool e gli fa aspettare il sì. Senza tool è una chat."
+  blurb_en: "xAI, the model. It is not Grok Bot: that is the table. This weight enters only if the client gives it tools and makes it wait for the yes. Without tools it is a chat."
 - id: mistral
   name: Mistral
   letter: M

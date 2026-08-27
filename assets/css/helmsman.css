@@ -489,6 +489,14 @@ footer .brand-logo {
   display: block;
   object-fit: contain;
 }
+.broker-tile__mark--face {
+  overflow: hidden;
+  border-radius: 50%;
+}
+.broker-tile__logo--face {
+  width: 100%;
+  height: 100%;
+}
 .broker-tile__letter {
   font-weight: 800;
   font-size: 0.78rem;

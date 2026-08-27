@@ -2,8 +2,10 @@
 {% assign b = include.broker %}
 {% assign inkhex = b.ink | replace: '#', '' %}
 <div class="broker-tile" title="{{ b.name }}">
-  <div class="broker-tile__mark" style="background:{{ b.accent }};color:{{ b.ink }}">
-    {% if b.icon %}
+  <div class="broker-tile__mark{% if b.logo %} broker-tile__mark--face{% endif %}" style="background:{{ b.accent }};color:{{ b.ink }}">
+    {% if b.logo %}
+    <img class="broker-tile__logo broker-tile__logo--face" src="{{ b.logo | relative_url }}" alt="" width="48" height="48" loading="lazy">
+    {% elsif b.icon %}
     <img class="broker-tile__logo" src="https://cdn.simpleicons.org/{{ b.icon }}/{{ inkhex }}" alt="" width="28" height="28" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
     <span class="broker-tile__letter" style="display:none">{{ b.letter }}</span>
     {% else %}

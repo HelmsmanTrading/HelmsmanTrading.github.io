@@ -5,13 +5,13 @@ title: "LLM | Helmsman"
 lang: it
 locale: it_IT
 alt: /en/llm/
-description: "Claude, Claude Code e Claude Desktop (MCP) sono nativi. Cursor e GPT sanno i tool. Gemini, Grok, Mistral, Ollama con attriti. Una chat nuda non entra. L’LLM propone. Tu confermi. Il broker esegue."
+description: "Claude, Claude Code, Claude Desktop e Grok Bot sono nativi. Cursor e GPT sanno i tool. Gemini, Grok, Mistral, Ollama con attriti. Una chat nuda non entra. L’LLM propone. Tu confermi. Il broker esegue."
 ---
 
 {% include page-hero-sea.html
   kicker="LLM"
   title="Il modello parla. Il ponte decide se ascoltare."
-  lead="Non ti chiediamo di sposare un cervello. Ti chiediamo un client che sa chiamare i tool e sa aspettare il tuo sì. Claude, Claude Code e Claude Desktop sono nativi. Cursor e gli altri che parlano MCP possono sedersi al tavolo. Chi inventa i lotti in chat resta fuori."
+  lead="Non ti chiediamo di sposare un cervello. Ti chiediamo un client che sa chiamare i tool e sa aspettare il tuo sì. Claude, Claude Code, Claude Desktop e Grok Bot sono nativi. Cursor e gli altri che parlano MCP possono sedersi al tavolo. Chi inventa i lotti in chat resta fuori."
 %}
 
 {% include llm-rail.html kicker="off" %}
@@ -23,7 +23,7 @@ description: "Claude, Claude Code e Claude Desktop (MCP) sono nativi. Cursor e G
     <h2 class="text-3xl md:text-5xl font-black mb-8 text-gray-900 dark:text-white">Un modello non è il ponte</h2>
     <p>Mettere il marchio di Claude o di GPT su una landing è un pomeriggio di CSS. Far sì che quel cervello chiami <code class="text-brand-gold">scan_market</code>, veda una preview con size e stop, aspetti il tuo sì, e solo allora parli col broker — quello è un mestiere. Helmsman esiste perché i modelli sono bravi a parlare e pessimi a dimensionare.</p>
     <p>Se copi una chat su un conto live, apri nudo e chiami il disastro «AI trading». Helmsman non finge che il mondo sia un’unica API di cervelli. Ogni client porta la propria grammatica: come si invocano i tool, come si mostra l’anteprima, come si tiene il sì umano. Tu resti capitano. Il modello resta ospite. Noi allunghiamo il ponte — e solo se quel cervello sa aspettare.</p>
-    <p>In codice, oggi: <strong class="text-gray-900 dark:text-white">Claude</strong> (Anthropic), <strong class="text-gray-900 dark:text-white">Claude Code</strong> e <strong class="text-gray-900 dark:text-white">Claude Desktop</strong> (MCP) sono nativi — allacciati, testati, funzionanti. <strong class="text-gray-900 dark:text-white">Cursor</strong> è un client che può sedere Claude, GPT o altro modello tool-capable. GPT (OpenAI) si allaccia. Gemini, Grok, Mistral, Ollama: integrabili, con attriti — il tool-calling non è un diritto di nascita. Una chat nuda, un autopilota, un canale che «ti direbbe cosa fare»: non entrano nella slide.</p>
+    <p>In codice, oggi: <strong class="text-gray-900 dark:text-white">Claude</strong> (Anthropic), <strong class="text-gray-900 dark:text-white">Claude Code</strong> e <strong class="text-gray-900 dark:text-white">Claude Desktop</strong> (MCP) sono nativi — allacciati, testati, funzionanti. <strong class="text-gray-900 dark:text-white">Grok Bot</strong> (xAI) si autoconfigura in chat sulla prima versione di Helmsman: stesso veto, niente MCP da avvitare a mano. Un bridge locale per il SaaS viene dopo — non è questa slide. <strong class="text-gray-900 dark:text-white">Cursor</strong> è un client che può sedere Claude, GPT o altro modello tool-capable. GPT (OpenAI) si allaccia. Gemini, Grok (il modello), Mistral, Ollama: integrabili, con attriti — il tool-calling non è un diritto di nascita. Una chat nuda, un autopilota, un canale che «ti direbbe cosa fare»: non entrano nella slide.</p>
     <p>I marchi che vedi appartengono ai rispettivi titolari. Servono a nominare chi può parlare col ponte, non a venderti una partnership. Oro sulla tile = nativo. Grigio = sa i tool. Ambra = con attriti. Nessuna finta «certificazione del modello».</p>
   </div>
 </section>
@@ -36,7 +36,7 @@ description: "Claude, Claude Code e Claude Desktop (MCP) sono nativi. Cursor e G
       <article>
         <p class="font-mono text-xs tracking-[0.25em] text-brand-gold mb-3">CLIENT · IL TAVOLO</p>
         <h3>Dove siedi</h3>
-        <p>Claude Code, Claude Desktop, Cursor. Il posto in cui chiedi lo scan, leggi la preview, dici sì o no. Senza un client che sa i tool, Helmsman è un repo. Con un client che spara da solo, Helmsman chiude il tubo.</p>
+        <p>Claude Code, Claude Desktop, Grok Bot, Cursor. Il posto in cui chiedi lo scan, leggi la preview, dici sì o no. Senza un client che sa i tool, Helmsman è un repo. Con un client che spara da solo, Helmsman chiude il tubo.</p>
         <ul>
           <li>— Tool visibili, non magia in background</li>
           <li>— Preview prima del submit</li>
@@ -126,9 +126,10 @@ description: "Claude, Claude Code e Claude Desktop (MCP) sono nativi. Cursor e G
       </ul>
     </div>
     <div class="sales-prose text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-      <h2 class="text-3xl md:text-4xl font-black mb-5 text-gray-900 dark:text-white">Perché Claude è nativo. Perché gli altri possono sedersi.</h2>
+      <h2 class="text-3xl md:text-4xl font-black mb-5 text-gray-900 dark:text-white">Perché alcuni tavoli sono nativi. Perché gli altri possono sedersi.</h2>
       <p>Helmsman è nato su Claude Code: tool, sessione, conferma umana, stesso tavolo. Non è un endorsement. È un fatto di grammatica. Il veto è stato scritto contro un modello che sa chiamare le funzioni e sa (se glielo imponi) aspettare.</p>
-      <p>Cursor è il secondo tavolo perché fa la stessa cosa: agent, MCP, un modello che può essere Claude o GPT. Il ponte non cambia. Cambia chi siede. GPT allaccia perché il tool-calling c’è. Gemini, Grok, Mistral, un Llama su Ollama: il mestiere è lo stesso, la disciplina no. Per questo sono in coda con attriti, non con uno sticker «AI-ready».</p>
+      <p>Grok Bot è nativo in un altro modo: si autoconfigura in chat sulla v1. Non è MCP da avvitare. Non è Grok-il-modello, che resta in coda con attriti. Un’app locale che fa da bridge per il SaaS viene dopo. Non è questa slide, e non è un motivo per chiamarlo partner.</p>
+      <p>Cursor è il tavolo compatibile perché fa la stessa cosa: agent, MCP, un modello che può essere Claude o GPT. Il ponte non cambia. Cambia chi siede. GPT allaccia perché il tool-calling c’è. Gemini, Grok, Mistral, un Llama su Ollama: il mestiere è lo stesso, la disciplina no. Per questo sono in coda con attriti, non con uno sticker «AI-ready».</p>
       <p>Se il tuo client non espone i tool, non c’è Helmsman. C’è una conversazione. Le conversazioni non aprono posizioni coperte.</p>
       <p><a href="/it/skill/" class="font-bold text-brand-gold hover:underline">Cosa fa la skill, che l’LLM non fa →</a></p>
     </div>
@@ -140,7 +141,7 @@ description: "Claude, Claude Code e Claude Desktop (MCP) sono nativi. Cursor e G
     <div>
       <p class="font-mono text-xs text-brand-gold tracking-[0.3em] mb-3">TIER A</p>
       <h2 class="text-3xl md:text-5xl font-black mb-3">Nativi. Già in codice.</h2>
-      <p class="text-gray-400 max-w-xl mb-8">Oro = i tavoli e il modello rispetto a cui il ponte è stato scritto. Claude Code, Claude Desktop, Claude. Paper, preview, sì umano. Non una partnership Anthropic.</p>
+      <p class="text-gray-400 max-w-xl mb-8">Oro = i tavoli e il modello rispetto a cui il ponte è stato scritto. Claude Code, Claude Desktop, Claude, Grok Bot. Paper, preview, sì umano. Non una partnership Anthropic o xAI.</p>
       {% include llm-grid.html tier="a" %}
     </div>
     <div>
@@ -152,7 +153,7 @@ description: "Claude, Claude Code e Claude Desktop (MCP) sono nativi. Cursor e G
     <div>
       <p class="font-mono text-xs tracking-[0.3em] mb-3 text-amber-500/90">TIER C</p>
       <h2 class="text-3xl md:text-4xl font-black mb-3">Integrabili, con attriti</h2>
-      <p class="text-gray-400 max-w-xl mb-8">Gemini, Grok, Mistral, Ollama. Il client deve esporre i tool e imporre l’attesa. Se il peso in locale non sa chiamare una funzione, resta una chat cara.</p>
+      <p class="text-gray-400 max-w-xl mb-8">Gemini, Grok (il modello), Mistral, Ollama. Il client deve esporre i tool e imporre l’attesa. Se il peso in locale non sa chiamare una funzione, resta una chat cara.</p>
       {% include llm-grid.html tier="c" %}
     </div>
   </div>
@@ -160,12 +161,17 @@ description: "Claude, Claude Code e Claude Desktop (MCP) sono nativi. Cursor e G
 
 <section class="py-24 px-6 bg-white dark:bg-brand-dark">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl md:text-4xl font-black mb-10 text-gray-900 dark:text-white">Tre tavoli. La stessa gabbia.</h2>
-    <div class="grid md:grid-cols-3 gap-8">
+    <h2 class="text-3xl md:text-4xl font-black mb-10 text-gray-900 dark:text-white">Quattro tavoli. La stessa gabbia.</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
       <div class="p-8 border border-gray-200 dark:border-white/10 card-glow">
         <p class="font-mono text-xs text-brand-gold tracking-widest mb-3">CLAUDE CODE · DESKTOP</p>
-        <h3 class="text-2xl font-black mb-4 text-gray-900 dark:text-white">I tavoli nativi</h3>
+        <h3 class="text-2xl font-black mb-4 text-gray-900 dark:text-white">I tavoli MCP</h3>
         <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Code in sessione, Desktop via MCP: stesso modello, due sedie, ponte già allacciato e testato. Se usi già Claude, non ti chiediamo un altro cervello. Ti chiediamo il sì sulla riga.</p>
+      </div>
+      <div class="p-8 border border-gray-200 dark:border-white/10 card-glow">
+        <p class="font-mono text-xs text-brand-gold tracking-widest mb-3">GROK BOT · CHAT</p>
+        <h3 class="text-2xl font-black mb-4 text-gray-900 dark:text-white">Si autoconfigura</h3>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">xAI, in chat, sulla v1: niente file MCP da avvitare. Il sì resta tuo. Un bridge locale per il SaaS viene dopo. Non è Grok-il-modello. Non è una partnership.</p>
       </div>
       <div class="p-8 border border-gray-200 dark:border-white/10 card-glow">
         <p class="font-mono text-xs text-brand-gold tracking-widest mb-3">CURSOR · MCP</p>
@@ -202,7 +208,7 @@ description: "Claude, Claude Code e Claude Desktop (MCP) sono nativi. Cursor e G
     </div>
     <div class="sales-prose text-gray-600 dark:text-gray-400 leading-relaxed">
       <h2 class="text-3xl font-black mb-4 text-gray-900 dark:text-white">Cosa ti chiediamo</h2>
-      <p>Nella pre-registrazione indica il client che usi già — Claude Code, Cursor, altro — e, se vuoi, il modello. Non è un pitch per farti cambiare cervello. È la coda: chi siede su GPT o su un peso locale ci dice dove allungare il ponte dopo Claude.</p>
+      <p>Nella pre-registrazione indica il client che usi già — Claude Code, Claude Desktop, Grok Bot, Cursor, altro — e, se vuoi, il modello. Non è un pitch per farti cambiare cervello. È la coda: chi siede su GPT o su un peso locale ci dice dove allungare il ponte dopo i tavoli nativi.</p>
       <p>Il tuo sì resta uguale. Cambia solo chi propone la tesi — e solo se quel chi sa i tool. Quella è l’unica invariante che ci interessa venderti sul lato modello. Sul lato venue, la mappa è <a class="text-brand-gold font-bold hover:underline" href="/it/broker/">l’altra sponda</a>.</p>
     </div>
   </div>
