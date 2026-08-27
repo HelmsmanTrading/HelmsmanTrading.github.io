@@ -1,0 +1,8 @@
+{% comment %}Models we will not fake. {% include llm-out.html %}{% endcomment %}
+<ul class="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+  {% for b in site.data.llms %}
+  {% if b.tier == 'e' %}
+  <li><strong class="text-gray-900 dark:text-white">{% if page.lang == 'it' %}{{ b.name }}{% else %}{{ b.name_en | default: b.name }}{% endif %}.</strong> {% if page.lang == 'it' %}{{ b.blurb_it }}{% else %}{{ b.blurb_en }}{% endif %}</li>
+  {% endif %}
+  {% endfor %}
+</ul>

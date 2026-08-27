@@ -4,6 +4,9 @@
     - title: How it works
       url: /en/how-it-works/
       blurb: Scan, proposal, covered execution
+    - title: LLMs
+      url: /en/llm/
+      blurb: The model proposes. The bridge vetoes.
     - title: Scan
       url: /en/scan/
       blurb: Liquid markets, every session

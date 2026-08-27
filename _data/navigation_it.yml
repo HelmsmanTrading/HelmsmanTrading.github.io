@@ -4,6 +4,9 @@
     - title: Come funziona
       url: /it/come-funziona/
       blurb: Scan, proposta, esecuzione coperta
+    - title: LLM
+      url: /it/llm/
+      blurb: Il modello propone. Il ponte veta.
     - title: Scan
       url: /it/scan/
       blurb: Mercati liquidi, ogni sessione

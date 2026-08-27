@@ -1,0 +1,154 @@
+# Compatible models and clients. `icon` = Simple Icons slug (identification only).
+# kind: client (where you type) · model (who proposes)
+# tier: a native · b tool-calling fits · c friction · e cannot sit at the table
+# rail: false keeps a name off the marquee.
+- id: claude-code
+  name: Claude Code
+  letter: CC
+  icon: claude
+  accent: "#D97757"
+  ink: "#FFFFFF"
+  status: live
+  status_it: Client nativo
+  status_en: Native client
+  kind: client
+  tier: a
+  star: true
+  blurb_it: "Il tavolo su cui Helmsman è nato. Tool, conferma umana, scan e preview nella stessa sessione. Non è un plugin: è il ponte che parli."
+  blurb_en: "The table Helmsman was born on. Tools, human confirm, scan and preview in one session. Not a plugin: the bridge you speak."
+- id: claude
+  name: Claude
+  letter: C
+  icon: anthropic
+  accent: "#191919"
+  ink: "#D97757"
+  status: live
+  status_it: Modello nativo
+  status_en: Native model
+  kind: model
+  tier: a
+  star: true
+  blurb_it: "Anthropic. Sonnet e Opus. Sa chiamare i tool, sa aspettare il sì. L’LLM rispetto a cui il veto è stato scritto. Può allucinare. Non firma l’ordine."
+  blurb_en: "Anthropic. Sonnet and Opus. It can call tools and wait for the yes. The LLM the veto was written against. It can hallucinate. It does not sign the order."
+- id: cursor
+  name: Cursor
+  letter: Cu
+  icon: cursor
+  accent: "#111111"
+  ink: "#F7F4EE"
+  status: live
+  status_it: Client compatibile
+  status_en: Compatible client
+  kind: client
+  tier: b
+  blurb_it: "Agent più MCP. Può sedere Claude, GPT o altro modello che sa i tool. Helmsman non è «dentro Cursor»: Cursor parla col ponte."
+  blurb_en: "Agent plus MCP. It can seat Claude, GPT or another tool-capable model. Helmsman is not «inside Cursor»: Cursor talks to the bridge."
+- id: claude-desktop
+  name: Claude Desktop
+  letter: CD
+  icon: claude
+  accent: "#2A1F1A"
+  ink: "#E8D5A3"
+  status: queued
+  status_it: MCP
+  status_en: MCP
+  kind: client
+  tier: b
+  blurb_it: "Stesso modello, altro tavolo. MCP verso Helmsman. Calza. Da allacciare come ogni client che sa i tool."
+  blurb_en: "The same model, another table. MCP into Helmsman. Fits. To wire like any client that can speak tools."
+- id: gpt
+  name: GPT
+  letter: G
+  icon: openai
+  accent: "#10A37F"
+  ink: "#FFFFFF"
+  status: queued
+  status_it: Da allacciare
+  status_en: To wire
+  kind: model
+  tier: b
+  blurb_it: "OpenAI. Tool-calling vero, via Cursor o MCP. Non è Claude: grammatica diversa, stesso veto. Size e stop restano al motore, non alla chat."
+  blurb_en: "OpenAI. Real tool-calling, via Cursor or MCP. It is not Claude: different grammar, same veto. Size and stops stay with the engine, not the chat."
+- id: gemini
+  name: Gemini
+  letter: Ge
+  icon: googlegemini
+  accent: "#8E75B2"
+  ink: "#FFFFFF"
+  status: friction
+  status_it: Con attriti
+  status_en: With friction
+  kind: model
+  tier: c
+  blurb_it: "Google. Tool-calling a tratti. Può sedersi se il client lo espone. Non è nativo: il veto deve essere più stretto, non più largo."
+  blurb_en: "Google. Tool-calling in stretches. It can sit if the client exposes it. Not native: the veto must get tighter, not looser."
+- id: grok
+  name: Grok
+  letter: X
+  icon: xai
+  accent: "#111111"
+  ink: "#FFFFFF"
+  status: friction
+  status_it: Con attriti
+  status_en: With friction
+  kind: model
+  tier: c
+  blurb_it: "xAI. Entra solo se il client gli dà i tool e gli fa aspettare il sì. Senza tool è una chat. Una chat non è Helmsman."
+  blurb_en: "xAI. It enters only if the client gives it tools and makes it wait for the yes. Without tools it is a chat. A chat is not Helmsman."
+- id: mistral
+  name: Mistral
+  letter: M
+  icon: mistralai
+  accent: "#FA520F"
+  ink: "#FFFFFF"
+  status: friction
+  status_it: Con attriti
+  status_en: With friction
+  kind: model
+  tier: c
+  region: eu
+  blurb_it: "EU, open-weight, tool-calling da verificare sul client. Integrabile se sa aspettare. Non un logo da brochure continentale."
+  blurb_en: "EU, open-weight, tool-calling to prove on the client. Integrable if it can wait. Not a continental brochure logo."
+- id: ollama
+  name: Ollama
+  letter: Ol
+  icon: ollama
+  accent: "#0B1F3A"
+  ink: "#C4A35A"
+  status: friction
+  status_it: Locale · attriti
+  status_en: Local · friction
+  kind: client
+  tier: c
+  blurb_it: "Modelli in macchina. Zero rete verso il vendor. Tool-calling e disciplina del sì dipendono dal peso che carichi. Non è magia offline."
+  blurb_en: "Models on the machine. No network to the vendor. Tool-calling and the discipline of yes depend on the weight you load. Not offline magic."
+- id: chatgpt-naked
+  name: ChatGPT nudo
+  name_en: Naked ChatGPT
+  letter: "—"
+  accent: "#3F3F46"
+  ink: "#A1A1AA"
+  status: blocked
+  status_it: Non compatibile
+  status_en: Not compatible
+  kind: chat
+  tier: e
+  rail: false
+  grid: false
+  blurb_it: "Una chat senza tool, senza preview, senza sì. Inventa lotti. Non entra nella slide."
+  blurb_en: "A chat with no tools, no preview, no yes. It invents lots. It stays off the slide."
+- id: autopilot
+  name: Autopilota
+  name_en: Autopilot
+  letter: "×"
+  accent: "#3F3F46"
+  ink: "#FCA5A5"
+  status: blocked
+  status_it: Vietato dal prodotto
+  status_en: Forbidden by the product
+  kind: bot
+  tier: e
+  rail: false
+  grid: false
+  blurb_it: "Un modello che spara mentre dormi. Helmsman chiude il tubo. Non è una feature in coda. È il contrario del timone."
+  blurb_en: "A model that fires while you sleep. Helmsman closes the pipe. It is not a feature in the queue. It is the opposite of the helm."
