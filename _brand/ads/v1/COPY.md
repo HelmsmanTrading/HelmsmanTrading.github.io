@@ -64,7 +64,8 @@ Pre-registrati.
 
 **RSA IT (titoli)** Tu tieni il timone · Rotta, poi il tuo sì · Coperto o niente · Non è un autopilota · Scan sui liquidi · Il broker resta tuo · Helmsman Trading · Pre-registrati
 
-**Display 300×250** `HELMSMAN` / Il timone è tuo. / Pre-registrati
+**Google Ads 250×250 Square** — logo, *Tu tieni il timone.*, CTA. Misura vera.  
+**Google Ads 728×90 Leaderboard** — banner header. Lockup + un colpo + CTA. Misura vera.
 
 ---
 

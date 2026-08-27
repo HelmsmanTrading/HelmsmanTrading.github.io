@@ -340,29 +340,66 @@
     .story .cta { font-size: 0.7rem; padding: 0.62rem 1.15rem; }
     .story .base { font-size: 0.48rem; }
 
-    /* leaderboard */
-    .lb { width: 100%; max-width: 728px; aspect-ratio: 728 / 90; }
+    /* Google Ads IAB */
+    .gads-block { margin-top: 2.8rem; }
+    .gads-label {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .gads-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: flex-start;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+    }
+    .g-sq { width: 250px; height: 250px; flex-shrink: 0; }
+    .g-sq::after { inset: 6px; }
+    .g-sq .inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 14px;
+      height: 100%;
+    }
+    .g-sq .logo { height: 16px; margin-bottom: 0.3rem; }
+    .g-sq .kicker { font-size: 0.34rem; letter-spacing: 0.12em; }
+    .g-sq h2 { font-size: 0.78rem; margin: 0.25rem 0 0.5rem; max-width: none; }
+    .g-sq h2 em { display: block; }
+    .g-sq .cta { padding: 0.32rem 0.7rem; font-size: 0.56rem; }
+    .g-sq .steps { grid-template-columns: 1fr 1fr; margin: 0; }
+    .g-sq .steps li { font-size: 0.52rem; padding: 0.28rem 0.35rem; }
+    .g-sq .steps i { font-size: 8px; }
+    .g-sq .reasons, .g-sq .cluster, .g-sq .base, .g-sq .micro, .g-sq .horizon, .g-sq .wake { display: none; }
+
+    .lb { width: 728px; height: 90px; flex-shrink: 0; }
     .lb::after { inset: 5px; }
-    .lb .horizon, .lb .wake { display: none; }
+    .lb .horizon, .lb .wake, .lb .base, .lb .micro, .lb .cluster { display: none; }
     .lb .inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
-      padding: 0 1.4rem;
+      gap: 0.7rem;
+      padding: 0 12px 0 14px;
       height: 100%;
     }
-    .lb .logo { height: 22px; margin: 0 0 0.15rem; }
-    .lb .kicker { font-size: 0.42rem; letter-spacing: 0.22em; }
-    .lb h2 {
-      font-size: 0.95rem;
-      letter-spacing: -0.03em;
-      line-height: 1.15;
-      margin: 0;
+    .lb .logo { height: 18px; margin: 0 0 2px; }
+    .lb .kicker { font-size: 0.34rem; letter-spacing: 0.14em; }
+    .lb h2 { display: none; }
+    .lb .cta { padding: 0.36rem 0.85rem; font-size: 0.6rem; box-shadow: none; flex-shrink: 0; }
+    .lb .copy { display: flex; flex-direction: column; gap: 0.1rem; min-width: 0; flex-shrink: 0; }
+    .lb .steps {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      min-width: 0;
     }
-    .lb h2 em { display: inline; }
-    .lb .cta { padding: 0.48rem 1.05rem; font-size: 0.68rem; box-shadow: none; }
-    .lb .copy { display: flex; flex-direction: column; gap: 0.15rem; min-width: 0; }
+    .lb .steps li { font-size: 0.58rem; padding: 0.28rem 0.4rem; }
   </style>
 </head>
 <body>
@@ -590,20 +627,50 @@
       </figure>
     </div>
 
-    <figure>
-      <div class="stage lb">
-        <div class="goldline"></div>
-        <div class="inner">
-          <div class="copy">
-            <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
-            <p class="kicker">Lista d’accesso</p>
+    <section class="gads-block">
+      <p class="gads-label">Google Ads · IAB</p>
+      <div class="gads-row">
+        <figure>
+          <div class="stage g-sq">
+            <div class="goldline"></div>
+            <div class="inner">
+              <div>
+                <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
+                <p class="kicker">Lista d’accesso</p>
+                <h2>Indica la rotta.<em>Tu tieni il timone.</em></h2>
+                <ol class="steps">
+                  <li><i>01</i>Scan</li>
+                  <li><i>02</i>Preview</li>
+                  <li><i>03</i>Il tuo sì</li>
+                  <li><i>04</i>Coperto</li>
+                </ol>
+              </div>
+              <span class="cta">Pre-registrati</span>
+            </div>
           </div>
-          <h2>Indica la rotta. <em>Tu tieni il timone.</em></h2>
-          <span class="cta">Pre-registrati</span>
-        </div>
+          <figcaption>250×250 · Square</figcaption>
+        </figure>
+        <figure>
+          <div class="stage lb">
+            <div class="goldline"></div>
+            <div class="inner">
+              <div class="copy">
+                <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
+                <p class="kicker">Lista d’accesso</p>
+              </div>
+              <ol class="steps">
+                <li><i>01</i>Scan</li>
+                <li><i>02</i>Preview</li>
+                <li><i>03</i>Il tuo sì</li>
+                <li><i>04</i>Coperto</li>
+              </ol>
+              <span class="cta">Pre-registrati</span>
+            </div>
+          </div>
+          <figcaption>728×90 · Leaderboard · banner header</figcaption>
+        </figure>
       </div>
-      <figcaption>728×90 · leaderboard</figcaption>
-    </figure>
+    </section>
   </div>
 </body>
 </html>

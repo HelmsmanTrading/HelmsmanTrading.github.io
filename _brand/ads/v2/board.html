@@ -220,6 +220,57 @@
     .story .cta { margin-top: 1.1rem; font-size: 0.68rem; }
     .story .base { font-size: 0.5rem; margin-top: 0.7rem; }
     .story .ticket { margin-top: 0.9rem; padding: 0.7rem 0.8rem; }
+
+    .gads-block { margin-top: 2.8rem; }
+    .gads-label {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .gads-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: flex-start;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+    }
+    .g-sq { width: 250px; height: 250px; flex-shrink: 0; }
+    .g-sq .inner { padding: 14px; display: flex; flex-direction: column; justify-content: space-between; }
+    .g-sq .logo { height: 16px; margin-bottom: 0.35rem; }
+    .g-sq .kicker { font-size: 0.36rem; letter-spacing: 0.14em; }
+    .g-sq h2 { font-size: 0.82rem; margin: 0.28rem 0 0; max-width: 14ch; }
+    .g-sq .cta { margin-top: 0; padding: 0.32rem 0.7rem; font-size: 0.56rem; }
+    .g-sq .compass { width: 78%; right: -26%; bottom: -18%; top: auto; transform: none; }
+    .g-sq .horizon { height: 36%; }
+    .g-sq .wake { height: 28%; }
+    .g-sq .ticket { margin-top: 0.45rem; padding: 0.4rem 0.5rem; min-width: 0; width: 58%; }
+    .g-sq .ticket ul { display: none; }
+    .g-sq .body, .g-sq .base { display: none; }
+    .g-lb { width: 728px; height: 90px; flex-shrink: 0; }
+    .g-lb .inner {
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 16px 0 18px;
+      gap: 0.9rem;
+    }
+    .g-lb .logo { height: 18px; margin: 0 0 2px; }
+    .g-lb .kicker { font-size: 0.34rem; letter-spacing: 0.16em; }
+    .g-lb h2 { font-size: 0.78rem; margin: 0; flex: 1; min-width: 0; }
+    .g-lb h2 em { display: inline; }
+    .g-lb .cta { margin: 0; padding: 0.36rem 0.85rem; font-size: 0.6rem; flex-shrink: 0; }
+    .g-lb .compass { width: 150px; right: -18px; top: 50%; transform: translateY(-42%); opacity: 1; }
+    .g-lb .horizon { height: 100%; opacity: 0.9; }
+    .g-lb .wake { width: 22%; height: 80%; left: auto; right: 8%; transform: none; }
+    .g-lb .ticket {
+      position: relative; z-index: 3; margin: 0; min-width: 7.2rem; padding: 0.35rem 0.55rem; flex-shrink: 0;
+    }
+    .g-lb .ticket ul, .g-lb .body, .g-lb .base, .g-lb .foot { display: none; }
+    .g-lb .ticket .tk { margin-bottom: 0.15rem; }
   </style>
 </head>
 <body>
@@ -425,6 +476,87 @@
         <figcaption>9:16 · story</figcaption>
       </figure>
     </div>
+
+    <section class="gads-block">
+      <p class="gads-label">Google Ads · IAB</p>
+      <div class="gads-row">
+        <figure>
+          <div class="stage g-sq">
+            <div class="goldline"></div>
+            <div class="horizon"></div>
+            <div class="wake"></div>
+            <div class="compass" aria-hidden="true">
+              <svg viewBox="0 0 400 400" fill="none">
+                <circle cx="200" cy="200" r="172" stroke="rgba(196,163,90,0.28)" stroke-width="0.8"/>
+                <g>
+                  <circle cx="200" cy="200" r="56" stroke="#C4A35A" stroke-width="5.5"/>
+                  <g transform="rotate(0 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <g transform="rotate(45 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <g transform="rotate(90 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <g transform="rotate(135 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <g transform="rotate(180 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <g transform="rotate(225 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <g transform="rotate(270 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <g transform="rotate(315 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <circle cx="200" cy="200" r="17" fill="#C4A35A"/>
+                  <animateTransform attributeName="transform" type="rotate" from="360 200 200" to="0 200 200" dur="48s" repeatCount="indefinite"/>
+                </g>
+              </svg>
+            </div>
+            <div class="inner">
+              <div>
+                <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
+                <p class="kicker">Notte in coperta</p>
+                <h2>Indica la rotta.<em>Tu tieni il timone.</em></h2>
+                <aside class="ticket">
+                  <p class="tk">Preview</p>
+                  <p class="wait">In attesa del sì</p>
+                </aside>
+              </div>
+              <span class="cta">Pre-registrati</span>
+            </div>
+          </div>
+          <figcaption>250×250 · Square</figcaption>
+        </figure>
+        <figure>
+          <div class="stage g-lb">
+            <div class="goldline"></div>
+            <div class="horizon"></div>
+            <div class="wake"></div>
+            <div class="compass" aria-hidden="true">
+              <svg viewBox="0 0 400 400" fill="none">
+                <g>
+                  <circle cx="200" cy="200" r="56" stroke="#C4A35A" stroke-width="5.5"/>
+                  <g transform="rotate(0 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <g transform="rotate(45 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <g transform="rotate(90 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <g transform="rotate(135 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <g transform="rotate(180 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <g transform="rotate(225 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <g transform="rotate(270 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <g transform="rotate(315 200 200)"><rect x="197.2" y="54" width="5.6" height="30" rx="2.8" fill="#C4A35A"/><circle cx="200" cy="52" r="6.4" fill="#C4A35A"/></g>
+                  <circle cx="200" cy="200" r="17" fill="#C4A35A"/>
+                  <animateTransform attributeName="transform" type="rotate" from="360 200 200" to="0 200 200" dur="48s" repeatCount="indefinite"/>
+                </g>
+              </svg>
+            </div>
+            <div class="inner">
+              <div>
+                <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
+                <p class="kicker">Notte in coperta</p>
+              </div>
+              <h2>Indica la rotta. <em>Tu tieni il timone.</em></h2>
+              <aside class="ticket">
+                <p class="tk">Preview</p>
+                <p class="wait">In attesa del sì</p>
+              </aside>
+              <span class="cta">Pre-registrati</span>
+            </div>
+          </div>
+          <figcaption>728×90 · Leaderboard · banner header</figcaption>
+        </figure>
+      </div>
+    </section>
   </div>
 </body>
 </html>

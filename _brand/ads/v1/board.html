@@ -138,6 +138,45 @@
     .story .cta { margin-top: 1.25rem; font-size: 0.65rem; }
     .base { font-size: 0.55rem; line-height: 1.4; color: var(--muted); margin-top: 0.85rem; max-width: 26rem; }
     .row-story { display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 2.5rem; }
+
+    .gads-block { margin-top: 2.8rem; }
+    .gads-label {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .gads-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: flex-start;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+    }
+    .g-sq { width: 250px; height: 250px; flex-shrink: 0; }
+    .g-sq .ad-inner { padding: 18px 16px 16px; }
+    .g-sq .logo { height: 18px; margin-bottom: 0.7rem; }
+    .g-sq .kicker { font-size: 0.4rem; letter-spacing: 0.2em; }
+    .g-sq h2 { font-size: 1.12rem; margin: 0.55rem 0 0; line-height: 1.18; letter-spacing: -0.04em; }
+    .g-sq .cta { margin-top: 0; padding: 0.38rem 0.8rem; font-size: 0.6rem; }
+    .g-sq .dial { width: 72%; right: -22%; bottom: -24%; border-color: rgba(196,163,90,0.35); }
+    .g-lb { width: 728px; height: 90px; flex-shrink: 0; }
+    .g-lb .ad-inner {
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 20px 0 18px;
+      gap: 1.35rem;
+    }
+    .g-lb .brand { flex-shrink: 0; }
+    .g-lb .logo { height: 22px; margin: 0; }
+    .g-lb .kicker { display: none; }
+    .g-lb h2 { font-size: 0.88rem; margin: 0; letter-spacing: -0.035em; line-height: 1.2; flex: 1; }
+    .g-lb .cta { margin: 0 0 0 auto; padding: 0.4rem 0.95rem; font-size: 0.65rem; flex-shrink: 0; }
+    .g-lb .dial { width: 130px; height: 130px; right: -28px; bottom: -48px; opacity: 0.9; }
   </style>
 </head>
 <body>
@@ -202,6 +241,39 @@
         <figcaption>9:16 · story / reels</figcaption>
       </figure>
     </div>
+
+    <section class="gads-block">
+      <p class="gads-label">Google Ads · IAB</p>
+      <div class="gads-row">
+        <figure>
+          <div class="ad g-sq">
+            <div class="dial"><span class="hub"></span></div>
+            <div class="ad-inner">
+              <div>
+                <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
+                <p class="kicker">Il timone · non l’autopilota</p>
+                <h2>Helmsman indica la rotta.<br>Tu tieni il timone.</h2>
+              </div>
+              <span class="cta">Pre-registrati</span>
+            </div>
+          </div>
+          <figcaption>250×250 · Square</figcaption>
+        </figure>
+        <figure>
+          <div class="ad g-lb">
+            <div class="dial"><span class="hub"></span></div>
+            <div class="ad-inner">
+              <div class="brand">
+                <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
+              </div>
+              <h2>Helmsman indica la rotta.<br>Tu tieni il timone.</h2>
+              <span class="cta">Pre-registrati</span>
+            </div>
+          </div>
+          <figcaption>728×90 · Leaderboard · banner header</figcaption>
+        </figure>
+      </div>
+    </section>
   </div>
 </body>
 </html>

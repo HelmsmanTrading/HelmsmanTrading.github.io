@@ -59,7 +59,9 @@ Niente ticker da «segnalare». Niente PnL. Il ticket è lo strumento, come la b
 1. **Cinema 16:9** — il master spettacolare (YouTube, LinkedIn landscape, still da film)  
 2. **Feed 1:1** — ruota grande, ticket in basso a destra  
 3. **Story 9:16** — orizzonte in verticale, due colpi di headline  
-4. Stessi tagli copy della v1 (X, RSA) — non si inventa un claim nuovo per «fare scena»
+4. **Google Ads 250×250 Square** — misura vera. Logo, un colpo, CTA  
+5. **Google Ads 728×90 Leaderboard** — banner header, misura vera  
+6. Stessi tagli copy della v1 (X, RSA) — non si inventa un claim nuovo per «fare scena»
 
 ---
 

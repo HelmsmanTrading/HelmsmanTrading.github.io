@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Helmsman — Ads v4 Tre voci</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0B1F3A;
+      --ink: #050d18;
+      --gold: #C4A35A;
+      --gold-light: #E8D5A3;
+      --paper: #F7F4EE;
+      --muted: #8A9BB0;
+      --veto: #B45353;
+      --veto-ink: #8B3A3A;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background: #02060c;
+      color: var(--paper);
+      padding: 2.5rem 1.5rem 5rem;
+    }
+    .wrap { max-width: 1400px; margin: 0 auto; }
+    header { margin-bottom: 2.2rem; }
+    header .k {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 10px;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.65rem;
+    }
+    header h1 { font-weight: 900; font-size: 2rem; letter-spacing: -0.04em; }
+    header .note { color: var(--muted); font-size: 0.9rem; margin-top: 0.55rem; max-width: 46rem; line-height: 1.55; }
+    figure { margin: 0 0 2.4rem; }
+    figcaption {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.8rem;
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    @media (max-width: 960px) { .row { grid-template-columns: 1fr; } }
+    .row-3 {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: start;
+    }
+    @media (max-width: 960px) { .row-3 { grid-template-columns: 1fr; } }
+
+    .stage {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(80% 70% at 12% 0%, rgba(18,38,63,0.9) 0%, transparent 55%),
+        radial-gradient(120% 80% at 80% 100%, #081628 0%, #050d18 58%, #02060c 100%);
+      color: var(--paper);
+    }
+    .goldline {
+      position: absolute; left: 0; right: 0; top: 0; height: 3px; z-index: 5;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      animation: goldscan 4s ease-in-out infinite;
+      transform-origin: center;
+    }
+    @keyframes goldscan {
+      0%, 100% { opacity: 0.35; transform: scaleX(0.4); }
+      50% { opacity: 1; transform: scaleX(1); }
+    }
+    .horizon {
+      position: absolute; left: -10%; right: -10%; bottom: 0; height: 26%;
+      background: linear-gradient(180deg, transparent, rgba(8,22,40,0.7) 45%, #02060c);
+      pointer-events: none;
+    }
+    .horizon::before {
+      content: "";
+      position: absolute; left: 22%; right: 22%; top: 22%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(196,163,90,0.32), transparent);
+    }
+
+    .logo { height: 28px; width: auto; display: block; }
+    .kicker {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    h2 {
+      font-weight: 900;
+      letter-spacing: -0.045em;
+      line-height: 1.04;
+    }
+    h2 em { font-style: normal; color: var(--gold); display: block; }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.72rem 1.4rem;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.78rem;
+      border-radius: 9999px;
+      box-shadow: 0 10px 28px rgba(196,163,90,0.2);
+    }
+    .micro {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+    .base { color: var(--muted); line-height: 1.45; }
+
+    .giant {
+      font-weight: 900;
+      letter-spacing: -0.08em;
+      line-height: 0.78;
+      color: var(--paper);
+    }
+    .caret {
+      display: inline-block;
+      width: 0.42em;
+      height: 0.78em;
+      margin-left: 0.08em;
+      background: var(--gold);
+      vertical-align: baseline;
+      animation: blink 1.05s steps(1) infinite;
+    }
+    @keyframes blink {
+      0%, 46% { opacity: 1; }
+      47%, 100% { opacity: 0; }
+    }
+
+    /* paper log */
+    .sheet {
+      position: relative;
+      background: var(--paper);
+      color: var(--navy);
+      padding: 1.35rem 1.4rem 1.2rem;
+      box-shadow: 0 28px 70px rgba(0,0,0,0.42);
+      background-image: repeating-linear-gradient(
+        180deg,
+        transparent,
+        transparent 27px,
+        rgba(11,31,58,0.05) 27px,
+        rgba(11,31,58,0.05) 28px
+      );
+    }
+    .sheet .kicker { font-size: 0.52rem; margin-bottom: 0.85rem; }
+    .log { list-style: none; }
+    .log li {
+      display: grid;
+      grid-template-columns: 6.2rem 1fr;
+      gap: 0.6rem;
+      padding: 0.42rem 0 0.5rem;
+      border-top: 1px solid rgba(11,31,58,0.08);
+      font-size: 0.92rem;
+      line-height: 1.35;
+    }
+    .log li:first-child { border-top: 0; padding-top: 0; }
+    .log .who {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #6a7a8c;
+      padding-top: 0.22rem;
+    }
+    .log .you .who { color: var(--gold); }
+    .log .you .say {
+      color: var(--navy);
+      font-weight: 700;
+      min-height: 1.35em;
+      display: flex;
+      align-items: center;
+    }
+    .log .you .caret {
+      width: 0.38rem;
+      height: 1.05rem;
+      margin: 0;
+    }
+    .strike {
+      color: var(--veto-ink);
+      text-decoration: line-through;
+      text-decoration-color: var(--veto);
+      text-decoration-thickness: 1.5px;
+    }
+    .seal {
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+      width: 42px;
+      height: 42px;
+      opacity: 0.85;
+    }
+    .sheet-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      margin-top: 1.1rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid rgba(11,31,58,0.1);
+      background: var(--paper);
+      position: relative;
+    }
+    .sheet .cta { box-shadow: none; }
+    .sheet .micro { color: #8A7038; }
+    .sheet .base { color: #6a7a8c; font-size: 0.52rem; max-width: 16rem; }
+
+    /* cinema */
+    .cinema { width: 100%; aspect-ratio: 16 / 9; }
+    .cinema .inner {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 5%;
+      align-items: center;
+      padding: 5.5% 6.2%;
+    }
+    .cinema .logo { margin-bottom: 1.1rem; }
+    .cinema .kicker { font-size: 0.6rem; }
+    .cinema h2 { font-size: clamp(1.5rem, 3.2vw, 2.35rem); margin: 0.4rem 0 0.5rem; max-width: 14ch; }
+    .cinema .giant { font-size: clamp(6.2rem, 14vw, 10.5rem); margin: 0.15rem 0 0.9rem; }
+    .cinema .base { font-size: 0.55rem; margin-top: 0.65rem; max-width: 24rem; }
+    .cinema .sheet { max-width: 420px; margin-left: auto; }
+
+    /* polyptych */
+    .poly { width: 100%; aspect-ratio: 16 / 9; }
+    .poly .inner {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 4.5% 5%;
+    }
+    .poly .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .poly .kicker { font-size: 0.55rem; }
+    .poly h2 { font-size: clamp(1.2rem, 2.4vw, 1.7rem); margin-top: 0.35rem; }
+    .poly h2 em { display: inline; }
+    .slabs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.85rem;
+      flex: 1;
+      align-items: stretch;
+      margin: 1.2rem 0 0.9rem;
+      min-height: 0;
+    }
+    .slab {
+      border: 1px solid rgba(196,163,90,0.28);
+      background: rgba(5,13,24,0.55);
+      padding: 0.9rem 0.85rem 0.8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 0;
+    }
+    .slab i {
+      font-style: normal;
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+    }
+    .slab strong {
+      font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      display: block;
+      margin-top: 0.45rem;
+    }
+    .slab .viz {
+      margin-top: auto;
+      height: 42%;
+      min-height: 4.2rem;
+      position: relative;
+    }
+    .viz-scan {
+      position: absolute; left: 8%; right: 8%; top: 48%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      animation: goldscan 3.2s ease-in-out infinite;
+    }
+    .viz-ticket {
+      position: absolute; inset: 12% 8% 8%;
+      border: 1px solid rgba(196,163,90,0.3);
+      padding: 0.45rem 0.55rem;
+      font-size: 0.58rem;
+      color: #9ca3af;
+    }
+    .viz-ticket b { color: var(--paper); display: block; margin-top: 0.2rem; }
+    .viz-empty {
+      position: absolute; left: 12%; bottom: 22%;
+      display: flex; align-items: flex-end; gap: 0.15rem;
+      font-weight: 800; font-size: 1.4rem; letter-spacing: -0.04em;
+    }
+    .viz-cover {
+      position: absolute; left: 12%; right: 12%; top: 38%;
+    }
+    .viz-cover span {
+      display: block; height: 2px; margin: 0.45rem 0;
+      background: var(--gold);
+      opacity: 0.85;
+    }
+    .viz-cover span:last-child { width: 72%; opacity: 0.45; }
+    .slab.is-void {
+      background: rgba(196,163,90,0.07);
+      border-color: rgba(196,163,90,0.5);
+    }
+    .poly .cta { margin-right: 0.8rem; }
+    .poly .foot { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem 1rem; }
+    .poly .base { font-size: 0.52rem; }
+
+    /* feed paper */
+    .sq { width: 100%; max-width: 540px; aspect-ratio: 1; }
+    .sq .inner {
+      position: relative; z-index: 2; height: 100%;
+      display: flex; flex-direction: column;
+      padding: 8%;
+    }
+    .sq .logo { margin-bottom: 0.85rem; }
+    .sq .kicker { font-size: 0.5rem; }
+    .sq h2 { font-size: 1.55rem; margin: 0.4rem 0 0.9rem; }
+    .sq .sheet { flex: 1; display: flex; flex-direction: column; }
+    .sq .log li { font-size: 0.82rem; grid-template-columns: 5.4rem 1fr; }
+    .sq .base { font-size: 0.5rem; margin-top: 0.7rem; }
+
+    /* veto manifesto */
+    .veto {
+      width: 100%; max-width: 540px; aspect-ratio: 1;
+      background: var(--paper);
+      color: var(--navy);
+    }
+    .veto .inner {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 9%;
+    }
+    .veto .kicker { color: var(--veto); font-size: 0.5rem; }
+    .veto h2 { font-size: clamp(1.7rem, 5vw, 2.2rem); margin: 0.7rem 0 0.5rem; }
+    .veto h2 em { color: var(--navy); }
+    .veto .dead {
+      font-size: clamp(1.8rem, 6vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: rgba(11,31,58,0.35);
+      text-decoration: line-through;
+      text-decoration-color: var(--veto);
+      text-decoration-thickness: 3px;
+      margin: 1.1rem 0;
+    }
+    .veto .alive {
+      font-size: clamp(1.8rem, 6vw, 2.5rem);
+      font-weight: 900;
+      letter-spacing: -0.045em;
+      color: var(--navy);
+    }
+    .veto .alive em { font-style: normal; color: #8A7038; }
+    .veto .cta { align-self: flex-start; }
+    .veto .base { color: #6a7a8c; font-size: 0.52rem; margin-top: 0.7rem; }
+    .badge-no {
+      display: inline-flex;
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--veto);
+      border: 1px solid rgba(180,83,83,0.55);
+      padding: 0.22rem 0.45rem;
+      animation: vp 2.4s ease-in-out infinite;
+    }
+    @keyframes vp {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; box-shadow: 0 0 10px rgba(180,83,83,0.25); }
+    }
+
+    /* story */
+    .story { width: 280px; aspect-ratio: 9 / 16; }
+    .story .inner {
+      position: relative; z-index: 2; height: 100%;
+      display: flex; flex-direction: column; justify-content: space-between;
+      padding: 12% 10%;
+    }
+    .story .logo { height: 22px; margin-bottom: 1rem; }
+    .story .kicker { font-size: 0.44rem; letter-spacing: 0.2em; }
+    .story h2 { font-size: 1.35rem; margin: 0.5rem 0 0.9rem; }
+    .story .sheet { padding: 0.85rem 0.8rem; }
+    .story .log li { grid-template-columns: 1fr; gap: 0.15rem; font-size: 0.78rem; }
+    .story .base { font-size: 0.48rem; margin-top: 0.65rem; }
+    .story .cta { margin-top: 0.2rem; font-size: 0.7rem; }
+
+    /* type poster */
+    .poster { width: 100%; max-width: 540px; aspect-ratio: 1; }
+    .poster .inner {
+      position: relative; z-index: 2; height: 100%;
+      display: flex; flex-direction: column; justify-content: space-between;
+      padding: 9%;
+    }
+    .poster .giant { font-size: clamp(7rem, 28vw, 11rem); }
+    .poster h2 { font-size: 1.15rem; max-width: 12ch; }
+    .poster .kicker { font-size: 0.5rem; }
+    .poster .base { font-size: 0.5rem; }
+
+    .gads-block { margin-top: 2.8rem; }
+    .gads-label {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .gads-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: flex-start;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+    }
+    .g-sq { width: 250px; height: 250px; flex-shrink: 0; background: var(--paper); color: var(--navy); }
+    .g-sq .goldline { display: none; }
+    .g-sq .inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 12px;
+      height: 100%;
+    }
+    .g-sq .logo { height: 16px; margin-bottom: 0.25rem; }
+    .g-sq .kicker { font-size: 0.34rem; letter-spacing: 0.12em; color: #8A7038; }
+    .g-sq h2 { display: none; }
+    .g-sq .cta { padding: 0.32rem 0.7rem; font-size: 0.56rem; }
+    .g-sq .sheet {
+      padding: 0.55rem 0.6rem 0.45rem;
+      box-shadow: none;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .g-sq .log li { font-size: 0.68rem; grid-template-columns: 4.4rem 1fr; padding: 0.22rem 0; }
+    .g-sq .sheet-foot { margin-top: auto; padding-top: 0.45rem; }
+    .g-sq .seal { display: none; }
+    .g-sq .horizon { display: none; }
+    .g-lb { width: 728px; height: 90px; flex-shrink: 0; }
+    .g-lb .goldline { opacity: 0.5; }
+    .g-lb .inner {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      padding: 8px 12px;
+      gap: 10px;
+      height: 100%;
+    }
+    .g-lb .brand { display: flex; flex-direction: column; justify-content: center; flex-shrink: 0; }
+    .g-lb .logo { height: 16px; margin: 0 0 3px; }
+    .g-lb .kicker { font-size: 0.32rem; }
+    .g-lb h2 { display: none; }
+    .g-lb .cta { padding: 0.32rem 0.8rem; font-size: 0.58rem; flex-shrink: 0; align-self: center; }
+    .g-lb .sheet {
+      flex: 1;
+      padding: 0.35rem 0.7rem;
+      display: flex;
+      align-items: center;
+      box-shadow: none;
+      min-width: 0;
+    }
+    .g-lb .log {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr 0.8fr;
+      width: 100%;
+      gap: 0;
+    }
+    .g-lb .log li {
+      display: block;
+      border-top: 0;
+      border-right: 1px solid rgba(11,31,58,0.1);
+      padding: 0 0.65rem;
+      font-size: 0.68rem;
+    }
+    .g-lb .log li:last-child { border-right: 0; }
+    .g-lb .log .who { display: block; padding-top: 0; margin-bottom: 0.1rem; }
+    .g-lb .horizon, .g-lb .giant, .g-lb .base { display: none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p class="k">v4 · tre voci · interno</p>
+      <h1>Ad board — il nastro, il vuoto, il no</h1>
+      <p class="note">Carta sul mare. Tre voci: modello, ponte, tu. Il pezzo creativo è la riga vuota — il cursore che aspetta. Il no (ingresso nudo) è marca, non un errore. Stessa tesi. Stesso CTA. Nessuno yacht, nessun PnL.</p>
+    </header>
+
+    <figure>
+      <div class="stage cinema">
+        <div class="goldline"></div>
+        <div class="horizon"></div>
+        <div class="inner">
+          <div>
+            <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
+            <p class="kicker">Tre voci · in attesa del sì</p>
+            <p class="giant">TU<span class="caret" aria-hidden="true"></span></p>
+            <h2>Helmsman indica la rotta.<em>Tu tieni il timone.</em></h2>
+            <p class="base">Trading comporta perdite. Helmsman è middleware: non consulenza, non l’LLM, non il broker.</p>
+          </div>
+          <div class="sheet">
+            <p class="kicker">Nastro · non è un ordine</p>
+            <ol class="log">
+              <li>
+                <span class="who">Modello</span>
+                <span class="say">Proposto.</span>
+              </li>
+              <li>
+                <span class="who">Ponte</span>
+                <span class="say"><span class="strike">Ingresso nudo.</span><br>Size dal motore. Stop in ordine.<br>Preview pronta.</span>
+              </li>
+              <li class="you">
+                <span class="who">Tu</span>
+                <span class="say"><span class="caret" aria-hidden="true"></span></span>
+              </li>
+            </ol>
+            <div class="sheet-foot">
+              <div>
+                <span class="cta">Pre-registrati</span>
+                <p class="micro" style="margin-top:0.5rem">Un sì. Il conto resta tuo</p>
+              </div>
+              <svg class="seal" viewBox="0 0 400 400" fill="none" aria-hidden="true">
+                <circle cx="200" cy="200" r="56" stroke="#C4A35A" stroke-width="14"/>
+                <g transform="rotate(0 200 200)"><rect x="194" y="48" width="12" height="52" rx="4" fill="#C4A35A"/></g>
+                <g transform="rotate(45 200 200)"><rect x="194" y="48" width="12" height="52" rx="4" fill="#C4A35A"/></g>
+                <g transform="rotate(90 200 200)"><rect x="194" y="48" width="12" height="52" rx="4" fill="#C4A35A"/></g>
+                <g transform="rotate(135 200 200)"><rect x="194" y="48" width="12" height="52" rx="4" fill="#C4A35A"/></g>
+                <circle cx="200" cy="200" r="22" fill="#C4A35A"/>
+                <circle cx="200" cy="200" r="8" fill="#F7F4EE"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <figcaption>16:9 · cinema · TU sul mare + carta</figcaption>
+    </figure>
+
+    <figure>
+      <div class="stage poly">
+        <div class="goldline"></div>
+        <div class="horizon"></div>
+        <div class="inner">
+          <div class="top">
+            <div>
+              <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman" style="height:26px;margin-bottom:0.7rem">
+              <p class="kicker">Tre voci · quattro lastre</p>
+              <h2>Indica la rotta. <em>Tu tieni il timone.</em></h2>
+            </div>
+          </div>
+          <div class="slabs">
+            <article class="slab">
+              <div><i>01</i><strong>Scan</strong></div>
+              <div class="viz"><span class="viz-scan"></span></div>
+            </article>
+            <article class="slab">
+              <div><i>02</i><strong>Preview</strong></div>
+              <div class="viz">
+                <div class="viz-ticket">Preview · non è un ordine<b>In attesa</b></div>
+              </div>
+            </article>
+            <article class="slab is-void">
+              <div><i>03</i><strong>Il tuo sì</strong></div>
+              <div class="viz">
+                <div class="viz-empty">TU<span class="caret"></span></div>
+              </div>
+            </article>
+            <article class="slab">
+              <div><i>04</i><strong>Coperto</strong></div>
+              <div class="viz">
+                <div class="viz-cover"><span></span><span></span></div>
+              </div>
+            </article>
+          </div>
+          <div class="foot">
+            <span class="cta">Pre-registrati</span>
+            <p class="micro">Il terzo riquadro è vuoto finché non parli</p>
+            <p class="base">Perdite possibili. Middleware, non consulenza.</p>
+          </div>
+        </div>
+      </div>
+      <figcaption>16:9 · polittico · il terzo riquadro è il prodotto</figcaption>
+    </figure>
+
+    <div class="row">
+      <figure>
+        <div class="stage sq">
+          <div class="goldline"></div>
+          <div class="horizon"></div>
+          <div class="inner">
+            <div>
+              <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
+              <p class="kicker">Tre voci</p>
+              <h2>Helmsman indica la rotta.<em>Tu tieni il timone.</em></h2>
+            </div>
+            <div class="sheet">
+              <ol class="log">
+                <li>
+                  <span class="who">Modello</span>
+                  <span class="say">Proposto.</span>
+                </li>
+                <li>
+                  <span class="who">Ponte</span>
+                  <span class="say"><span class="strike">Ingresso nudo.</span> Size e stop in preview.</span>
+                </li>
+                <li class="you">
+                  <span class="who">Tu</span>
+                  <span class="say"><span class="caret" aria-hidden="true"></span></span>
+                </li>
+              </ol>
+              <div class="sheet-foot">
+                <span class="cta">Pre-registrati</span>
+                <p class="micro">Il conto resta tuo</p>
+              </div>
+            </div>
+            <p class="base">Perdite possibili. Non è consulenza.</p>
+          </div>
+        </div>
+        <figcaption>1:1 · feed · il foglio</figcaption>
+      </figure>
+
+      <figure>
+        <div class="veto">
+          <div class="inner">
+            <div>
+              <img class="logo" src="../../../assets/images/logo/logo-light.png" alt="Helmsman">
+              <p class="kicker" style="margin-top:1.1rem">Il no è marca</p>
+              <p class="badge-no" style="margin-top:0.7rem">No</p>
+              <p class="dead">Ingresso nudo</p>
+              <p class="alive">Coperto — <em>o non parte.</em></p>
+            </div>
+            <div>
+              <span class="cta">Pre-registrati</span>
+              <p class="base">Tu tieni il timone. Helmsman non è un bot. Perdite possibili. Non è consulenza.</p>
+            </div>
+          </div>
+        </div>
+        <figcaption>1:1 · veto · manifesto su carta</figcaption>
+      </figure>
+    </div>
+
+    <div class="row-3">
+      <figure>
+        <div class="stage poster">
+          <div class="goldline"></div>
+          <div class="horizon"></div>
+          <div class="inner">
+            <div>
+              <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
+              <p class="kicker" style="margin-top:1.2rem">Tre voci</p>
+            </div>
+            <p class="giant">TU<span class="caret"></span></p>
+            <div>
+              <h2>Helmsman indica la rotta.<em>Tu tieni il timone.</em></h2>
+              <span class="cta" style="margin-top:1rem">Pre-registrati</span>
+              <p class="base" style="margin-top:0.7rem">Perdite possibili. Non è consulenza.</p>
+            </div>
+          </div>
+        </div>
+        <figcaption>1:1 · poster tipo · il pezzo da muro</figcaption>
+      </figure>
+
+      <figure>
+        <div class="stage story">
+          <div class="goldline"></div>
+          <div class="horizon"></div>
+          <div class="inner">
+            <div>
+              <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
+              <p class="kicker">Tre voci</p>
+              <h2>Indica la rotta.<em>Tu tieni il timone.</em></h2>
+              <div class="sheet">
+                <ol class="log">
+                  <li>
+                    <span class="who">Modello</span>
+                    <span class="say">Proposto.</span>
+                  </li>
+                  <li>
+                    <span class="who">Ponte</span>
+                    <span class="say"><span class="strike">Nudo.</span> Coperto.</span>
+                  </li>
+                  <li class="you">
+                    <span class="who">Tu</span>
+                    <span class="say"><span class="caret"></span></span>
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div>
+              <span class="cta">Pre-registrati</span>
+              <p class="micro" style="margin-top:0.55rem">Il conto resta tuo</p>
+              <p class="base">Perdite possibili. Non è consulenza.</p>
+            </div>
+          </div>
+        </div>
+        <figcaption>9:16 · story</figcaption>
+      </figure>
+    </div>
+
+    <section class="gads-block">
+      <p class="gads-label">Google Ads · IAB</p>
+      <div class="gads-row">
+        <figure>
+          <div class="stage g-sq">
+            <div class="inner">
+              <img class="logo" src="../../../assets/images/logo/logo-light.png" alt="Helmsman">
+              <p class="kicker">Tre voci · in attesa del sì</p>
+              <div class="sheet">
+                <ol class="log">
+                  <li>
+                    <span class="who">Modello</span>
+                    <span class="say">Proposto.</span>
+                  </li>
+                  <li>
+                    <span class="who">Ponte</span>
+                    <span class="say"><span class="strike">Nudo.</span> Coperto.</span>
+                  </li>
+                  <li class="you">
+                    <span class="who">Tu</span>
+                    <span class="say"><span class="caret" aria-hidden="true"></span></span>
+                  </li>
+                </ol>
+                <div class="sheet-foot">
+                  <span class="cta">Pre-registrati</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption>250×250 · Square</figcaption>
+        </figure>
+        <figure>
+          <div class="stage g-lb">
+            <div class="goldline"></div>
+            <div class="inner">
+              <div class="brand">
+                <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
+                <p class="kicker">Tre voci</p>
+              </div>
+              <div class="sheet">
+                <ol class="log">
+                  <li>
+                    <span class="who">Modello</span>
+                    <span class="say">Proposto.</span>
+                  </li>
+                  <li>
+                    <span class="who">Ponte</span>
+                    <span class="say"><span class="strike">Nudo.</span> Coperto.</span>
+                  </li>
+                  <li class="you">
+                    <span class="who">Tu</span>
+                    <span class="say"><span class="caret" aria-hidden="true"></span></span>
+                  </li>
+                </ol>
+              </div>
+              <span class="cta">Pre-registrati</span>
+            </div>
+          </div>
+          <figcaption>728×90 · Leaderboard · banner header</figcaption>
+        </figure>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

@@ -103,7 +103,8 @@ Stesso VO della v1/v2. Cambia il montaggio: è un **sell**, non un notturno.
 2. **Meta 1200×628** — il pezzo da comprare  
 3. **Feed 1:1** — nastro + cluster  
 4. **Story 9:16** — nastro in colonna, CTA in zona pollice  
-5. **Leaderboard 728×90** — lockup, un colpo, CTA  
+5. **Google Ads 250×250 Square** — misura vera. Lista + CTA  
+6. **Google Ads 728×90 Leaderboard** — banner header, misura vera. Lockup, un colpo, CTA  
 
 Tagli X / RSA: restano quelli della v1. Non si inventa un claim nuovo per «convertire meglio».
 

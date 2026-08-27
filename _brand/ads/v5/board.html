@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Helmsman — Ads v5 Mozzo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0B1F3A;
+      --ink: #050d18;
+      --gold: #C4A35A;
+      --gold-light: #E8D5A3;
+      --paper: #F7F4EE;
+      --muted: #8A9BB0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background: #000;
+      color: var(--paper);
+      padding: 2.5rem 1.5rem 5rem;
+    }
+    .wrap { max-width: 1400px; margin: 0 auto; }
+    header { margin-bottom: 2.2rem; }
+    header .k {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 10px;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.65rem;
+    }
+    header h1 { font-weight: 900; font-size: 2rem; letter-spacing: -0.04em; }
+    header .note { color: var(--muted); font-size: 0.9rem; margin-top: 0.55rem; max-width: 46rem; line-height: 1.55; }
+    figure { margin: 0 0 2.4rem; }
+    figcaption {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.8rem;
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    @media (max-width: 960px) { .row { grid-template-columns: 1fr; } }
+    .row-story {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: start;
+    }
+    @media (max-width: 960px) { .row-story { grid-template-columns: 1fr; } }
+
+    .stage {
+      position: relative;
+      overflow: hidden;
+      background: #03070d;
+      color: var(--paper);
+    }
+    .stage .key {
+      position: absolute;
+      width: 55%;
+      height: 90%;
+      right: -8%;
+      top: -10%;
+      background: radial-gradient(ellipse at 32% 38%, rgba(196,163,90,0.28), rgba(196,163,90,0.05) 32%, transparent 62%);
+      pointer-events: none;
+      filter: blur(8px);
+      animation: breath 8s ease-in-out infinite;
+    }
+    .stage .falloff {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(120% 90% at 100% 50%, transparent 20%, rgba(3,7,13,0.35) 55%, #03070d 92%),
+        linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.55) 100%);
+      pointer-events: none;
+      z-index: 2;
+    }
+    @keyframes breath {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; }
+    }
+
+    .helm {
+      position: absolute;
+      z-index: 1;
+      pointer-events: none;
+      isolation: isolate;
+      transform: perspective(920px) rotateY(-24deg) rotateX(10deg);
+      filter: drop-shadow(0 30px 50px rgba(0,0,0,0.65));
+    }
+    .helm svg { width: 100%; height: 100%; display: block; overflow: visible; }
+    .sheen {
+      position: absolute;
+      inset: 8%;
+      border-radius: 50%;
+      background: linear-gradient(118deg, transparent 42%, rgba(232,213,163,0.28) 50%, transparent 58%);
+      mix-blend-mode: overlay;
+      animation: sheen 7.5s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 2;
+    }
+    @keyframes sheen {
+      0%, 100% { transform: translateX(-12%) rotate(8deg); opacity: 0.15; }
+      50% { transform: translateX(18%) rotate(8deg); opacity: 0.85; }
+    }
+    .spin {
+      transform-origin: 200px 200px;
+      animation: spin 64s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .inner { position: relative; z-index: 3; height: 100%; }
+    .logo { height: 30px; width: auto; display: block; }
+    .kicker {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    h2 {
+      font-weight: 900;
+      letter-spacing: -0.045em;
+      line-height: 1.04;
+    }
+    h2 em { font-style: normal; color: var(--gold); display: block; }
+    .body { color: #b7c2d0; line-height: 1.45; }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.75rem 1.5rem;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.8rem;
+      border-radius: 9999px;
+      box-shadow: 0 12px 32px rgba(196,163,90,0.18);
+    }
+    .base { color: var(--muted); line-height: 1.45; }
+
+    /* cinema */
+    .cinema { width: 100%; aspect-ratio: 16 / 9; }
+    .cinema .inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 6% 7% 5.5%;
+      max-width: 42%;
+    }
+    .cinema .logo { margin-bottom: 1.25rem; }
+    .cinema .kicker { font-size: 0.62rem; }
+    .cinema h2 { font-size: clamp(1.85rem, 3.6vw, 2.85rem); margin: 0.7rem 0 0.8rem; max-width: 13ch; }
+    .cinema .body { font-size: 1rem; max-width: 22rem; }
+    .cinema .cta { margin-top: 1.2rem; }
+    .cinema .base { font-size: 0.58rem; margin-top: 0.85rem; max-width: 24rem; }
+    .cinema .helm { width: 78%; right: -16%; top: 50%; height: auto; aspect-ratio: 1; transform: translateY(-52%) perspective(920px) rotateY(-26deg) rotateX(11deg); }
+
+    /* meta */
+    .meta { width: 100%; aspect-ratio: 1200 / 628; }
+    .meta .inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6% 6.5%;
+      max-width: 46%;
+      height: 100%;
+    }
+    .meta .logo { height: 26px; margin-bottom: 0.9rem; }
+    .meta .kicker { font-size: 0.52rem; }
+    .meta h2 { font-size: clamp(1.35rem, 2.8vw, 1.95rem); margin: 0.45rem 0 0.55rem; max-width: 14ch; }
+    .meta .body { font-size: 0.85rem; }
+    .meta .cta { margin-top: 0.9rem; padding: 0.62rem 1.25rem; font-size: 0.74rem; }
+    .meta .base { font-size: 0.5rem; margin-top: 0.55rem; max-width: 22rem; }
+    .meta .helm { width: 72%; right: -18%; top: 50%; height: auto; aspect-ratio: 1; transform: translateY(-50%) perspective(900px) rotateY(-24deg) rotateX(10deg); }
+    .meta .key { right: -12%; }
+
+    /* kv */
+    .kv { width: 100%; max-width: 560px; aspect-ratio: 1; }
+    .kv .inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 8.5%;
+      height: 100%;
+    }
+    .kv .logo { height: 26px; }
+    .kv .kicker { font-size: 0.5rem; }
+    .kv h2 { font-size: 1.35rem; margin: 0 0 0.7rem; max-width: 12ch; }
+    .kv .cta { font-size: 0.72rem; padding: 0.6rem 1.2rem; }
+    .kv .base { font-size: 0.48rem; margin-top: 0.55rem; max-width: 16rem; }
+    .kv .helm { width: 108%; right: -28%; top: 46%; height: auto; aspect-ratio: 1; transform: translateY(-50%) perspective(860px) rotateY(-20deg) rotateX(9deg); }
+    .kv .key { width: 80%; right: -20%; top: 10%; }
+    .kv .falloff {
+      background:
+        radial-gradient(90% 80% at 70% 50%, transparent 18%, rgba(3,7,13,0.2) 50%, #03070d 88%),
+        linear-gradient(180deg, transparent 70%, rgba(0,0,0,0.5) 100%);
+    }
+
+    /* macro */
+    .macro { width: 100%; max-width: 560px; aspect-ratio: 1; }
+    .macro .inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 8.5%;
+      height: 100%;
+    }
+    .macro .logo { height: 24px; }
+    .macro .kicker { font-size: 0.48rem; }
+    .macro h2 { font-size: 1.15rem; max-width: 11ch; }
+    .macro .cta { font-size: 0.7rem; padding: 0.58rem 1.15rem; }
+    .macro .base { font-size: 0.48rem; margin-top: 0.5rem; }
+    .macro .helm { width: 165%; left: 50%; top: 52%; right: auto; height: auto; aspect-ratio: 1; transform: translate(-50%, -50%) perspective(700px) rotateY(-8deg) rotateX(6deg); }
+    .macro .key { width: 90%; left: 5%; right: auto; top: 5%; background: radial-gradient(circle at 48% 48%, rgba(196,163,90,0.4), transparent 48%); }
+    .macro .falloff {
+      background: radial-gradient(circle at 50% 52%, transparent 22%, rgba(3,7,13,0.45) 52%, #03070d 78%);
+    }
+
+    /* story */
+    .story { width: 280px; aspect-ratio: 9 / 16; }
+    .story .inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 12% 10% 11%;
+      height: 100%;
+    }
+    .story .logo { height: 22px; }
+    .story .kicker { font-size: 0.44rem; letter-spacing: 0.22em; margin-top: 1.1rem; }
+    .story h2 { font-size: 1.45rem; margin: 0.55rem 0 0; }
+    .story .body { font-size: 0.72rem; margin-top: 0.55rem; }
+    .story .cta { font-size: 0.7rem; }
+    .story .base { font-size: 0.48rem; margin-top: 0.55rem; }
+    .story .helm { width: 165%; left: -28%; bottom: -8%; top: auto; height: auto; aspect-ratio: 1; transform: perspective(800px) rotateY(12deg) rotateX(16deg); }
+    .story .key { width: 90%; right: auto; left: -20%; top: 35%; height: 50%; }
+
+    .gads-block { margin-top: 2.8rem; }
+    .gads-label {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .gads-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: flex-start;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+    }
+    .g-sq { width: 250px; height: 250px; flex-shrink: 0; }
+    .g-sq .inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 14px;
+      max-width: none;
+      height: 100%;
+    }
+    .g-sq .logo { height: 16px; }
+    .g-sq .kicker { font-size: 0.34rem; letter-spacing: 0.16em; margin-top: 0.45rem; }
+    .g-sq h2 { font-size: 0.95rem; margin: 0; max-width: 8ch; }
+    .g-sq .cta { padding: 0.32rem 0.7rem; font-size: 0.56rem; box-shadow: none; }
+    .g-sq .body, .g-sq .base { display: none; }
+    .g-sq .helm { width: 145%; left: 18%; right: auto; top: 58%; height: auto; aspect-ratio: 1; transform: translateY(-50%) perspective(520px) rotateY(-12deg) rotateX(8deg); }
+    .g-sq .key { width: 90%; left: 20%; right: auto; top: 8%; background: radial-gradient(circle at 42% 48%, rgba(196,163,90,0.42), transparent 52%); }
+    .g-sq .falloff {
+      background: radial-gradient(circle at 62% 55%, transparent 18%, rgba(3,7,13,0.35) 48%, #03070d 78%);
+    }
+    .g-lb { width: 728px; height: 90px; flex-shrink: 0; }
+    .g-lb .inner {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 16px 0 96px;
+      gap: 1.1rem;
+      max-width: none;
+      height: 100%;
+    }
+    .g-lb .logo { height: 18px; margin: 0; }
+    .g-lb .kicker { display: none; }
+    .g-lb h2 { font-size: 1.05rem; margin: 0; flex: 1; letter-spacing: -0.04em; }
+    .g-lb h2 em { display: inline; }
+    .g-lb .cta { padding: 0.36rem 0.9rem; font-size: 0.6rem; box-shadow: none; flex-shrink: 0; margin-left: auto; }
+    .g-lb .body, .g-lb .base { display: none; }
+    .g-lb .helm { width: 200px; left: -36px; right: auto; top: 50%; height: auto; aspect-ratio: 1; transform: translateY(-50%) perspective(480px) rotateY(18deg) rotateX(6deg); opacity: 1; }
+    .g-lb .key { width: 280px; left: -40px; right: auto; top: -80%; height: 260%; background: radial-gradient(circle at 40% 50%, rgba(196,163,90,0.32), transparent 55%); }
+    .g-lb .falloff { background: linear-gradient(90deg, transparent 0%, #03070d 28%, #03070d 100%); }
+  </style>
+</head>
+<body>
+  <svg width="0" height="0" aria-hidden="true" style="position:absolute">
+    <defs>
+      <radialGradient id="hub" cx="34%" cy="30%" r="70%">
+        <stop offset="0%" stop-color="#F3E6C0"/>
+        <stop offset="38%" stop-color="#E8D5A3"/>
+        <stop offset="62%" stop-color="#C4A35A"/>
+        <stop offset="100%" stop-color="#6F5428"/>
+      </radialGradient>
+      <linearGradient id="steel" x1="20%" y1="10%" x2="90%" y2="90%">
+        <stop offset="0%" stop-color="#9AABBF"/>
+        <stop offset="28%" stop-color="#3D5574"/>
+        <stop offset="55%" stop-color="#1A3354"/>
+        <stop offset="100%" stop-color="#0A1628"/>
+      </linearGradient>
+      <linearGradient id="spoke" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#C5D0DC"/>
+        <stop offset="18%" stop-color="#6A7F98"/>
+        <stop offset="50%" stop-color="#24364F"/>
+        <stop offset="100%" stop-color="#0C1828"/>
+      </linearGradient>
+      <linearGradient id="goldedge" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#E8D5A3"/>
+        <stop offset="45%" stop-color="#C4A35A"/>
+        <stop offset="100%" stop-color="#8A7038"/>
+      </linearGradient>
+      <filter id="spec" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="1.2" result="b"/>
+        <feSpecularLighting in="b" surfaceScale="6" specularConstant="1.15" specularExponent="18" lighting-color="#F3E6C0" result="s">
+          <fePointLight x="-40" y="-70" z="180"/>
+        </feSpecularLighting>
+        <feComposite in="s" in2="SourceGraphic" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <div class="wrap">
+    <header>
+      <p class="k">v5 · mozzo · campagna</p>
+      <h1>Ad board — luce da plancia</h1>
+      <p class="note">Un oggetto. Una luce. Una tesi. Metallo scuro, mozzo d’oro, studio buio. Niente mare, niente nastro, niente foglio. Inverso della v4. Più pulito della v2. Più corpo della v1. Non un kit SaaS.</p>
+    </header>
+
+    <figure>
+      <div class="stage cinema">
+        <div class="key"></div>
+        <div class="helm" aria-hidden="true">
+          <svg viewBox="0 0 400 400" fill="none">
+            <g class="spin">
+              <circle cx="200" cy="200" r="168" stroke="url(#steel)" stroke-width="18" filter="url(#spec)"/>
+              <circle cx="200" cy="200" r="158" stroke="url(#goldedge)" stroke-width="1.2" opacity="0.55"/>
+              <circle cx="200" cy="200" r="178" stroke="rgba(196,163,90,0.18)" stroke-width="0.6"/>
+              <g fill="url(#spoke)" filter="url(#spec)">
+                <g transform="rotate(0 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                <g transform="rotate(45 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                <g transform="rotate(90 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                <g transform="rotate(135 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                <g transform="rotate(180 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                <g transform="rotate(225 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                <g transform="rotate(270 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                <g transform="rotate(315 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+              </g>
+              <circle cx="200" cy="200" r="48" fill="url(#hub)" filter="url(#spec)"/>
+              <circle cx="200" cy="200" r="48" stroke="url(#goldedge)" stroke-width="1.4" fill="none"/>
+              <circle cx="200" cy="200" r="16" fill="#081628"/>
+              <ellipse cx="186" cy="188" rx="14" ry="9" fill="rgba(243,230,192,0.35)"/>
+            </g>
+          </svg>
+          <div class="sheen"></div>
+        </div>
+        <div class="falloff"></div>
+        <div class="inner">
+          <div>
+            <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
+            <p class="kicker">Lo strumento</p>
+            <h2>Helmsman indica la rotta.<em>Tu tieni il timone.</em></h2>
+            <p class="body">Coperto, o non parte. Il sì è tuo.</p>
+          </div>
+          <div>
+            <span class="cta">Pre-registrati</span>
+            <p class="base">Trading comporta perdite. Helmsman è middleware: non consulenza, non l’LLM, non il broker.</p>
+          </div>
+        </div>
+      </div>
+      <figcaption>16:9 · cinema · master v5</figcaption>
+    </figure>
+
+    <figure>
+      <div class="stage meta">
+        <div class="key"></div>
+        <div class="helm" aria-hidden="true">
+          <svg viewBox="0 0 400 400" fill="none">
+            <g class="spin">
+              <circle cx="200" cy="200" r="168" stroke="url(#steel)" stroke-width="18" filter="url(#spec)"/>
+              <circle cx="200" cy="200" r="158" stroke="url(#goldedge)" stroke-width="1.2" opacity="0.55"/>
+              <g fill="url(#spoke)" filter="url(#spec)">
+                <g transform="rotate(0 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                <g transform="rotate(45 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                <g transform="rotate(90 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                <g transform="rotate(135 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                <g transform="rotate(180 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                <g transform="rotate(225 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                <g transform="rotate(270 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                <g transform="rotate(315 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+              </g>
+              <circle cx="200" cy="200" r="48" fill="url(#hub)" filter="url(#spec)"/>
+              <circle cx="200" cy="200" r="16" fill="#081628"/>
+              <ellipse cx="186" cy="188" rx="14" ry="9" fill="rgba(243,230,192,0.35)"/>
+            </g>
+          </svg>
+        </div>
+        <div class="falloff"></div>
+        <div class="inner">
+          <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
+          <p class="kicker">Lo strumento</p>
+          <h2>Indica la rotta.<em>Tu tieni il timone.</em></h2>
+          <p class="body">Coperto, o non parte.</p>
+          <span class="cta">Pre-registrati</span>
+          <p class="base">Perdite possibili. Middleware, non consulenza.</p>
+        </div>
+      </div>
+      <figcaption>1200×628 · Meta / LinkedIn</figcaption>
+    </figure>
+
+    <div class="row">
+      <figure>
+        <div class="stage kv">
+          <div class="key"></div>
+          <div class="helm" aria-hidden="true">
+            <svg viewBox="0 0 400 400" fill="none">
+              <g class="spin">
+                <circle cx="200" cy="200" r="168" stroke="url(#steel)" stroke-width="18" filter="url(#spec)"/>
+                <circle cx="200" cy="200" r="158" stroke="url(#goldedge)" stroke-width="1.2" opacity="0.5"/>
+                <g fill="url(#spoke)" filter="url(#spec)">
+                  <g transform="rotate(0 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                  <g transform="rotate(45 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                  <g transform="rotate(90 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                  <g transform="rotate(135 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                  <g transform="rotate(180 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                  <g transform="rotate(225 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                  <g transform="rotate(270 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                  <g transform="rotate(315 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                </g>
+                <circle cx="200" cy="200" r="48" fill="url(#hub)" filter="url(#spec)"/>
+                <circle cx="200" cy="200" r="16" fill="#081628"/>
+                <ellipse cx="186" cy="188" rx="14" ry="9" fill="rgba(243,230,192,0.35)"/>
+              </g>
+            </svg>
+          </div>
+          <div class="falloff"></div>
+          <div class="inner">
+            <div>
+              <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
+              <p class="kicker" style="margin-top:0.9rem">Lo strumento</p>
+            </div>
+            <div>
+              <h2>Tu tieni il timone.</h2>
+              <span class="cta">Pre-registrati</span>
+              <p class="base">Perdite possibili. Non è consulenza.</p>
+            </div>
+          </div>
+        </div>
+        <figcaption>1:1 · key visual</figcaption>
+      </figure>
+
+      <figure>
+        <div class="stage macro">
+          <div class="key"></div>
+          <div class="helm" aria-hidden="true">
+            <svg viewBox="0 0 400 400" fill="none">
+              <g>
+                <circle cx="200" cy="200" r="168" stroke="url(#steel)" stroke-width="18" filter="url(#spec)" opacity="0.35"/>
+                <g fill="url(#spoke)" filter="url(#spec)" opacity="0.4">
+                  <g transform="rotate(0 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/></g>
+                  <g transform="rotate(45 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/></g>
+                  <g transform="rotate(90 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/></g>
+                  <g transform="rotate(135 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/></g>
+                </g>
+                <circle cx="200" cy="200" r="72" fill="url(#hub)" filter="url(#spec)"/>
+                <circle cx="200" cy="200" r="72" stroke="url(#goldedge)" stroke-width="2" fill="none"/>
+                <circle cx="200" cy="200" r="24" fill="#081628"/>
+                <ellipse cx="178" cy="178" rx="22" ry="14" fill="rgba(243,230,192,0.4)"/>
+              </g>
+            </svg>
+          </div>
+          <div class="falloff"></div>
+          <div class="inner">
+            <div>
+              <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
+              <p class="kicker" style="margin-top:0.9rem">Mozzo</p>
+            </div>
+            <div>
+              <h2>Il sì è tuo.</h2>
+              <span class="cta">Pre-registrati</span>
+              <p class="base">Coperto, o non parte.</p>
+            </div>
+          </div>
+        </div>
+        <figcaption>1:1 · macro · solo il mozzo</figcaption>
+      </figure>
+    </div>
+
+    <figure>
+        <div class="stage story">
+          <div class="key"></div>
+          <div class="helm" aria-hidden="true">
+            <svg viewBox="0 0 400 400" fill="none">
+              <g class="spin">
+                <circle cx="200" cy="200" r="168" stroke="url(#steel)" stroke-width="18" filter="url(#spec)"/>
+                <g fill="url(#spoke)" filter="url(#spec)">
+                  <g transform="rotate(0 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                  <g transform="rotate(45 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                  <g transform="rotate(90 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                  <g transform="rotate(135 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                  <g transform="rotate(180 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                  <g transform="rotate(225 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                  <g transform="rotate(270 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                  <g transform="rotate(315 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                </g>
+                <circle cx="200" cy="200" r="48" fill="url(#hub)" filter="url(#spec)"/>
+                <circle cx="200" cy="200" r="16" fill="#081628"/>
+                <ellipse cx="186" cy="188" rx="14" ry="9" fill="rgba(243,230,192,0.35)"/>
+              </g>
+            </svg>
+            <div class="sheen"></div>
+          </div>
+          <div class="falloff"></div>
+          <div class="inner">
+            <div>
+              <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
+              <p class="kicker">Lo strumento</p>
+              <h2>Indica la rotta.<em>Tu tieni il timone.</em></h2>
+              <p class="body">Coperto, o non parte.</p>
+            </div>
+            <div>
+              <span class="cta">Pre-registrati</span>
+              <p class="base">Perdite possibili. Non è consulenza.</p>
+            </div>
+          </div>
+        </div>
+        <figcaption>9:16 · story</figcaption>
+      </figure>
+
+    <section class="gads-block">
+      <p class="gads-label">Google Ads · IAB</p>
+      <div class="gads-row">
+        <figure>
+          <div class="stage g-sq">
+            <div class="key"></div>
+            <div class="helm" aria-hidden="true">
+              <svg viewBox="0 0 400 400" fill="none">
+                <g>
+                  <circle cx="200" cy="200" r="168" stroke="url(#steel)" stroke-width="18" filter="url(#spec)"/>
+                  <g fill="url(#spoke)" filter="url(#spec)">
+                    <g transform="rotate(0 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                    <g transform="rotate(45 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                    <g transform="rotate(90 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                    <g transform="rotate(135 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                    <g transform="rotate(180 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                    <g transform="rotate(225 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                    <g transform="rotate(270 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                    <g transform="rotate(315 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                  </g>
+                  <circle cx="200" cy="200" r="56" fill="url(#hub)" filter="url(#spec)"/>
+                  <circle cx="200" cy="200" r="18" fill="#081628"/>
+                  <ellipse cx="186" cy="188" rx="14" ry="9" fill="rgba(243,230,192,0.35)"/>
+                </g>
+              </svg>
+            </div>
+            <div class="falloff"></div>
+            <div class="inner">
+              <div>
+                <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
+                <p class="kicker">Mozzo</p>
+              </div>
+              <div>
+                <h2>Il sì è tuo.</h2>
+                <span class="cta">Pre-registrati</span>
+              </div>
+            </div>
+          </div>
+          <figcaption>250×250 · Square</figcaption>
+        </figure>
+        <figure>
+          <div class="stage g-lb">
+            <div class="key"></div>
+            <div class="helm" aria-hidden="true">
+              <svg viewBox="0 0 400 400" fill="none">
+                <g>
+                  <circle cx="200" cy="200" r="168" stroke="url(#steel)" stroke-width="18" filter="url(#spec)"/>
+                  <g fill="url(#spoke)" filter="url(#spec)">
+                    <g transform="rotate(0 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                    <g transform="rotate(45 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                    <g transform="rotate(90 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                    <g transform="rotate(135 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                    <g transform="rotate(180 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                    <g transform="rotate(225 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                    <g transform="rotate(270 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                    <g transform="rotate(315 200 200)"><rect x="193.2" y="38" width="13.6" height="118" rx="4"/><circle cx="200" cy="36" r="9.5"/></g>
+                  </g>
+                  <circle cx="200" cy="200" r="48" fill="url(#hub)" filter="url(#spec)"/>
+                  <circle cx="200" cy="200" r="16" fill="#081628"/>
+                  <ellipse cx="186" cy="188" rx="14" ry="9" fill="rgba(243,230,192,0.35)"/>
+                </g>
+              </svg>
+            </div>
+            <div class="falloff"></div>
+            <div class="inner">
+              <img class="logo" src="../../../assets/images/logo/logo-dark.png" alt="Helmsman">
+              <h2>Tu tieni il <em>timone.</em></h2>
+              <span class="cta">Pre-registrati</span>
+            </div>
+          </div>
+          <figcaption>728×90 · Leaderboard · banner header</figcaption>
+        </figure>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
