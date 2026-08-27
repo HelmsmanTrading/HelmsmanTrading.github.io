@@ -30,6 +30,20 @@
   star: true
   blurb_it: "Anthropic. Sonnet e Opus. Sa chiamare i tool, sa aspettare il sì. L’LLM rispetto a cui il veto è stato scritto. Può allucinare. Non firma l’ordine."
   blurb_en: "Anthropic. Sonnet and Opus. It can call tools and wait for the yes. The LLM the veto was written against. It can hallucinate. It does not sign the order."
+- id: claude-desktop
+  name: Claude Desktop
+  letter: CD
+  icon: claude
+  accent: "#2A1F1A"
+  ink: "#E8D5A3"
+  status: live
+  status_it: MCP vivo
+  status_en: Live MCP
+  kind: client
+  tier: a
+  star: true
+  blurb_it: "Stesso modello, altro tavolo. MCP verso Helmsman: allacciato, testato, funzionante. Non è da costruire. È già il ponte."
+  blurb_en: "The same model, another table. MCP into Helmsman: wired, tested, working. Not to build. It is already the bridge."
 - id: cursor
   name: Cursor
   letter: Cu
@@ -43,19 +57,6 @@
   tier: b
   blurb_it: "Agent più MCP. Può sedere Claude, GPT o altro modello che sa i tool. Helmsman non è «dentro Cursor»: Cursor parla col ponte."
   blurb_en: "Agent plus MCP. It can seat Claude, GPT or another tool-capable model. Helmsman is not «inside Cursor»: Cursor talks to the bridge."
-- id: claude-desktop
-  name: Claude Desktop
-  letter: CD
-  icon: claude
-  accent: "#2A1F1A"
-  ink: "#E8D5A3"
-  status: queued
-  status_it: MCP
-  status_en: MCP
-  kind: client
-  tier: b
-  blurb_it: "Stesso modello, altro tavolo. MCP verso Helmsman. Calza. Da allacciare come ogni client che sa i tool."
-  blurb_en: "The same model, another table. MCP into Helmsman. Fits. To wire like any client that can speak tools."
 - id: gpt
   name: GPT
   letter: G
