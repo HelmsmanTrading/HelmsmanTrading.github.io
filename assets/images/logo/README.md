@@ -7,8 +7,10 @@
 
 ## Header / footer
 
-- `logo-light.png` — lockup navy su trasparente
-- `logo-dark.png` — lockup oro/bianco su trasparente
+- `logo-horizontal-light.svg` + `logo-light.png` — lockup vivo (TRADING grande, filetto centrato)
+- `logo-horizontal-dark.svg` + `logo-dark.png` — stesso, oro/bianco su navy
+- `logo-horizontal-light-prev.svg` + `logo-light-prev.png` — lockup precedente, tenuto per sicurezza
+- `logo-horizontal-dark-prev.svg` + `logo-dark-prev.png` — idem, versione scura
 
 ## Favicon (generate dal segno)
 
